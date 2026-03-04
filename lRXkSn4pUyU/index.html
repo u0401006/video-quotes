@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>影片金句導覽</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        h1 { color: #333; margin-bottom: 30px; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 30px;
+        }
+        .item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+        .item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .info {
+            padding: 20px;
+        }
+        .time {
+            font-weight: bold;
+            color: #1976d2;
+            font-size: 18px;
+            font-family: "SF Mono", "Monaco", monospace;
+        }
+        .text {
+            margin-top: 12px;
+            color: #333;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>📌 影片金句導覽</h1>
+    <div class="grid">
+
+        <div class="item">
+            <img src="quote_001_00-00-32.jpg" alt="這種不適感，正是培養自信孩子的第一個關鍵步驟...">
+            <div class="info">
+                <div class="time">⏱ 00:00:32</div>
+                <div class="text">這種不適感，正是培養自信孩子的第一個關鍵步驟</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_002_00-02-12.jpg" alt="為了舒適而育兒，是我們做的最自然、最善意、也最有缺陷的單一行為...">
+            <div class="info">
+                <div class="time">⏱ 00:02:12</div>
+                <div class="text">為了舒適而育兒，是我們做的最自然、最善意、也最有缺陷的單一行為</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_003_00-03-16.jpg" alt="它教導孩子艱難的感受是緊急狀況。但它沒有用...">
+            <div class="info">
+                <div class="time">⏱ 00:03:16</div>
+                <div class="text">它教導孩子艱難的感受是緊急狀況。但它沒有用</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_004_00-03-30.jpg" alt="如果生活不會承諾舒適，我們的育兒也不能...">
+            <div class="info">
+                <div class="time">⏱ 00:03:30</div>
+                <div class="text">如果生活不會承諾舒適，我們的育兒也不能</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_005_00-03-38.jpg" alt="我們的目標是建立應對效能，我稱之為「可處理性」...">
+            <div class="info">
+                <div class="time">⏱ 00:03:38</div>
+                <div class="text">我們的目標是建立應對效能，我稱之為「可處理性」</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_006_00-03-46.jpg" alt="我們的孩子不需要舒適的生活。他們需要對不適感到舒適...">
+            <div class="info">
+                <div class="time">⏱ 00:03:46</div>
+                <div class="text">我們的孩子不需要舒適的生活。他們需要對不適感到舒適</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_007_00-04-06.jpg" alt="焦慮加勇敢等於自信。焦慮不是問題，它是核心成分...">
+            <div class="info">
+                <div class="time">⏱ 00:04:06</div>
+                <div class="text">焦慮加勇敢等於自信。焦慮不是問題，它是核心成分</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_008_00-04-20.jpg" alt="沒有人能在不處理艱難事物的情況下，對自己能處理艱難事物感到自信...">
+            <div class="info">
+                <div class="time">⏱ 00:04:20</div>
+                <div class="text">沒有人能在不處理艱難事物的情況下，對自己能處理艱難事物感到自信</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_009_00-05-42.jpg" alt="看著孩子驚慌失措，還是送他們上場。這要求父母勇敢...">
+            <div class="info">
+                <div class="time">⏱ 00:05:42</div>
+                <div class="text">看著孩子驚慌失措，還是送他們上場。這要求父母勇敢</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_010_00-06-03.jpg" alt="自信不是來自讚美或保護。它來自練習...">
+            <div class="info">
+                <div class="time">⏱ 00:06:03</div>
+                <div class="text">自信不是來自讚美或保護。它來自練習</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_011_00-06-37.jpg" alt="勇敢的育兒創造勇敢的孩子，而勇敢的孩子將改變世界...">
+            <div class="info">
+                <div class="time">⏱ 00:06:37</div>
+                <div class="text">勇敢的育兒創造勇敢的孩子，而勇敢的孩子將改變世界</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
