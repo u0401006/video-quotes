@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>影片金句收藏</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 48px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+        }
+        .card-preview {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .card-meta {
+            color: #666;
+            font-size: 14px;
+        }
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📌 影片金句收藏</h1>
+        <div class="grid" id="videos"></div>
+        <div class="footer">
+            <p>由 Claude Code 自動生成 · video-keyframe-annotator</p>
+        </div>
+    </div>
+
+    <script>
+        // 自動掃描所有影片目錄
+        fetch('videos.json')
+            .then(r => r.json())
+            .then(videos => {
+                const grid = document.getElementById('videos');
+                videos.forEach(video => {
+                    const card = document.createElement('a');
+                    card.className = 'card';
+                    card.href = video.path;
+
+                    card.innerHTML = `
+                        <img class="card-preview" src="${video.preview}" alt="${video.title}">
+                        <div class="card-body">
+                            <div class="card-title">${video.title}</div>
+                            <div class="card-meta">${video.count} 個金句</div>
+                        </div>
+                    `;
+
+                    grid.appendChild(card);
+                });
+            })
+            .catch(() => {
+                document.getElementById('videos').innerHTML = '<p style="color: white;">尚無影片</p>';
+            });
+    </script>
+</body>
+</html>

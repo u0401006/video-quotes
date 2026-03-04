@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>影片金句導覽</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        h1 { color: #333; margin-bottom: 30px; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 30px;
+        }
+        .item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+        .item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .info {
+            padding: 20px;
+        }
+        .time {
+            font-weight: bold;
+            color: #1976d2;
+            font-size: 18px;
+            font-family: "SF Mono", "Monaco", monospace;
+        }
+        .text {
+            margin-top: 12px;
+            color: #333;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>📌 影片金句導覽</h1>
+    <div class="grid">
+
+        <div class="item">
+            <img src="quote_001_00-00-40.jpg" alt="實力、能力和潛在能力——潛在能力是每個人都有的，但很多人並沒有完全發揮出來...">
+            <div class="info">
+                <div class="time">⏱ 00:00:40</div>
+                <div class="text">實力、能力和潛在能力——潛在能力是每個人都有的，但很多人並沒有完全發揮出來</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_002_00-01-45.jpg" alt="在新技術不斷誕生的業界中磨練自己，判斷力、綜合力、分析力、領導力都是這樣逐漸培養起來的...">
+            <div class="info">
+                <div class="time">⏱ 00:01:45</div>
+                <div class="text">在新技術不斷誕生的業界中磨練自己，判斷力、綜合力、分析力、領導力都是這樣逐漸培養起來的</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_003_00-02-15.jpg" alt="哈佛 MBA 教給我的第一件事：商業的框架思維——就像高爾夫、棒球都有基本型，商業思維也有基礎框架...">
+            <div class="info">
+                <div class="time">⏱ 00:02:15</div>
+                <div class="text">哈佛 MBA 教給我的第一件事：商業的框架思維——就像高爾夫、棒球都有基本型，商業思維也有基礎框架</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_004_00-02-50.jpg" alt="MBA 帶來的第二個價值是人際網絡的擴展，這些同學至今仍然給我寶貴的商業建議...">
+            <div class="info">
+                <div class="time">⏱ 00:02:50</div>
+                <div class="text">MBA 帶來的第二個價值是人際網絡的擴展，這些同學至今仍然給我寶貴的商業建議</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_005_00-03-30.jpg" alt="討論時最重要的是掌握核心本質，細節的執行計劃交給現場處理，但方針決策是我的強項...">
+            <div class="info">
+                <div class="time">⏱ 00:03:30</div>
+                <div class="text">討論時最重要的是掌握核心本質，細節的執行計劃交給現場處理，但方針決策是我的強項</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_006_00-04-20.jpg" alt="如果沒有 MBA，就無法走到今天這一步——兩年訓練改變了我的思維結構...">
+            <div class="info">
+                <div class="time">⏱ 00:04:20</div>
+                <div class="text">如果沒有 MBA，就無法走到今天這一步——兩年訓練改變了我的思維結構</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_007_00-05-10.jpg" alt="在興銀學到的金融知識，讓樂天成為金融科技領域最成功的公司之一——金錢、信用、支付的本質都在那時理解...">
+            <div class="info">
+                <div class="time">⏱ 00:05:10</div>
+                <div class="text">在興銀學到的金融知識，讓樂天成為金融科技領域最成功的公司之一——金錢、信用、支付的本質都在那時理解</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_008_00-06-40.jpg" alt="24 年前看網頁時載入很慢，幾乎沒人在網路上買東西——但我看到了 TCP/IP 和超連結改變資訊存在...">
+            <div class="info">
+                <div class="time">⏱ 00:06:40</div>
+                <div class="text">24 年前看網頁時載入很慢，幾乎沒人在網路上買東西——但我看到了 TCP/IP 和超連結改變資訊存在方式的本質</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_009_00-07-50.jpg" alt="當資訊存在方式改變，人們從哪裡獲取、從哪裡購買的行為也會改變——我預見到這一點並承擔了風險...">
+            <div class="info">
+                <div class="time">⏱ 00:07:50</div>
+                <div class="text">當資訊存在方式改變，人們從哪裡獲取、從哪裡購買的行為也會改變——我預見到這一點並承擔了風險</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
