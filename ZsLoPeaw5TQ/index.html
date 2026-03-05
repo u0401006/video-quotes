@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>影片金句導覽</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        h1 { color: #333; margin-bottom: 30px; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 30px;
+        }
+        .item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+        .item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .info {
+            padding: 20px;
+        }
+        .time {
+            font-weight: bold;
+            color: #1976d2;
+            font-size: 18px;
+            font-family: "SF Mono", "Monaco", monospace;
+        }
+        .text {
+            margin-top: 12px;
+            color: #333;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>📌 影片金句導覽</h1>
+    <div class="grid">
+
+        <div class="item">
+            <img src="quote_001_00-00-15.jpg" alt="會議室不足讓業務速度越來越慢。場地找不到就改下週，這很嚴重...">
+            <div class="info">
+                <div class="time">⏱ 00:00:15</div>
+                <div class="text">會議室不足讓業務速度越來越慢。場地找不到就改下週，這很嚴重</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_002_00-01-20.jpg" alt="數據顯示會議室只使用了 60% 到 70%，其實有 30-40% 是空著的...">
+            <div class="info">
+                <div class="time">⏱ 00:01:20</div>
+                <div class="text">數據顯示會議室只使用了 60% 到 70%，其實有 30-40% 是空著的</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_003_00-02-45.jpg" alt="善於移動、根據工作選擇場所的人，生產力比較高...">
+            <div class="info">
+                <div class="time">⏱ 00:02:45</div>
+                <div class="text">善於移動、根據工作選擇場所的人，生產力比較高</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_004_00-04-30.jpg" alt="疫情後大家認知到：面對面工作很重要，真實溝通很重要...">
+            <div class="info">
+                <div class="time">⏱ 00:04:30</div>
+                <div class="text">疫情後大家認知到：面對面工作很重要，真實溝通很重要</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_005_00-06-15.jpg" alt="AI 會找出所需場所並妥善分配。這是資源利用價值最大化演算法...">
+            <div class="info">
+                <div class="time">⏱ 00:06:15</div>
+                <div class="text">AI 會找出所需場所並妥善分配。這是資源利用價值最大化演算法</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_006_00-07-20.jpg" alt="導入系統後，使用率從 69.9% 提升到 85%，會議室數量零增加...">
+            <div class="info">
+                <div class="time">⏱ 00:07:20</div>
+                <div class="text">導入系統後，使用率從 69.9% 提升到 85%，會議室數量零增加</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_007_00-08-10.jpg" alt="想開會就能馬上開會，這對業務速度提升和生產力有很大貢獻...">
+            <div class="info">
+                <div class="time">⏱ 00:08:10</div>
+                <div class="text">想開會就能馬上開會，這對業務速度提升和生產力有很大貢獻</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_008_00-09-05.jpg" alt="數據讓我們了解：居心地好的場所聚集更多人，溝通滿足度更高...">
+            <div class="info">
+                <div class="time">⏱ 00:09:05</div>
+                <div class="text">數據讓我們了解：居心地好的場所聚集更多人，溝通滿足度更高</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="quote_009_00-10-30.jpg" alt="辦公室是作業系統，必須用 AI 和數據來更新它...">
+            <div class="info">
+                <div class="time">⏱ 00:10:30</div>
+                <div class="text">辦公室是作業系統，必須用 AI 和數據來更新它</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
