@@ -1,0 +1,142 @@
+[
+  {
+    "index": 1,
+    "time": "00:00:35",
+    "text": "告訴你說一個 AI Agent 它背後運作的原理是什麼樣子",
+    "file": "2rcJdFuNbZQ_keyframes/quote_001_00-00-35.jpg",
+    "success": true
+  },
+  {
+    "index": 2,
+    "time": "00:01:05",
+    "text": "今天這堂課我們可以看作是要來解剖小龍蝦，看看 OpenClaw 背後是怎麼運作的",
+    "file": "2rcJdFuNbZQ_keyframes/quote_002_00-01-05.jpg",
+    "success": true
+  },
+  {
+    "index": 3,
+    "time": "00:03:33",
+    "text": "一般在使用 AI 的時候你會覺得它只動口不動手，就跟你指導教授一樣",
+    "file": "2rcJdFuNbZQ_keyframes/quote_003_00-03-33.jpg",
+    "success": true
+  },
+  {
+    "index": 4,
+    "time": "00:03:46",
+    "text": "如果是像 OpenClaw 的話，當一模一樣的指令給一個 AI Agent，它就真的會開始做事",
+    "file": "2rcJdFuNbZQ_keyframes/quote_004_00-03-46.jpg",
+    "success": true
+  },
+  {
+    "index": 5,
+    "time": "00:04:47",
+    "text": "這裡面人類唯一能做的事情就只有審核而已",
+    "file": "2rcJdFuNbZQ_keyframes/quote_005_00-04-47.jpg",
+    "success": true
+  },
+  {
+    "index": 6,
+    "time": "00:09:47",
+    "text": "隨著語言模型每一次能力變強，就會有一波 AI Agent 的浪潮",
+    "file": "2rcJdFuNbZQ_keyframes/quote_006_00-09-47.jpg",
+    "success": true
+  },
+  {
+    "index": 7,
+    "time": "00:11:37",
+    "text": "這邊要強調的一個非常重要的觀念：AI Agent 並不是語言模型",
+    "file": "2rcJdFuNbZQ_keyframes/quote_007_00-11-37.jpg",
+    "success": true
+  },
+  {
+    "index": 8,
+    "time": "00:12:41",
+    "text": "OpenClaw 是一個跑在你的電腦上面，人與語言模型之間的介面",
+    "file": "2rcJdFuNbZQ_keyframes/quote_008_00-12-41.jpg",
+    "success": true
+  },
+  {
+    "index": 9,
+    "time": "00:12:52",
+    "text": "OpenClaw 是 AI Agent 中不是 AI 的那個部分，是語言模型以外的東西",
+    "file": "2rcJdFuNbZQ_keyframes/quote_009_00-12-52.jpg",
+    "success": true
+  },
+  {
+    "index": 10,
+    "time": "00:13:00",
+    "text": "你的龍蝦的聰明程度取決於背後裝的模型",
+    "file": "2rcJdFuNbZQ_keyframes/quote_010_00-13-00.jpg",
+    "success": true
+  },
+  {
+    "index": 11,
+    "time": "00:21:37",
+    "text": "語言模型實際上在做的事情是文字接龍，不是在回答問題",
+    "file": "2rcJdFuNbZQ_keyframes/quote_011_00-21-37.jpg",
+    "success": true
+  },
+  {
+    "index": 12,
+    "time": "00:24:54",
+    "text": "大型語言模型就是一個住在黑盒子裡面的人，唯一會做的事情就是文字接龍",
+    "file": "2rcJdFuNbZQ_keyframes/quote_012_00-24-54.jpg",
+    "success": true
+  },
+  {
+    "index": 13,
+    "time": "00:27:07",
+    "text": "system prompt 就是 OpenClaw 附加上去的文字，讓語言模型知道自己是誰",
+    "file": "2rcJdFuNbZQ_keyframes/quote_013_00-27-07.jpg",
+    "success": true
+  },
+  {
+    "index": 14,
+    "time": "00:31:56",
+    "text": "語言模型有非常嚴重的失憶症，每次都要跟它重複一次之前發生的事情",
+    "file": "2rcJdFuNbZQ_keyframes/quote_014_00-31-56.jpg",
+    "success": true
+  },
+  {
+    "index": 15,
+    "time": "00:32:54",
+    "text": "AI Agent 就像失憶女友一樣，它不只是每天重新開始，是每次對話都重新開始",
+    "file": "2rcJdFuNbZQ_keyframes/quote_015_00-32-54.jpg",
+    "success": true
+  },
+  {
+    "index": 16,
+    "time": "00:34:22",
+    "text": "read 是 OpenClaw 龍蝦裡面內建的一個工具，讓 AI 可以讀取檔案",
+    "file": "2rcJdFuNbZQ_keyframes/quote_016_00-34-22.jpg",
+    "success": true
+  },
+  {
+    "index": 17,
+    "time": "00:34:47",
+    "text": "龍蝦它只是個節肢動物，它完全沒有人工智慧在裡面，裡面通通是寫死的程式碼",
+    "file": "2rcJdFuNbZQ_keyframes/quote_017_00-34-47.jpg",
+    "success": true
+  },
+  {
+    "index": 18,
+    "time": "00:43:00",
+    "text": "這些 AI Agent 其實也會自己創作工具",
+    "file": "2rcJdFuNbZQ_keyframes/quote_018_00-43-00.jpg",
+    "success": true
+  },
+  {
+    "index": 19,
+    "time": "00:48:32",
+    "text": "Skill 就是 AI Agent 自己寫給自己用的工具",
+    "file": "2rcJdFuNbZQ_keyframes/quote_019_00-48-32.jpg",
+    "success": true
+  },
+  {
+    "index": 20,
+    "time": "01:05:33",
+    "text": "Agent 可以把工作外包給其他的 Agent，這叫做 Multi-Agent",
+    "file": "2rcJdFuNbZQ_keyframes/quote_020_01-05-33.jpg",
+    "success": true
+  }
+]

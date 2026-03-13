@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解剖小龍蝦 — OpenClaw AI Agent 原理 | 金句 20 選</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Microsoft JhengHei", sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #fff;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #e94560 0%, #0f3460 100%);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.3);
+        }
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+        .header a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .meta span {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .quote-card {
+            background: #1e2a4a;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .quote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(233, 69, 96, 0.2);
+        }
+        .quote-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .quote-info {
+            padding: 20px;
+        }
+        .quote-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .quote-number {
+            background: linear-gradient(135deg, #e94560, #ff6b6b);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        .quote-time {
+            color: #8892b0;
+            font-size: 0.9rem;
+        }
+        .quote-text {
+            color: #ccd6f6;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #8892b0;
+            font-size: 0.9rem;
+        }
+        .footer a {
+            color: #e94560;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🦞 解剖小龍蝦 — AI Agent 運作原理</h1>
+        <p>李宏毅教授講解 OpenClaw AI Agent 背後的運作機制</p>
+        <div class="meta">
+            <span>📺 <a href="https://youtu.be/2rcJdFuNbZQ" target="_blank">觀看原始影片</a></span>
+            <span>📝 金句數量：20</span>
+            <span>⏱️ 影片長度：83 分鐘</span>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="quote-card">
+            <img src="quote_001_00-00-35.jpg" alt="金句 1">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 1</span>
+                    <span class="quote-time">⏰ 00:00:35</span>
+                </div>
+                <div class="quote-text">告訴你說一個 AI Agent 它背後運作的原理是什麼樣子</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_002_00-01-05.jpg" alt="金句 2">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 2</span>
+                    <span class="quote-time">⏰ 00:01:05</span>
+                </div>
+                <div class="quote-text">今天這堂課我們可以看作是要來解剖小龍蝦，看看 OpenClaw 背後是怎麼運作的</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_003_00-03-33.jpg" alt="金句 3">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 3</span>
+                    <span class="quote-time">⏰ 00:03:33</span>
+                </div>
+                <div class="quote-text">一般在使用 AI 的時候你會覺得它只動口不動手，就跟你指導教授一樣</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_004_00-03-46.jpg" alt="金句 4">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 4</span>
+                    <span class="quote-time">⏰ 00:03:46</span>
+                </div>
+                <div class="quote-text">如果是像 OpenClaw 的話，當一模一樣的指令給一個 AI Agent，它就真的會開始做事</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_005_00-04-47.jpg" alt="金句 5">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 5</span>
+                    <span class="quote-time">⏰ 00:04:47</span>
+                </div>
+                <div class="quote-text">這裡面人類唯一能做的事情就只有審核而已</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_006_00-09-47.jpg" alt="金句 6">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 6</span>
+                    <span class="quote-time">⏰ 00:09:47</span>
+                </div>
+                <div class="quote-text">隨著語言模型每一次能力變強，就會有一波 AI Agent 的浪潮</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_007_00-11-37.jpg" alt="金句 7">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 7</span>
+                    <span class="quote-time">⏰ 00:11:37</span>
+                </div>
+                <div class="quote-text">這邊要強調的一個非常重要的觀念：AI Agent 並不是語言模型</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_008_00-12-41.jpg" alt="金句 8">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 8</span>
+                    <span class="quote-time">⏰ 00:12:41</span>
+                </div>
+                <div class="quote-text">OpenClaw 是一個跑在你的電腦上面，人與語言模型之間的介面</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_009_00-12-52.jpg" alt="金句 9">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 9</span>
+                    <span class="quote-time">⏰ 00:12:52</span>
+                </div>
+                <div class="quote-text">OpenClaw 是 AI Agent 中不是 AI 的那個部分，是語言模型以外的東西</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_010_00-13-00.jpg" alt="金句 10">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 10</span>
+                    <span class="quote-time">⏰ 00:13:00</span>
+                </div>
+                <div class="quote-text">你的龍蝦的聰明程度取決於背後裝的模型</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_011_00-21-37.jpg" alt="金句 11">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 11</span>
+                    <span class="quote-time">⏰ 00:21:37</span>
+                </div>
+                <div class="quote-text">語言模型實際上在做的事情是文字接龍，不是在回答問題</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_012_00-24-54.jpg" alt="金句 12">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 12</span>
+                    <span class="quote-time">⏰ 00:24:54</span>
+                </div>
+                <div class="quote-text">大型語言模型就是一個住在黑盒子裡面的人，唯一會做的事情就是文字接龍</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_013_00-27-07.jpg" alt="金句 13">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 13</span>
+                    <span class="quote-time">⏰ 00:27:07</span>
+                </div>
+                <div class="quote-text">system prompt 就是 OpenClaw 附加上去的文字，讓語言模型知道自己是誰</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_014_00-31-56.jpg" alt="金句 14">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 14</span>
+                    <span class="quote-time">⏰ 00:31:56</span>
+                </div>
+                <div class="quote-text">語言模型有非常嚴重的失憶症，每次都要跟它重複一次之前發生的事情</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_015_00-32-54.jpg" alt="金句 15">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 15</span>
+                    <span class="quote-time">⏰ 00:32:54</span>
+                </div>
+                <div class="quote-text">AI Agent 就像失憶女友一樣，它不只是每天重新開始，是每次對話都重新開始</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_016_00-34-22.jpg" alt="金句 16">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 16</span>
+                    <span class="quote-time">⏰ 00:34:22</span>
+                </div>
+                <div class="quote-text">read 是 OpenClaw 龍蝦裡面內建的一個工具，讓 AI 可以讀取檔案</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_017_00-34-47.jpg" alt="金句 17">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 17</span>
+                    <span class="quote-time">⏰ 00:34:47</span>
+                </div>
+                <div class="quote-text">龍蝦它只是個節肢動物，它完全沒有人工智慧在裡面，裡面通通是寫死的程式碼</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_018_00-43-00.jpg" alt="金句 18">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 18</span>
+                    <span class="quote-time">⏰ 00:43:00</span>
+                </div>
+                <div class="quote-text">這些 AI Agent 其實也會自己創作工具</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_019_00-48-32.jpg" alt="金句 19">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 19</span>
+                    <span class="quote-time">⏰ 00:48:32</span>
+                </div>
+                <div class="quote-text">Skill 就是 AI Agent 自己寫給自己用的工具</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <img src="quote_020_01-05-33.jpg" alt="金句 20">
+            <div class="quote-info">
+                <div class="quote-header">
+                    <span class="quote-number">金句 20</span>
+                    <span class="quote-time">⏰ 01:05:33</span>
+                </div>
+                <div class="quote-text">Agent 可以把工作外包給其他的 Agent，這叫做 Multi-Agent</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>🤖 Generated with <a href="https://claude.ai/claude-code" target="_blank">Claude Code</a> + video-keyframe-annotator</p>
+        <p style="margin-top: 10px;">影片來源：<a href="https://youtu.be/2rcJdFuNbZQ" target="_blank">李宏毅教授 - 解剖小龍蝦 OpenClaw AI Agent</a></p>
+    </div>
+</body>
+</html>
