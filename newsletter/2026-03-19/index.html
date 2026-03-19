@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CNA 國際戰情電子報 — 2026-03-19</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+                   "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: #f4f4f4;
+      color: #1a1a1a;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    /* ===== WRAPPER ===== */
+    .email-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      background: #0d1117;
+      color: #ffffff;
+      padding: 28px 32px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, #0d1117 60%, #1a2332 100%);
+    }
+    .header-inner { position: relative; z-index: 1; }
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-icon {
+      width: 36px; height: 36px;
+      background: #e63946;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .brand-name {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: #fff;
+    }
+    .brand-sub {
+      font-size: 11px;
+      color: #8b949e;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .header-meta {
+      text-align: right;
+    }
+    .edition-badge {
+      display: inline-block;
+      background: rgba(230,57,70,0.15);
+      border: 1px solid rgba(230,57,70,0.4);
+      color: #ff6b7a;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .header-date {
+      font-size: 13px;
+      color: #8b949e;
+    }
+    .header-headline {
+      font-size: 13px;
+      color: #c9d1d9;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .header-headline strong {
+      color: #e2e8f0;
+    }
+
+    /* ===== BREAKING BAR ===== */
+    .breaking-bar {
+      background: #e63946;
+      color: #fff;
+      padding: 8px 32px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .breaking-label {
+      background: #fff;
+      color: #e63946;
+      padding: 1px 8px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+
+    /* ===== SECTION LABEL ===== */
+    .section-label {
+      padding: 20px 32px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label span {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #e63946;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e8e8e8;
+    }
+
+    /* ===== FEATURED BLOCK ===== */
+    .featured {
+      padding: 16px 32px 28px;
+    }
+    .featured-main {
+      background: #0d1117;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .featured-image-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      background: #1a2332;
+      overflow: hidden;
+    }
+    .featured-image-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .featured-image-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #30363d;
+      font-size: 13px;
+      background: linear-gradient(135deg, #0d1117, #1c2430);
+    }
+    .featured-image-placeholder .ph-icon { font-size: 40px; margin-bottom: 8px; opacity: 0.3; }
+    .featured-category-tag {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: #e63946;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+    .featured-content {
+      padding: 20px 24px 24px;
+      color: #fff;
+    }
+    .featured-title {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 12px;
+      color: #e2e8f0;
+    }
+    .featured-summary {
+      font-size: 14px;
+      line-height: 1.75;
+      color: #8b949e;
+      margin-bottom: 18px;
+    }
+    .featured-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #e63946;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .featured-link::after {
+      content: '→';
+    }
+
+    /* Sub-topic cards */
+    .subtopic-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .subtopic-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .subtopic-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    .subtopic-img-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 75%; /* 4:3 */
+      background: #f0f0f0;
+      overflow: hidden;
+    }
+    .subtopic-img-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .subtopic-img-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f4f5;
+      color: #d0d0d0;
+      font-size: 28px;
+    }
+    .subtopic-body {
+      padding: 12px;
+    }
+    .subtopic-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #e63946;
+      margin-bottom: 4px;
+    }
+    .subtopic-title {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: #1a1a1a;
+      margin-bottom: 6px;
+    }
+    .subtopic-summary {
+      font-size: 11px;
+      color: #666;
+      line-height: 1.55;
+    }
+
+    /* ===== NEWS GRID ===== */
+    .news-grid {
+      padding: 4px 32px 28px;
+    }
+    .news-card {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid #f0f0f0;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      border-radius: 6px;
+      margin: 0 -8px;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    .news-card:hover {
+      background: #fafafa;
+    }
+    .news-card:last-child {
+      border-bottom: none;
+    }
+    .news-card-number {
+      font-size: 28px;
+      font-weight: 900;
+      color: #e8e8e8;
+      line-height: 1;
+      min-width: 32px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .news-card-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .news-card-tags {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .tag-politics  { background: #fff0f0; color: #c0392b; }
+    .tag-intl      { background: #f0f4ff; color: #2563eb; }
+    .tag-finance   { background: #f0fdf4; color: #16a34a; }
+    .tag-sports    { background: #fff7ed; color: #ea580c; }
+    .tag-tech      { background: #f5f3ff; color: #7c3aed; }
+    .tag-society   { background: #fdf4ff; color: #a21caf; }
+    .tag-default   { background: #f4f4f4; color: #555; }
+    .tag-source {
+      font-size: 10px;
+      color: #999;
+      font-weight: 400;
+    }
+    .news-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: #1a1a1a;
+      margin-bottom: 5px;
+    }
+    .news-card-summary {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .news-card-thumb {
+      width: 88px;
+      height: 66px;
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #f0f0f0;
+      position: relative;
+    }
+    .news-card-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .news-card-thumb-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d0d0d0;
+      font-size: 22px;
+    }
+
+    /* ===== DIVIDER ===== */
+    .section-divider {
+      margin: 0 32px;
+      border: none;
+      border-top: 2px solid #0d1117;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #0d1117;
+      color: #8b949e;
+      padding: 28px 32px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .footer-brand {
+      font-size: 15px;
+      font-weight: 800;
+      color: #e2e8f0;
+      margin-bottom: 6px;
+    }
+    .footer-desc {
+      font-size: 12px;
+      color: #8b949e;
+      line-height: 1.6;
+    }
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+    }
+    .footer-links a {
+      color: #8b949e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .footer-links a:hover {
+      color: #c9d1d9;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+      color: #484f58;
+    }
+    .footer-generated {
+      font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+      font-size: 10px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .header, .section-label, .featured, .news-grid, .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .breaking-bar { padding-left: 20px; padding-right: 20px; }
+      .featured-title { font-size: 18px; }
+      .subtopic-cards { grid-template-columns: 1fr; }
+      .subtopic-img-wrap { padding-bottom: 56.25%; }
+      .news-card-number { font-size: 22px; min-width: 26px; }
+      .news-card-title { font-size: 14px; }
+      .news-card-thumb { width: 72px; height: 54px; }
+      .section-divider { margin-left: 20px; margin-right: 20px; }
+      .header-top { flex-direction: column; align-items: flex-start; }
+      .header-meta { text-align: left; }
+      .footer-inner { flex-direction: column; }
+      .footer-links { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+<div class="email-wrapper" id="newsletter-root">
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="newsletter-header">
+    <div class="header-inner">
+      <div class="header-top">
+        <div class="brand">
+          <div class="brand-icon">📡</div>
+          <div>
+            <div class="brand-name" id="newsletter-name">CNA 國際戰情電子報</div>
+            <div class="brand-sub">AI 新聞精選電子報</div>
+          </div>
+        </div>
+        <div class="header-meta">
+          <div class="edition-badge" id="edition-badge">第 國際特刊 期</div>
+          <div class="header-date" id="header-date">2026-03-19</div>
+        </div>
+      </div>
+      <div class="header-headline">
+        本期收錄 <strong id="article-count">8</strong> 則新聞 · 涵蓋 <strong id="category-list">國際、能源、地緣政治</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== BREAKING BAR ===== -->
+  <div class="breaking-bar" id="breaking-bar">
+    <span class="breaking-label">BREAKING</span>
+    <span id="breaking-text">中東戰事升高至能源與運輸層面，外溢風險持續擴大</span>
+  </div>
+
+  <!-- ===== FEATURED SECTION ===== -->
+  <div class="section-label">
+    <span>本期專題</span>
+  </div>
+
+  <section class="featured" id="featured-section">
+    <!-- Main featured story -->
+    <a href="https://www.cna.com.tw/news/aopl/202603190209.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="featured-main" id="featured-main">
+        <div class="featured-image-wrap" id="featured-image-wrap">
+          <!-- vision-auto-crop will inject: src, srcset, alt -->
+          <img
+            id="featured-image"
+            src="https://imgcdn.cna.com.tw/www/webphotos/WebCover/800/20260319/1683x1262_76661336975.jpg"
+            data-src="https://imgcdn.cna.com.tw/www/webphotos/WebCover/800/20260319/1683x1262_76661336975.jpg"
+            alt="伊朗南帕爾斯天然氣田遇襲　對全球影響一文掌握 | 國際 | 中央社 CNA"
+            loading="lazy"
+            style="display:block;"
+          >
+          <div class="featured-image-placeholder" id="featured-image-placeholder" style="display:none;">
+            <div class="ph-icon">🖼️</div>
+            <div>16:9 主視覺圖片</div>
+          </div>
+          <div class="featured-category-tag" id="featured-category">國際焦點</div>
+        </div>
+        <div class="featured-content">
+          <h1 class="featured-title" id="featured-title">伊朗南帕爾斯天然氣田遇襲　對全球影響一文掌握</h1>
+          <p class="featured-summary" id="featured-summary">伊朗南帕爾斯氣田遇襲後，區域報復擴大至能源設施與航運通道，油氣市場震盪加劇。事件已從軍事衝突延伸為供應安全風險，對全球通膨與運輸成本形成壓力。</p>
+          <span class="featured-link" id="featured-link">閱讀全文</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Sub-topic cards -->
+    <div class="subtopic-cards" id="subtopic-cards">
+
+      <!-- Subtopic 1 -->
+      <a href="https://www.cna.com.tw/news/aopl/202603190236.aspx" target="_blank" rel="noopener" style="display:block;">
+        <div class="subtopic-card">
+          <div class="subtopic-img-wrap">
+            <img
+              id="subtopic1-image"
+              src="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg"
+              data-src="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg"
+              alt="阿拉伯、伊斯蘭國家外長集會　敦促伊朗立刻停止攻擊 | 國際 | 中央社 CNA"
+              loading="lazy"
+              style="display:block;"
+            >
+            <div class="subtopic-img-placeholder" id="subtopic1-placeholder" style="display:none;">🖼️</div>
+          </div>
+          <div class="subtopic-body">
+            <div class="subtopic-tag" id="subtopic1-tag">國際</div>
+            <div class="subtopic-title" id="subtopic1-title">阿拉伯、伊斯蘭國家外長集會　敦促伊朗立刻停止攻擊</div>
+            <div class="subtopic-summary" id="subtopic1-summary">多個阿拉伯與伊斯蘭國家外長在利雅德會後聯合敦促伊朗立即停止攻擊，並要求遵守國際法與安理會決議。</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Subtopic 2 -->
+      <a href="https://www.cna.com.tw/news/aopl/202603190240.aspx" target="_blank" rel="noopener" style="display:block;">
+        <div class="subtopic-card">
+          <div class="subtopic-img-wrap">
+            <img
+              id="subtopic2-image"
+              src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260319/1024x768_wmky_0_C20260319000135.jpg"
+              data-src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260319/1024x768_wmky_0_C20260319000135.jpg"
+              alt="中東衝突導致壓縮天然氣短缺　印度加氣站大排長龍 | 國際 | 中央社 CNA"
+              loading="lazy"
+              style="display:block;"
+            >
+            <div class="subtopic-img-placeholder" id="subtopic2-placeholder" style="display:none;">🖼️</div>
+          </div>
+          <div class="subtopic-body">
+            <div class="subtopic-tag" id="subtopic2-tag">國際</div>
+            <div class="subtopic-title" id="subtopic2-title">中東衝突導致壓縮天然氣短缺　印度加氣站大排長龍</div>
+            <div class="subtopic-summary" id="subtopic2-summary">荷莫茲海峽運輸受阻，印度壓縮天然氣供應吃緊，加氣站排隊時間拉長，民生運輸成本上升。</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Subtopic 3 -->
+      <a href="https://www.cna.com.tw/news/aopl/202603190139.aspx" target="_blank" rel="noopener" style="display:block;">
+        <div class="subtopic-card">
+          <div class="subtopic-img-wrap">
+            <img
+              id="subtopic3-image"
+              src="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg"
+              data-src="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg"
+              alt="中東戰火未歇　國泰航空停飛杜拜利雅德到4/30 | 國際 | 中央社 CNA"
+              loading="lazy"
+              style="display:block;"
+            >
+            <div class="subtopic-img-placeholder" id="subtopic3-placeholder" style="display:none;">🖼️</div>
+          </div>
+          <div class="subtopic-body">
+            <div class="subtopic-tag" id="subtopic3-tag">國際</div>
+            <div class="subtopic-title" id="subtopic3-title">中東戰火未歇　國泰航空停飛杜拜利雅德到4/30</div>
+            <div class="subtopic-summary" id="subtopic3-summary">國泰航空宣布往返杜拜、利雅德航班停飛至4月30日，反映中東戰火已直接衝擊區域航空營運。</div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ===== NEWS GRID SECTION ===== -->
+  <hr class="section-divider">
+  <div class="section-label">
+    <span>今日要聞</span>
+  </div>
+
+  <section class="news-grid" id="news-grid">
+
+    <!-- News Card 1 -->
+    <a href="https://www.cna.com.tw/news/aopl/202603190230.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">01</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-international" id="news1-tag">國際</span>
+            <span class="tag-source" id="news1-source">中央社</span>
+          </div>
+          <div class="news-card-title" id="news1-title">中東態勢影響整體經濟　韓學者：當心二次衝擊</div>
+          <div class="news-card-summary" id="news1-summary">韓國學者示警中東戰事不只推升油價，更可能引發匯率與金融環境惡化，形成第二波經濟衝擊。</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260319/1024x768_wmky_0_C20260319000130.jpg" data-src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260319/1024x768_wmky_0_C20260319000130.jpg" alt="" loading="lazy" id="news1-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news1-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- News Card 2 -->
+    <a href="https://www.cna.com.tw/news/aopl/202603190215.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">02</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-international" id="news2-tag">國際</span>
+            <span class="tag-source" id="news2-source">中央社</span>
+          </div>
+          <div class="news-card-title" id="news2-title">歐盟與冰島簽署防衛協定　加強雙邊安全合作</div>
+          <div class="news-card-summary" id="news2-summary">歐盟與冰島簽署防衛協定，雙邊安全合作升級，北極戰略與歐洲安全布局再受關注。</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg" data-src="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg" alt="" loading="lazy" id="news2-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news2-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- News Card 3 -->
+    <a href="https://www.cna.com.tw/news/aopl/202603190220.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">03</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-international" id="news3-tag">國際</span>
+            <span class="tag-source" id="news3-source">中央社</span>
+          </div>
+          <div class="news-card-title" id="news3-title">科威特2座煉油廠遭無人機攻擊起火　未傳人員傷亡</div>
+          <div class="news-card-summary" id="news3-summary">科威特兩座煉油廠遭無人機攻擊起火，凸顯能源設施在區域衝突中的脆弱性與供應風險。</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg" data-src="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg" alt="" loading="lazy" id="news3-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news3-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- News Card 4 -->
+    <a href="https://www.cna.com.tw/news/aopl/202603190168.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">04</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-international" id="news4-tag">國際</span>
+            <span class="tag-source" id="news4-source">中央社</span>
+          </div>
+          <div class="news-card-title" id="news4-title">華郵：盧比歐赫格塞斯住所現無人機　美軍基地警戒</div>
+          <div class="news-card-summary" id="news4-summary">美媒披露美國高層住處周邊出現無人機，美軍基地警戒升級，顯示戰事外溢的安全壓力。</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="https://imgcdn.cna.com.tw/www/webphotos/WebOg/600/20260319/761x399_446834466681.jpg" data-src="https://imgcdn.cna.com.tw/www/webphotos/WebOg/600/20260319/761x399_446834466681.jpg" alt="" loading="lazy" id="news4-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news4-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- News Card 5 -->
+    <a href="https://www.cna.com.tw/news/aopl/202603190210.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">05</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-international" id="news5-tag">國際</span>
+            <span class="tag-source" id="news5-source">中央社</span>
+          </div>
+          <div class="news-card-title" id="news5-title">外遇風波影響法案審議　日本教育部長再次致歉</div>
+          <div class="news-card-summary" id="news5-summary">日本教育部長受外遇風波影響再度致歉，國內政治事件牽動法案審議與施政節奏。</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="https://imgcdn.cna.com.tw/www/webphotos/WebOg/600/20260319/1998x1049_019841442989.jpg" data-src="https://imgcdn.cna.com.tw/www/webphotos/WebOg/600/20260319/1998x1049_019841442989.jpg" alt="" loading="lazy" id="news5-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news5-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="newsletter-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand" id="footer-brand">CNA 國際戰情電子報</div>
+        <div class="footer-desc">
+          由 AI 新聞偵察系統自動整理，每小時更新。<br>
+          收錄來自各大媒體的重要新聞，提供快速摘要。
+        </div>
+      </div>
+      <div>
+        <div class="footer-links">
+          <a href="https://www.cna.com.tw/newsletter.aspx">訂閱</a>
+          <a href="https://www.cna.com.tw/newsletter.aspx">取消訂閱</a>
+          <a href="https://u0401006.github.io/video-quotes/newsletter/2026-03-19/">歷史期數</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CNA 國際戰情電子報 · 版權所有</span>
+      <span class="footer-generated" id="generated-at">🤖 Generated at 2026-03-19 17:07</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
