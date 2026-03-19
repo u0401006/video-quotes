@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>台灣快訊 Scout — 2026年3月19日 第47期</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+                   "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: #f4f4f4;
+      color: #1a1a1a;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    /* ===== WRAPPER ===== */
+    .email-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      background: #0d1117;
+      color: #ffffff;
+      padding: 28px 32px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, #0d1117 60%, #1a2332 100%);
+    }
+    .header-inner { position: relative; z-index: 1; }
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-icon {
+      width: 36px; height: 36px;
+      background: #e63946;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .brand-name {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: #fff;
+    }
+    .brand-sub {
+      font-size: 11px;
+      color: #8b949e;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .header-meta {
+      text-align: right;
+    }
+    .edition-badge {
+      display: inline-block;
+      background: rgba(230,57,70,0.15);
+      border: 1px solid rgba(230,57,70,0.4);
+      color: #ff6b7a;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .header-date {
+      font-size: 13px;
+      color: #8b949e;
+    }
+    .header-headline {
+      font-size: 13px;
+      color: #c9d1d9;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .header-headline strong {
+      color: #e2e8f0;
+    }
+
+    /* ===== BREAKING BAR ===== */
+    .breaking-bar {
+      background: #e63946;
+      color: #fff;
+      padding: 8px 32px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .breaking-label {
+      background: #fff;
+      color: #e63946;
+      padding: 1px 8px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+
+    /* ===== SECTION LABEL ===== */
+    .section-label {
+      padding: 20px 32px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label span {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #e63946;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e8e8e8;
+    }
+
+    /* ===== FEATURED BLOCK ===== */
+    .featured {
+      padding: 16px 32px 28px;
+    }
+    .featured-main {
+      background: #0d1117;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .featured-image-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background: #1a2332;
+      overflow: hidden;
+    }
+    /* Demo: SVG-generated placeholder with color gradient */
+    .featured-image-bg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(160deg, #0f1923 0%, #1e3a5f 40%, #0d2137 70%, #1a0a2e 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .featured-image-bg::before {
+      content: '';
+      position: absolute;
+      top: -20%; left: -10%;
+      width: 70%; height: 140%;
+      background: radial-gradient(ellipse, rgba(230,57,70,0.15) 0%, transparent 70%);
+    }
+    .featured-image-bg::after {
+      content: '';
+      position: absolute;
+      bottom: -10%; right: 5%;
+      width: 50%; height: 80%;
+      background: radial-gradient(ellipse, rgba(37,99,235,0.15) 0%, transparent 65%);
+    }
+    .featured-image-text {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: rgba(255,255,255,0.08);
+      font-size: 80px;
+      line-height: 1;
+      user-select: none;
+    }
+    .featured-category-tag {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: #e63946;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+    .featured-content {
+      padding: 20px 24px 24px;
+      color: #fff;
+    }
+    .featured-title {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 12px;
+      color: #e2e8f0;
+    }
+    .featured-summary {
+      font-size: 14px;
+      line-height: 1.75;
+      color: #8b949e;
+      margin-bottom: 18px;
+    }
+    .featured-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #e63946;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .featured-link::after {
+      content: '→';
+    }
+
+    /* Sub-topic cards */
+    .subtopic-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .subtopic-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .subtopic-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    /* Demo subtopic image placeholders */
+    .subtopic-img-demo {
+      width: 100%;
+      padding-bottom: 75%;
+      position: relative;
+      overflow: hidden;
+    }
+    .subtopic-img-demo-inner {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+    }
+    .subtopic-img-demo-inner.c1 {
+      background: linear-gradient(135deg, #1e3a5f, #0d2137);
+    }
+    .subtopic-img-demo-inner.c2 {
+      background: linear-gradient(135deg, #1a3a1a, #0a2010);
+    }
+    .subtopic-img-demo-inner.c3 {
+      background: linear-gradient(135deg, #3a1a1a, #200a0a);
+    }
+    .subtopic-body {
+      padding: 12px;
+    }
+    .subtopic-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #e63946;
+      margin-bottom: 4px;
+    }
+    .subtopic-title {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: #1a1a1a;
+      margin-bottom: 6px;
+    }
+    .subtopic-summary {
+      font-size: 11px;
+      color: #666;
+      line-height: 1.55;
+    }
+
+    /* ===== NEWS GRID ===== */
+    .news-grid {
+      padding: 4px 32px 28px;
+    }
+    .news-card {
+      display: flex;
+      gap: 16px;
+      padding: 16px 8px;
+      border-bottom: 1px solid #f0f0f0;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      border-radius: 6px;
+      margin: 0 -8px;
+    }
+    .news-card:hover {
+      background: #fafafa;
+    }
+    .news-card:last-child {
+      border-bottom: none;
+    }
+    .news-card-number {
+      font-size: 28px;
+      font-weight: 900;
+      color: #e8e8e8;
+      line-height: 1;
+      min-width: 32px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .news-card-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .news-card-tags {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .tag-politics  { background: #fff0f0; color: #c0392b; }
+    .tag-intl      { background: #f0f4ff; color: #2563eb; }
+    .tag-finance   { background: #f0fdf4; color: #16a34a; }
+    .tag-sports    { background: #fff7ed; color: #ea580c; }
+    .tag-tech      { background: #f5f3ff; color: #7c3aed; }
+    .tag-society   { background: #fdf4ff; color: #a21caf; }
+    .tag-source {
+      font-size: 10px;
+      color: #999;
+    }
+    .news-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: #1a1a1a;
+      margin-bottom: 5px;
+    }
+    .news-card-summary {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+    }
+    /* Demo thumb placeholders */
+    .news-card-thumb-demo {
+      width: 88px;
+      height: 66px;
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+    }
+    .thumb-c1 { background: linear-gradient(135deg, #f5f3ff, #ede9fe); }
+    .thumb-c2 { background: linear-gradient(135deg, #f0f4ff, #dbeafe); }
+    .thumb-c3 { background: linear-gradient(135deg, #fff7ed, #fed7aa); }
+    .thumb-c4 { background: linear-gradient(135deg, #f0fdf4, #bbf7d0); }
+    .thumb-c5 { background: linear-gradient(135deg, #fff0f0, #fecaca); }
+
+    /* ===== DIVIDER ===== */
+    .section-divider {
+      margin: 0 32px;
+      border: none;
+      border-top: 2px solid #0d1117;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #0d1117;
+      color: #8b949e;
+      padding: 28px 32px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .footer-brand {
+      font-size: 15px;
+      font-weight: 800;
+      color: #e2e8f0;
+      margin-bottom: 6px;
+    }
+    .footer-desc {
+      font-size: 12px;
+      color: #8b949e;
+      line-height: 1.6;
+    }
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+    }
+    .footer-links a {
+      color: #8b949e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .footer-links a:hover {
+      color: #c9d1d9;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+      color: #484f58;
+    }
+    .footer-generated {
+      font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+      font-size: 10px;
+    }
+
+    /* ===== DEMO BADGE ===== */
+    .demo-notice {
+      background: #fffbeb;
+      border: 1px dashed #f59e0b;
+      color: #92400e;
+      padding: 8px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .header, .section-label, .featured, .news-grid, .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .breaking-bar { padding-left: 20px; padding-right: 20px; }
+      .featured-title { font-size: 18px; }
+      .subtopic-cards { grid-template-columns: 1fr; }
+      .news-card-number { font-size: 22px; min-width: 26px; }
+      .news-card-title { font-size: 14px; }
+      .news-card-thumb-demo { width: 72px; height: 54px; }
+      .section-divider { margin-left: 20px; margin-right: 20px; }
+      .header-top { flex-direction: column; align-items: flex-start; }
+      .header-meta { text-align: left; }
+      .footer-inner { flex-direction: column; }
+      .footer-links { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+<div class="email-wrapper">
+
+  <!-- DEMO NOTICE -->
+  <div class="demo-notice">
+    ⚠️ DEMO 版本 — 以下內容為示範假資料，非真實新聞。圖片位置留空待 vision-auto-crop 填入。
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-top">
+        <div class="brand">
+          <div class="brand-icon">📡</div>
+          <div>
+            <div class="brand-name">台灣快訊 Scout</div>
+            <div class="brand-sub">AI 新聞精選電子報</div>
+          </div>
+        </div>
+        <div class="header-meta">
+          <div class="edition-badge">第 47 期</div>
+          <div class="header-date">2026年3月19日 · 週四 下午版</div>
+        </div>
+      </div>
+      <div class="header-headline">
+        本期收錄 <strong>7</strong> 則新聞 · 涵蓋 <strong>政治 · 國際 · 財經 · 體育 · 科技</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== BREAKING BAR ===== -->
+  <div class="breaking-bar">
+    <span class="breaking-label">BREAKING</span>
+    <span>立院今日三讀通過《AI 發展條例》，台灣成亞洲首個 AI 立法國家</span>
+  </div>
+
+  <!-- ===== FEATURED SECTION ===== -->
+  <div class="section-label">
+    <span>本期專題</span>
+  </div>
+
+  <section class="featured">
+    <!-- Main featured -->
+    <a href="https://example.com/ai-law" target="_blank" rel="noopener" style="display:block;">
+      <div class="featured-main">
+        <div class="featured-image-wrap">
+          <!-- vision-auto-crop placeholder: 16:9 主視覺 -->
+          <div class="featured-image-bg">
+            <div class="featured-image-text">🏛️</div>
+          </div>
+          <div class="featured-category-tag">政治</div>
+        </div>
+        <div class="featured-content">
+          <h1 class="featured-title">《AI 發展條例》今三讀通過——台灣成亞洲首個 AI 立法國家，科技業與民團反應分歧</h1>
+          <p class="featured-summary">
+            立法院今日下午以 65 票對 42 票三讀通過《人工智慧發展與監理條例》，確立高風險 AI 系統須強制申報、通過安全審查方可上市的機制。
+            行政院表示，條例預計今年底前分階段施行，首波適用對象包含政府採購、醫療輔助診斷及自動駕駛三大領域。
+            科技業者普遍憂心合規成本提升，民間數位人權團體則批評罰則過輕、缺乏獨立監督機構，後續配套細則恐成角力焦點。
+          </p>
+          <span class="featured-link">閱讀全文</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Sub-topic cards -->
+    <div class="subtopic-cards">
+
+      <a href="https://example.com/ai-law-detail1" target="_blank" rel="noopener" style="display:block;">
+        <div class="subtopic-card">
+          <div class="subtopic-img-demo">
+            <div class="subtopic-img-demo-inner c1">🤖</div>
+          </div>
+          <div class="subtopic-body">
+            <div class="subtopic-tag">科技</div>
+            <div class="subtopic-title">高風險 AI 定義劃定範圍更廣，業界稱「幾乎每家公司都受影響」</div>
+            <div class="subtopic-summary">條例將信用評分、人臉辨識及輿情分析均列為高風險類別，估計衝擊逾 3,000 家本土科技公司。</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://example.com/ai-law-detail2" target="_blank" rel="noopener" style="display:block;">
+        <div class="subtopic-card">
+          <div class="subtopic-img-demo">
+            <div class="subtopic-img-demo-inner c2">⚖️</div>
+          </div>
+          <div class="subtopic-body">
+            <div class="subtopic-tag">政治</div>
+            <div class="subtopic-title">民進黨、國民黨立委表決前場外衝突，院區警力加強戒備</div>
+            <div class="subtopic-summary">三讀前，朝野黨團就「罰則條款」爆發肢體推擠，議長數度中止議事，場外支持者聚集逾千人。</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://example.com/ai-law-detail3" target="_blank" rel="noopener" style="display:block;">
+        <div class="subtopic-card">
+          <div class="subtopic-img-demo">
+            <div class="subtopic-img-demo-inner c3">🌐</div>
+          </div>
+          <div class="subtopic-body">
+            <div class="subtopic-tag">國際</div>
+            <div class="subtopic-title">歐盟、日本官員致函祝賀，指台灣立法可作為亞太 AI 治理參考</div>
+            <div class="subtopic-summary">歐洲議會 AI 委員會主席稱此為「亞洲版 EU AI Act 里程碑」，並邀台赴布魯塞爾交流法規細節。</div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ===== NEWS GRID SECTION ===== -->
+  <hr class="section-divider">
+  <div class="section-label">
+    <span>今日要聞</span>
+  </div>
+
+  <section class="news-grid">
+
+    <!-- News 1: 國際 -->
+    <a href="https://example.com/news-taiwan-us-arms" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">01</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-intl">國際</span>
+            <span class="tag-source">中央社</span>
+          </div>
+          <div class="news-card-title">美參院通過《台灣增強韌性法》，追加 120 億美元軍援授權</div>
+          <div class="news-card-summary">法案以 72:27 高票通過，明確要求國防部在 18 個月內移交岸防飛彈系統及無人機偵察設備，白宮表示總統將在本週簽署。</div>
+        </div>
+        <div class="news-card-thumb-demo thumb-c2">🇺🇸</div>
+      </div>
+    </a>
+
+    <!-- News 2: 財經 -->
+    <a href="https://example.com/news-tsmc" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">02</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-finance">財經</span>
+            <span class="tag-source">經濟日報</span>
+          </div>
+          <div class="news-card-title">台積電法說會：2nm 良率超預期，Q2 出貨量上調 15%，股價盤後衝上 1,280 元</div>
+          <div class="news-card-summary">魏哲家表示 CoWoS 先進封裝產能今年擴充三倍，AI 晶片需求「能見度至少到 2028 年」，法人調高目標價至 1,400 元。</div>
+        </div>
+        <div class="news-card-thumb-demo thumb-c4">💹</div>
+      </div>
+    </a>
+
+    <!-- News 3: 體育 -->
+    <a href="https://example.com/news-baseball" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">03</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-sports">體育</span>
+            <span class="tag-source">民視</span>
+          </div>
+          <div class="news-card-title">世界棒球12強亞洲資格賽：林昱珉完投 7 局，中華隊 5:1 擊退南韓晉決賽</div>
+          <div class="news-card-summary">林昱珉飆出本季最快 157km/h 直球，三振 9 名打者；吳念庭第 4 局轟出 2 分砲為關鍵轉折，主帥謝長亨賽後直言「超出預期」。</div>
+        </div>
+        <div class="news-card-thumb-demo thumb-c3">⚾</div>
+      </div>
+    </a>
+
+    <!-- News 4: 社會 -->
+    <a href="https://example.com/news-earthquake" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">04</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-society">社會</span>
+            <span class="tag-source">自由時報</span>
+          </div>
+          <div class="news-card-title">花蓮規模 5.8 地震，最大震度 5 強；花蓮港部分設施受損，蘇花改一度封路管制</div>
+          <div class="news-card-summary">上午 9 時 47 分發生淺層地震，震源深度 12 公里，氣象署研判為去年大地震餘震序列，目前無人員傷亡報告，交通部已派工程師評估路況。</div>
+        </div>
+        <div class="news-card-thumb-demo thumb-c5">🌏</div>
+      </div>
+    </a>
+
+    <!-- News 5: 科技 -->
+    <a href="https://example.com/news-foxconn-robot" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">05</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-tech">科技</span>
+            <span class="tag-source">數位時代</span>
+          </div>
+          <div class="news-card-title">鴻海發布「FOXTROT-2」人形機器人，預計 2027 年導入 iPhone 組裝產線</div>
+          <div class="news-card-summary">劉揚偉展示機器人可完成精密螺絲組裝及 QC 視覺檢測，稱每台成本已壓低至 8 萬美元以下，並宣布在高雄楠梓設立全球機器人研發中心。</div>
+        </div>
+        <div class="news-card-thumb-demo thumb-c1">🤖</div>
+      </div>
+    </a>
+
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">台灣快訊 Scout</div>
+        <div class="footer-desc">
+          由 AI 新聞偵察系統自動整理，每小時更新。<br>
+          收錄來自各大媒體的重要新聞，提供快速摘要。
+        </div>
+      </div>
+      <div>
+        <div class="footer-links">
+          <a href="https://example.com/subscribe">訂閱</a>
+          <a href="https://example.com/unsubscribe">取消訂閱</a>
+          <a href="https://example.com/archive">歷史期數</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 台灣快訊 Scout · 版權所有</span>
+      <span class="footer-generated">🤖 Generated at 2026-03-19 15:00 UTC+8</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
