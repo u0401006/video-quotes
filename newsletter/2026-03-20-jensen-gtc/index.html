@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 代理時代週報 — 2026-03-20</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+                   "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: #f4f4f4;
+      color: #1a1a1a;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    /* ===== WRAPPER ===== */
+    .email-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      background: #0d1117;
+      color: #ffffff;
+      padding: 28px 32px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, #0d1117 60%, #1a2332 100%);
+    }
+    .header-inner { position: relative; z-index: 1; }
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-icon {
+      width: 36px; height: 36px;
+      background: #e63946;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .brand-name {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: #fff;
+    }
+    .brand-sub {
+      font-size: 11px;
+      color: #8b949e;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .header-meta {
+      text-align: right;
+    }
+    .edition-badge {
+      display: inline-block;
+      background: rgba(230,57,70,0.15);
+      border: 1px solid rgba(230,57,70,0.4);
+      color: #ff6b7a;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .header-date {
+      font-size: 13px;
+      color: #8b949e;
+    }
+    .header-headline {
+      font-size: 13px;
+      color: #c9d1d9;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .header-headline strong {
+      color: #e2e8f0;
+    }
+
+    /* ===== BREAKING BAR ===== */
+    .breaking-bar {
+      background: #e63946;
+      color: #fff;
+      padding: 8px 32px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .breaking-label {
+      background: #fff;
+      color: #e63946;
+      padding: 1px 8px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+
+    /* ===== SECTION LABEL ===== */
+    .section-label {
+      padding: 20px 32px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label span {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #e63946;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e8e8e8;
+    }
+
+    /* ===== FEATURED BLOCK ===== */
+    .featured {
+      padding: 16px 32px 28px;
+    }
+    .featured-main {
+      background: #0d1117;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .featured-image-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      background: #1a2332;
+      overflow: hidden;
+    }
+    .featured-image-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .featured-image-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #30363d;
+      font-size: 13px;
+      background: linear-gradient(135deg, #0d1117, #1c2430);
+    }
+    .featured-image-placeholder .ph-icon { font-size: 40px; margin-bottom: 8px; opacity: 0.3; }
+    .featured-category-tag {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: #e63946;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+    .featured-content {
+      padding: 20px 24px 24px;
+      color: #fff;
+    }
+    .featured-title {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 12px;
+      color: #e2e8f0;
+    }
+    .featured-summary {
+      font-size: 14px;
+      line-height: 1.75;
+      color: #8b949e;
+      margin-bottom: 18px;
+    }
+    .featured-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #e63946;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .featured-link::after {
+      content: '→';
+    }
+
+    /* Sub-topic cards */
+    .subtopic-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .subtopic-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .subtopic-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    .subtopic-img-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 75%; /* 4:3 */
+      background: #f0f0f0;
+      overflow: hidden;
+    }
+    .subtopic-img-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .subtopic-img-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f4f5;
+      color: #d0d0d0;
+      font-size: 28px;
+    }
+    .subtopic-body {
+      padding: 12px;
+    }
+    .subtopic-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #e63946;
+      margin-bottom: 4px;
+    }
+    .subtopic-title {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: #1a1a1a;
+      margin-bottom: 6px;
+    }
+    .subtopic-summary {
+      font-size: 11px;
+      color: #666;
+      line-height: 1.55;
+    }
+
+    /* ===== NEWS GRID ===== */
+    .news-grid {
+      padding: 4px 32px 28px;
+    }
+    .news-card {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid #f0f0f0;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      border-radius: 6px;
+      margin: 0 -8px;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    .news-card:hover {
+      background: #fafafa;
+    }
+    .news-card:last-child {
+      border-bottom: none;
+    }
+    .news-card-number {
+      font-size: 28px;
+      font-weight: 900;
+      color: #e8e8e8;
+      line-height: 1;
+      min-width: 32px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .news-card-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .news-card-tags {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .tag-politics  { background: #fff0f0; color: #c0392b; }
+    .tag-intl      { background: #f0f4ff; color: #2563eb; }
+    .tag-finance   { background: #f0fdf4; color: #16a34a; }
+    .tag-sports    { background: #fff7ed; color: #ea580c; }
+    .tag-tech      { background: #f5f3ff; color: #7c3aed; }
+    .tag-society   { background: #fdf4ff; color: #a21caf; }
+    .tag-default   { background: #f4f4f4; color: #555; }
+    .tag-source {
+      font-size: 10px;
+      color: #999;
+      font-weight: 400;
+    }
+    .news-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: #1a1a1a;
+      margin-bottom: 5px;
+    }
+    .news-card-summary {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .news-card-thumb {
+      width: 88px;
+      height: 66px;
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #f0f0f0;
+      position: relative;
+    }
+    .news-card-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .news-card-thumb-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d0d0d0;
+      font-size: 22px;
+    }
+
+    /* ===== DIVIDER ===== */
+    .section-divider {
+      margin: 0 32px;
+      border: none;
+      border-top: 2px solid #0d1117;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #0d1117;
+      color: #8b949e;
+      padding: 28px 32px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .footer-brand {
+      font-size: 15px;
+      font-weight: 800;
+      color: #e2e8f0;
+      margin-bottom: 6px;
+    }
+    .footer-desc {
+      font-size: 12px;
+      color: #8b949e;
+      line-height: 1.6;
+    }
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+    }
+    .footer-links a {
+      color: #8b949e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .footer-links a:hover {
+      color: #c9d1d9;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+      color: #484f58;
+    }
+    .footer-generated {
+      font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+      font-size: 10px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .header, .section-label, .featured, .news-grid, .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .breaking-bar { padding-left: 20px; padding-right: 20px; }
+      .featured-title { font-size: 18px; }
+      .subtopic-cards { grid-template-columns: 1fr; }
+      .subtopic-img-wrap { padding-bottom: 56.25%; }
+      .news-card-number { font-size: 22px; min-width: 26px; }
+      .news-card-title { font-size: 14px; }
+      .news-card-thumb { width: 72px; height: 54px; }
+      .section-divider { margin-left: 20px; margin-right: 20px; }
+      .header-top { flex-direction: column; align-items: flex-start; }
+      .header-meta { text-align: left; }
+      .footer-inner { flex-direction: column; }
+      .footer-links { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+<div class="email-wrapper" id="newsletter-root">
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="newsletter-header">
+    <div class="header-inner">
+      <div class="header-top">
+        <div class="brand">
+          <div class="brand-icon">📡</div>
+          <div>
+            <div class="brand-name" id="newsletter-name">AI 代理時代週報</div>
+            <div class="brand-sub">AI 新聞精選電子報</div>
+          </div>
+        </div>
+        <div class="header-meta">
+          <div class="edition-badge" id="edition-badge">第 42 期</div>
+          <div class="header-date" id="header-date">2026-03-20</div>
+        </div>
+      </div>
+      <div class="header-headline">
+        本期收錄 <strong id="article-count">7</strong> 則新聞 · 涵蓋 <strong id="category-list">AI 代理、推論經濟、半導體、航太、機器人</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== BREAKING BAR ===== -->
+  <div class="breaking-bar" id="breaking-bar">
+    <span class="breaking-label">BREAKING</span>
+    <span id="breaking-text">黃仁勳：AI 推論轉折點已至，全球基礎設施需求上看 1 兆美元！</span>
+  </div>
+
+  <!-- ===== FEATURED SECTION ===== -->
+  <div class="section-label">
+    <span>本期專題</span>
+  </div>
+
+  <section class="featured" id="featured-section">
+    <!-- Main featured story -->
+    <a href="https://www.inside.com.tw/article/40865-nvdia-2026-gtc-highlights" target="_blank" rel="noopener" style="display:block;">
+      <div class="featured-main" id="featured-main">
+        <div class="featured-image-wrap" id="featured-image-wrap">
+          <!-- vision-auto-crop will inject: src, srcset, alt -->
+          <img
+            id="featured-image"
+            src="https://www.inside.com.tw/wp-content/uploads/2026/03/NVIDIA-GTC-2026-Jensen-Huang.jpg"
+            data-src="https://www.inside.com.tw/wp-content/uploads/2026/03/NVIDIA-GTC-2026-Jensen-Huang.jpg"
+            alt="AI 代理時代的轉折點：黃仁勳 GTC 2026 全紀錄"
+            loading="lazy"
+            style="display:block;"
+          >
+          <div class="featured-image-placeholder" id="featured-image-placeholder" style="display:none;">
+            <div class="ph-icon">🖼️</div>
+            <div>16:9 主視覺圖片</div>
+          </div>
+          <div class="featured-category-tag" id="featured-category">深度專題</div>
+        </div>
+        <div class="featured-content">
+          <h1 class="featured-title" id="featured-title">AI 代理時代的轉折點：黃仁勳 GTC 2026 全紀錄</h1>
+          <p class="featured-summary" id="featured-summary">在 2026 年 GTC 大會上，黃仁勳正式宣告 AI 從「訓練」跨入「推論」時代。他將近期爆紅的開源工具 OpenClaw 定義為「現代電腦的完美體現」，並推出企業級平台 NemoClaw，標誌著「代理型作業系統」的崛起。黃仁勳預測，到 2027 年全球 AI 基礎設施需求將翻倍至 1 兆美元，資料中心正轉型為產生智慧的「詞元工廠」。</p>
+          <span class="featured-link" id="featured-link">閱讀全文</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Sub-topic cards -->
+    <div class="subtopic-cards" id="subtopic-cards">
+
+      <!-- Subtopic 1 -->
+      <a href="https://www.inside.com.tw/article/40858-nvidia-gtc-2026-jensen-huang-inference-era-trillion-dollar-ai-infrastructure" target="_blank" rel="noopener" style="display:block;">
+        <div class="subtopic-card">
+          <div class="subtopic-img-wrap">
+            <img
+              id="subtopic1-image"
+              src="https://www.inside.com.tw/wp-content/uploads/2026/03/token-economy.jpg"
+              data-src="https://www.inside.com.tw/wp-content/uploads/2026/03/token-economy.jpg"
+              alt="詞元經濟學：1 兆美元的工廠"
+              loading="lazy"
+              style="display:block;"
+            >
+            <div class="subtopic-img-placeholder" id="subtopic1-placeholder" style="display:none;">🖼️</div>
+          </div>
+          <div class="subtopic-body">
+            <div class="subtopic-tag" id="subtopic1-tag">經濟趨勢</div>
+            <div class="subtopic-title" id="subtopic1-title">詞元經濟學：1 兆美元的工廠</div>
+            <div class="subtopic-summary" id="subtopic1-summary">黃仁勳指出運算已從「檢索」轉向「生成」，未來公司將以提升「詞元工廠」效率為核心。</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Subtopic 2 -->
+      <a href="https://www.inside.com.tw/article/40857-nemoclaw" target="_blank" rel="noopener" style="display:block;">
+        <div class="subtopic-card">
+          <div class="subtopic-img-wrap">
+            <img
+              id="subtopic2-image"
+              src="https://www.inside.com.tw/wp-content/uploads/2026/03/NemoClaw.jpg"
+              data-src="https://www.inside.com.tw/wp-content/uploads/2026/03/NemoClaw.jpg"
+              alt="NemoClaw：企業級代理平台"
+              loading="lazy"
+              style="display:block;"
+            >
+            <div class="subtopic-img-placeholder" id="subtopic2-placeholder" style="display:none;">🖼️</div>
+          </div>
+          <div class="subtopic-body">
+            <div class="subtopic-tag" id="subtopic2-tag">技術突破</div>
+            <div class="subtopic-title" id="subtopic2-title">NemoClaw：企業級代理平台</div>
+            <div class="subtopic-summary" id="subtopic2-summary">與 OpenClaw 合作推出，解決企業對 AI 代理存取敏感資訊與執行程式碼的安全疑慮。</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Subtopic 3 -->
+      <a href="https://www.inside.com.tw/article/40879-nvidia-ai-agent-2026-gtc" target="_blank" rel="noopener" style="display:block;">
+        <div class="subtopic-card">
+          <div class="subtopic-img-wrap">
+            <img
+              id="subtopic3-image"
+              src="https://www.inside.com.tw/wp-content/uploads/2026/03/OpenClaw-Lobster.jpg"
+              data-src="https://www.inside.com.tw/wp-content/uploads/2026/03/OpenClaw-Lobster.jpg"
+              alt="OpenClaw：現代電腦體現"
+              loading="lazy"
+              style="display:block;"
+            >
+            <div class="subtopic-img-placeholder" id="subtopic3-placeholder" style="display:none;">🖼️</div>
+          </div>
+          <div class="subtopic-body">
+            <div class="subtopic-tag" id="subtopic3-tag">開源生態</div>
+            <div class="subtopic-title" id="subtopic3-title">OpenClaw：現代電腦體現</div>
+            <div class="subtopic-summary" id="subtopic3-summary">黃仁勳盛讚 OpenClaw 提供行動能力，讓開源模型得以真正與現實互動並產生價值。</div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ===== NEWS GRID SECTION ===== -->
+  <hr class="section-divider">
+  <div class="section-label">
+    <span>今日要聞</span>
+  </div>
+
+  <section class="news-grid" id="news-grid">
+
+    <!-- News Card 1 -->
+    <a href="https://www.inside.com.tw/article/40856-nvidia-gtc-2026-vera-rubin-inference-era" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">01</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-tech" id="news1-tag">硬體架構</span>
+            <span class="tag-source" id="news1-source">INSIDE</span>
+          </div>
+          <div class="news-card-title" id="news1-title">Vera Rubin 架構細節公開：100% 液冷無電纜</div>
+          <div class="news-card-summary" id="news1-summary">全新 Vera Rubin 超級電腦大幅縮短安裝週期，點名台積電、鴻海等 12 家台廠為關鍵夥伴。</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="https://www.inside.com.tw/wp-content/uploads/2026/03/Vera-Rubin.jpg" data-src="https://www.inside.com.tw/wp-content/uploads/2026/03/Vera-Rubin.jpg" alt="" loading="lazy" id="news1-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news1-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- News Card 2 -->
+    <a href="https://www.inside.com.tw/article/40859-nvidia-gtc-2026-cars" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">02</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-society" id="news2-tag">智慧交通</span>
+            <span class="tag-source" id="news2-source">TechNews</span>
+          </div>
+          <div class="news-card-title" id="news2-title">自駕車迎來 ChatGPT 時刻：Uber 無人計程車上路</div>
+          <div class="news-card-summary" id="news2-summary">NVIDIA 宣布 Robotaxi 全新佈局，比亞迪、現代、日產等全球車廠全數入列合作清單。</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="https://www.inside.com.tw/wp-content/uploads/2026/03/Robotaxi.jpg" data-src="https://www.inside.com.tw/wp-content/uploads/2026/03/Robotaxi.jpg" alt="" loading="lazy" id="news2-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news2-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- News Card 3 -->
+    <a href="https://www.inside.com.tw/article/40855-nvidia-2026-gtc-cuda" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">03</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-intl" id="news3-tag">技術歷史</span>
+            <span class="tag-source" id="news3-source">INSIDE</span>
+          </div>
+          <div class="news-card-title" id="news3-title">CUDA 20 週年：從智慧交通到電信的加速之路</div>
+          <div class="news-card-summary" id="news3-summary">黃仁勳回顧 CUDA 二十年里程碑，強調軟硬體深度整合已讓加速運算深入社會各層面。</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="https://www.inside.com.tw/wp-content/uploads/2026/03/CUDA-20th.jpg" data-src="https://www.inside.com.tw/wp-content/uploads/2026/03/CUDA-20th.jpg" alt="" loading="lazy" id="news3-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news3-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- News Card 4 -->
+    <a href="https://technews.tw/2026/03/17/four-highlights-of-jensen-huang-gtc-2026-speech/" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">04</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-intl" id="news4-tag">航太科技</span>
+            <span class="tag-source" id="news4-source">TechNews</span>
+          </div>
+          <div class="news-card-title" id="news4-title">太空資料中心願景：Thor 晶片已入衛星</div>
+          <div class="news-card-summary" id="news4-summary">輝達正開發 Vera Rubin Space-1 電腦，克服太空極端環境挑戰，開啟軌道運算新頁。</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="https://www.inside.com.tw/wp-content/uploads/2026/03/Space-Data-Center.jpg" data-src="https://www.inside.com.tw/wp-content/uploads/2026/03/Space-Data-Center.jpg" alt="" loading="lazy" id="news4-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news4-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- News Card 5 -->
+    <a href="{{news5_url}}" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">05</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag {{news5_tag_class}}" id="news5-tag">{{news5_tag}}</span>
+            <span class="tag-source" id="news5-source">{{news5_source}}</span>
+          </div>
+          <div class="news-card-title" id="news5-title">{{news5_title}}</div>
+          <div class="news-card-summary" id="news5-summary">{{news5_summary}}</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="{{news5_thumb_src}}" data-src="{{news5_thumb_src}}" alt="" loading="lazy" id="news5-thumb" style="display:{{news5_thumb_display}};">
+          <div class="news-card-thumb-placeholder" id="news5-thumb-placeholder" style="display:{{news5_thumb_placeholder_display}};">📰</div>
+        </div>
+      </div>
+    </a>
+
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="newsletter-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand" id="footer-brand">AI 代理時代週報</div>
+        <div class="footer-desc">
+          由 AI 新聞偵察系統自動整理，每小時更新。<br>
+          收錄來自各大媒體的重要新聞，提供快速摘要。
+        </div>
+      </div>
+      <div>
+        <div class="footer-links">
+          <a href="{{subscribe_url}}">訂閱</a>
+          <a href="{{unsubscribe_url}}">取消訂閱</a>
+          <a href="{{archive_url}}">歷史期數</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AI 代理時代週報 · 版權所有</span>
+      <span class="footer-generated" id="generated-at">🤖 Generated at 2026-03-20 04:30</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
