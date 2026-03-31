@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>流量週報 2026/03/22–03/28</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --brand:    #004E98;
+    --brand-lt: #499BEA;
+    --brand-dk: #315280;
+    --bg:       #F4F7FC;
+    --bg2:      #FFFFFF;
+    --t1:       #232323;
+    --t2:       #454545;
+    --t3:       #595959;
+    --gy1:      #666666;
+    --gy2:      #9C9C9C;
+    --gy3:      #CCCCCC;
+    --gy4:      #E1E1E1;
+    --gy5:      #F6F6F6;
+    --up:       #34C759;
+    --dn:       #AE1319;
+    --radius:   10px;
+  }
+
+  body {
+    font-family: "Microsoft JhengHei", "SF Pro TC", "PingFang TC", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--t1);
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--brand);
+    color: #fff;
+    padding: 28px 32px 24px;
+  }
+  .header h1 { font-size: 22px; font-weight: 700; }
+  .header p  { font-size: 13px; opacity: .75; margin-top: 4px; }
+
+  /* ── TABS ── */
+  .tabs {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--gy4);
+    display: flex;
+    padding: 0 32px;
+    gap: 4px;
+  }
+  .tab-btn {
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gy1);
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: color .15s, border-color .15s;
+  }
+  .tab-btn:hover { color: var(--brand); }
+  .tab-btn.active { color: var(--brand); border-bottom-color: var(--brand); }
+
+  /* ── CONTENT ── */
+  .pane { display: none; padding: 28px 32px 48px; }
+  .pane.active { display: block; }
+
+  /* ── KPI CARDS ── */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .kpi {
+    background: var(--bg2);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    border: 1px solid var(--gy4);
+  }
+  .kpi-label { font-size: 12px; color: var(--gy1); text-transform: uppercase; letter-spacing: .8px; }
+  .kpi-value { font-size: 28px; font-weight: 700; margin: 6px 0 4px; color: var(--t1); }
+  .kpi-delta {
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 7px;
+    border-radius: 12px;
+  }
+  .kpi-delta.up   { background: #EDFAF2; color: var(--up); }
+  .kpi-delta.dn   { background: #FDECEA; color: var(--dn); }
+  .kpi-delta.flat { background: var(--gy5); color: var(--gy1); }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 28px; }
+  .section-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--brand-dk);
+    text-transform: uppercase;
+    letter-spacing: .7px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gy4);
+  }
+
+  /* ── CHART CARD ── */
+  .chart-card {
+    background: var(--bg2);
+    border: 1px solid var(--gy4);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .chart-toggles {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .tog-btn {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1.5px solid var(--gy3);
+    background: none;
+    color: var(--gy1);
+    cursor: pointer;
+    transition: all .15s;
+  }
+  .tog-btn.on { border-color: var(--brand); color: var(--brand); background: #EAF2FC; }
+  canvas { max-height: 280px; }
+
+  /* ── TWO-COL GRID ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  /* ── SOURCES ── */
+  .source-list { list-style: none; }
+  .source-item {
+    display: flex;
+    align-items: center;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--gy5);
+    gap: 10px;
+  }
+  .source-item:last-child { border-bottom: none; }
+  .source-rank {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gy2);
+    width: 22px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+  .source-name { flex: 1; font-size: 13px; color: var(--t2); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .source-bar-wrap { width: 80px; height: 5px; background: var(--gy5); border-radius: 3px; flex-shrink: 0; }
+  .source-bar { height: 100%; background: var(--brand-lt); border-radius: 3px; }
+  .source-val { font-size: 12px; font-weight: 700; color: var(--t1); width: 52px; text-align: right; flex-shrink: 0; }
+
+  /* ── ARTICLES ── */
+  .article-list { list-style: none; }
+  .article-item {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gy5);
+    align-items: flex-start;
+  }
+  .article-item:last-child { border-bottom: none; }
+  .article-rank {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gy3);
+    width: 24px;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+  .article-rank.top3 { color: var(--brand); }
+  .article-title {
+    flex: 1;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--t2);
+  }
+  .article-pv {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--t1);
+    white-space: nowrap;
+    padding-top: 1px;
+  }
+
+  @media (max-width: 640px) {
+    .header, .pane { padding: 20px 16px; }
+    .tabs { padding: 0 8px; }
+    .kpi-row { grid-template-columns: 1fr 1fr; }
+    .kpi-row .kpi:last-child { grid-column: span 2; }
+    .two-col { grid-template-columns: 1fr; }
+    .kpi-value { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>流量週報</h1>
+  <p>2026 / 03 / 22 – 03 / 28 &nbsp;·&nbsp; CNA · Focus Taiwan EN · Focus Taiwan JP</p>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" data-pane="cna">CNA 中文</button>
+  <button class="tab-btn" data-pane="ft_en">Focus Taiwan EN</button>
+  <button class="tab-btn" data-pane="ft_jp">Focus Taiwan JP</button>
+</div>
+
+<!-- ═══════════════ CNA ═══════════════ -->
+<div class="pane active" id="pane-cna"></div>
+
+<!-- ═══════════════ FT EN ════════════ -->
+<div class="pane" id="pane-ft_en"></div>
+
+<!-- ═══════════════ FT JP ════════════ -->
+<div class="pane" id="pane-ft_jp"></div>
+
+<script>
+// ─── RAW DATA ───────────────────────────────────────────────────────────────
+const DATA = {
+  cna: {
+    label: 'CNA 中文',
+    color: '#004E98',
+    colorLight: '#499BEA',
+    traffic: [
+      { date:'03/22', users:254272, sessions:322998, pageviews:475144 },
+      { date:'03/23', users:240603, sessions:322526, pageviews:520082 },
+      { date:'03/24', users:323097, sessions:432602, pageviews:658703 },
+      { date:'03/25', users:420743, sessions:537526, pageviews:786892 },
+      { date:'03/26', users:457325, sessions:603740, pageviews:909416 },
+      { date:'03/27', users:315670, sessions:419468, pageviews:641540 },
+      { date:'03/28', users:609466, sessions:714628, pageviews:886323 },
+    ],
+    prev: [
+      { date:'03/15', users:184897, sessions:240480, pageviews:384985 },
+      { date:'03/16', users:239930, sessions:320833, pageviews:521978 },
+      { date:'03/17', users:236150, sessions:306129, pageviews:510783 },
+      { date:'03/18', users:289677, sessions:388754, pageviews:593545 },
+      { date:'03/19', users:270204, sessions:360717, pageviews:568744 },
+      { date:'03/20', users:240093, sessions:328077, pageviews:526639 },
+      { date:'03/21', users:287707, sessions:362093, pageviews:536734 },
+    ],
+    sources: [
+      { name:'Google 搜尋', users:958012 },
+      { name:'直接流量', users:905188 },
+      { name:'Google News', users:83202 },
+      { name:'(not set)', users:44473 },
+      { name:'APP 直接開啟', users:40608 },
+      { name:'主粉絲團', users:23525 },
+      { name:'網友 FB', users:15916+7005+3282 },
+      { name:'Threads', users:13570+8909 },
+      { name:'Yahoo 搜尋', users:12994+1592 },
+      { name:'Bing 搜尋', users:10072 },
+      { name:'LINE 分享', users:7720+6589+2222 },
+      { name:'Twitter/X', users:842 },
+    ],
+    articles: [
+      { rank:1, title:'統一發票115年1-2月千萬獎號碼：87510041', pv:131237 },
+      { rank:2, title:'柯文哲涉京華城等案一審判有期徒刑17年、褫奪公權6年', pv:97117 },
+      { rank:3, title:'統一發票11-12月千萬獎7張未領 繳11元服務費中大獎', pv:93294 },
+      { rank:4, title:'林秉文涉88會館案潛逃柬埔寨遭槍殺身亡 刑事局證實', pv:67998 },
+      { rank:5, title:'返鄉創業賣鐵板牛排 越南移工：沒有台灣沒今天的我', pv:64091 },
+      { rank:6, title:'伊朗外長：荷莫茲海峽對所有人開放 交戰國不在列', pv:60240 },
+      { rank:7, title:'張淑芬：張忠謀腳好多了 黃仁勳曾一天來回台美探視', pv:49554 },
+      { rank:8, title:'人事長：爭取軍公教今年調薪 擬調整公務員專業加給', pv:48576 },
+      { rank:9, title:'柯文哲涉京華城等案一審宣判 應執行17年徒刑（APP）', pv:43560 },
+      { rank:10, title:'伊朗阻止中國2貨輪通過荷莫茲海峽', pv:35052 },
+    ],
+  },
+  ft_en: {
+    label: 'Focus Taiwan EN',
+    color: '#2E5F9E',
+    colorLight: '#6B9FD4',
+    traffic: [
+      { date:'03/22', users:8985,  sessions:11523, pageviews:27810 },
+      { date:'03/23', users:9743,  sessions:13255, pageviews:31561 },
+      { date:'03/24', users:13056, sessions:17003, pageviews:39117 },
+      { date:'03/25', users:15924, sessions:19947, pageviews:40059 },
+      { date:'03/26', users:20220, sessions:25864, pageviews:50715 },
+      { date:'03/27', users:13565, sessions:18183, pageviews:38094 },
+      { date:'03/28', users:10294, sessions:13005, pageviews:30244 },
+    ],
+    prev: [
+      { date:'03/15', users:10085, sessions:13118, pageviews:29833 },
+      { date:'03/16', users:13385, sessions:17026, pageviews:36568 },
+      { date:'03/17', users:9299,  sessions:12583, pageviews:32445 },
+      { date:'03/18', users:9289,  sessions:12669, pageviews:31707 },
+      { date:'03/19', users:13816, sessions:17698, pageviews:38694 },
+      { date:'03/20', users:22390, sessions:27136, pageviews:48514 },
+      { date:'03/21', users:15295, sessions:18758, pageviews:36302 },
+    ],
+    sources: [
+      { name:'Google 搜尋', users:32003 },
+      { name:'直接流量', users:30883 },
+      { name:'網友 FB', users:2839+1366+446 },
+      { name:'Reddit', users:2543+266+75 },
+      { name:'APP', users:1341+429 },
+      { name:'Google Ads', users:1028 },
+      { name:'Google News', users:755 },
+      { name:'Twitter/X', users:620+59 },
+      { name:'chatgpt.com', users:291+228 },
+      { name:'Bing 搜尋', users:262 },
+      { name:'Gemini', users:120 },
+      { name:'Perplexity', users:72 },
+    ],
+    articles: [
+      { rank:1, title:'Winning numbers released for January-February receipt lottery', pv:9158 },
+      { rank:2, title:'Taiwan urges Denmark to correct designation or face consequences', pv:7103 },
+      { rank:3, title:'7 NT$10 million receipt prizes unclaimed ahead of May 5 deadline', pv:5283 },
+      { rank:4, title:'NT$39 FamilyMart receipt wins invoice lottery\'s NT$10 million prize', pv:4905 },
+      { rank:5, title:'Winning numbers released for November-December receipt lottery', pv:3159 },
+      { rank:6, title:'Ex-Taipei Mayor Ko Wen-je sentenced to 17 years for bribery, corruption', pv:2896 },
+      { rank:7, title:'Boy rescued at Taoyuan Airport after jumping into safety net', pv:2504 },
+      { rank:8, title:'Australian woman \'sold as infant\' says Taiwan rejected nationality', pv:2196 },
+      { rank:9, title:'Taiwanese in Denmark hope new Cabinet resolves designation issue', pv:2067 },
+      { rank:10, title:'Thunderstorms forecast in northern Taiwan this week', pv:2013 },
+    ],
+  },
+  ft_jp: {
+    label: 'Focus Taiwan JP',
+    color: '#B5121B',
+    colorLight: '#E0636A',
+    traffic: [
+      { date:'03/22', users:16105, sessions:17839, pageviews:24670 },
+      { date:'03/23', users:8501,  sessions:9844,  pageviews:16175 },
+      { date:'03/24', users:21820, sessions:24502, pageviews:32289 },
+      { date:'03/25', users:19349, sessions:21350, pageviews:29020 },
+      { date:'03/26', users:11917, sessions:14144, pageviews:23108 },
+      { date:'03/27', users:9969,  sessions:11861, pageviews:18308 },
+      { date:'03/28', users:19109, sessions:21817, pageviews:29701 },
+    ],
+    prev: [
+      { date:'03/15', users:17380, sessions:19329, pageviews:29130 },
+      { date:'03/16', users:14524, sessions:16663, pageviews:26895 },
+      { date:'03/17', users:25019, sessions:27069, pageviews:37490 },
+      { date:'03/18', users:47116, sessions:50849, pageviews:65368 },
+      { date:'03/19', users:40295, sessions:42448, pageviews:56923 },
+      { date:'03/20', users:27388, sessions:29567, pageviews:39817 },
+      { date:'03/21', users:42091, sessions:43222, pageviews:56020 },
+    ],
+    sources: [
+      { name:'直接流量', users:54672 },
+      { name:'Google 搜尋', users:27030 },
+      { name:'Twitter/X', users:8400+99 },
+      { name:'Yahoo 搜尋', users:1960 },
+      { name:'網友 FB', users:824+188+161 },
+      { name:'日本 Yahoo 新聞', users:778 },
+      { name:'APP', users:448+137+44 },
+      { name:'Google News', users:415 },
+      { name:'Bing 搜尋', users:197 },
+      { name:'Threads', users:136 },
+      { name:'chatgpt.com', users:30 },
+    ],
+    articles: [
+      { rank:1, title:'タイワンツキノワグマ増加傾向 個体数は1200頭前後', pv:25782 },
+      { rank:2, title:'自由度格付け、台湾はアジア2位 日本に次ぐ', pv:15507 },
+      { rank:3, title:'タイガーエア台湾、「サブスク」導入へ', pv:5518 },
+      { rank:4, title:'TWICEが台北ドームで3デイズ ツウィ、ソロ披露', pv:5172 },
+      { rank:5, title:'Snow Man佐久間大介が訪台 コンサート開催を「指切り」で約束', pv:4399 },
+      { rank:6, title:'台湾・日月潭の貯水率約6割 カエル像、全体が外に露出', pv:3812 },
+      { rank:7, title:'統一ライオンズ、今季から新本拠地に（写真特集）', pv:3732 },
+      { rank:8, title:'農作業中の女性、犬に約200カ所かまれ入院', pv:2792 },
+      { rank:9, title:'台湾のモノ輸出額、世界12位に 昨年1年間で約102兆円', pv:2753 },
+      { rank:10, title:'台湾鉄道の特急「プユマ号」、塗装変更へ', pv:2717 },
+    ],
+  },
+};
+
+// ─── HELPERS ────────────────────────────────────────────────────────────────
+const fmt = n => n >= 1e6
+  ? (n/1e6).toFixed(2) + 'M'
+  : n >= 1e4
+    ? (n/1e4).toFixed(1) + '萬'
+    : n.toLocaleString();
+
+const fmtRaw = n => n.toLocaleString();
+
+const pct = (curr, prev) => {
+  if (!prev) return { val: '—', cls: 'flat' };
+  const p = ((curr - prev) / prev * 100);
+  return {
+    val: (p > 0 ? '+' : '') + p.toFixed(1) + '%',
+    cls: p > 0 ? 'up' : p < 0 ? 'dn' : 'flat',
+  };
+};
+
+const sum = (arr, key) => arr.reduce((a, b) => a + b[key], 0);
+
+const charts = {};
+
+// ─── BUILD PANE ─────────────────────────────────────────────────────────────
+function buildPane(id) {
+  const d = DATA[id];
+  const pane = document.getElementById('pane-' + id);
+
+  const currU = sum(d.traffic, 'users');
+  const currS = sum(d.traffic, 'sessions');
+  const currP = sum(d.traffic, 'pageviews');
+  const prevU = sum(d.prev, 'users');
+  const prevS = sum(d.prev, 'sessions');
+  const prevP = sum(d.prev, 'pageviews');
+
+  const du = pct(currU, prevU), ds = pct(currS, prevS), dp = pct(currP, prevP);
+  const maxSrc = d.sources[0].users;
+
+  pane.innerHTML = `
+    <!-- KPI -->
+    <div class="kpi-row">
+      <div class="kpi">
+        <div class="kpi-label">使用者</div>
+        <div class="kpi-value">${fmt(currU)}</div>
+        <span class="kpi-delta ${du.cls}">${du.val} WoW</span>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">工作階段</div>
+        <div class="kpi-value">${fmt(currS)}</div>
+        <span class="kpi-delta ${ds.cls}">${ds.val} WoW</span>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">網頁瀏覽</div>
+        <div class="kpi-value">${fmt(currP)}</div>
+        <span class="kpi-delta ${dp.cls}">${dp.val} WoW</span>
+      </div>
+    </div>
+
+    <!-- TRAFFIC TREND -->
+    <div class="section">
+      <div class="section-title">每日流量趨勢</div>
+      <div class="chart-card">
+        <div class="chart-toggles">
+          <button class="tog-btn on" data-metric="users" data-chart="${id}">使用者</button>
+          <button class="tog-btn" data-metric="sessions" data-chart="${id}">工作階段</button>
+          <button class="tog-btn" data-metric="pageviews" data-chart="${id}">瀏覽量</button>
+        </div>
+        <canvas id="chart-line-${id}"></canvas>
+      </div>
+    </div>
+
+    <!-- SOURCES + ARTICLES -->
+    <div class="two-col">
+      <div class="section">
+        <div class="section-title">流量來源 Top 12</div>
+        <div class="chart-card">
+          <ul class="source-list">
+            ${d.sources.slice(0,12).map((s, i) => `
+              <li class="source-item">
+                <span class="source-rank">${i+1}</span>
+                <span class="source-name" title="${s.name}">${s.name}</span>
+                <div class="source-bar-wrap"><div class="source-bar" style="width:${Math.round(s.users/maxSrc*100)}%"></div></div>
+                <span class="source-val">${fmtRaw(s.users)}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">熱門文章 Top 10</div>
+        <div class="chart-card">
+          <ul class="article-list">
+            ${d.articles.map(a => `
+              <li class="article-item">
+                <span class="article-rank ${a.rank <= 3 ? 'top3' : ''}">${a.rank}</span>
+                <span class="article-title">${a.title}</span>
+                <span class="article-pv">${fmtRaw(a.pv)}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Line chart
+  const labels = d.traffic.map(t => t.date);
+  const metric = 'users';
+
+  const ctx = document.getElementById('chart-line-' + id).getContext('2d');
+  charts[id] = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: '本週',
+          data: d.traffic.map(t => t[metric]),
+          borderColor: d.color,
+          backgroundColor: d.color + '18',
+          borderWidth: 2.5,
+          pointRadius: 4,
+          pointBackgroundColor: d.color,
+          tension: 0.35,
+          fill: true,
+        },
+        {
+          label: '上週',
+          data: d.prev.map(t => t[metric]),
+          borderColor: '#CCCCCC',
+          backgroundColor: 'transparent',
+          borderWidth: 1.5,
+          pointRadius: 3,
+          pointBackgroundColor: '#CCCCCC',
+          borderDash: [4, 3],
+          tension: 0.35,
+          fill: false,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+          align: 'end',
+          labels: { boxWidth: 14, font: { size: 12 } },
+        },
+        tooltip: {
+          callbacks: {
+            label: ctx => ' ' + ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString(),
+          },
+        },
+      },
+      scales: {
+        x: {
+          grid: { color: '#F0F0F0' },
+          ticks: { font: { size: 12 } },
+        },
+        y: {
+          grid: { color: '#F0F0F0' },
+          ticks: {
+            font: { size: 12 },
+            callback: v => v >= 1e6 ? (v/1e6).toFixed(1)+'M' : v >= 1e4 ? (v/1e4).toFixed(0)+'萬' : v,
+          },
+        },
+      },
+    },
+  });
+}
+
+// ─── METRIC TOGGLE ──────────────────────────────────────────────────────────
+document.addEventListener('click', e => {
+  const btn = e.target.closest('[data-metric]');
+  if (!btn) return;
+  const chartId = btn.dataset.chart;
+  const metric  = btn.dataset.metric;
+  const d = DATA[chartId];
+
+  // update button states
+  btn.closest('.chart-toggles').querySelectorAll('.tog-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+
+  // update datasets
+  const c = charts[chartId];
+  const labelMap = { users:'使用者', sessions:'工作階段', pageviews:'網頁瀏覽' };
+  c.data.datasets[0].data = d.traffic.map(t => t[metric]);
+  c.data.datasets[0].label = '本週 ' + labelMap[metric];
+  c.data.datasets[1].data = d.prev.map(t => t[metric]);
+  c.data.datasets[1].label = '上週 ' + labelMap[metric];
+  c.update();
+});
+
+// ─── TAB SWITCH ─────────────────────────────────────────────────────────────
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    const id = btn.dataset.pane;
+    const pane = document.getElementById('pane-' + id);
+    pane.classList.add('active');
+    if (!pane.hasChildNodes()) buildPane(id);
+  });
+});
+
+// ─── INIT ────────────────────────────────────────────────────────────────────
+buildPane('cna');
+</script>
+</body>
+</html>
