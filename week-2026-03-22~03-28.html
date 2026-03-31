@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>流量週報 2026/03/22–03/28</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --brand: #7BB4B8;
+    --brand-dark: #5a9499;
+    --brand-light: #e8f4f5;
+    --bg: #f5f6f8;
+    --surface: #ffffff;
+    --border: #e2e5ea;
+    --text: #1a2332;
+    --text-secondary: #6b7585;
+    --up: #2ecc71;
+    --down: #e74c3c;
+    --tab-active: #7BB4B8;
+    --radius: 12px;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Header */
+  .header {
+    background: var(--brand);
+    padding: 24px 32px;
+    color: white;
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .header h1 { font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+  .header .period { font-size: 13px; opacity: 0.85; margin-top: 2px; }
+  .header .badge {
+    background: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* Tabs */
+  .tabs-wrap {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+  }
+  .tabs {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+  }
+  .tab {
+    padding: 14px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+    user-select: none;
+  }
+  .tab:hover { color: var(--brand); }
+  .tab.active { color: var(--brand); border-bottom-color: var(--brand); font-weight: 600; }
+
+  /* Content */
+  .content { max-width: 1100px; margin: 0 auto; padding: 28px 20px 60px; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* KPI Cards */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 640px) { .kpi-grid { grid-template-columns: 1fr; } }
+  .kpi-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+  }
+  .kpi-label { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+  .kpi-value { font-size: 28px; font-weight: 700; margin: 6px 0 4px; letter-spacing: -1px; color: var(--text); }
+  .kpi-delta {
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .kpi-delta.up { color: var(--up); }
+  .kpi-delta.down { color: var(--down); }
+
+  /* Chart card */
+  .chart-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+  .chart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .chart-title { font-size: 15px; font-weight: 700; }
+  .chart-toggle { display: flex; gap: 6px; }
+  .toggle-btn {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.15s;
+  }
+  .toggle-btn.active {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: white;
+  }
+  .chart-container { position: relative; height: 260px; }
+
+  /* Two col layout */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+  .donut-container { position: relative; height: 220px; }
+
+  /* Source list */
+  .source-list { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+  .source-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+  }
+  .source-rank {
+    width: 20px;
+    text-align: right;
+    color: var(--text-secondary);
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+  .source-name { flex: 1; color: var(--text); font-weight: 500; }
+  .source-bar-wrap { width: 80px; background: var(--bg); border-radius: 4px; height: 6px; flex-shrink: 0; }
+  .source-bar { height: 6px; border-radius: 4px; background: var(--brand); }
+  .source-val { width: 60px; text-align: right; color: var(--text-secondary); font-size: 12px; flex-shrink: 0; }
+
+  /* Articles */
+  .articles-table { width: 100%; border-collapse: collapse; }
+  .articles-table thead th {
+    text-align: left;
+    padding: 10px 12px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    border-bottom: 2px solid var(--border);
+    font-weight: 600;
+  }
+  .articles-table tbody tr { border-bottom: 1px solid var(--border); transition: background 0.1s; }
+  .articles-table tbody tr:last-child { border-bottom: none; }
+  .articles-table tbody tr:hover { background: var(--brand-light); }
+  .articles-table td { padding: 10px 12px; vertical-align: middle; }
+  .art-rank { color: var(--text-secondary); font-size: 12px; text-align: center; width: 32px; }
+  .art-title { font-size: 13px; line-height: 1.4; color: var(--text); }
+  .art-pv { text-align: right; font-weight: 700; font-size: 13px; color: var(--brand-dark); white-space: nowrap; }
+  .art-pv-bar-wrap { width: 80px; }
+  .art-pv-bar { height: 5px; background: var(--brand); border-radius: 3px; opacity: 0.6; }
+
+  /* Utility */
+  .section-sub-title { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div>
+      <h1>📊 流量週報</h1>
+      <div class="period">2026 / 03 / 22 &ndash; 03 / 28　｜　CNA・Focus Taiwan EN・Focus Taiwan JP</div>
+    </div>
+    <div class="badge">W13 · 2026</div>
+  </div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('cna', this)">CNA 中央社</div>
+    <div class="tab" onclick="switchTab('ft_en', this)">Focus Taiwan EN</div>
+    <div class="tab" onclick="switchTab('ft_jp', this)">Focus Taiwan JP</div>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ===== CNA ===== -->
+  <div class="section active" id="sec-cna">
+
+    <div class="kpi-grid" id="kpi-cna"></div>
+
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">每日流量趨勢</div>
+          <div class="section-sub-title">本週 vs 上週同期</div>
+        </div>
+        <div class="chart-toggle">
+          <button class="toggle-btn active" onclick="switchMetric('cna','users',this)">使用者</button>
+          <button class="toggle-btn" onclick="switchMetric('cna','sessions',this)">工作階段</button>
+          <button class="toggle-btn" onclick="switchMetric('cna','pageviews',this)">瀏覽量</button>
+        </div>
+      </div>
+      <div class="chart-container"><canvas id="chart-cna"></canvas></div>
+    </div>
+
+    <div class="two-col">
+      <div class="chart-card">
+        <div class="chart-header"><div class="chart-title">流量來源 Top 10</div></div>
+        <div class="donut-container"><canvas id="donut-cna"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header"><div class="chart-title">來源排行</div></div>
+        <div class="source-list" id="srclist-cna"></div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-header"><div class="chart-title">熱門文章 Top 50</div></div>
+      <table class="articles-table"><thead><tr><th>#</th><th>標題</th><th style="text-align:right">瀏覽量</th><th class="art-pv-bar-wrap"></th></tr></thead>
+      <tbody id="arttable-cna"></tbody></table>
+    </div>
+
+  </div>
+
+  <!-- ===== FT EN ===== -->
+  <div class="section" id="sec-ft_en">
+    <div class="kpi-grid" id="kpi-ft_en"></div>
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">每日流量趨勢</div>
+          <div class="section-sub-title">本週 vs 上週同期</div>
+        </div>
+        <div class="chart-toggle">
+          <button class="toggle-btn active" onclick="switchMetric('ft_en','users',this)">使用者</button>
+          <button class="toggle-btn" onclick="switchMetric('ft_en','sessions',this)">工作階段</button>
+          <button class="toggle-btn" onclick="switchMetric('ft_en','pageviews',this)">瀏覽量</button>
+        </div>
+      </div>
+      <div class="chart-container"><canvas id="chart-ft_en"></canvas></div>
+    </div>
+    <div class="two-col">
+      <div class="chart-card">
+        <div class="chart-header"><div class="chart-title">流量來源 Top 10</div></div>
+        <div class="donut-container"><canvas id="donut-ft_en"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header"><div class="chart-title">來源排行</div></div>
+        <div class="source-list" id="srclist-ft_en"></div>
+      </div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-header"><div class="chart-title">熱門文章 Top 50</div></div>
+      <table class="articles-table"><thead><tr><th>#</th><th>標題</th><th style="text-align:right">瀏覽量</th><th class="art-pv-bar-wrap"></th></tr></thead>
+      <tbody id="arttable-ft_en"></tbody></table>
+    </div>
+  </div>
+
+  <!-- ===== FT JP ===== -->
+  <div class="section" id="sec-ft_jp">
+    <div class="kpi-grid" id="kpi-ft_jp"></div>
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">每日流量趨勢</div>
+          <div class="section-sub-title">本週 vs 上週同期</div>
+        </div>
+        <div class="chart-toggle">
+          <button class="toggle-btn active" onclick="switchMetric('ft_jp','users',this)">使用者</button>
+          <button class="toggle-btn" onclick="switchMetric('ft_jp','sessions',this)">工作階段</button>
+          <button class="toggle-btn" onclick="switchMetric('ft_jp','pageviews',this)">瀏覽量</button>
+        </div>
+      </div>
+      <div class="chart-container"><canvas id="chart-ft_jp"></canvas></div>
+    </div>
+    <div class="two-col">
+      <div class="chart-card">
+        <div class="chart-header"><div class="chart-title">流量來源 Top 10</div></div>
+        <div class="donut-container"><canvas id="donut-ft_jp"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header"><div class="chart-title">來源排行</div></div>
+        <div class="source-list" id="srclist-ft_jp"></div>
+      </div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-header"><div class="chart-title">熱門文章 Top 50</div></div>
+      <table class="articles-table"><thead><tr><th>#</th><th>標題</th><th style="text-align:right">瀏覽量</th><th class="art-pv-bar-wrap"></th></tr></thead>
+      <tbody id="arttable-ft_jp"></tbody></table>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const DATA = {
+  cna: {
+    traffic: [
+      {date:"03/22",users:254272,sessions:322998,pageviews:475144},
+      {date:"03/23",users:240603,sessions:322526,pageviews:520082},
+      {date:"03/24",users:323097,sessions:432602,pageviews:658703},
+      {date:"03/25",users:420743,sessions:537526,pageviews:786892},
+      {date:"03/26",users:457325,sessions:603740,pageviews:909416},
+      {date:"03/27",users:315670,sessions:419468,pageviews:641540},
+      {date:"03/28",users:609466,sessions:714628,pageviews:886323},
+    ],
+    prev: [
+      {date:"03/15",users:184897,sessions:240480,pageviews:384985},
+      {date:"03/16",users:239930,sessions:320833,pageviews:521978},
+      {date:"03/17",users:236150,sessions:306129,pageviews:510783},
+      {date:"03/18",users:289677,sessions:388754,pageviews:593545},
+      {date:"03/19",users:270204,sessions:360717,pageviews:568744},
+      {date:"03/20",users:240093,sessions:328077,pageviews:526639},
+      {date:"03/21",users:287707,sessions:362093,pageviews:536734},
+    ],
+    sources: [
+      {name:"Google 搜尋",users:958012},
+      {name:"直接流量",users:905188},
+      {name:"Google News",users:83202},
+      {name:"(not set)",users:44473},
+      {name:"APP 直接開啟",users:40608},
+      {name:"主粉絲團",users:23525},
+      {name:"網友 FB",users:26921},
+      {name:"Threads",users:22479},
+      {name:"Yahoo 搜尋",users:12994},
+      {name:"LINE 分享",users:7720},
+    ],
+    articles: [
+      {title:"統一發票115年1-2月千萬獎號碼：87510041",pv:131237},
+      {title:"柯文哲涉京華城等案一審判有期徒刑17年、褫奪公權6年",pv:97117},
+      {title:"統一發票11-12月千萬獎7張未領　繳11元服務費中大獎",pv:93294},
+      {title:"林秉文涉88會館案潛逃柬埔寨遭槍殺身亡",pv:67998},
+      {title:"返鄉創業賣鐵板牛排　越南移工：沒有台灣沒今天的我",pv:64091},
+      {title:"伊朗外長：荷莫茲海峽對所有人開放 交戰國不在列",pv:60240},
+      {title:"張淑芬：張忠謀腳好多了　黃仁勳曾一天來回台美探視",pv:49554},
+      {title:"人事長：爭取軍公教今年調薪　擬調整公務員專業加給",pv:48576},
+      {title:"柯文哲涉案一審宣判（APP）",pv:43560},
+      {title:"伊朗阻止中國2貨輪通過荷莫茲海峽",pv:35052},
+      {title:"伊朗革命衛隊：已讓試圖通過荷莫茲海峽3艘船調頭",pv:34647},
+      {title:"柯文哲案一審判17年（政治版）",pv:21414},
+      {title:"台大榮譽教授克洛爾120年冥誕　逃離納粹",pv:20485},
+      {title:"7-11全家全聯開出6張千萬發票　花39元茶飲中獎",pv:19678},
+      {title:"顏慧欣病逝　政院：對美關稅談判萬分不捨",pv:19547},
+      {title:"外交部斥丹麥屈從中國　籲更正居留證台灣國籍標示",pv:19545},
+      {title:"中東戰爭第26天》美揚言對伊朗發動地獄式打擊",pv:18889},
+      {title:"京華城案一審宣判（APP 推播）",pv:18366},
+      {title:"京華城等案一審　應曉薇判15年6月、沈慶京10年",pv:17242},
+      {title:"巴西首架國產組裝戰機Gripen亮相",pv:16541},
+    ]
+  },
+  ft_en: {
+    traffic: [
+      {date:"03/22",users:8985,sessions:11523,pageviews:27810},
+      {date:"03/23",users:9743,sessions:13255,pageviews:31561},
+      {date:"03/24",users:13056,sessions:17003,pageviews:39117},
+      {date:"03/25",users:15924,sessions:19947,pageviews:40059},
+      {date:"03/26",users:20220,sessions:25864,pageviews:50715},
+      {date:"03/27",users:13565,sessions:18183,pageviews:38094},
+      {date:"03/28",users:10294,sessions:13005,pageviews:30244},
+    ],
+    prev: [
+      {date:"03/15",users:10085,sessions:13118,pageviews:29833},
+      {date:"03/16",users:13385,sessions:17026,pageviews:36568},
+      {date:"03/17",users:9299,sessions:12583,pageviews:32445},
+      {date:"03/18",users:9289,sessions:12669,pageviews:31707},
+      {date:"03/19",users:13816,sessions:17698,pageviews:38694},
+      {date:"03/20",users:22390,sessions:27136,pageviews:48514},
+      {date:"03/21",users:15295,sessions:18758,pageviews:36302},
+    ],
+    sources: [
+      {name:"Google 搜尋",users:32003},
+      {name:"直接流量",users:30883},
+      {name:"網友 FB",users:4651},
+      {name:"Reddit",users:2884},
+      {name:"APP 直接開啟",users:1341},
+      {name:"Google CPC",users:1028},
+      {name:"Google News",users:755},
+      {name:"Twitter/X",users:679},
+      {name:"ChatGPT",users:519},
+      {name:"Bing 搜尋",users:262},
+    ],
+    articles: [
+      {title:"Winning numbers released for January-February receipt lottery",pv:9158},
+      {title:"Taiwan urges Denmark to correct designation or face consequences",pv:7103},
+      {title:"7 NT$10 million receipt prizes unclaimed ahead of May 5 deadline",pv:5283},
+      {title:"NT$39 FamilyMart receipt wins invoice lottery's NT$10 million prize",pv:4905},
+      {title:"Winning numbers released for November-December receipt lottery",pv:3159},
+      {title:"Ex-Taipei Mayor Ko Wen-je sentenced to 17 years for bribery, corruption",pv:2896},
+      {title:"Boy rescued at Taoyuan Airport after jumping into safety net",pv:2504},
+      {title:"Australian woman 'sold as infant' says Taiwan rejected nationality",pv:2196},
+      {title:"Taiwanese in Denmark hope new Cabinet resolves designation issue",pv:2067},
+      {title:"Thunderstorms forecast in northern Taiwan this week",pv:2013},
+      {title:"Senior Taiwan official attends MQ-9B delivery ceremony in U.S.",pv:2002},
+      {title:"Taiwanese singer Tzuyu moved to tears at TWICE concert in Taipei",pv:1706},
+      {title:"Taipei Eid al-Fitr celebration draws thousands",pv:1695},
+      {title:"TPP-linked Chinese spouse indicted for Anti-Infiltration Act violations",pv:1687},
+      {title:"Taiwanese YouTubers arrested after deportation from Cambodia",pv:1463},
+      {title:"Ko faces 2028 presidential race ban after 17-year sentence",pv:1425},
+      {title:"Taiwan to send Mandarin teachers to Tibetan schools in India",pv:1345},
+      {title:"Taiwan higher education sees 20% drop in QS subject rankings",pv:1170},
+      {title:"Taiwan deputy trade representative Yen Huai-shing dies aged 53",pv:1150},
+      {title:"Ko Wen-je vows to 'not surrender,' denies guilty verdict",pv:1101},
+    ]
+  },
+  ft_jp: {
+    traffic: [
+      {date:"03/22",users:16105,sessions:17839,pageviews:24670},
+      {date:"03/23",users:8501,sessions:9844,pageviews:16175},
+      {date:"03/24",users:21820,sessions:24502,pageviews:32289},
+      {date:"03/25",users:19349,sessions:21350,pageviews:29020},
+      {date:"03/26",users:11917,sessions:14144,pageviews:23108},
+      {date:"03/27",users:9969,sessions:11861,pageviews:18308},
+      {date:"03/28",users:19109,sessions:21817,pageviews:29701},
+    ],
+    prev: [
+      {date:"03/15",users:17380,sessions:19329,pageviews:29130},
+      {date:"03/16",users:14524,sessions:16663,pageviews:26895},
+      {date:"03/17",users:25019,sessions:27069,pageviews:37490},
+      {date:"03/18",users:47116,sessions:50849,pageviews:65368},
+      {date:"03/19",users:40295,sessions:42448,pageviews:56923},
+      {date:"03/20",users:27388,sessions:29567,pageviews:39817},
+      {date:"03/21",users:42091,sessions:43222,pageviews:56020},
+    ],
+    sources: [
+      {name:"直接流量",users:54672},
+      {name:"Google 搜尋",users:27030},
+      {name:"Twitter/X",users:8400},
+      {name:"Yahoo 搜尋",users:1960},
+      {name:"網友 FB",users:1347},
+      {name:"日本 Yahoo 新聞",users:778},
+      {name:"APP 直接開啟",users:448},
+      {name:"Google News",users:415},
+      {name:"itainews.com",users:319},
+      {name:"Bing 搜尋",users:197},
+    ],
+    articles: [
+      {title:"タイワンツキノワグマ増加傾向　個体数は1200頭前後",pv:25782},
+      {title:"自由度格付け、台湾はアジア2位　日本に次ぐ",pv:15507},
+      {title:"タイガーエア台湾、「サブスク」導入へ",pv:5518},
+      {title:"TWICEが台北ドームで3デイズ　ツウィ、ソロ披露",pv:5172},
+      {title:"Snow Man佐久間大介が訪台　コンサート開催を「指切り」で約束",pv:4399},
+      {title:"台湾・日月潭の貯水率約6割　カエル像が全体が外に露出",pv:3812},
+      {title:"統一ライオンズ今季から新本拠地　台湾プロ野球の球場を振り返る",pv:3732},
+      {title:"農作業中の女性、犬に約200カ所かまれ入院",pv:2792},
+      {title:"台湾のモノ輸出額、世界12位に",pv:2753},
+      {title:"台湾鉄道の特急「プユマ号」、塗装変更へ",pv:2717},
+      {title:"台湾高速鉄道、通信品質向上へ　約100億円投入",pv:2498},
+      {title:"サッカー女子アジア杯　台湾、北朝鮮に敗れる",pv:2028},
+      {title:"無差別襲撃の容疑者制止試み死亡の男性、忠烈祠に合祀",pv:2009},
+      {title:"台湾プロ・味全、5月にソフトバンク応援ツアー",pv:1705},
+      {title:"台北にホタル観賞の季節到来",pv:1658},
+      {title:"台湾、不当表記に対抗　韓国を「KOREA（SOUTH）」に変更へ",pv:1571},
+      {title:"屏東県、チガヤ植栽　ヒガシメンフクロウ絶滅防止へ",pv:1419},
+      {title:"世界最強のパスポートランキング　台湾は31位",pv:1288},
+      {title:"フードパンダ台湾事業を953億円で買収合意　グラブ",pv:1243},
+      {title:"DAZN台湾、日本プロ野球800試合以上を生配信へ",pv:1195},
+    ]
+  }
+};
+
+const COLORS = ['#7BB4B8','#5a9499','#a8d0d3','#3d7478','#c8e5e7','#2c5659','#87bfc3','#4a8a8e','#b5d8db','#1e3b3d'];
+const metricLabel = { users:'使用者', sessions:'工作階段', pageviews:'瀏覽量' };
+
+const chartInstances = {};
+const donutInstances = {};
+const currentMetric = { cna:'users', ft_en:'users', ft_jp:'users' };
+
+function fmt(n) {
+  if (n >= 1000000) return (n/1000000).toFixed(2) + 'M';
+  if (n >= 1000) return (n/1000).toFixed(1) + 'K';
+  return n.toLocaleString();
+}
+function fmtFull(n) { return n.toLocaleString(); }
+
+function delta(curr, prev) {
+  if (!prev) return null;
+  return ((curr - prev) / prev * 100).toFixed(1);
+}
+
+function buildKPI(prop) {
+  const d = DATA[prop];
+  const curr = d.traffic.reduce((a,b)=>({users:a.users+b.users, sessions:a.sessions+b.sessions, pageviews:a.pageviews+b.pageviews}));
+  const prev = d.prev.reduce((a,b)=>({users:a.users+b.users, sessions:a.sessions+b.sessions, pageviews:a.pageviews+b.pageviews}));
+  const metrics = [
+    {label:'週使用者', key:'users', icon:'👥'},
+    {label:'週工作階段', key:'sessions', icon:'🔄'},
+    {label:'週瀏覽量', key:'pageviews', icon:'📄'},
+  ];
+  const el = document.getElementById('kpi-'+prop);
+  el.innerHTML = metrics.map(m => {
+    const d_val = delta(curr[m.key], prev[m.key]);
+    const isUp = d_val >= 0;
+    return `<div class="kpi-card">
+      <div class="kpi-label">${m.icon} ${m.label}</div>
+      <div class="kpi-value">${fmt(curr[m.key])}</div>
+      <span class="kpi-delta ${isUp?'up':'down'}">${isUp?'▲':'▼'} ${Math.abs(d_val)}% vs 上週</span>
+    </div>`;
+  }).join('');
+}
+
+function buildChart(prop) {
+  const d = DATA[prop];
+  const metric = currentMetric[prop];
+  const labels = d.traffic.map(r => r.date);
+  const thisWeek = d.traffic.map(r => r[metric]);
+  const lastWeek = d.prev.map(r => r[metric]);
+  const ctx = document.getElementById('chart-'+prop).getContext('2d');
+  if (chartInstances[prop]) chartInstances[prop].destroy();
+  chartInstances[prop] = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: '本週',
+          data: thisWeek,
+          borderColor: '#7BB4B8',
+          backgroundColor: 'rgba(123,180,184,0.1)',
+          borderWidth: 2.5,
+          pointRadius: 4,
+          pointBackgroundColor: '#7BB4B8',
+          fill: true,
+          tension: 0.3,
+        },
+        {
+          label: '上週',
+          data: lastWeek,
+          borderColor: '#c5cdd8',
+          backgroundColor: 'transparent',
+          borderWidth: 1.5,
+          pointRadius: 3,
+          pointBackgroundColor: '#c5cdd8',
+          fill: false,
+          tension: 0.3,
+          borderDash: [5,4],
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: { font: { size: 12 }, usePointStyle: true, pointStyleWidth: 10 }
+        },
+        tooltip: {
+          callbacks: {
+            label: ctx => ` ${ctx.dataset.label}: ${fmtFull(ctx.raw)}`
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: false,
+          grid: { color: 'rgba(0,0,0,0.05)' },
+          ticks: {
+            callback: v => fmt(v),
+            font: { size: 11 },
+            color: '#8a93a3'
+          }
+        },
+        x: {
+          grid: { display: false },
+          ticks: { font: { size: 12 }, color: '#8a93a3' }
+        }
+      }
+    }
+  });
+}
+
+function buildDonut(prop) {
+  const sources = DATA[prop].sources.slice(0, 10);
+  const ctx = document.getElementById('donut-'+prop).getContext('2d');
+  if (donutInstances[prop]) donutInstances[prop].destroy();
+  donutInstances[prop] = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: sources.map(s => s.name),
+      datasets: [{
+        data: sources.map(s => s.users),
+        backgroundColor: COLORS,
+        borderWidth: 2,
+        borderColor: '#fff'
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ` ${ctx.label}: ${fmtFull(ctx.raw)} 人`
+          }
+        }
+      },
+      cutout: '62%'
+    }
+  });
+
+  // Source list
+  const max = sources[0].users;
+  const listEl = document.getElementById('srclist-'+prop);
+  listEl.innerHTML = sources.map((s, i) => `
+    <div class="source-row">
+      <span class="source-rank">${i+1}</span>
+      <span class="source-name">${s.name}</span>
+      <div class="source-bar-wrap"><div class="source-bar" style="width:${Math.round(s.users/max*100)}%;background:${COLORS[i]}"></div></div>
+      <span class="source-val">${fmt(s.users)}</span>
+    </div>
+  `).join('');
+}
+
+function buildArticles(prop) {
+  const arts = DATA[prop].articles;
+  const maxPv = arts[0].pv;
+  const tbody = document.getElementById('arttable-'+prop);
+  tbody.innerHTML = arts.map((a, i) => `
+    <tr>
+      <td class="art-rank">${i+1}</td>
+      <td class="art-title">${a.title}</td>
+      <td class="art-pv">${fmtFull(a.pv)}</td>
+      <td class="art-pv-bar-wrap"><div class="art-pv-bar" style="width:${Math.round(a.pv/maxPv*100)}%"></div></td>
+    </tr>
+  `).join('');
+}
+
+function switchTab(prop, el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('sec-'+prop).classList.add('active');
+  // Trigger chart resize
+  setTimeout(() => {
+    if (chartInstances[prop]) chartInstances[prop].resize();
+    if (donutInstances[prop]) donutInstances[prop].resize();
+  }, 50);
+}
+
+function switchMetric(prop, metric, el) {
+  el.closest('.chart-toggle').querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  currentMetric[prop] = metric;
+  buildChart(prop);
+}
+
+// Init all
+['cna','ft_en','ft_jp'].forEach(prop => {
+  buildKPI(prop);
+  buildChart(prop);
+  buildDonut(prop);
+  buildArticles(prop);
+});
+</script>
+</body>
+</html>
