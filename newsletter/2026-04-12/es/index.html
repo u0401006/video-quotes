@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>西語讀者新聞精選 — 2026-04-12</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+                   "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: #f4f4f4;
+      color: #1a1a1a;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    /* ===== WRAPPER ===== */
+    .email-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      background: #0d1117;
+      color: #ffffff;
+      padding: 28px 32px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, #0d1117 60%, #1a2332 100%);
+    }
+    .header-inner { position: relative; z-index: 1; }
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-icon {
+      width: 36px; height: 36px;
+      background: #e63946;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .brand-name {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: #fff;
+    }
+    .brand-sub {
+      font-size: 11px;
+      color: #8b949e;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .header-meta {
+      text-align: right;
+    }
+    .edition-badge {
+      display: inline-block;
+      background: rgba(230,57,70,0.15);
+      border: 1px solid rgba(230,57,70,0.4);
+      color: #ff6b7a;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .header-date {
+      font-size: 13px;
+      color: #8b949e;
+    }
+    .header-headline {
+      font-size: 13px;
+      color: #c9d1d9;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .header-headline strong {
+      color: #e2e8f0;
+    }
+
+    /* ===== BREAKING BAR ===== */
+    .breaking-bar {
+      background: #e63946;
+      color: #fff;
+      padding: 8px 32px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .breaking-label {
+      background: #fff;
+      color: #e63946;
+      padding: 1px 8px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+
+    /* ===== SECTION LABEL ===== */
+    .section-label {
+      padding: 20px 32px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label span {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #e63946;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e8e8e8;
+    }
+
+    /* ===== FEATURED BLOCK ===== */
+    .featured {
+      padding: 16px 32px 28px;
+    }
+    .featured-main {
+      background: #0d1117;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .featured-image-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      background: #1a2332;
+      overflow: hidden;
+    }
+    .featured-image-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .featured-image-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #30363d;
+      font-size: 13px;
+      background: linear-gradient(135deg, #0d1117, #1c2430);
+    }
+    .featured-image-placeholder .ph-icon { font-size: 40px; margin-bottom: 8px; opacity: 0.3; }
+    .featured-category-tag {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: #e63946;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+    .featured-content {
+      padding: 20px 24px 24px;
+      color: #fff;
+    }
+    .featured-title {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 12px;
+      color: #e2e8f0;
+    }
+    .featured-summary {
+      font-size: 14px;
+      line-height: 1.75;
+      color: #8b949e;
+      margin-bottom: 18px;
+    }
+    .featured-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #e63946;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .featured-link::after {
+      content: '→';
+    }
+
+    /* Sub-topic cards */
+    .subtopic-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .subtopic-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .subtopic-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    .subtopic-img-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 75%; /* 4:3 */
+      background: #f0f0f0;
+      overflow: hidden;
+    }
+    .subtopic-img-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .subtopic-img-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f4f5;
+      color: #d0d0d0;
+      font-size: 28px;
+    }
+    .subtopic-body {
+      padding: 12px;
+    }
+    .subtopic-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #e63946;
+      margin-bottom: 4px;
+    }
+    .subtopic-title {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: #1a1a1a;
+      margin-bottom: 6px;
+    }
+    .subtopic-summary {
+      font-size: 11px;
+      color: #666;
+      line-height: 1.55;
+    }
+
+    /* ===== NEWS GRID ===== */
+    .news-grid {
+      padding: 4px 32px 28px;
+    }
+    .news-card {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid #f0f0f0;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      border-radius: 6px;
+      margin: 0 -8px;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    .news-card:hover {
+      background: #fafafa;
+    }
+    .news-card:last-child {
+      border-bottom: none;
+    }
+    .news-card-number {
+      font-size: 28px;
+      font-weight: 900;
+      color: #e8e8e8;
+      line-height: 1;
+      min-width: 32px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .news-card-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .news-card-tags {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .tag-politics  { background: #fff0f0; color: #c0392b; }
+    .tag-intl      { background: #f0f4ff; color: #2563eb; }
+    .tag-finance   { background: #f0fdf4; color: #16a34a; }
+    .tag-sports    { background: #fff7ed; color: #ea580c; }
+    .tag-tech      { background: #f5f3ff; color: #7c3aed; }
+    .tag-society   { background: #fdf4ff; color: #a21caf; }
+    .tag-default   { background: #f4f4f4; color: #555; }
+    .tag-source {
+      font-size: 10px;
+      color: #999;
+      font-weight: 400;
+    }
+    .news-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: #1a1a1a;
+      margin-bottom: 5px;
+    }
+    .news-card-summary {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .news-card-thumb {
+      width: 88px;
+      height: 66px;
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #f0f0f0;
+      position: relative;
+    }
+    .news-card-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .news-card-thumb-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d0d0d0;
+      font-size: 22px;
+    }
+
+    /* ===== DIVIDER ===== */
+    .section-divider {
+      margin: 0 32px;
+      border: none;
+      border-top: 2px solid #0d1117;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #0d1117;
+      color: #8b949e;
+      padding: 28px 32px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .footer-brand {
+      font-size: 15px;
+      font-weight: 800;
+      color: #e2e8f0;
+      margin-bottom: 6px;
+    }
+    .footer-desc {
+      font-size: 12px;
+      color: #8b949e;
+      line-height: 1.6;
+    }
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+    }
+    .footer-links a {
+      color: #8b949e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .footer-links a:hover {
+      color: #c9d1d9;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+      color: #484f58;
+    }
+    .footer-generated {
+      font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+      font-size: 10px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .header, .section-label, .featured, .news-grid, .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .breaking-bar { padding-left: 20px; padding-right: 20px; }
+      .featured-title { font-size: 18px; }
+      .subtopic-cards { grid-template-columns: 1fr; }
+      .subtopic-img-wrap { padding-bottom: 56.25%; }
+      .news-card-number { font-size: 22px; min-width: 26px; }
+      .news-card-title { font-size: 14px; }
+      .news-card-thumb { width: 72px; height: 54px; }
+      .section-divider { margin-left: 20px; margin-right: 20px; }
+      .header-top { flex-direction: column; align-items: flex-start; }
+      .header-meta { text-align: left; }
+      .footer-inner { flex-direction: column; }
+      .footer-links { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+<div class="email-wrapper" id="newsletter-root">
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="newsletter-header">
+    <div class="header-inner">
+      <div class="header-top">
+        <div class="brand">
+          <div class="brand-icon">📡</div>
+          <div>
+            <div class="brand-name" id="newsletter-name">西語讀者新聞精選</div>
+            <div class="brand-sub">AI 新聞精選電子報</div>
+          </div>
+        </div>
+        <div class="header-meta">
+          <div class="edition-badge" id="edition-badge">第 試刊 期</div>
+          <div class="header-date" id="header-date">2026-04-12</div>
+        </div>
+      </div>
+      <div class="header-headline">
+        本期收錄 <strong id="article-count">5</strong> 則新聞 · 涵蓋 <strong id="category-list">foreign translation</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== BREAKING BAR ===== -->
+  <div class="breaking-bar" id="breaking-bar">
+    <span class="breaking-label">BREAKING</span>
+    <span id="breaking-text">台積電強攻2奈米及更先進製程　根留台灣開枝散葉</span>
+  </div>
+
+  <!-- ===== FEATURED SECTION ===== -->
+  <div class="section-label">
+    <span>本期專題</span>
+  </div>
+
+  <section class="featured" id="featured-section">
+    <!-- Main featured story -->
+    <a href="https://www.cna.com.tw/news/afe/202604120020.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="featured-main" id="featured-main">
+        <div class="featured-image-wrap" id="featured-image-wrap">
+          <!-- vision-auto-crop will inject: src, srcset, alt -->
+          <img
+            id="featured-image"
+            src="../images/202604120020.jpg"
+            data-src="../images/202604120020.jpg"
+            alt="台積電強攻2奈米及更先進製程　根留台灣開枝散葉"
+            loading="lazy"
+            style="display:block;"
+          >
+          <div class="featured-image-placeholder" id="featured-image-placeholder" style="display:none;">
+            <div class="ph-icon">🖼️</div>
+            <div>16:9 主視覺圖片</div>
+          </div>
+          <div class="featured-category-tag" id="featured-category">ES</div>
+        </div>
+        <div class="featured-content">
+          <h1 class="featured-title" id="featured-title">台積電強攻2奈米及更先進製程　根留台灣開枝散葉</h1>
+          <p class="featured-summary" id="featured-summary">TSMC impulsa con fuerza los procesos de 2 nanómetros y más avanzados, manteniendo sus raíces en Taiwán y expandiéndose. Se prevé que la producción en masa de 2 nanómetros comience en el cuarto trimestre de 2025. El proceso N2P también entrará en producción en masa en el segundo semestre de este año. El proceso A16, que utiliza Super Power Rail (SPR), también tiene previsto iniciar su producción en masa en el segundo semestre de este año. En cuanto al proceso avanzado A14 (1,4 nanómetros), la planta A14 del Parque Científico Central de Taiwán (Central Taiwan Science Park) ya ha solicitado el inicio de las obras en octubre de 2025, y se espera que la producción en masa comience en el segundo semestre de 2028. Las plantas de obleas 20 de Hsinchu Baoshan y 22 de Kaohsiung son bases importantes para la producción en masa de 2 nanómetros, y también se están realizando activamente planes para los procesos A16 y A14. Se espera que la construcción de la planta de obleas 25 de Taichung comience a finales de 2025, centrándose principalmente en procesos avanzados por debajo de los 2 nanómetros, y no se descarta la planificación del proceso avanzado A10 (1 nanómetro). También se construirá una nueva planta en el Parque Científico de Tainan, cuya construcción está prevista para este año y se completará en 2028. TSMC continúa expandiendo los procesos avanzados en su planta de Arizona, Estados Unidos. Se espera que la segunda planta entre en producción en masa en el segundo semestre de 2027, la tercera planta ya está en construcción y se planea construir una cuarta planta y una planta de empaquetado avanzado.</p>
+          <span class="featured-link" id="featured-link">閱讀全文</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Sub-topic cards -->
+    <div class="subtopic-cards" id="subtopic-cards">
+
+      <!-- Subtopic 1 -->
+      <a href="https://www.cna.com.tw/news/aipl/202604120030.aspx" target="_blank" rel="noopener" style="display:block;">
+        <div class="subtopic-card">
+          <div class="subtopic-img-wrap">
+            <img
+              id="subtopic1-image"
+              src="../images/202604120030.jpg"
+              data-src="../images/202604120030.jpg"
+              alt="空軍天龍演習驗證反封鎖　劍翔無人機首波出擊"
+              loading="lazy"
+              style="display:block;"
+            >
+            <div class="subtopic-img-placeholder" id="subtopic1-placeholder" style="display:none;">🖼️</div>
+          </div>
+          <div class="subtopic-body">
+            <div class="subtopic-tag" id="subtopic1-tag">推薦</div>
+            <div class="subtopic-title" id="subtopic1-title">空軍天龍演習驗證反封鎖　劍翔無人機首波出擊</div>
+            <div class="subtopic-summary" id="subtopic1-summary">La Fuerza Aérea de Taiwán completó recientemente el ejercicio &quot;Tianlong&quot;, simulando un bloqueo aéreo y marítimo del Estrecho de Taiwán por parte del Ejército Popular de Liberación, con el objetivo de verificar la capacidad de ataque coordinado aire-mar y la capacidad conjunta anti-bloqueo. El ejercicio integró fuerzas de la Fuerza Aérea, la Armada y otras ramas militares para fortalecer la efectividad del combate conjunto. El Ministerio de Defensa activó el mecanismo de transición &quot;paz-guerra&quot;, con el Centro de Comando de Operaciones Aéreas Conjuntas (JAOC) integrando fuerzas aéreas y navales para llevar a cabo operaciones de escolta anti-bloqueo, asegurando el transporte de suministros. En el ejercicio, los drones Chien Hsiang fueron los primeros en realizar misiones de contramedida. Aviones de patrulla antisubmarina P-3C, aviones de alerta temprana E-2K e cazas IDF y F-16V despegaron, cooperando con las unidades de defensa aérea para formar una densa red de fuego, llevando a cabo ataques coordinados aire-mar. El Comando de la Fuerza Aérea declaró que el ejercicio verificó la capacidad de ataque coordinado aire-mar y el control del comando en el campo de batalla, mejorando la integración y el uso de las fuerzas.</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Subtopic 2 -->
+      <a href="https://www.cna.com.tw/news/aipl/202604120105.aspx" target="_blank" rel="noopener" style="display:block;">
+        <div class="subtopic-card">
+          <div class="subtopic-img-wrap">
+            <img
+              id="subtopic2-image"
+              src="../images/202604120105.jpg"
+              data-src="../images/202604120105.jpg"
+              alt="中國10項涉台措施　政院批「交流工具化、經貿武器化」統戰作法"
+              loading="lazy"
+              style="display:block;"
+            >
+            <div class="subtopic-img-placeholder" id="subtopic2-placeholder" style="display:none;">🖼️</div>
+          </div>
+          <div class="subtopic-body">
+            <div class="subtopic-tag" id="subtopic2-tag">推薦</div>
+            <div class="subtopic-title" id="subtopic2-title">中國10項涉台措施　政院批「交流工具化、經貿武器化」統戰作法</div>
+            <div class="subtopic-summary" id="subtopic2-summary">El Yuan Ejecutivo (gabinete) de Taiwán criticó las 10 medidas de China hacia Taiwán como tácticas de frente unido que &#x27;instrumentalizan los intercambios y convierten el comercio y la economía en armas&#x27;. La Oficina de Asuntos de Taiwán del Comité Central del Partido Comunista de China (PCCh) anunció varias políticas relacionadas con Taiwán, incluyendo la reanudación de los programas piloto de viajes individuales a Taiwán para residentes de Shanghái y Fujian, la promoción de la normalización de los vuelos directos de pasajeros entre ambos lados del Estrecho, el apoyo a la participación de productos agrícolas y pesqueros taiwaneses en exposiciones y ventas en China continental, y el apoyo a las pequeñas y medianas empresas taiwanesas para que exploren el mercado continental. El Yuan Ejecutivo respondió a través de un comunicado de prensa, criticando estas medidas como tácticas de frente unido que instrumentalizan los intercambios y convierten el comercio y la economía en armas. En el pasado, Pekín a menudo prohibía o permitía [estas actividades] con razones infundadas, perjudicando los derechos e intereses de las industrias y los agricultores y pescadores taiwaneses. El gobierno apoya los intercambios bilaterales saludables, ordenados, recíprocos y dignos, y llevará a cabo evaluaciones de riesgo de varios asuntos relacionados con los intercambios para garantizar que no afecten la economía y la estructura industrial de Taiwán. Los proyectos que involucren la autoridad pública del gobierno deben negociarse a través de los mecanismos existentes entre ambos gobiernos, sin condiciones políticas previas, respetando los mecanismos del mercado y las normas internacionales.</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Subtopic 3 -->
+      <a href="https://www.cna.com.tw/news/ahel/202604120101.aspx" target="_blank" rel="noopener" style="display:block;">
+        <div class="subtopic-card">
+          <div class="subtopic-img-wrap">
+            <img
+              id="subtopic3-image"
+              src="../images/202604120101.jpg"
+              data-src="../images/202604120101.jpg"
+              alt="陽明交大用相機偵測頸動脈狹窄　獲國際賽第5名"
+              loading="lazy"
+              style="display:block;"
+            >
+            <div class="subtopic-img-placeholder" id="subtopic3-placeholder" style="display:none;">🖼️</div>
+          </div>
+          <div class="subtopic-body">
+            <div class="subtopic-tag" id="subtopic3-tag">推薦</div>
+            <div class="subtopic-title" id="subtopic3-title">陽明交大用相機偵測頸動脈狹窄　獲國際賽第5名</div>
+            <div class="subtopic-summary" id="subtopic3-summary">La Universidad Yang Ming Chiao Tung (Taiwán) ha obtenido el quinto lugar en una competencia internacional gracias a un sistema de detección no invasivo de la estenosis carotídea. El equipo del departamento de medicina de la Universidad Yang Ming Chiao Tung desarrolló un &quot;Sistema de detección temprana no invasivo de la estenosis carotídea&quot; que utiliza una cámara común para capturar imágenes y, mediante técnicas de procesamiento de señales, analiza los cambios en el flujo sanguíneo para determinar el grado de estenosis carotídea. Este sistema no requiere equipo médico adicional, tiene un bajo umbral técnico y es fácil de operar. El equipo señaló que muchos pacientes suelen buscar atención médica solo cuando la estenosis vascular es grave, por lo que la detección temprana permite una intervención terapéutica oportuna. Yang Chih-Chieh, director del departamento de medicina de la Universidad Yang Ming Chiao Tung, indicó que esta competencia es la primera plataforma internacional interdisciplinaria de &quot;medicina × ingeniería × IA&quot; del mundo. La organización de este evento por parte de Taiwán representa un reconocimiento internacional de su solidez académica y también indica que la Universidad Yang Ming Chiao Tung está estableciendo gradualmente una voz en el campo de la educación médica internacional. La competencia de este año atrajo a estudiantes de muchos países y el premio total ascendió a 150.000 dólares estadounidenses.</div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ===== NEWS GRID SECTION ===== -->
+  <hr class="section-divider">
+  <div class="section-label">
+    <span>今日要聞</span>
+  </div>
+
+  <section class="news-grid" id="news-grid">
+
+    <!-- News Card 1 -->
+    <a href="https://www.cna.com.tw/news/afe/202604120020.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">01</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-tech" id="news1-tag">ES</span>
+            <span class="tag-source" id="news1-source">PID 202604120020</span>
+          </div>
+          <div class="news-card-title" id="news1-title">台積電強攻2奈米及更先進製程　根留台灣開枝散葉</div>
+          <div class="news-card-summary" id="news1-summary">TSMC impulsa con fuerza los procesos de 2 nanómetros y más avanzados, manteniendo sus raíces en Taiwán y expandiéndose. Se prevé que la producción en masa de 2 nanómetros comience en el cuarto trimestre de 2025. El proceso N2P también entrará en producción en masa en el segundo semestre de este año. El proceso A16, que utiliza Super Power Rail (SPR), también tiene previsto iniciar su producción en masa en el segundo semestre de este año. En cuanto al proceso avanzado A14 (1,4 nanómetros), la planta A14 del Parque Científico Central de Taiwán (Central Taiwan Science Park) ya ha solicitado el inicio de las obras en octubre de 2025, y se espera que la producción en masa comience en el segundo semestre de 2028. Las plantas de obleas 20 de Hsinchu Baoshan y 22 de Kaohsiung son bases importantes para la producción en masa de 2 nanómetros, y también se están realizando activamente planes para los procesos A16 y A14. Se espera que la construcción de la planta de obleas 25 de Taichung comience a finales de 2025, centrándose principalmente en procesos avanzados por debajo de los 2 nanómetros, y no se descarta la planificación del proceso avanzado A10 (1 nanómetro). También se construirá una nueva planta en el Parque Científico de Tainan, cuya construcción está prevista para este año y se completará en 2028. TSMC continúa expandiendo los procesos avanzados en su planta de Arizona, Estados Unidos. Se espera que la segunda planta entre en producción en masa en el segundo semestre de 2027, la tercera planta ya está en construcción y se planea construir una cuarta planta y una planta de empaquetado avanzado.</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="../images/202604120020.jpg" data-src="../images/202604120020.jpg" alt="" loading="lazy" id="news1-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news1-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- News Card 2 -->
+    <a href="https://www.cna.com.tw/news/aipl/202604120030.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">02</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-tech" id="news2-tag">ES</span>
+            <span class="tag-source" id="news2-source">PID 202604120030</span>
+          </div>
+          <div class="news-card-title" id="news2-title">空軍天龍演習驗證反封鎖　劍翔無人機首波出擊</div>
+          <div class="news-card-summary" id="news2-summary">La Fuerza Aérea de Taiwán completó recientemente el ejercicio &quot;Tianlong&quot;, simulando un bloqueo aéreo y marítimo del Estrecho de Taiwán por parte del Ejército Popular de Liberación, con el objetivo de verificar la capacidad de ataque coordinado aire-mar y la capacidad conjunta anti-bloqueo. El ejercicio integró fuerzas de la Fuerza Aérea, la Armada y otras ramas militares para fortalecer la efectividad del combate conjunto. El Ministerio de Defensa activó el mecanismo de transición &quot;paz-guerra&quot;, con el Centro de Comando de Operaciones Aéreas Conjuntas (JAOC) integrando fuerzas aéreas y navales para llevar a cabo operaciones de escolta anti-bloqueo, asegurando el transporte de suministros. En el ejercicio, los drones Chien Hsiang fueron los primeros en realizar misiones de contramedida. Aviones de patrulla antisubmarina P-3C, aviones de alerta temprana E-2K e cazas IDF y F-16V despegaron, cooperando con las unidades de defensa aérea para formar una densa red de fuego, llevando a cabo ataques coordinados aire-mar. El Comando de la Fuerza Aérea declaró que el ejercicio verificó la capacidad de ataque coordinado aire-mar y el control del comando en el campo de batalla, mejorando la integración y el uso de las fuerzas.</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="../images/202604120030.jpg" data-src="../images/202604120030.jpg" alt="" loading="lazy" id="news2-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news2-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- News Card 3 -->
+    <a href="https://www.cna.com.tw/news/aipl/202604120105.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">03</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-tech" id="news3-tag">ES</span>
+            <span class="tag-source" id="news3-source">PID 202604120105</span>
+          </div>
+          <div class="news-card-title" id="news3-title">中國10項涉台措施　政院批「交流工具化、經貿武器化」統戰作法</div>
+          <div class="news-card-summary" id="news3-summary">El Yuan Ejecutivo (gabinete) de Taiwán criticó las 10 medidas de China hacia Taiwán como tácticas de frente unido que &#x27;instrumentalizan los intercambios y convierten el comercio y la economía en armas&#x27;. La Oficina de Asuntos de Taiwán del Comité Central del Partido Comunista de China (PCCh) anunció varias políticas relacionadas con Taiwán, incluyendo la reanudación de los programas piloto de viajes individuales a Taiwán para residentes de Shanghái y Fujian, la promoción de la normalización de los vuelos directos de pasajeros entre ambos lados del Estrecho, el apoyo a la participación de productos agrícolas y pesqueros taiwaneses en exposiciones y ventas en China continental, y el apoyo a las pequeñas y medianas empresas taiwanesas para que exploren el mercado continental. El Yuan Ejecutivo respondió a través de un comunicado de prensa, criticando estas medidas como tácticas de frente unido que instrumentalizan los intercambios y convierten el comercio y la economía en armas. En el pasado, Pekín a menudo prohibía o permitía [estas actividades] con razones infundadas, perjudicando los derechos e intereses de las industrias y los agricultores y pescadores taiwaneses. El gobierno apoya los intercambios bilaterales saludables, ordenados, recíprocos y dignos, y llevará a cabo evaluaciones de riesgo de varios asuntos relacionados con los intercambios para garantizar que no afecten la economía y la estructura industrial de Taiwán. Los proyectos que involucren la autoridad pública del gobierno deben negociarse a través de los mecanismos existentes entre ambos gobiernos, sin condiciones políticas previas, respetando los mecanismos del mercado y las normas internacionales.</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="../images/202604120105.jpg" data-src="../images/202604120105.jpg" alt="" loading="lazy" id="news3-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news3-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- News Card 4 -->
+    <a href="https://www.cna.com.tw/news/ahel/202604120101.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">04</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-tech" id="news4-tag">ES</span>
+            <span class="tag-source" id="news4-source">PID 202604120101</span>
+          </div>
+          <div class="news-card-title" id="news4-title">陽明交大用相機偵測頸動脈狹窄　獲國際賽第5名</div>
+          <div class="news-card-summary" id="news4-summary">La Universidad Yang Ming Chiao Tung (Taiwán) ha obtenido el quinto lugar en una competencia internacional gracias a un sistema de detección no invasivo de la estenosis carotídea. El equipo del departamento de medicina de la Universidad Yang Ming Chiao Tung desarrolló un &quot;Sistema de detección temprana no invasivo de la estenosis carotídea&quot; que utiliza una cámara común para capturar imágenes y, mediante técnicas de procesamiento de señales, analiza los cambios en el flujo sanguíneo para determinar el grado de estenosis carotídea. Este sistema no requiere equipo médico adicional, tiene un bajo umbral técnico y es fácil de operar. El equipo señaló que muchos pacientes suelen buscar atención médica solo cuando la estenosis vascular es grave, por lo que la detección temprana permite una intervención terapéutica oportuna. Yang Chih-Chieh, director del departamento de medicina de la Universidad Yang Ming Chiao Tung, indicó que esta competencia es la primera plataforma internacional interdisciplinaria de &quot;medicina × ingeniería × IA&quot; del mundo. La organización de este evento por parte de Taiwán representa un reconocimiento internacional de su solidez académica y también indica que la Universidad Yang Ming Chiao Tung está estableciendo gradualmente una voz en el campo de la educación médica internacional. La competencia de este año atrajo a estudiantes de muchos países y el premio total ascendió a 150.000 dólares estadounidenses.</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="../images/202604120101.jpg" data-src="../images/202604120101.jpg" alt="" loading="lazy" id="news4-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news4-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- News Card 5 -->
+    <a href="https://www.cna.com.tw/news/ahel/202604120164.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">05</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-tech" id="news5-tag">ES</span>
+            <span class="tag-source" id="news5-source">PID 202604120164</span>
+          </div>
+          <div class="news-card-title" id="news5-title">白沙屯媽祖進香深夜起駕　賴總統淨轎恭送為台灣祈福</div>
+          <div class="news-card-summary" id="news5-summary">La peregrinación de la Mazu de Baishatun al templo Chaotian de Beigang, organizada por el templo Gongtian de Baishatun en el distrito de Miaoli, comenzó a las 23:55 de esta noche, con una duración de 8 días y 7 noches, atrayendo a creyentes de todas partes. Este año, además de la Mazu principal, también se unieron la Mazu de Shanbian y la Mazu del maestro de altar anual (una figura rotativa a cargo de los rituales). El presidente Lai visitó el templo por la tarde y realizó la ceremonia de purificación del palanquín de la Mazu, orando por el buen desarrollo de la peregrinación, la paz y la felicidad de todos, y bendiciendo a Taiwán. El presidente Lai señaló que este año se han inscrito más de 460.000 &quot;Xiang Deng Jiao&quot; (peregrinos). Rezó para que Mazu bendiga a Taiwán con paz y prosperidad, buenas cosechas, ausencia de desastres en todas las ciudades y condados, y seguridad para todas las familias. El magistrado del distrito de Miaoli, Chung Tung-chin, y varios funcionarios públicos del Partido Demócrata Progresista también estuvieron presentes.</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="../images/202604120164.jpg" data-src="../images/202604120164.jpg" alt="" loading="lazy" id="news5-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news5-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="newsletter-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand" id="footer-brand">西語讀者新聞精選</div>
+        <div class="footer-desc">
+          由 AI 新聞偵察系統自動整理，每小時更新。<br>
+          收錄來自各大媒體的重要新聞，提供快速摘要。
+        </div>
+      </div>
+      <div>
+        <div class="footer-links">
+          <a href="#">訂閱</a>
+          <a href="#">取消訂閱</a>
+          <a href="#">歷史期數</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 西語讀者新聞精選 · 版權所有</span>
+      <span class="footer-generated" id="generated-at">🤖 Generated at 2026-04-13 09:52</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

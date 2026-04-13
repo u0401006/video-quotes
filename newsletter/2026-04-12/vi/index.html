@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>越南語讀者新聞精選 — 2026-04-12</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+                   "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: #f4f4f4;
+      color: #1a1a1a;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    /* ===== WRAPPER ===== */
+    .email-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      background: #0d1117;
+      color: #ffffff;
+      padding: 28px 32px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, #0d1117 60%, #1a2332 100%);
+    }
+    .header-inner { position: relative; z-index: 1; }
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-icon {
+      width: 36px; height: 36px;
+      background: #e63946;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .brand-name {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: #fff;
+    }
+    .brand-sub {
+      font-size: 11px;
+      color: #8b949e;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .header-meta {
+      text-align: right;
+    }
+    .edition-badge {
+      display: inline-block;
+      background: rgba(230,57,70,0.15);
+      border: 1px solid rgba(230,57,70,0.4);
+      color: #ff6b7a;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .header-date {
+      font-size: 13px;
+      color: #8b949e;
+    }
+    .header-headline {
+      font-size: 13px;
+      color: #c9d1d9;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .header-headline strong {
+      color: #e2e8f0;
+    }
+
+    /* ===== BREAKING BAR ===== */
+    .breaking-bar {
+      background: #e63946;
+      color: #fff;
+      padding: 8px 32px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .breaking-label {
+      background: #fff;
+      color: #e63946;
+      padding: 1px 8px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+
+    /* ===== SECTION LABEL ===== */
+    .section-label {
+      padding: 20px 32px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label span {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #e63946;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e8e8e8;
+    }
+
+    /* ===== FEATURED BLOCK ===== */
+    .featured {
+      padding: 16px 32px 28px;
+    }
+    .featured-main {
+      background: #0d1117;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .featured-image-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      background: #1a2332;
+      overflow: hidden;
+    }
+    .featured-image-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .featured-image-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #30363d;
+      font-size: 13px;
+      background: linear-gradient(135deg, #0d1117, #1c2430);
+    }
+    .featured-image-placeholder .ph-icon { font-size: 40px; margin-bottom: 8px; opacity: 0.3; }
+    .featured-category-tag {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: #e63946;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+    .featured-content {
+      padding: 20px 24px 24px;
+      color: #fff;
+    }
+    .featured-title {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 12px;
+      color: #e2e8f0;
+    }
+    .featured-summary {
+      font-size: 14px;
+      line-height: 1.75;
+      color: #8b949e;
+      margin-bottom: 18px;
+    }
+    .featured-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #e63946;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .featured-link::after {
+      content: '→';
+    }
+
+    /* Sub-topic cards */
+    .subtopic-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .subtopic-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .subtopic-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    .subtopic-img-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 75%; /* 4:3 */
+      background: #f0f0f0;
+      overflow: hidden;
+    }
+    .subtopic-img-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .subtopic-img-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f4f5;
+      color: #d0d0d0;
+      font-size: 28px;
+    }
+    .subtopic-body {
+      padding: 12px;
+    }
+    .subtopic-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #e63946;
+      margin-bottom: 4px;
+    }
+    .subtopic-title {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: #1a1a1a;
+      margin-bottom: 6px;
+    }
+    .subtopic-summary {
+      font-size: 11px;
+      color: #666;
+      line-height: 1.55;
+    }
+
+    /* ===== NEWS GRID ===== */
+    .news-grid {
+      padding: 4px 32px 28px;
+    }
+    .news-card {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid #f0f0f0;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      border-radius: 6px;
+      margin: 0 -8px;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    .news-card:hover {
+      background: #fafafa;
+    }
+    .news-card:last-child {
+      border-bottom: none;
+    }
+    .news-card-number {
+      font-size: 28px;
+      font-weight: 900;
+      color: #e8e8e8;
+      line-height: 1;
+      min-width: 32px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .news-card-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .news-card-tags {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .tag-politics  { background: #fff0f0; color: #c0392b; }
+    .tag-intl      { background: #f0f4ff; color: #2563eb; }
+    .tag-finance   { background: #f0fdf4; color: #16a34a; }
+    .tag-sports    { background: #fff7ed; color: #ea580c; }
+    .tag-tech      { background: #f5f3ff; color: #7c3aed; }
+    .tag-society   { background: #fdf4ff; color: #a21caf; }
+    .tag-default   { background: #f4f4f4; color: #555; }
+    .tag-source {
+      font-size: 10px;
+      color: #999;
+      font-weight: 400;
+    }
+    .news-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: #1a1a1a;
+      margin-bottom: 5px;
+    }
+    .news-card-summary {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .news-card-thumb {
+      width: 88px;
+      height: 66px;
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #f0f0f0;
+      position: relative;
+    }
+    .news-card-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .news-card-thumb-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d0d0d0;
+      font-size: 22px;
+    }
+
+    /* ===== DIVIDER ===== */
+    .section-divider {
+      margin: 0 32px;
+      border: none;
+      border-top: 2px solid #0d1117;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #0d1117;
+      color: #8b949e;
+      padding: 28px 32px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .footer-brand {
+      font-size: 15px;
+      font-weight: 800;
+      color: #e2e8f0;
+      margin-bottom: 6px;
+    }
+    .footer-desc {
+      font-size: 12px;
+      color: #8b949e;
+      line-height: 1.6;
+    }
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+    }
+    .footer-links a {
+      color: #8b949e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .footer-links a:hover {
+      color: #c9d1d9;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+      color: #484f58;
+    }
+    .footer-generated {
+      font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+      font-size: 10px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .header, .section-label, .featured, .news-grid, .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .breaking-bar { padding-left: 20px; padding-right: 20px; }
+      .featured-title { font-size: 18px; }
+      .subtopic-cards { grid-template-columns: 1fr; }
+      .subtopic-img-wrap { padding-bottom: 56.25%; }
+      .news-card-number { font-size: 22px; min-width: 26px; }
+      .news-card-title { font-size: 14px; }
+      .news-card-thumb { width: 72px; height: 54px; }
+      .section-divider { margin-left: 20px; margin-right: 20px; }
+      .header-top { flex-direction: column; align-items: flex-start; }
+      .header-meta { text-align: left; }
+      .footer-inner { flex-direction: column; }
+      .footer-links { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+<div class="email-wrapper" id="newsletter-root">
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="newsletter-header">
+    <div class="header-inner">
+      <div class="header-top">
+        <div class="brand">
+          <div class="brand-icon">📡</div>
+          <div>
+            <div class="brand-name" id="newsletter-name">越南語讀者新聞精選</div>
+            <div class="brand-sub">AI 新聞精選電子報</div>
+          </div>
+        </div>
+        <div class="header-meta">
+          <div class="edition-badge" id="edition-badge">第 試刊 期</div>
+          <div class="header-date" id="header-date">2026-04-12</div>
+        </div>
+      </div>
+      <div class="header-headline">
+        本期收錄 <strong id="article-count">5</strong> 則新聞 · 涵蓋 <strong id="category-list">foreign translation</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== BREAKING BAR ===== -->
+  <div class="breaking-bar" id="breaking-bar">
+    <span class="breaking-label">BREAKING</span>
+    <span id="breaking-text">越南偶像嗨翻河內旅展台灣館  民眾推台灣值得再訪</span>
+  </div>
+
+  <!-- ===== FEATURED SECTION ===== -->
+  <div class="section-label">
+    <span>本期專題</span>
+  </div>
+
+  <section class="featured" id="featured-section">
+    <!-- Main featured story -->
+    <a href="https://www.cna.com.tw/news/ahel/202604120029.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="featured-main" id="featured-main">
+        <div class="featured-image-wrap" id="featured-image-wrap">
+          <!-- vision-auto-crop will inject: src, srcset, alt -->
+          <img
+            id="featured-image"
+            src="../images/202604120029.jpg"
+            data-src="../images/202604120029.jpg"
+            alt="越南偶像嗨翻河內旅展台灣館  民眾推台灣值得再訪"
+            loading="lazy"
+            style="display:block;"
+          >
+          <div class="featured-image-placeholder" id="featured-image-placeholder" style="display:none;">
+            <div class="ph-icon">🖼️</div>
+            <div>16:9 主視覺圖片</div>
+          </div>
+          <div class="featured-category-tag" id="featured-category">VI</div>
+        </div>
+        <div class="featured-content">
+          <h1 class="featured-title" id="featured-title">越南偶像嗨翻河內旅展台灣館  民眾推台灣值得再訪</h1>
+          <p class="featured-summary" id="featured-summary">Thần tượng Việt Nam khuấy động gian hàng Đài Loan tại Hội chợ Du lịch Hà Nội. Người dân khẳng định Đài Loan đáng để ghé thăm lần nữa.
+
+Hội chợ Du lịch Quốc tế Hà Nội lần thứ 15 diễn ra từ ngày 9 đến 12 tháng 4, gian hàng Đài Loan do Cục Du lịch Đài Loan dẫn đầu với 17 đơn vị, tổng cộng 41 người tham gia. Trong thời gian triển lãm, đã có hơn 2.000 buổi gặp gỡ giao dịch du lịch B2B được tổ chức. Các hoạt động tại gian hàng Đài Loan bao gồm biểu diễn nhào lộn của Đoàn kịch Hổ (Tiger Troupe), biểu diễn của nhà vô địch pha chế rượu, tự tay làm tò he (một loại hình nghệ thuật dân gian của Đài Loan), thu hút đông đảo khách tham quan. Thần tượng Việt Nam ISAAC, với vai trò đại sứ du lịch Đài Loan, đã xuất hiện và giao lưu với người hâm mộ, quảng bá du lịch Đài Loan. Cục Du lịch Đài Loan hy vọng thông qua sự kiện này sẽ truyền tải thông điệp về một Đài Loan sôi động 24/24, đồng thời tích cực khai thác thị trường du lịch tự túc của giới trẻ Việt Nam, tăng cường giới thiệu các điểm đến như Cao Hùng, Đài Nam thông qua hoạt động quảng bá của người nổi tiếng. Một số công ty lữ hành Việt Nam bày tỏ sự yêu thích đối với Đài Loan, hàng tháng đều tổ chức tour du lịch đến Đài Loan và mong muốn phát triển thêm các điểm đến mới. Khách du lịch Việt Nam từng đến Đài Loan cho biết thủ tục đến Đài Loan đơn giản, người dân thân thiện, đồ ăn ngon và dự định sẽ đến thăm Đài Loan lần nữa.</p>
+          <span class="featured-link" id="featured-link">閱讀全文</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Sub-topic cards -->
+    <div class="subtopic-cards" id="subtopic-cards">
+
+      <!-- Subtopic 1 -->
+      <a href="https://www.cna.com.tw/news/asoc/202604120032.aspx" target="_blank" rel="noopener" style="display:block;">
+        <div class="subtopic-card">
+          <div class="subtopic-img-wrap">
+            <img
+              id="subtopic1-image"
+              src="../images/202604120032.jpg"
+              data-src="../images/202604120032.jpg"
+              alt="南投埔里噴藥車翻覆 50歲印尼移工被壓傷不治"
+              loading="lazy"
+              style="display:block;"
+            >
+            <div class="subtopic-img-placeholder" id="subtopic1-placeholder" style="display:none;">🖼️</div>
+          </div>
+          <div class="subtopic-body">
+            <div class="subtopic-tag" id="subtopic1-tag">推薦</div>
+            <div class="subtopic-title" id="subtopic1-title">南投埔里噴藥車翻覆 50歲印尼移工被壓傷不治</div>
+            <div class="subtopic-summary" id="subtopic1-summary">Một vụ tai nạn chết người đã xảy ra hôm qua tại trấn Phố Lý (埔里), huyện Nam Đầu (南投), Đài Loan. Một lao động nhập cư người Indonesia 50 tuổi lái xe phun thuốc trừ sâu trên con đường công nghiệp gần đường Bắc Thôn (北村路) thì bị nghi ngờ thao tác sai khiến xe mất lái, đâm vào đống đất bên đường và lật. Người lao động này không kịp nhảy ra khỏi xe và bị xe đè, nhân viên cứu hộ đến hiện trường thì nạn nhân đã ngừng thở và tim ngừng đập. Sau khi được đưa đến bệnh viện, nạn nhân đã được tuyên bố tử vong. Cảnh sát đã thông báo cho chủ lao động và những người liên quan để lấy lời khai, đồng thời báo cáo với прокурор để khám nghiệm tử thi và làm rõ nguyên nhân vụ tai nạn.</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Subtopic 2 -->
+      <a href="https://www.cna.com.tw/news/afe/202604120020.aspx" target="_blank" rel="noopener" style="display:block;">
+        <div class="subtopic-card">
+          <div class="subtopic-img-wrap">
+            <img
+              id="subtopic2-image"
+              src="../images/202604120020.jpg"
+              data-src="../images/202604120020.jpg"
+              alt="台積電強攻2奈米及更先進製程　根留台灣開枝散葉"
+              loading="lazy"
+              style="display:block;"
+            >
+            <div class="subtopic-img-placeholder" id="subtopic2-placeholder" style="display:none;">🖼️</div>
+          </div>
+          <div class="subtopic-body">
+            <div class="subtopic-tag" id="subtopic2-tag">推薦</div>
+            <div class="subtopic-title" id="subtopic2-title">台積電強攻2奈米及更先進製程　根留台灣開枝散葉</div>
+            <div class="subtopic-summary" id="subtopic2-summary">TSMC tích cực phát triển quy trình 2 nanomet và các quy trình tiên tiến hơn, tiếp tục bám rễ ở Đài Loan. Dự kiến quy trình 2 nanomet sẽ đi vào sản xuất hàng loạt vào quý 4 năm 2025, N2P sẽ đi vào sản xuất hàng loạt vào nửa cuối năm nay và quy trình A16 cũng dự kiến sẽ đi vào sản xuất hàng loạt vào nửa cuối năm nay. Về quy trình tiên tiến A14 (1,4 nanomet), nhà máy A14 tại Khu Khoa học Trung tâm (Central Taiwan Science Park) đã được báo cáo khởi công vào tháng 10 năm 2025 và dự kiến sẽ đi vào sản xuất hàng loạt vào nửa cuối năm 2028. Nhà máy Wafer 20 ở Bảo Sơn, Tân Trúc (Hsinchu) và nhà máy Wafer 22 ở Cao Hùng (Kaohsiung) là những cơ sở quan trọng cho việc sản xuất hàng loạt quy trình 2 nanomet, đồng thời tích cực triển khai quy trình A16 và A14. Nhà máy Wafer 25 ở Đài Trung (Taichung) dự kiến sẽ bắt đầu xây dựng vào cuối năm 2025, chủ yếu tập trung vào các quy trình tiên tiến dưới 2 nanomet và không loại trừ việc lên kế hoạch cho quy trình tiên tiến A10 (1 nanomet). Về phía Đài Nam (Tainan), việc xây dựng nhà máy được lên kế hoạch tại Khu Khoa học Nam (Southern Taiwan Science Park), dự kiến sẽ khởi công trong năm nay và hoàn thành vào năm 2028. Nhà máy ở Arizona, Hoa Kỳ cũng đang mở rộng quy trình tiên tiến, nhà máy thứ hai dự kiến sẽ đi vào sản xuất hàng loạt vào nửa cuối năm 2027, nhà máy thứ ba đang được xây dựng và có kế hoạch xây dựng nhà máy thứ tư và nhà máy đóng gói tiên tiến.</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Subtopic 3 -->
+      <a href="https://www.cna.com.tw/news/aipl/202604120024.aspx" target="_blank" rel="noopener" style="display:block;">
+        <div class="subtopic-card">
+          <div class="subtopic-img-wrap">
+            <img
+              id="subtopic3-image"
+              src="../images/202604120024.jpg"
+              data-src="../images/202604120024.jpg"
+              alt="漢光42號兵推　情報單位首度納入演練編組"
+              loading="lazy"
+              style="display:block;"
+            >
+            <div class="subtopic-img-placeholder" id="subtopic3-placeholder" style="display:none;">🖼️</div>
+          </div>
+          <div class="subtopic-body">
+            <div class="subtopic-tag" id="subtopic3-tag">推薦</div>
+            <div class="subtopic-title" id="subtopic3-title">漢光42號兵推　情報單位首度納入演練編組</div>
+            <div class="subtopic-summary" id="subtopic3-summary">Cuộc diễn tập bàn cờ Hán Quang số 42 của quân đội Đài Loan sẽ diễn ra từ ngày 11 đến ngày 24 tháng 4, kéo dài 14 ngày 13 đêm. Trọng tâm của cuộc diễn tập bao gồm chỉ huy phi tập trung, ủy quyền hành động quân sự, hỗ trợ hậu cần và phối hợp giữa các bộ, ngành. Cuộc diễn tập tham khảo kinh nghiệm của quân đội Hoa Kỳ, tập trung vào &quot;báo cáo ngược&quot; và &quot;diễn tập kế hoạch&quot;. Năm nay, lần đầu tiên các đơn vị tình báo được đưa vào đội hình diễn tập bàn cờ, mô phỏng các hành động có thể xảy ra của quân đội Cộng sản, dự kiến các phương án đối phó. Ông Tô Tử Vân (Su Tzu-yun) từ Viện Nghiên cứu An ninh Quốc phòng cho biết, động thái này tham khảo thực tiễn của Cơ quan Tình báo Quốc phòng Hoa Kỳ, biên chế nhân viên tình báo vào các sở chỉ huy các cấp để thực hiện thu thập tình báo chiến trường, tăng cường năng lực tình báo nhân sự (HUMINT), nâng cao tính minh bạch của chiến trường, bù đắp những thiếu sót của trinh sát công nghệ và tối ưu hóa nghiệp vụ phân tích tình báo. Mô hình này nhằm mục đích hòa nhập với hệ thống quân đội Hoa Kỳ, cho phép các đơn vị tình báo nắm bắt chính xác nhu cầu thông tin của các đơn vị cơ sở.</div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ===== NEWS GRID SECTION ===== -->
+  <hr class="section-divider">
+  <div class="section-label">
+    <span>今日要聞</span>
+  </div>
+
+  <section class="news-grid" id="news-grid">
+
+    <!-- News Card 1 -->
+    <a href="https://www.cna.com.tw/news/ahel/202604120029.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">01</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-intl" id="news1-tag">VI</span>
+            <span class="tag-source" id="news1-source">PID 202604120029</span>
+          </div>
+          <div class="news-card-title" id="news1-title">越南偶像嗨翻河內旅展台灣館  民眾推台灣值得再訪</div>
+          <div class="news-card-summary" id="news1-summary">Thần tượng Việt Nam khuấy động gian hàng Đài Loan tại Hội chợ Du lịch Hà Nội. Người dân khẳng định Đài Loan đáng để ghé thăm lần nữa.
+
+Hội chợ Du lịch Quốc tế Hà Nội lần thứ 15 diễn ra từ ngày 9 đến 12 tháng 4, gian hàng Đài Loan do Cục Du lịch Đài Loan dẫn đầu với 17 đơn vị, tổng cộng 41 người tham gia. Trong thời gian triển lãm, đã có hơn 2.000 buổi gặp gỡ giao dịch du lịch B2B được tổ chức. Các hoạt động tại gian hàng Đài Loan bao gồm biểu diễn nhào lộn của Đoàn kịch Hổ (Tiger Troupe), biểu diễn của nhà vô địch pha chế rượu, tự tay làm tò he (một loại hình nghệ thuật dân gian của Đài Loan), thu hút đông đảo khách tham quan. Thần tượng Việt Nam ISAAC, với vai trò đại sứ du lịch Đài Loan, đã xuất hiện và giao lưu với người hâm mộ, quảng bá du lịch Đài Loan. Cục Du lịch Đài Loan hy vọng thông qua sự kiện này sẽ truyền tải thông điệp về một Đài Loan sôi động 24/24, đồng thời tích cực khai thác thị trường du lịch tự túc của giới trẻ Việt Nam, tăng cường giới thiệu các điểm đến như Cao Hùng, Đài Nam thông qua hoạt động quảng bá của người nổi tiếng. Một số công ty lữ hành Việt Nam bày tỏ sự yêu thích đối với Đài Loan, hàng tháng đều tổ chức tour du lịch đến Đài Loan và mong muốn phát triển thêm các điểm đến mới. Khách du lịch Việt Nam từng đến Đài Loan cho biết thủ tục đến Đài Loan đơn giản, người dân thân thiện, đồ ăn ngon và dự định sẽ đến thăm Đài Loan lần nữa.</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="../images/202604120029.jpg" data-src="../images/202604120029.jpg" alt="" loading="lazy" id="news1-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news1-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- News Card 2 -->
+    <a href="https://www.cna.com.tw/news/asoc/202604120032.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">02</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-intl" id="news2-tag">VI</span>
+            <span class="tag-source" id="news2-source">PID 202604120032</span>
+          </div>
+          <div class="news-card-title" id="news2-title">南投埔里噴藥車翻覆 50歲印尼移工被壓傷不治</div>
+          <div class="news-card-summary" id="news2-summary">Một vụ tai nạn chết người đã xảy ra hôm qua tại trấn Phố Lý (埔里), huyện Nam Đầu (南投), Đài Loan. Một lao động nhập cư người Indonesia 50 tuổi lái xe phun thuốc trừ sâu trên con đường công nghiệp gần đường Bắc Thôn (北村路) thì bị nghi ngờ thao tác sai khiến xe mất lái, đâm vào đống đất bên đường và lật. Người lao động này không kịp nhảy ra khỏi xe và bị xe đè, nhân viên cứu hộ đến hiện trường thì nạn nhân đã ngừng thở và tim ngừng đập. Sau khi được đưa đến bệnh viện, nạn nhân đã được tuyên bố tử vong. Cảnh sát đã thông báo cho chủ lao động và những người liên quan để lấy lời khai, đồng thời báo cáo với прокурор để khám nghiệm tử thi và làm rõ nguyên nhân vụ tai nạn.</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="../images/202604120032.jpg" data-src="../images/202604120032.jpg" alt="" loading="lazy" id="news2-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news2-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- News Card 3 -->
+    <a href="https://www.cna.com.tw/news/afe/202604120020.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">03</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-intl" id="news3-tag">VI</span>
+            <span class="tag-source" id="news3-source">PID 202604120020</span>
+          </div>
+          <div class="news-card-title" id="news3-title">台積電強攻2奈米及更先進製程　根留台灣開枝散葉</div>
+          <div class="news-card-summary" id="news3-summary">TSMC tích cực phát triển quy trình 2 nanomet và các quy trình tiên tiến hơn, tiếp tục bám rễ ở Đài Loan. Dự kiến quy trình 2 nanomet sẽ đi vào sản xuất hàng loạt vào quý 4 năm 2025, N2P sẽ đi vào sản xuất hàng loạt vào nửa cuối năm nay và quy trình A16 cũng dự kiến sẽ đi vào sản xuất hàng loạt vào nửa cuối năm nay. Về quy trình tiên tiến A14 (1,4 nanomet), nhà máy A14 tại Khu Khoa học Trung tâm (Central Taiwan Science Park) đã được báo cáo khởi công vào tháng 10 năm 2025 và dự kiến sẽ đi vào sản xuất hàng loạt vào nửa cuối năm 2028. Nhà máy Wafer 20 ở Bảo Sơn, Tân Trúc (Hsinchu) và nhà máy Wafer 22 ở Cao Hùng (Kaohsiung) là những cơ sở quan trọng cho việc sản xuất hàng loạt quy trình 2 nanomet, đồng thời tích cực triển khai quy trình A16 và A14. Nhà máy Wafer 25 ở Đài Trung (Taichung) dự kiến sẽ bắt đầu xây dựng vào cuối năm 2025, chủ yếu tập trung vào các quy trình tiên tiến dưới 2 nanomet và không loại trừ việc lên kế hoạch cho quy trình tiên tiến A10 (1 nanomet). Về phía Đài Nam (Tainan), việc xây dựng nhà máy được lên kế hoạch tại Khu Khoa học Nam (Southern Taiwan Science Park), dự kiến sẽ khởi công trong năm nay và hoàn thành vào năm 2028. Nhà máy ở Arizona, Hoa Kỳ cũng đang mở rộng quy trình tiên tiến, nhà máy thứ hai dự kiến sẽ đi vào sản xuất hàng loạt vào nửa cuối năm 2027, nhà máy thứ ba đang được xây dựng và có kế hoạch xây dựng nhà máy thứ tư và nhà máy đóng gói tiên tiến.</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="../images/202604120020.jpg" data-src="../images/202604120020.jpg" alt="" loading="lazy" id="news3-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news3-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- News Card 4 -->
+    <a href="https://www.cna.com.tw/news/aipl/202604120024.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">04</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-intl" id="news4-tag">VI</span>
+            <span class="tag-source" id="news4-source">PID 202604120024</span>
+          </div>
+          <div class="news-card-title" id="news4-title">漢光42號兵推　情報單位首度納入演練編組</div>
+          <div class="news-card-summary" id="news4-summary">Cuộc diễn tập bàn cờ Hán Quang số 42 của quân đội Đài Loan sẽ diễn ra từ ngày 11 đến ngày 24 tháng 4, kéo dài 14 ngày 13 đêm. Trọng tâm của cuộc diễn tập bao gồm chỉ huy phi tập trung, ủy quyền hành động quân sự, hỗ trợ hậu cần và phối hợp giữa các bộ, ngành. Cuộc diễn tập tham khảo kinh nghiệm của quân đội Hoa Kỳ, tập trung vào &quot;báo cáo ngược&quot; và &quot;diễn tập kế hoạch&quot;. Năm nay, lần đầu tiên các đơn vị tình báo được đưa vào đội hình diễn tập bàn cờ, mô phỏng các hành động có thể xảy ra của quân đội Cộng sản, dự kiến các phương án đối phó. Ông Tô Tử Vân (Su Tzu-yun) từ Viện Nghiên cứu An ninh Quốc phòng cho biết, động thái này tham khảo thực tiễn của Cơ quan Tình báo Quốc phòng Hoa Kỳ, biên chế nhân viên tình báo vào các sở chỉ huy các cấp để thực hiện thu thập tình báo chiến trường, tăng cường năng lực tình báo nhân sự (HUMINT), nâng cao tính minh bạch của chiến trường, bù đắp những thiếu sót của trinh sát công nghệ và tối ưu hóa nghiệp vụ phân tích tình báo. Mô hình này nhằm mục đích hòa nhập với hệ thống quân đội Hoa Kỳ, cho phép các đơn vị tình báo nắm bắt chính xác nhu cầu thông tin của các đơn vị cơ sở.</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="../images/202604120024.jpg" data-src="../images/202604120024.jpg" alt="" loading="lazy" id="news4-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news4-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- News Card 5 -->
+    <a href="https://www.cna.com.tw/news/afe/202604120162.aspx" target="_blank" rel="noopener" style="display:block;">
+      <div class="news-card">
+        <div class="news-card-number">05</div>
+        <div class="news-card-body">
+          <div class="news-card-tags">
+            <span class="tag tag-intl" id="news5-tag">VI</span>
+            <span class="tag-source" id="news5-source">PID 202604120162</span>
+          </div>
+          <div class="news-card-title" id="news5-title">資安署強化關鍵基礎設施防護　聚焦醫療應對新興威脅</div>
+          <div class="news-card-summary" id="news5-summary">Cơ quan An ninh mạng (NCSA, trực thuộc chính phủ Đài Loan) tăng cường bảo vệ cơ sở hạ tầng trọng yếu, tập trung vào lĩnh vực y tế để ứng phó với các mối đe dọa mới nổi. Khóa học &quot;Lớp tinh hoa an ninh mạng cơ sở hạ tầng trọng yếu&quot; được tổ chức cho các lĩnh vực như y tế, diễn ra từ ngày 11 đến 12 tháng 4, với sự tham gia giảng dạy của các giảng viên trong lĩnh vực OT (Operational Technology - Công nghệ vận hành). Hơn 30 chuyên gia an ninh mạng, bao gồm nhân viên an ninh mạng từ 18 bệnh viện, đã tham gia khóa đào tạo. Khóa học tập trung vào lĩnh vực y tế, bao gồm diễn tập tấn công và phòng thủ mạng xuyên quốc gia năm 2025 (CODE 2025) trong lĩnh vực y tế và thiết bị y tế. Thông qua đào tạo thực hành, thảo luận nhóm và diễn tập, khóa học giúp tăng cường hiệu quả học tập về an ninh mạng. Trong những năm gần đây, nhà cung cấp dịch vụ y tế Change Healthcare của Hoa Kỳ và nhiều bệnh viện ở Đài Loan đã bị tấn công bởi tin tặc, ảnh hưởng đến thông tin sức khỏe của người dân và dịch vụ y tế. Cơ quan An ninh mạng nhấn mạnh rằng họ sẽ tiếp tục đầu tư vào việc đào tạo nhân tài an ninh mạng, xây dựng hệ sinh thái nhân tài thực chiến để bảo vệ và đảm bảo hoạt động bình thường của các cơ sở hạ tầng trọng yếu.</div>
+        </div>
+        <div class="news-card-thumb">
+          <img src="../images/202604120162.jpg" data-src="../images/202604120162.jpg" alt="" loading="lazy" id="news5-thumb" style="display:block;">
+          <div class="news-card-thumb-placeholder" id="news5-thumb-placeholder" style="display:none;">📰</div>
+        </div>
+      </div>
+    </a>
+
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="newsletter-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand" id="footer-brand">越南語讀者新聞精選</div>
+        <div class="footer-desc">
+          由 AI 新聞偵察系統自動整理，每小時更新。<br>
+          收錄來自各大媒體的重要新聞，提供快速摘要。
+        </div>
+      </div>
+      <div>
+        <div class="footer-links">
+          <a href="#">訂閱</a>
+          <a href="#">取消訂閱</a>
+          <a href="#">歷史期數</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 越南語讀者新聞精選 · 版權所有</span>
+      <span class="footer-generated" id="generated-at">🤖 Generated at 2026-04-13 09:52</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
