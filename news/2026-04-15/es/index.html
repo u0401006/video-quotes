@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Noticias de Taiwán en Español — 2026-04-15 精選新聞">
+  <title>Noticias de Taiwán en Español — 2026-04-15</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+                   "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: #f8f4ee;
+      color: #1a1008;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ===== PAGE WRAPPER ===== */
+    .page-wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 0 48px;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      background: #2a1c0f;
+      color: #f0e8d8;
+      padding: 28px 32px 22px;
+    }
+    .header-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .brand-name {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: #f5ead6;
+      line-height: 1.2;
+    }
+    .brand-tagline {
+      font-size: 11px;
+      color: #9a8468;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+    .header-meta {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .header-date {
+      font-size: 14px;
+      color: #c8b498;
+      font-weight: 500;
+    }
+    .header-count {
+      font-size: 11px;
+      color: #806850;
+      margin-top: 3px;
+    }
+    .header-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 12px;
+    }
+    .header-categories {
+      font-size: 12px;
+      color: #806850;
+      letter-spacing: 0.3px;
+    }
+    .header-categories strong {
+      color: #c8a878;
+    }
+
+    /* ===== SECTION LABEL ===== */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 24px 32px 0;
+    }
+    .section-label span {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #9b5a2a;
+      white-space: nowrap;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e5ddd3;
+    }
+
+    /* ===== STORY LIST ===== */
+    .story-list {
+      padding: 16px 32px 0;
+    }
+
+    /* ===== STORY CARD ===== */
+    .story-card {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid #ede5d8;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      transition: box-shadow 0.2s ease, transform 0.15s ease;
+    }
+    .story-card:hover {
+      box-shadow: 0 4px 20px rgba(60, 35, 10, 0.09);
+      transform: translateY(-2px);
+    }
+
+    /* Story image */
+    .story-image-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      background: linear-gradient(135deg, #f0e8de, #e8ddd0);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .story-image-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .story-card:hover .story-image-wrap img {
+      transform: scale(1.03);
+    }
+    .story-img-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f0e8de, #e4d8cc);
+      color: #c8b098;
+      font-size: 36px;
+    }
+    .story-category-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+
+    /* Category tag colors — warm palette */
+    .tag-politics { background: #fff0e8; color: #b04520; }
+    .tag-intl     { background: #fff8e8; color: #9a6010; }
+    .tag-finance  { background: #eef5e8; color: #3d7025; }
+    .tag-sports   { background: #fef0e0; color: #a04510; }
+    .tag-tech     { background: #f0ecf8; color: #6040a0; }
+    .tag-society  { background: #fdf0f4; color: #902848; }
+    .tag-default  { background: #f0ece4; color: #5c4830; }
+
+    /* Card body */
+    .story-body {
+      padding: 18px 20px 20px;
+    }
+    .story-meta {
+      margin-bottom: 8px;
+    }
+    .story-time {
+      font-size: 12px;
+      color: #9a8070;
+      font-weight: 400;
+    }
+    .story-title {
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.45;
+      color: #1a1008;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: color 0.15s ease;
+    }
+    .story-title:hover {
+      color: #9b5a2a;
+    }
+    .story-excerpt {
+      font-size: 14px;
+      color: #4a3828;
+      line-height: 1.75;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .read-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: none;
+      border: 1.5px solid #c8a878;
+      color: #9b5a2a;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .read-more-btn:hover {
+      background: #9b5a2a;
+      color: #ffffff;
+      border-color: #9b5a2a;
+    }
+    .read-more-btn::after {
+      content: '→';
+      font-size: 14px;
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    .lightbox.is-open {
+      visibility: visible;
+      opacity: 1;
+    }
+    .lb-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(28, 18, 8, 0.65);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+    .lb-panel {
+      position: relative;
+      background: #fffbf7;
+      border-radius: 12px;
+      max-width: 660px;
+      width: 100%;
+      max-height: 88vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 60px rgba(28, 18, 8, 0.3);
+      transform: translateY(16px) scale(0.98);
+      transition: transform 0.25s ease;
+      z-index: 1;
+    }
+    .lightbox.is-open .lb-panel {
+      transform: translateY(0) scale(1);
+    }
+    .lb-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      background: rgba(28, 18, 8, 0.07);
+      border: none;
+      border-radius: 50%;
+      font-size: 16px;
+      color: #5c4830;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      transition: background 0.15s ease, color 0.15s ease;
+      line-height: 1;
+    }
+    .lb-close:hover {
+      background: rgba(28, 18, 8, 0.14);
+      color: #1a1008;
+    }
+    .lb-scroll {
+      overflow-y: auto;
+      padding: 28px 30px 32px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .lb-scroll::-webkit-scrollbar { width: 4px; }
+    .lb-scroll::-webkit-scrollbar-track { background: #f0e8de; }
+    .lb-scroll::-webkit-scrollbar-thumb { background: #c8a878; border-radius: 2px; }
+
+    .lb-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .lb-category {
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .lb-time {
+      font-size: 12px;
+      color: #9a8070;
+    }
+    .lb-title {
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.4;
+      color: #1a1008;
+      margin-bottom: 18px;
+      padding-right: 28px;
+    }
+    .lb-image-wrap {
+      width: 100%;
+      padding-bottom: 56.25%;
+      position: relative;
+      background: linear-gradient(135deg, #f0e8de, #e4d8cc);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+    .lb-image-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .lb-body {
+      font-size: 15px;
+      color: #2d1e10;
+      line-height: 1.85;
+    }
+    .lb-body p { margin-bottom: 16px; }
+    .lb-body p:last-child { margin-bottom: 0; }
+    .lb-body strong { font-weight: 700; color: #1a1008; }
+    .lb-body a { color: #9b5a2a; text-decoration: underline; text-underline-offset: 3px; }
+    .lb-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 22px;
+      color: #9b5a2a;
+      font-size: 13px;
+      font-weight: 700;
+      border-bottom: 1.5px solid currentColor;
+      padding-bottom: 1px;
+      transition: opacity 0.15s ease;
+    }
+    .lb-source:hover { opacity: 0.7; }
+    .lb-source::after { content: '→'; }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: #2a1c0f;
+      color: #806850;
+      padding: 24px 32px;
+      margin-top: 8px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .footer-brand {
+      font-size: 15px;
+      font-weight: 800;
+      color: #c8b498;
+    }
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      font-size: 12px;
+    }
+    .footer-links a {
+      color: #806850;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .footer-links a:hover { color: #c8b498; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+    }
+    .footer-generated {
+      font-family: "SF Mono", "Fira Code", monospace;
+      font-size: 10px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .page-wrapper { padding-bottom: 32px; }
+      .site-header,
+      .story-list,
+      .section-label,
+      .site-footer { padding-left: 16px; padding-right: 16px; }
+      .header-top { flex-direction: column; }
+      .header-meta { text-align: left; }
+      .brand-name { font-size: 20px; }
+      .story-title { font-size: 16px; }
+      .lb-panel { border-radius: 8px; max-height: 92vh; }
+      .lb-scroll { padding: 22px 20px 24px; }
+      .lb-title { font-size: 19px; }
+      .lb-body { font-size: 14px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-top">
+      <div>
+        <div class="brand-name">Noticias de Taiwán en Español</div>
+        <div class="brand-tagline">AI 新聞精選 · 每小時更新</div>
+      </div>
+      <div class="header-meta">
+        <div class="header-date">2026-04-15</div>
+        <div class="header-count">6 則精選</div>
+      </div>
+    </div>
+    <hr class="header-divider">
+    <div class="header-categories">
+      涵蓋 <strong>economía, tecnología, diplomacia</strong>
+    </div>
+  </header>
+
+  <!-- ===== SECTION LABEL ===== -->
+  <div class="section-label">
+    <span>今日要聞</span>
+  </div>
+
+  <!-- ===== STORY LIST ===== -->
+  <main class="story-list" id="story-list">
+    <article class="story-card" data-id="1" data-category="Economía" data-time="2026-04-14 11:01" data-image="https://imgcdn.cna.com.tw/www/webphotos/WebCover/800/20260414/1777x1332_542640125879.jpg" data-source="https://www.cna.com.tw/news/afe/202604140048.aspx" data-tag-class="tag-finance">
+  <div class="story-image-wrap" onclick="openLightbox(1)">
+    <img src="https://imgcdn.cna.com.tw/www/webphotos/WebCover/800/20260414/1777x1332_542640125879.jpg" alt="台積電創2040元新天價　台股衝新高突破36200點" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-finance">Economía</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-14 11:01</time></div>
+    <h2 class="story-title" onclick="openLightbox(1)">台積電創2040元新天價　台股衝新高突破36200點</h2>
+    <p class="story-excerpt">TSMC marcó un nuevo máximo en 2.040 dólares taiwaneses y la bolsa de Taipéi superó los 36.200 puntos.</p>
+    <button class="read-more-btn" onclick="openLightbox(1)">Leer más</button>
+  </div>
+</article><article class="story-card" data-id="2" data-category="Economía" data-time="2026-04-14 13:42" data-image="https://imgcdn.cna.com.tw/www/webphotos/WebCover/800/20260414/1777x1332_135922707707.jpg" data-source="https://www.cna.com.tw/news/afe/202604140120.aspx" data-tag-class="tag-finance">
+  <div class="story-image-wrap" onclick="openLightbox(2)">
+    <img src="https://imgcdn.cna.com.tw/www/webphotos/WebCover/800/20260414/1777x1332_135922707707.jpg" alt="台股漲838點收36296點創新高　台積電、信驊創天價" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-finance">Economía</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-14 13:42</time></div>
+    <h2 class="story-title" onclick="openLightbox(2)">台股漲838點收36296點創新高　台積電、信驊創天價</h2>
+    <p class="story-excerpt">La bolsa taiwanesa subió 838 puntos y cerró en un récord de 36.296, con máximos históricos de TSMC y ASPEED.</p>
+    <button class="read-more-btn" onclick="openLightbox(2)">Leer más</button>
+  </div>
+</article><article class="story-card" data-id="3" data-category="Economía" data-time="2026-04-14 18:38" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260414/1152x768_wmky_0_C20260414000023.jpg" data-source="https://www.cna.com.tw/news/afe/202604140279.aspx" data-tag-class="tag-finance">
+  <div class="story-image-wrap" onclick="openLightbox(3)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260414/1152x768_wmky_0_C20260414000023.jpg" alt="台股上市櫃市值增加2.82兆元　攀至128.03兆元新高" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-finance">Economía</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-14 18:38</time></div>
+    <h2 class="story-title" onclick="openLightbox(3)">台股上市櫃市值增加2.82兆元　攀至128.03兆元新高</h2>
+    <p class="story-excerpt">La capitalización combinada de las empresas cotizadas en Taiwán aumentó en 2,82 billones de dólares taiwaneses y alcanzó un nuevo récord de 128,03 billones.</p>
+    <button class="read-more-btn" onclick="openLightbox(3)">Leer más</button>
+  </div>
+</article><article class="story-card" data-id="4" data-category="Tecnología" data-time="2026-04-14 18:12" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260414/1364x768_wmkn_0_C20260414000146.jpg" data-source="https://www.cna.com.tw/news/afe/202604140266.aspx" data-tag-class="tag-tech">
+  <div class="story-image-wrap" onclick="openLightbox(4)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260414/1364x768_wmkn_0_C20260414000146.jpg" alt="電信三雄搶進衛星布局　強化通訊韌性" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-tech">Tecnología</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-14 18:12</time></div>
+    <h2 class="story-title" onclick="openLightbox(4)">電信三雄搶進衛星布局　強化通訊韌性</h2>
+    <p class="story-excerpt">Las tres principales telecos de Taiwán aceleran su despliegue satelital para reforzar la resiliencia de las comunicaciones.</p>
+    <button class="read-more-btn" onclick="openLightbox(4)">Leer más</button>
+  </div>
+</article><article class="story-card" data-id="5" data-category="Industria" data-time="2026-04-14 11:38" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260414/1024x768_wmky_0_C20260414000051.jpg" data-source="https://www.cna.com.tw/news/afe/202604140061.aspx" data-tag-class="tag-tech">
+  <div class="story-image-wrap" onclick="openLightbox(5)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260414/1024x768_wmky_0_C20260414000051.jpg" alt="許介立：電電公會推海外4大科學園區　墨西哥進度較快" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-tech">Industria</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-14 11:38</time></div>
+    <h2 class="story-title" onclick="openLightbox(5)">許介立：電電公會推海外4大科學園區　墨西哥進度較快</h2>
+    <p class="story-excerpt">La asociación eléctrica y electrónica de Taiwán impulsa cuatro parques científicos en el exterior, con México avanzando más rápido.</p>
+    <button class="read-more-btn" onclick="openLightbox(5)">Leer más</button>
+  </div>
+</article><article class="story-card" data-id="6" data-category="Diplomacia" data-time="2026-04-14 13:51" data-image="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg" data-source="https://www.cna.com.tw/news/aipl/202604140126.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(6)">
+    <img src="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg" alt="林佳龍接見新任立陶宛代表　盼深化戰略產業合作" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-intl">Diplomacia</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-14 13:51</time></div>
+    <h2 class="story-title" onclick="openLightbox(6)">林佳龍接見新任立陶宛代表　盼深化戰略產業合作</h2>
+    <p class="story-excerpt">El canciller Lin Chia-lung recibió al nuevo representante de Lituania y expresó su interés en profundizar la cooperación en industrias estratégicas.</p>
+    <button class="read-more-btn" onclick="openLightbox(6)">Leer más</button>
+  </div>
+</article>
+  </main>
+
+  <!-- ===== HIDDEN FULL CONTENTS (read by lightbox JS) ===== -->
+  <div id="story-contents" style="display:none;">
+    <div id="story-content-1"><p>TSMC marcó un nuevo máximo en 2.040 dólares taiwaneses y la bolsa de Taipéi superó los 36.200 puntos.</p><p>2026年4月14日，在美國總統川普聲稱伊朗希望協議及台積電股價創下2040元新高下，台股盤中大漲逾700點，突破36200點歷史新高，電子、金融及傳產主要類股全面走強，成交額達新台幣5876億元。</p></div><div id="story-content-2"><p>La bolsa taiwanesa subió 838 puntos y cerró en un récord de 36.296, con máximos históricos de TSMC y ASPEED.</p><p>2026年4月14日，台股加權指數盤中最高達36341.44點，終場收在36296.12點，創歷史新高，成交值新台幣9717.31億元。台積電、信驊等權值股同創新天價，電子及多數產業類股同步走強。</p></div><div id="story-content-3"><p>La capitalización combinada de las empresas cotizadas en Taiwán aumentó en 2,82 billones de dólares taiwaneses y alcanzó un nuevo récord de 128,03 billones.</p><p>2026年04月14日，台股盤中與收盤加權指數、上市櫃公司總市值創歷史新高，外資買超689.08億元。台積電和信驊同步創新天價，台積電市值增至53.29兆元，貢獻大盤516點。</p></div><div id="story-content-4"><p>Las tres principales telecos de Taiwán aceleran su despliegue satelital para reforzar la resiliencia de las comunicaciones.</p><p>2026年4月14日，數位產業署主辦首屆「衛星數位應用創新大賽」結果揭曉，中華電信、台灣大哥大獲獎，展現衛星通訊、星地整合應用實力。Amazon Leo低軌衛星傳將來台，預計與遠傳合作。</p></div><div id="story-content-5"><p>La asociación eléctrica y electrónica de Taiwán impulsa cuatro parques científicos en el exterior, con México avanzando más rápido.</p><p>2026年4月14日，台灣電機電子工業同業公會副理事長許介立於台北表示，公會持續推動TEEMA科學園區於墨西哥、波蘭、美國與印度布局，並期盼中東戰事結束、國際油價回穩，降低全球經濟衝擊。</p></div><div id="story-content-6"><p>El canciller Lin Chia-lung recibió al nuevo representante de Lituania y expresó su interés en profundizar la cooperación en industrias estratégicas.</p><p>2026年4月13日，外交部長林佳龍於外交部接見新任立陶宛駐台代表裴凱倫，雙方討論深化經貿、半導體、人工智慧、綠能與無人機等戰略產業合作，共同提升全球民主供應鏈韌性，強調共享民主價值。</p></div>
+  </div>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lb-title">
+    <div class="lb-backdrop" id="lb-backdrop"></div>
+    <div class="lb-panel">
+      <button class="lb-close" id="lb-close" aria-label="關閉">✕</button>
+      <div class="lb-scroll" id="lb-scroll">
+        <div class="lb-meta">
+          <span class="lb-category tag-default" id="lb-category"></span>
+          <span class="lb-time" id="lb-time"></span>
+        </div>
+        <h2 class="lb-title" id="lb-title"></h2>
+        <div class="lb-image-wrap" id="lb-image-wrap">
+          <img id="lb-image" src="" alt="" loading="eager">
+        </div>
+        <div class="lb-body" id="lb-body"></div>
+        <a class="lb-source" id="lb-source" href="#" target="_blank" rel="noopener">查看原文</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">Noticias de Taiwán en Español</div>
+      <div class="footer-links">
+        <a href="https://u0401006.github.io/video-quotes/news/">歷史存檔</a>
+        <a href="#">訂閱電子報</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Noticias de Taiwán en Español · 版權所有</span>
+      <span class="footer-generated">Generated at 2026-04-15 18:18</span>
+    </div>
+  </footer>
+
+</div><!-- /.page-wrapper -->
+
+<script>
+  var TAG_CLASSES = {
+    '政治': 'tag-politics', '國內': 'tag-politics',
+    '國際': 'tag-intl',     '外交': 'tag-intl',
+    '財經': 'tag-finance',  '經濟': 'tag-finance',
+    '體育': 'tag-sports',
+    '科技': 'tag-tech',     '科學': 'tag-tech',
+    '社會': 'tag-society',  '生活': 'tag-society'
+  };
+
+  function openLightbox(id) {
+    var card = document.querySelector('.story-card[data-id="' + id + '"]');
+    var contentEl = document.getElementById('story-content-' + id);
+    if (!card) return;
+
+    var category  = card.dataset.category  || '';
+    var time      = card.dataset.time      || '';
+    var image     = card.dataset.image     || '';
+    var source    = card.dataset.source    || '';
+    var tagClass  = card.dataset.tagClass  || TAG_CLASSES[category] || 'tag-default';
+    var title     = card.querySelector('.story-title').textContent.trim();
+    var fullHtml  = contentEl ? contentEl.innerHTML : '';
+
+    // Populate lightbox fields
+    var catEl = document.getElementById('lb-category');
+    catEl.textContent = category;
+    catEl.className   = 'lb-category ' + tagClass;
+
+    document.getElementById('lb-time').textContent  = time;
+    document.getElementById('lb-title').textContent = title;
+    document.getElementById('lb-body').innerHTML    = fullHtml;
+
+    var imgWrap = document.getElementById('lb-image-wrap');
+    var imgEl   = document.getElementById('lb-image');
+    if (image) {
+      imgEl.src = image;
+      imgEl.alt = title;
+      imgWrap.style.display = 'block';
+    } else {
+      imgWrap.style.display = 'none';
+    }
+
+    var srcEl = document.getElementById('lb-source');
+    if (source) {
+      srcEl.href         = source;
+      srcEl.style.display = 'inline-flex';
+    } else {
+      srcEl.style.display = 'none';
+    }
+
+    // Scroll lightbox content to top
+    document.getElementById('lb-scroll').scrollTop = 0;
+
+    // Open with animation
+    var lb = document.getElementById('lightbox');
+    lb.classList.add('is-open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    var lb = document.getElementById('lightbox');
+    lb.classList.remove('is-open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Close on backdrop click
+  document.getElementById('lb-backdrop').addEventListener('click', closeLightbox);
+  // Close button
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  // ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body>
+</html>
