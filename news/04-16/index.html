@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Noticias Rápidas (CNA) — 04-16 精選新聞">
+  <title>Noticias Rápidas (CNA) — 04-16</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+                   "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: #f8f4ee;
+      color: #1a1008;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ===== PAGE WRAPPER ===== */
+    .page-wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 0 48px;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      background: #2a1c0f;
+      color: #f0e8d8;
+      padding: 28px 32px 22px;
+    }
+    .header-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .brand-name {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: #f5ead6;
+      line-height: 1.2;
+    }
+    .brand-tagline {
+      font-size: 11px;
+      color: #9a8468;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+    .header-meta {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .header-date {
+      font-size: 14px;
+      color: #c8b498;
+      font-weight: 500;
+    }
+    .header-count {
+      font-size: 11px;
+      color: #806850;
+      margin-top: 3px;
+    }
+    .header-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 12px;
+    }
+    .header-categories {
+      font-size: 12px;
+      color: #806850;
+      letter-spacing: 0.3px;
+    }
+    .header-categories strong {
+      color: #c8a878;
+    }
+
+    /* ===== SECTION LABEL ===== */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 24px 32px 0;
+    }
+    .section-label span {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #9b5a2a;
+      white-space: nowrap;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e5ddd3;
+    }
+
+    /* ===== STORY LIST ===== */
+    .story-list {
+      padding: 16px 32px 0;
+    }
+
+    /* ===== STORY CARD ===== */
+    .story-card {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid #ede5d8;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      transition: box-shadow 0.2s ease, transform 0.15s ease;
+    }
+    .story-card:hover {
+      box-shadow: 0 4px 20px rgba(60, 35, 10, 0.09);
+      transform: translateY(-2px);
+    }
+
+    /* Story image */
+    .story-image-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      background: linear-gradient(135deg, #f0e8de, #e8ddd0);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .story-image-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .story-card:hover .story-image-wrap img {
+      transform: scale(1.03);
+    }
+    .story-img-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f0e8de, #e4d8cc);
+      color: #c8b098;
+      font-size: 36px;
+    }
+    .story-category-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+
+    /* Category tag colors — warm palette */
+    .tag-politics { background: #fff0e8; color: #b04520; }
+    .tag-intl     { background: #fff8e8; color: #9a6010; }
+    .tag-finance  { background: #eef5e8; color: #3d7025; }
+    .tag-sports   { background: #fef0e0; color: #a04510; }
+    .tag-tech     { background: #f0ecf8; color: #6040a0; }
+    .tag-society  { background: #fdf0f4; color: #902848; }
+    .tag-default  { background: #f0ece4; color: #5c4830; }
+
+    /* Card body */
+    .story-body {
+      padding: 18px 20px 20px;
+    }
+    .story-meta {
+      margin-bottom: 8px;
+    }
+    .story-time {
+      font-size: 12px;
+      color: #9a8070;
+      font-weight: 400;
+    }
+    .story-title {
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.45;
+      color: #1a1008;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: color 0.15s ease;
+    }
+    .story-title:hover {
+      color: #9b5a2a;
+    }
+    .story-excerpt {
+      font-size: 14px;
+      color: #4a3828;
+      line-height: 1.75;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .read-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: none;
+      border: 1.5px solid #c8a878;
+      color: #9b5a2a;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .read-more-btn:hover {
+      background: #9b5a2a;
+      color: #ffffff;
+      border-color: #9b5a2a;
+    }
+    .read-more-btn::after {
+      content: '→';
+      font-size: 14px;
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    .lightbox.is-open {
+      visibility: visible;
+      opacity: 1;
+    }
+    .lb-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(28, 18, 8, 0.65);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+    .lb-panel {
+      position: relative;
+      background: #fffbf7;
+      border-radius: 12px;
+      max-width: 660px;
+      width: 100%;
+      max-height: 88vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 60px rgba(28, 18, 8, 0.3);
+      transform: translateY(16px) scale(0.98);
+      transition: transform 0.25s ease;
+      z-index: 1;
+    }
+    .lightbox.is-open .lb-panel {
+      transform: translateY(0) scale(1);
+    }
+    .lb-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      background: rgba(28, 18, 8, 0.07);
+      border: none;
+      border-radius: 50%;
+      font-size: 16px;
+      color: #5c4830;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      transition: background 0.15s ease, color 0.15s ease;
+      line-height: 1;
+    }
+    .lb-close:hover {
+      background: rgba(28, 18, 8, 0.14);
+      color: #1a1008;
+    }
+    .lb-scroll {
+      overflow-y: auto;
+      padding: 28px 30px 32px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .lb-scroll::-webkit-scrollbar { width: 4px; }
+    .lb-scroll::-webkit-scrollbar-track { background: #f0e8de; }
+    .lb-scroll::-webkit-scrollbar-thumb { background: #c8a878; border-radius: 2px; }
+
+    .lb-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .lb-category {
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .lb-time {
+      font-size: 12px;
+      color: #9a8070;
+    }
+    .lb-title {
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.4;
+      color: #1a1008;
+      margin-bottom: 18px;
+      padding-right: 28px;
+    }
+    .lb-image-wrap {
+      width: 100%;
+      padding-bottom: 56.25%;
+      position: relative;
+      background: linear-gradient(135deg, #f0e8de, #e4d8cc);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+    .lb-image-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .lb-body {
+      font-size: 15px;
+      color: #2d1e10;
+      line-height: 1.85;
+    }
+    .lb-body p { margin-bottom: 16px; }
+    .lb-body p:last-child { margin-bottom: 0; }
+    .lb-body strong { font-weight: 700; color: #1a1008; }
+    .lb-body a { color: #9b5a2a; text-decoration: underline; text-underline-offset: 3px; }
+    .lb-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 22px;
+      color: #9b5a2a;
+      font-size: 13px;
+      font-weight: 700;
+      border-bottom: 1.5px solid currentColor;
+      padding-bottom: 1px;
+      transition: opacity 0.15s ease;
+    }
+    .lb-source:hover { opacity: 0.7; }
+    .lb-source::after { content: '→'; }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: #2a1c0f;
+      color: #806850;
+      padding: 24px 32px;
+      margin-top: 8px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .footer-brand {
+      font-size: 15px;
+      font-weight: 800;
+      color: #c8b498;
+    }
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      font-size: 12px;
+    }
+    .footer-links a {
+      color: #806850;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .footer-links a:hover { color: #c8b498; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+    }
+    .footer-generated {
+      font-family: "SF Mono", "Fira Code", monospace;
+      font-size: 10px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .page-wrapper { padding-bottom: 32px; }
+      .site-header,
+      .story-list,
+      .section-label,
+      .site-footer { padding-left: 16px; padding-right: 16px; }
+      .header-top { flex-direction: column; }
+      .header-meta { text-align: left; }
+      .brand-name { font-size: 20px; }
+      .story-title { font-size: 16px; }
+      .lb-panel { border-radius: 8px; max-height: 92vh; }
+      .lb-scroll { padding: 22px 20px 24px; }
+      .lb-title { font-size: 19px; }
+      .lb-body { font-size: 14px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-top">
+      <div>
+        <div class="brand-name">Noticias Rápidas (CNA)</div>
+        <div class="brand-tagline">AI 新聞精選 · 每小時更新</div>
+      </div>
+      <div class="header-meta">
+        <div class="header-date">04-16</div>
+        <div class="header-count">20 則精選</div>
+      </div>
+    </div>
+    <hr class="header-divider">
+    <div class="header-categories">
+      涵蓋 <strong>社會, 其他, 財經, 國內, 政治</strong>
+    </div>
+  </header>
+
+  <!-- ===== SECTION LABEL ===== -->
+  <div class="section-label">
+    <span>今日要聞</span>
+  </div>
+
+  <!-- ===== STORY LIST ===== -->
+  <main class="story-list" id="story-list">
+    
+<article class="story-card" data-id="1" data-category="財經" data-time="2026-04-16 14:59" data-image="https://imgcdn.cna.com.tw/www/webphotos/WebOg/600/20260416/1199x629_0992357720.jpg" data-source="https://www.cna.com.tw/news/afe/202604160185.aspx" data-tag-class="tag-finance">
+  <div class="story-image-wrap" onclick="openLightbox(1)">
+    <img src="https://imgcdn.cna.com.tw/www/webphotos/WebOg/600/20260416/1199x629_0992357720.jpg" alt="Fuerte demanda de IA impulsa a TSMC: estima un aumento del 10% en los ingresos del segundo trimestre y un crecimiento anual de más del 30%" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-finance">財經</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 14:59</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(1)">Fuerte demanda de IA impulsa a TSMC: estima un aumento del 10% en los ingresos del segundo trimestre y un crecimiento anual de más del 30%</h2>
+    <p class="story-excerpt">El presidente de TSMC, Wei Che-chia, declaró en la conferencia de inversores que los ingresos del primer trimestre superaron ligeramente las expectativas, impulsados por la fuerte demanda de tecnología de procesos de vanguardia.</p>
+    <button class="read-more-btn" onclick="openLightbox(1)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="2" data-category="財經" data-time="2026-04-16 15:24" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1152x768_wmky_0_C20260416000116.jpg" data-source="https://www.cna.com.tw/news/afe/202604160196.aspx" data-tag-class="tag-finance">
+  <div class="story-image-wrap" onclick="openLightbox(2)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1152x768_wmky_0_C20260416000116.jpg" alt="TSMC planea la fabricación de empaquetado avanzado CoPoS; se espera el cronograma de producción en masa" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-finance">財經</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 15:24</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(2)">TSMC planea la fabricación de empaquetado avanzado CoPoS; se espera el cronograma de producción en masa</h2>
+    <p class="story-excerpt">El presidente de TSMC, C.C. Wei, dijo que la compañía está expandiendo la capacidad de empaquetado avanzado CoWoS para garantizar el suministro y respaldar las necesidades de los clientes a un costo razonable.</p>
+    <button class="read-more-btn" onclick="openLightbox(2)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="3" data-category="財經" data-time="2026-04-16 18:43" data-image="https://imgcdn.cna.com.tw/www/webphotos/WebOg/600/20260416/1151x604_252012029486.jpg" data-source="https://www.cna.com.tw/news/afe/202604160319.aspx" data-tag-class="tag-finance">
+  <div class="story-image-wrap" onclick="openLightbox(3)">
+    <img src="https://imgcdn.cna.com.tw/www/webphotos/WebOg/600/20260416/1151x604_252012029486.jpg" alt="Fuerte demanda de IA impulsa el crecimiento de TSMC en más del 30%: puntos clave de la conferencia de resultados" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-finance">財經</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 18:43</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(3)">Fuerte demanda de IA impulsa el crecimiento de TSMC en más del 30%: puntos clave de la conferencia de resultados</h2>
+    <p class="story-excerpt">La conferencia de resultados de TSMC ha revelado mensajes positivos, con ingresos, margen de beneficio bruto y margen de beneficio operativo del primer trimestre mejores de lo esperado. Los ingresos y las ganancias alcanzaron nuevos máximos, con una ganancia por acción de 22,08 NTD.</p>
+    <button class="read-more-btn" onclick="openLightbox(3)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="4" data-category="財經" data-time="2026-04-16 19:32" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260417/1200x775_wmky_579726148334_202407290191000000.jpg" data-source="https://www.cna.com.tw/news/afe/202604160335.aspx" data-tag-class="tag-finance">
+  <div class="story-image-wrap" onclick="openLightbox(4)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260417/1200x775_wmky_579726148334_202407290191000000.jpg" alt="El Ministerio de Desarrollo Digital anuncia la construcción de un centro de capacidad de cómputo para IA bajo el modelo BOO para construir la infraestructura digital nacional" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-finance">財經</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 19:32</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(4)">El Ministerio de Desarrollo Digital anuncia la construcción de un centro de capacidad de cómputo para IA bajo el modelo BOO para construir la infraestructura digital nacional</h2>
+    <p class="story-excerpt">El Ministerio de Desarrollo Digital (MODD) ha anunciado el proyecto BOO (Build-Own-Operate, Construir-Poseer-Operar) para un centro de capacidad de cómputo para Inteligencia Artificial (IA), incorporando dicho centro a la importante construcción pública digital y promoviéndolo bajo el modelo BOO.</p>
+    <button class="read-more-btn" onclick="openLightbox(4)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="5" data-category="財經" data-time="2026-04-16 11:46" data-image="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg" data-source="https://www.cna.com.tw/news/afe/202604160083.aspx" data-tag-class="tag-finance">
+  <div class="story-image-wrap" onclick="openLightbox(5)">
+    <img src="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg" alt="El Consejo Nacional de Desarrollo: El "Gran Valle del Silicio" de Taoyuan-Hsinchu-Miaoli muestra resultados y acelera la actualización de la IA y los semiconductores" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-finance">財經</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 11:46</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(5)">El Consejo Nacional de Desarrollo: El "Gran Valle del Silicio" de Taoyuan-Hsinchu-Miaoli muestra resultados y acelera la actualización de la IA y los semiconductores</h2>
+    <p class="story-excerpt">El Consejo Nacional de Desarrollo (CND) ha declarado que el "Plan de Promoción del Gran Valle del Silicio de Taoyuan-Hsinchu-Miaoli" ha demostrado su eficacia, contribuyendo a acelerar la actualización de las industrias de la IA y los semiconductores.    Desde su lanzamiento, el plan ha ayudado a más de 1400 empresas a implementar aplicaciones de IA y ha facilitado varias inversiones, incluyendo la introducción de la tecnología de IA en la industria del automóvil y la investigación y desarrollo de semiconductores de compuestos y nuevos fármacos.    Hasta marzo de 2026 (115 según el calendario taiwanés), el Fondo Nacional de Desarrollo ha invertido en 208 empresas en la región de Taoyuan-Hsinchu-Miaoli, con una inversión acumulada de 5271 millones de NTD (dólares taiwaneses). Además, el gobierno, a través de la plataforma de industrialización de la investigación científica, ha facilitado la transferencia de tecnología y la cooperación entre la industria y la academia, y ha cultivado muchas pequeñas y medianas empresas.    En cuanto al cultivo de talento, a través de los Colegios de Investigación de Áreas Clave Nacionales y los mecanismos de cooperación industria-academia, se han formado 5410 talentos en áreas clave. El Consejo Nacional de Ciencia y Tecnología (CNCT) ha completado la evaluación de viabilidad del proyecto de expansión del Parque Científico de Longtan, y los gobiernos de los condados y ciudades de Taoyuan, Hsinchu y Miaoli también están promoviendo el desarrollo de más de 20 parques industriales.    Además, el CND también ha aprobado el plan general de mejora y adaptación de la cuenca hidrográfica gestionada centralmente por el Ministerio de Economía para hacer frente a los desafíos climáticos extremos y fortalecer la capacidad de prevención de inundaciones y adaptación de la cuenca.</p>
+    <button class="read-more-btn" onclick="openLightbox(5)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="6" data-category="財經" data-time="2026-04-16 20:14" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1365x768_wmkn_0_C20260416000160.jpg" data-source="https://www.cna.com.tw/news/afe/202604160351.aspx" data-tag-class="tag-finance">
+  <div class="story-image-wrap" onclick="openLightbox(6)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1365x768_wmkn_0_C20260416000160.jpg" alt="Hotech lanza tres robots con IA para posicionarse en el mercado taiwanés de automatización inteligente" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-finance">財經</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 20:14</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(6)">Hotech lanza tres robots con IA para posicionarse en el mercado taiwanés de automatización inteligente</h2>
+    <p class="story-excerpt">Hotech, en colaboración con Pudu Robotics, ha celebrado una presentación de nuevos productos en la que ha lanzado tres robots inteligentes con IA, con el objetivo de posicionarse en el mercado taiwanés de automatización inteligente.  El vicepresidente de Hotech, Chang Yi-Sheng, ha declarado que, a través de la cooperación con empresas de robótica, la tecnología de IA se transformará en soluciones que las empresas puedan implementar de inmediato.  Hotech se centra en tres áreas principales: fabricación inteligente, logística inteligente y servicios inteligentes, proporcionando soluciones robóticas integrales. Los nuevos productos incluyen: un robot de limpieza de suelos grande con IA equipado con un sistema de percepción visual 3D, adecuado para entornos complejos como aparcamientos; un robot cuadrúpedo de navegación autónoma con especificaciones de protección industrial IP67, adecuado para la inspección industrial y la protección de la seguridad, capaz de adaptarse a diversos terrenos; y un robot de distribución industrial de carga ligera de 150 kg, que junto con los modelos existentes, constituye una secuencia de carga completa para satisfacer las necesidades de diferentes industrias.</p>
+    <button class="read-more-btn" onclick="openLightbox(6)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="7" data-category="政治" data-time="2026-04-16 18:18" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1024x768_wmkn_0_C20260416000125.jpg" data-source="https://www.cna.com.tw/news/aipl/202604160305.aspx" data-tag-class="tag-politics">
+  <div class="story-image-wrap" onclick="openLightbox(7)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1024x768_wmkn_0_C20260416000125.jpg" alt="Concluye simulación TTX de política, economía y defensa: preocupa la reducción del espacio de autonomía estratégica de los semiconductores" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-politics">政治</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 18:18</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(7)">Concluye simulación TTX de política, economía y defensa: preocupa la reducción del espacio de autonomía estratégica de los semiconductores</h2>
+    <p class="story-excerpt">Concluyó la "Simulación de la situación política, económica, militar y anímica TTX 2026", organizada por la Universidad Nacional Chengchi (政大) y otras instituciones. Se simularon escenarios como el bloqueo del PCCh (Partido Comunista Chino) a Kinmen y Matsu, conflictos con la Guardia Costera, ataques con drones y sabotaje de la quinta columna, destacando múltiples deficiencias en el marco legal de Taiwán, la reserva de información y comunicaciones, la atención médica en tiempos de guerra y la protección de la infraestructura.</p>
+    <button class="read-more-btn" onclick="openLightbox(7)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="8" data-category="政治" data-time="2026-04-16 18:03" data-image="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg" data-source="https://www.cna.com.tw/news/aipl/202604160296.aspx" data-tag-class="tag-politics">
+  <div class="story-image-wrap" onclick="openLightbox(8)">
+    <img src="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg" alt="Simulación de reabastecimiento de suministros en tiempos de guerra con C-130H: Ejercicios de lanzamiento aéreo en todo Taiwán a partir del 21" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-politics">政治</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 18:03</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(8)">Simulación de reabastecimiento de suministros en tiempos de guerra con C-130H: Ejercicios de lanzamiento aéreo en todo Taiwán a partir del 21</h2>
+    <p class="story-excerpt">Para fortalecer la logística en tiempos de guerra y la capacidad de suministro de materiales en caso de desastres naturales, la Fuerza Aérea movilizará aviones de transporte C-130H del 21 de abril al 9 de junio, en coordinación con el Ejército, para llevar a cabo ejercicios de lanzamiento aéreo en todo Taiwán.</p>
+    <button class="read-more-btn" onclick="openLightbox(8)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="9" data-category="政治" data-time="2026-04-16 18:58" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/2000x1334_wmky_75803095318648_202604100038000000.jpg" data-source="https://www.cna.com.tw/news/aipl/202604160325.aspx" data-tag-class="tag-politics">
+  <div class="story-image-wrap" onclick="openLightbox(9)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/2000x1334_wmky_75803095318648_202604100038000000.jpg" alt="Funcionario de seguridad nacional: Pekín utiliza la reunión de Zheng y Xi para propagar la oposición de Taiwán a Japón, Estados Unidos y la compra de armas" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-politics">政治</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 18:58</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(9)">Funcionario de seguridad nacional: Pekín utiliza la reunión de Zheng y Xi para propagar la oposición de Taiwán a Japón, Estados Unidos y la compra de armas</h2>
+    <p class="story-excerpt">Un funcionario de seguridad nacional señaló que, tras la "reunión de Zheng y Xi", Pekín está impulsando simultáneamente tres ejes principales de propaganda externa: "anti-Japón, anti-Estados Unidos y anti-compra de armas". A través de la interacción "partido a partido" con los partidos de la oposición de Taiwán, proporciona respaldo taiwanés a narrativas relacionadas, con la intención de remodelar la narrativa de la cuestión del Estrecho de Taiwán a nivel internacional y allanar el camino para una reunión entre los líderes de Estados Unidos y China.</p>
+    <button class="read-more-btn" onclick="openLightbox(9)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="10" data-category="政治" data-time="2026-04-16 16:59" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1024x768_wmkn_0_C20260416000096.jpg" data-source="https://www.cna.com.tw/news/aopl/202604160251.aspx" data-tag-class="tag-politics">
+  <div class="story-image-wrap" onclick="openLightbox(10)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1024x768_wmkn_0_C20260416000096.jpg" alt="Simposio sobre seguridad de cables submarinos entre Taiwán, EE. UU. y Portugal: Huang Sheng-hsiung advierte sobre la estrategia de fusión cívico-militar de China y Rusia" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-politics">政治</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 16:59</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(10)">Simposio sobre seguridad de cables submarinos entre Taiwán, EE. UU. y Portugal: Huang Sheng-hsiung advierte sobre la estrategia de fusión cívico-militar de China y Rusia</h2>
+    <p class="story-excerpt">La Fundación Luso-Americana para el Desarrollo y la Embajada de Estados Unidos en Portugal organizaron un simposio sobre seguridad de cables submarinos en Lisboa para discutir el comercio, la competencia, la seguridad y la cooperación en torno a los cables submarinos.    El embajador estadounidense, Randi Charno Levine, enfatizó que proteger a los ciudadanos estadounidenses, fortalecer la cooperación en defensa, equilibrar el comercio y contrarrestar las influencias malignas de China y Rusia son sus principales prioridades, y que el tema de los cables submarinos abarca estas áreas. Señaló que el 95% del tráfico de datos global se transmite a través de cables submarinos, y que la ubicación geográfica de Portugal es clave, ya que aproximadamente una cuarta parte de los cables submarinos globales se conectan a través de Portugal.    Huang Sheng-hsiung compartió la experiencia de Taiwán, advirtiendo que la estrategia de fusión cívico-militar de China y Rusia podría dañar la infraestructura y perjudicar la seguridad nacional. Mencionó que las fallas en los cables submarinos afectan las comunicaciones de internet y el comando militar, y sugirió explorar rutas de comunicación diversificadas.    Nagos Angos sugirió que la industria y los responsables políticos cooperen para aumentar la redundancia de los cables submarinos, reducir el riesgo de interrupción de un solo cable y establecer un sistema regulatorio estable. Bruno Bragança enfatizó la necesidad de mejorar la conciencia del dominio marítimo y acelerar la toma de decisiones.</p>
+    <button class="read-more-btn" onclick="openLightbox(10)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="11" data-category="其他" data-time="2026-04-16 19:14" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1024x768_wmky_0_C20260416000161.jpg" data-source="https://www.cna.com.tw/news/acn/202604160331.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(11)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1024x768_wmky_0_C20260416000161.jpg" alt="China abre el turismo individual a Taiwán desde Shanghái y Fujian; el Consejo para Asuntos de China Continental dice que espera un anuncio claro" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-default">其他</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 19:14</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(11)">China abre el turismo individual a Taiwán desde Shanghái y Fujian; el Consejo para Asuntos de China Continental dice que espera un anuncio claro</h2>
+    <p class="story-excerpt">La Oficina de Asuntos de Taiwán del Comité Central del PCCh anunció "10 medidas para promover los intercambios y la cooperación entre ambos lados del Estrecho", incluyendo la promoción de la reanudación de los programas piloto de turismo individual a Taiwán para los residentes de Shanghái y la provincia de Fujian, así como la reanudación total de la normalización de los vuelos directos de pasajeros entre ambos lados del Estrecho.</p>
+    <button class="read-more-btn" onclick="openLightbox(11)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="12" data-category="其他" data-time="2026-04-16 17:44" data-image="https://imgcdn.cna.com.tw/www/webphotos/WebCover/800/20260416/1999x1498_822066784339.jpg" data-source="https://www.cna.com.tw/news/asoc/202604160282.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(12)">
+    <img src="https://imgcdn.cna.com.tw/www/webphotos/WebCover/800/20260416/1999x1498_822066784339.jpg" alt="Acusados dos taiwaneses por presuntamente ayudar al Grupo Inspur de China a captar talentos ilegalmente" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-default">其他</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 17:44</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(12)">Acusados dos taiwaneses por presuntamente ayudar al Grupo Inspur de China a captar talentos ilegalmente</h2>
+    <p class="story-excerpt">La Fiscalía del Distrito de Nueva Taipéi ha acusado a dos hombres, de apellido Chen y Huang, de ayudar presuntamente al Grupo Inspur de China a captar ilegalmente talentos de alta tecnología en Taiwán.</p>
+    <button class="read-more-btn" onclick="openLightbox(12)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="13" data-category="財經" data-time="2026-04-16 19:59" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1200x900_wmky_868065972036_202504240159000000.jpg" data-source="https://www.cna.com.tw/news/afe/202604160347.aspx" data-tag-class="tag-finance">
+  <div class="story-image-wrap" onclick="openLightbox(13)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1200x900_wmky_868065972036_202504240159000000.jpg" alt="Comisión de Supervisión Financiera: Holdings financieros y bancos deben establecer comités de nominación para fortalecer el gobierno corporativo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-finance">財經</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 19:59</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(13)">Comisión de Supervisión Financiera: Holdings financieros y bancos deben establecer comités de nominación para fortalecer el gobierno corporativo</h2>
+    <p class="story-excerpt">La Comisión de Supervisión Financiera (FSC, siglas en inglés) planea enmendar el código de prácticas de gobierno corporativo para fortalecer el gobierno corporativo de los holdings financieros y la industria bancaria, requiriendo que "deban" establecer comités de nominación, con directores independientes que sirvan como la mayoría de los miembros y el presidente.</p>
+    <button class="read-more-btn" onclick="openLightbox(13)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="14" data-category="社會" data-time="2026-04-16 19:18" data-image="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg" data-source="https://www.cna.com.tw/news/ahel/202604160332.aspx" data-tag-class="tag-society">
+  <div class="story-image-wrap" onclick="openLightbox(14)">
+    <img src="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg" alt="Taiwán refuerza la lucha contra el "lavado verde": el Ministerio de Medio Ambiente y la Comisión de Supervisión Financiera planean ajustar los indicadores de finanzas sostenibles" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-society">社會</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 19:18</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(14)">Taiwán refuerza la lucha contra el "lavado verde": el Ministerio de Medio Ambiente y la Comisión de Supervisión Financiera planean ajustar los indicadores de finanzas sostenibles</h2>
+    <p class="story-excerpt">El Ministerio de Medio Ambiente y la Comisión de Supervisión Financiera (FSC, por sus siglas en inglés) de Taiwán están colaborando para ajustar los indicadores de finanzas sostenibles, fortalecer los mecanismos contra el "lavado verde" (greenwashing) y simplificar los procesos de verificación de la cadena de suministro para las empresas.</p>
+    <button class="read-more-btn" onclick="openLightbox(14)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="15" data-category="社會" data-time="2026-04-16 20:08" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1024x768_wmky_0_C20260416000149.jpg" data-source="https://www.cna.com.tw/news/ahel/202604160350.aspx" data-tag-class="tag-society">
+  <div class="story-image-wrap" onclick="openLightbox(15)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1024x768_wmky_0_C20260416000149.jpg" alt="EVA Air celebra 35 años de la ruta Taoyuan-Viena: 35 vuelos semanales a Europa" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-society">社會</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 20:08</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(15)">EVA Air celebra 35 años de la ruta Taoyuan-Viena: 35 vuelos semanales a Europa</h2>
+    <p class="story-excerpt">La ruta Taoyuan-Viena de EVA Air cumple 35 años, ofreciendo actualmente 35 vuelos semanales de ida y vuelta a Europa.</p>
+    <button class="read-more-btn" onclick="openLightbox(15)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="16" data-category="其他" data-time="2026-04-16 20:31" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1152x768_wmkn_0_C20260416000165.jpg" data-source="https://www.cna.com.tw/news/acul/202604160358.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(16)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1152x768_wmkn_0_C20260416000165.jpg" alt="Cambio de directores artísticos en el Centro Nacional de Artes Escénicas y la Ópera Nacional de Taichung: Chiu Yuan y Lee Hui-mei asumen sus cargos" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-default">其他</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 20:31</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(16)">Cambio de directores artísticos en el Centro Nacional de Artes Escénicas y la Ópera Nacional de Taichung: Chiu Yuan y Lee Hui-mei asumen sus cargos</h2>
+    <p class="story-excerpt">El Centro Nacional de Artes Escénicas (NPAC, siglas en inglés) ha anunciado el nombramiento de los nuevos directores artísticos. Chiu Yuan asume el cargo de directora artística del Centro Nacional de Teatro y Conciertos (National Theater and Concert Hall), puesto que antes ocupaba Lee Hui-mei, quien la sustituye.      Chien Wen-pin continuará como director artístico del Centro Nacional de Artes de Kaohsiung - Weiwuying. La ceremonia de toma de posesión tendrá lugar el 20 de abril en Weiwuying.      Chiu Yuan era la directora artística general de la Ópera Nacional de Taichung. Este cambio de personal supone un traslado de puesto. La ceremonia de toma de posesión de Chien Wen-pin se celebrará en Weiwuying debido a los ensayos de un concierto.</p>
+    <button class="read-more-btn" onclick="openLightbox(16)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="17" data-category="其他" data-time="2026-04-16 20:08" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1209x768_wmky_0_C20260416000097.jpg" data-source="https://www.cna.com.tw/news/acul/202604160349.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(17)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1209x768_wmky_0_C20260416000097.jpg" alt="Exposición "Caminata por la Tierra" en el Festival Literario de Taipéi: 8 escritores guían el descubrimiento de la memoria de la tierra" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-default">其他</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 20:08</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(17)">Exposición "Caminata por la Tierra" en el Festival Literario de Taipéi: 8 escritores guían el descubrimiento de la memoria de la tierra</h2>
+    <p class="story-excerpt">La exposición "Caminata por la Tierra" del Festival Literario de Taipéi se exhibirá del 18 de abril al 17 de mayo en el distrito histórico de Bopiliao.  Organizada por el Departamento de Cultura de la ciudad de Taipéi y gestionada por la revista Wenxun, la exposición invita a ocho escritores, incluyendo a Cheng Ting Apyang Imiq, Li Lu, Lin Li-ching, Hsu Chen-fu, Chen Hao-jen, Deng Jiu-yun, Lo I-shan y Yen Chung-hsien, a explorar varios lugares de Taipéi, como el Parque Forestal Daan, Neihu Tatayou, Wanhua, la llanura de Guandu, Guizikeng, Wenshan y Yangmingshan.  La sección "Asuntos de la Tierra" presentará sus creaciones literarias sobre la tierra, mientras que la sección "Obras de la Tierra" compartirá su conocimiento y sentimientos sobre el suelo. La exposición ofrecerá "Notas de Campo" para animar al público a registrar sus observaciones de la tierra.  A través de la perspectiva de los escritores, la exposición busca descubrir y presentar la memoria y las historias de la tierra de Taipéi.</p>
+    <button class="read-more-btn" onclick="openLightbox(17)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="18" data-category="其他" data-time="2026-04-16 18:11" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1217x768_wmkn_0_C20260416000124.jpg" data-source="https://www.cna.com.tw/news/acul/202604160300.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(18)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1217x768_wmkn_0_C20260416000124.jpg" alt="Fallece Lin Huang-jiao, conservadora del tejido de junco de Taitung; el Ministerio de Cultura emitirá un certificado de reconocimiento" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-default">其他</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 18:11</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(18)">Fallece Lin Huang-jiao, conservadora del tejido de junco de Taitung; el Ministerio de Cultura emitirá un certificado de reconocimiento</h2>
+    <p class="story-excerpt">Falleció Lin Huang-jiao, conservadora del tejido de junco de Taitung, a una edad avanzada.</p>
+    <button class="read-more-btn" onclick="openLightbox(18)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="19" data-category="社會" data-time="2026-04-16 20:19" data-image="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg" data-source="https://www.cna.com.tw/news/ahel/202604160355.aspx" data-tag-class="tag-society">
+  <div class="story-image-wrap" onclick="openLightbox(19)">
+    <img src="https://imgcdn.cna.com.tw/www/images/pic_fb.jpg" alt="Aumento de autolesiones entre estudiantes: Ministerio de Educación coordinará con otros ministerios la derivación a servicios de salud mental" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-society">社會</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 20:19</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(19)">Aumento de autolesiones entre estudiantes: Ministerio de Educación coordinará con otros ministerios la derivación a servicios de salud mental</h2>
+    <p class="story-excerpt">La Federación Nacional de Sindicatos de Docentes (全教產) citó estadísticas del Ministerio de Educación (教育部) que indican que los casos notificados de suicidio y autolesión entre estudiantes de todos los niveles educativos aumentaron de 1.155 en el año fiscal 2016 a 20.271 en el año fiscal 2024.      La Federación Nacional de Sindicatos de Docentes sugirió tomar como referencia el modelo "Girasol" (向日葵學園), que permite la colaboración entre los sistemas médico y educativo para proporcionar un espacio de transición donde la terapia y el aprendizaje coexistan.      El Ministerio de Educación respondió que ya está cooperando con el Ministerio de Salud y Bienestar Social (衛福部) para proporcionar una intervención temprana de salud mental para los estudiantes con problemas emocionales y de conducta graves. A través de la coordinación interministerial, el Ministerio de Salud y Bienestar Social evaluará los recursos médicos y fortalecerá la conexión entre el apoyo médico y educativo.      El Ministerio de Educación declaró que proporciona orientación de tres niveles de acuerdo con la "Ley de Orientación Estudiantil" (學生輔導法) y ha establecido el "Centro de Servicios de Apoyo al Comportamiento Emocional de Estudiantes de Educación Especial" (特殊教育學生情緒行為支持服務中心), subsidiando a los gobiernos locales para establecer equipos de apoyo para problemas de comportamiento emocional.</p>
+    <button class="read-more-btn" onclick="openLightbox(19)">看全文</button>
+  </div>
+</article>
+
+
+<article class="story-card" data-id="20" data-category="國內" data-time="2026-04-16 13:57" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1150x768_wmky_0_C20260416000084.jpg" data-source="https://www.cna.com.tw/news/aloc/202604160154.aspx" data-tag-class="tag-politics">
+  <div class="story-image-wrap" onclick="openLightbox(20)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260416/1150x768_wmky_0_C20260416000084.jpg" alt="Nueva Taipei impulsa "Doctor Car" para mejorar la tasa de supervivencia con médicos in situ" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-politics">國內</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-16 13:57</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(20)">Nueva Taipei impulsa "Doctor Car" para mejorar la tasa de supervivencia con médicos in situ</h2>
+    <p class="story-excerpt">El Departamento de Bomberos de Nueva Taipei, en colaboración con el Hospital Far Eastern Memorial, ha implementado el sistema "Doctor Car" (Coche Médico), permitiendo que los médicos lleguen al lugar de los incidentes de inmediato para brindar apoyo y aumentar la tasa de supervivencia de pacientes en estado crítico.</p>
+    <button class="read-more-btn" onclick="openLightbox(20)">看全文</button>
+  </div>
+</article>
+
+  </main>
+
+  <!-- ===== HIDDEN FULL CONTENTS (read by lightbox JS) ===== -->
+  <div id="story-contents" style="display:none;">
+    
+<div id="story-content-1">
+<p>El presidente de TSMC, Wei Che-chia, declaró en la conferencia de inversores que los ingresos del primer trimestre superaron ligeramente las expectativas, impulsados por la fuerte demanda de tecnología de procesos de vanguardia.</p><p>Se prevé que los ingresos del segundo trimestre alcancen entre 39.000 y 40.200 millones de dólares, lo que supone un aumento del 10% con respecto al trimestre anterior y del 32% con respecto al año anterior. Se espera que el margen de beneficio bruto se sitúe entre el 65,5% y el 67,5%.</p><p>Wei Che-chia señaló que la fuerte demanda relacionada con la IA está impulsando la demanda de chips de procesos de vanguardia. Confía en la tendencia de la IA y en el rendimiento de los ingresos de 2026, y espera que el crecimiento de los ingresos en dólares para todo el año supere el 30%, superando la estimación anterior de cerca del 30%.</p><p>TSMC seguirá de cerca el impacto del aumento de los precios de los componentes y la situación en Oriente Medio en la economía global, y se centrará en fortalecer su posición competitiva.</p>
+</div>
+
+
+<div id="story-content-2">
+<p>El presidente de TSMC, C.C. Wei, dijo que la compañía está expandiendo la capacidad de empaquetado avanzado CoWoS para garantizar el suministro y respaldar las necesidades de los clientes a un costo razonable.</p><p>Al mismo tiempo, TSMC también está estableciendo un proceso de fabricación de tecnología de empaquetado avanzado CoPoS, que se espera que entre en producción en masa en unos pocos años.</p><p>Wei señaló que el suministro general de capacidad de empaquetado sigue siendo escaso. TSMC está trabajando en estrecha colaboración con las fábricas de subcontratación de pruebas y empaquetado back-end para hacer frente a la fuerte demanda de los clientes. TSMC continúa desarrollando empaquetado avanzado y tecnologías de apilamiento de chips 3D, incluidos CoWoS, InFO, TSMC-SoIC y fotónica de silicio, y está trabajando para aumentar la capacidad de empaquetado. Aunque los ingenieros enfrentan desafíos, el equipo resolverá los problemas e impulsará el desarrollo de la tecnología y la capacidad.</p>
+</div>
+
+
+<div id="story-content-3">
+<p>La conferencia de resultados de TSMC ha revelado mensajes positivos, con ingresos, margen de beneficio bruto y margen de beneficio operativo del primer trimestre mejores de lo esperado. Los ingresos y las ganancias alcanzaron nuevos máximos, con una ganancia por acción de 22,08 NTD.</p><p>El presidente ejecutivo, C.C. Wei, declaró que la fuerte demanda de IA está impulsando el crecimiento de la demanda de semiconductores avanzados. TSMC ampliará la capacidad de 3nm, añadiendo nuevas fábricas de 3nm en el Parque Científico del Sur de Taiwán (Southern Taiwan Science Park), Arizona (EE. UU.) y Kumamoto (Japón), cuya producción en masa está prevista que comience gradualmente entre 2027 y 2028. Se espera que el proceso de 2nm entre en producción en masa en el cuarto trimestre de 2025, y el proceso A14 está previsto que entre en producción en masa en 2028.</p><p>El director financiero, Wendell Huang, señaló que la situación en Oriente Medio podría provocar un aumento de los precios de las materias primas químicas, lo que afectaría a los beneficios, pero no afectará a las operaciones a corto plazo. En cuanto a la construcción de una fábrica de obleas por parte de Elon Musk, Wei cree que el ciclo de construcción es largo y requiere un uso intensivo de capital. Con respecto a la competencia de Intel, Wei dijo que no subestimará a ningún competidor y hará todo lo posible para ampliar la producción para satisfacer las necesidades de los clientes.</p>
+</div>
+
+
+<div id="story-content-4">
+<p>El Ministerio de Desarrollo Digital (MODD) ha anunciado el proyecto BOO (Build-Own-Operate, Construir-Poseer-Operar) para un centro de capacidad de cómputo para Inteligencia Artificial (IA), incorporando dicho centro a la importante construcción pública digital y promoviéndolo bajo el modelo BOO.</p><p>La inversión total de las instituciones solicitantes (sin incluir el terreno) debe alcanzar los 300 millones de dólares taiwaneses o más, con una escala de capacidad de cómputo total de 15 PetaFLOPS o más en condiciones FP32, para apoyar la investigación y el desarrollo de tecnologías de IA como la medicina de precisión y el transporte inteligente.</p><p>Las instituciones participantes deben planificar un cierto porcentaje de capacidad de cómputo para proporcionar uso gratuito o preferencial al gobierno y a las unidades académicas, y ayudar a las pequeñas y medianas empresas a obtener recursos de capacidad de cómputo a un costo razonable. Al mismo tiempo, se alienta a los operadores a proponer planes preferenciales para los residentes locales o los grupos vulnerables.</p><p>El centro de capacidad de cómputo debe cumplir con las regulaciones de la "Ley de Gestión de la Seguridad de la Información y las Comunicaciones", estableciendo planes de respaldo fuera del sitio y de operación continua. El plazo de solicitud vence el 14 de mayo de 2026.</p>
+</div>
+
+
+<div id="story-content-5">
+<p>El Consejo Nacional de Desarrollo (CND) ha declarado que el "Plan de Promoción del Gran Valle del Silicio de Taoyuan-Hsinchu-Miaoli" ha demostrado su eficacia, contribuyendo a acelerar la actualización de las industrias de la IA y los semiconductores.    Desde su lanzamiento, el plan ha ayudado a más de 1400 empresas a implementar aplicaciones de IA y ha facilitado varias inversiones, incluyendo la introducción de la tecnología de IA en la industria del automóvil y la investigación y desarrollo de semiconductores de compuestos y nuevos fármacos.    Hasta marzo de 2026 (115 según el calendario taiwanés), el Fondo Nacional de Desarrollo ha invertido en 208 empresas en la región de Taoyuan-Hsinchu-Miaoli, con una inversión acumulada de 5271 millones de NTD (dólares taiwaneses). Además, el gobierno, a través de la plataforma de industrialización de la investigación científica, ha facilitado la transferencia de tecnología y la cooperación entre la industria y la academia, y ha cultivado muchas pequeñas y medianas empresas.    En cuanto al cultivo de talento, a través de los Colegios de Investigación de Áreas Clave Nacionales y los mecanismos de cooperación industria-academia, se han formado 5410 talentos en áreas clave. El Consejo Nacional de Ciencia y Tecnología (CNCT) ha completado la evaluación de viabilidad del proyecto de expansión del Parque Científico de Longtan, y los gobiernos de los condados y ciudades de Taoyuan, Hsinchu y Miaoli también están promoviendo el desarrollo de más de 20 parques industriales.    Además, el CND también ha aprobado el plan general de mejora y adaptación de la cuenca hidrográfica gestionada centralmente por el Ministerio de Economía para hacer frente a los desafíos climáticos extremos y fortalecer la capacidad de prevención de inundaciones y adaptación de la cuenca.</p>
+</div>
+
+
+<div id="story-content-6">
+<p>Hotech, en colaboración con Pudu Robotics, ha celebrado una presentación de nuevos productos en la que ha lanzado tres robots inteligentes con IA, con el objetivo de posicionarse en el mercado taiwanés de automatización inteligente.  El vicepresidente de Hotech, Chang Yi-Sheng, ha declarado que, a través de la cooperación con empresas de robótica, la tecnología de IA se transformará en soluciones que las empresas puedan implementar de inmediato.  Hotech se centra en tres áreas principales: fabricación inteligente, logística inteligente y servicios inteligentes, proporcionando soluciones robóticas integrales. Los nuevos productos incluyen: un robot de limpieza de suelos grande con IA equipado con un sistema de percepción visual 3D, adecuado para entornos complejos como aparcamientos; un robot cuadrúpedo de navegación autónoma con especificaciones de protección industrial IP67, adecuado para la inspección industrial y la protección de la seguridad, capaz de adaptarse a diversos terrenos; y un robot de distribución industrial de carga ligera de 150 kg, que junto con los modelos existentes, constituye una secuencia de carga completa para satisfacer las necesidades de diferentes industrias.</p>
+</div>
+
+
+<div id="story-content-7">
+<p>Concluyó la "Simulación de la situación política, económica, militar y anímica TTX 2026", organizada por la Universidad Nacional Chengchi (政大) y otras instituciones. Se simularon escenarios como el bloqueo del PCCh (Partido Comunista Chino) a Kinmen y Matsu, conflictos con la Guardia Costera, ataques con drones y sabotaje de la quinta columna, destacando múltiples deficiencias en el marco legal de Taiwán, la reserva de información y comunicaciones, la atención médica en tiempos de guerra y la protección de la infraestructura.</p><p>La simulación energética reveló que las reservas de gas natural solo alcanzan para 11 días, y la controversia sobre la reactivación de la energía nuclear sigue sin resolverse. Los problemas de seguridad económica señalaron la exposición en el extranjero de las compañías de seguros de vida, la dependencia económica entre ambos lados del Estrecho y la falta de un mecanismo de coordinación interministerial.</p><p>En cuanto a la competitividad industrial, la concentración de las exportaciones de tecnologías de la información y la comunicación (TIC), la creciente brecha de riqueza y los altos precios de la vivienda se consideran eslabones débiles en el sistema de seguridad. Los participantes expresaron su preocupación de que, tras la multinacionalización de TSMC, los intereses comerciales puedan divergir de la estrategia de Taiwán, y el efecto del "escudo de silicio" podría debilitar la voluntad de intervención de Estados Unidos.</p><p>La conclusión indica que Taiwán se enfrenta a una prueba integral de resiliencia militar, económica, social y tecnológica. La ausencia de un mecanismo de coordinación de crisis, los desequilibrios estructurales de la industria y la reducción del espacio de autonomía estratégica de los semiconductores son los temas prioritarios.</p>
+</div>
+
+
+<div id="story-content-8">
+<p>Para fortalecer la logística en tiempos de guerra y la capacidad de suministro de materiales en caso de desastres naturales, la Fuerza Aérea movilizará aviones de transporte C-130H del 21 de abril al 9 de junio, en coordinación con el Ejército, para llevar a cabo ejercicios de lanzamiento aéreo en todo Taiwán.</p><p>Los lugares de los ejercicios incluyen Pingtung, Taitung, Penghu, Hsinchu y Taichung, entre otros. El contenido del entrenamiento incluye reconocimiento aéreo, lanzamiento aéreo de suministros, lanzamiento marítimo de emergencia y aterrizaje de transporte aéreo. Parte del entrenamiento incluye elementos nocturnos, cuyo objetivo es fortalecer la capacidad de apoyo logístico nocturno.</p><p>Además, el Ejército ha gastado cerca de 200 millones de yuanes taiwaneses (aproximadamente 6.2 millones de dólares estadounidenses) para adquirir un sistema de "paracaídas de lanzamiento aéreo de precisión" con función de posicionamiento por satélite, con el fin de mejorar la capacidad de lanzamiento aéreo terrestre y marítimo en todo tipo de clima y terreno. Este sistema puede llevar a cabo misiones a través de aviones de transporte C-130H y helicópteros CH-47, puede guiar con precisión los suministros al lugar designado y tiene funciones de control autónomo.</p>
+</div>
+
+
+<div id="story-content-9">
+<p>Un funcionario de seguridad nacional señaló que, tras la "reunión de Zheng y Xi", Pekín está impulsando simultáneamente tres ejes principales de propaganda externa: "anti-Japón, anti-Estados Unidos y anti-compra de armas". A través de la interacción "partido a partido" con los partidos de la oposición de Taiwán, proporciona respaldo taiwanés a narrativas relacionadas, con la intención de remodelar la narrativa de la cuestión del Estrecho de Taiwán a nivel internacional y allanar el camino para una reunión entre los líderes de Estados Unidos y China.</p><p>Pekín intenta volver a etiquetar a Japón como "nuevo militarismo", incorporar a Taiwán en su narrativa histórica y cuestionar la legitimidad de la cooperación entre Taiwán y Japón. En el aspecto "anti-Estados Unidos", Pekín define a las alianzas democráticas como "fuerzas externas" en la cuestión del Estrecho de Taiwán, con la intención de internalizar la cuestión de Taiwán. Al mismo tiempo, Pekín califica la venta de armas de Estados Unidos a Taiwán y el apoyo de los países democráticos como "interferencia externa", tratando de influir en la comunidad internacional y en las decisiones de Estados Unidos.</p><p>En cuanto a la "anti-compra de armas", la oposición en el Yuan Legislativo (Parlamento unicameral de Taiwán) bloquea el presupuesto de defensa, haciéndose eco de la retórica de Pekín y creando la impresión de que la opinión pública taiwanesa no apoya la compra de armas. El funcionario de seguridad nacional cree que la "reunión de Zheng y Xi" es un punto de apoyo central, destinado a moldear una narrativa de "Taiwán no apoya a Estados Unidos ni la compra de armas, y tiende al intercambio pacífico" en vísperas de la interacción entre Estados Unidos y China.</p>
+</div>
+
+
+<div id="story-content-10">
+<p>La Fundación Luso-Americana para el Desarrollo y la Embajada de Estados Unidos en Portugal organizaron un simposio sobre seguridad de cables submarinos en Lisboa para discutir el comercio, la competencia, la seguridad y la cooperación en torno a los cables submarinos.    El embajador estadounidense, Randi Charno Levine, enfatizó que proteger a los ciudadanos estadounidenses, fortalecer la cooperación en defensa, equilibrar el comercio y contrarrestar las influencias malignas de China y Rusia son sus principales prioridades, y que el tema de los cables submarinos abarca estas áreas. Señaló que el 95% del tráfico de datos global se transmite a través de cables submarinos, y que la ubicación geográfica de Portugal es clave, ya que aproximadamente una cuarta parte de los cables submarinos globales se conectan a través de Portugal.    Huang Sheng-hsiung compartió la experiencia de Taiwán, advirtiendo que la estrategia de fusión cívico-militar de China y Rusia podría dañar la infraestructura y perjudicar la seguridad nacional. Mencionó que las fallas en los cables submarinos afectan las comunicaciones de internet y el comando militar, y sugirió explorar rutas de comunicación diversificadas.    Nagos Angos sugirió que la industria y los responsables políticos cooperen para aumentar la redundancia de los cables submarinos, reducir el riesgo de interrupción de un solo cable y establecer un sistema regulatorio estable. Bruno Bragança enfatizó la necesidad de mejorar la conciencia del dominio marítimo y acelerar la toma de decisiones.</p>
+</div>
+
+
+<div id="story-content-11">
+<p>La Oficina de Asuntos de Taiwán del Comité Central del PCCh anunció "10 medidas para promover los intercambios y la cooperación entre ambos lados del Estrecho", incluyendo la promoción de la reanudación de los programas piloto de turismo individual a Taiwán para los residentes de Shanghái y la provincia de Fujian, así como la reanudación total de la normalización de los vuelos directos de pasajeros entre ambos lados del Estrecho.</p><p>En respuesta, el viceministro del Consejo para Asuntos de China Continental (MAC), Liang Wen-chieh, dijo que los ciudadanos de China continental que viajen a Taiwán deben solicitar primero el Permiso de Viaje a Taiwán (大通證). Antes de que la parte continental china anuncie claramente las áreas que pueden solicitarlo, en realidad no es factible.</p><p>Liang Wen-chieh señaló que Shanghái anunció previamente que los residentes podían viajar a Kinmen y Matsu, pero hasta ahora no ha anunciado que se puedan solicitar visas, y no ha habido ningún progreso real. Cree que este asunto debe implementarse primero antes de considerar otras solicitudes.</p><p>Liang Wen-chieh agregó que, ya sea que se abra el turismo individual o en grupo, la consulta entre las "pequeñas dos asociaciones" (小兩會, organizaciones semioficiales encargadas de las negociaciones técnicas) es inevitable, incluyendo el número de turistas de China continental permitidos y los mecanismos de gestión de riesgos en Taiwán.</p>
+</div>
+
+
+<div id="story-content-12">
+<p>La Fiscalía del Distrito de Nueva Taipéi ha acusado a dos hombres, de apellido Chen y Huang, de ayudar presuntamente al Grupo Inspur de China a captar ilegalmente talentos de alta tecnología en Taiwán.</p><p>Chen recibió instrucciones del Grupo Inspur en 2015 para establecer la "Compañía Digital Cloud", dedicada a la investigación y desarrollo de decodificadores (set-top boxes). Los gastos operativos de la empresa fueron cubiertos por una filial del Grupo Inspur. La fiscalía descubrió que Chen era sospechoso de recuperar las acciones al establecer la empresa.</p><p>En 2024, Huang fundó el centro de I+D en Taiwán de la empresa estadounidense Aivres, con el fin de reclutar talentos para la investigación y el desarrollo de servidores de IA para el Grupo Inspur. La fiscalía determinó que ambos violaron el Estatuto sobre las Relaciones entre el Pueblo de Taiwán y el Área Continental y la Ley de Sociedades, y los acusó formalmente de acuerdo con la ley.</p><p>La fiscalía enfatizó que castigará severamente a las empresas chinas por operar ilegalmente y captar talentos en Taiwán, con el fin de proteger la industria nacional de alta tecnología.</p>
+</div>
+
+
+<div id="story-content-13">
+<p>La Comisión de Supervisión Financiera (FSC, siglas en inglés) planea enmendar el código de prácticas de gobierno corporativo para fortalecer el gobierno corporativo de los holdings financieros y la industria bancaria, requiriendo que "deban" establecer comités de nominación, con directores independientes que sirvan como la mayoría de los miembros y el presidente.</p><p>Además, refiriéndose a las regulaciones de las empresas que cotizan en bolsa, se sugiere que los directores independientes de los holdings financieros y los bancos nacionales aumenten las horas de educación continua anual, y el contenido debe cubrir las áreas profesionales requeridas para los cambios en el entorno financiero.</p><p>El subdirector general de la Oficina Bancaria, Chang Chia-kuei, explicó que el comité de nominación tiene las funciones de formular el conocimiento profesional de los miembros, construir indicadores de evaluación del desempeño, establecer planes de educación continua y establecer códigos de gobierno corporativo, y sugirió que se envíe a la junta directiva para su discusión. Si los operadores no cumplen con las normas de autorregulación, se tomarán medidas correctivas.</p><p>El secretario jefe de la FSC, Shang Kuang-chi, dijo que espera mejorar el gobierno corporativo a través del sistema. En la actualidad, las empresas que cotizan en bolsa están obligadas a establecer comités de remuneración y auditoría. Los holdings financieros y los bancos son industrias altamente reguladas, y se espera que se ajusten a través de la autorregulación de la asociación.</p>
+</div>
+
+
+<div id="story-content-14">
+<p>El Ministerio de Medio Ambiente y la Comisión de Supervisión Financiera (FSC, por sus siglas en inglés) de Taiwán están colaborando para ajustar los indicadores de finanzas sostenibles, fortalecer los mecanismos contra el "lavado verde" (greenwashing) y simplificar los procesos de verificación de la cadena de suministro para las empresas.</p><p>El ministro de Medio Ambiente, Peng Chi-ming, declaró que se tomará como referencia la tendencia de la Unión Europea a simplificar los informes de sostenibilidad, reduciendo así la carga administrativa de las empresas que deben presentar informes repetidos. Las principales orientaciones incluyen la eliminación de marcos de clasificación confusos, la supresión de etiquetas ecológicas engañosas y la elaboración de datos estandarizados para la verificación de la cadena de suministro, que supone una gran presión para las empresas, como los datos de consumo de electricidad y los coeficientes de materias primas comunes, con el fin de resolver el problema de la dificultad para encontrar datos.</p><p>El objetivo es garantizar que los fondos puedan guiar realmente a las empresas para que lleven a cabo una reducción sustancial de las emisiones de carbono y una transformación sostenible. Al mismo tiempo, se está estudiando la viabilidad de que los holdings financieros consoliden la divulgación de los informes de sostenibilidad. Se espera que los planes pertinentes se publiquen antes de finales de año, con el objetivo de proporcionar a las pequeñas y medianas empresas un mecanismo de verificación más práctico y simplificado, evitando así costes administrativos excesivos.</p>
+</div>
+
+
+<div id="story-content-15">
+<p>La ruta Taoyuan-Viena de EVA Air cumple 35 años, ofreciendo actualmente 35 vuelos semanales de ida y vuelta a Europa.</p><p>El gerente general de EVA Air, Sun Chia-ming, señaló que Viena fue el primer destino europeo de la aerolínea y también la primera ruta transoceánica. Actualmente, la ruta Taoyuan-Viena opera un vuelo diario de ida y vuelta, con 3 vuelos directos semanales y 4 vuelos con escala en Bangkok.</p><p>Anteriormente, la proporción de pasajeros de negocios y turismo era de 3 a 7, pero ahora ha alcanzado un 50/50, con la mitad de los pasajeros provenientes de Asia y la otra mitad de Europa. La tasa de ocupación supera el 90%. EVA Air considera Viena como una puerta de entrada clave que conecta Europa y Asia, y planea expandir sus rutas europeas, incluyendo Barcelona, Helsinki e Estambul entre las opciones consideradas.</p><p>A partir del 18 de mayo, EVA Air colabora con el City Airport Train (CAT) del aeropuerto de Viena, permitiendo a los pasajeros facturar su equipaje en la estación central (Hauptbahnhof) hasta dos horas antes de la salida del vuelo.</p>
+</div>
+
+
+<div id="story-content-16">
+<p>El Centro Nacional de Artes Escénicas (NPAC, siglas en inglés) ha anunciado el nombramiento de los nuevos directores artísticos. Chiu Yuan asume el cargo de directora artística del Centro Nacional de Teatro y Conciertos (National Theater and Concert Hall), puesto que antes ocupaba Lee Hui-mei, quien la sustituye.      Chien Wen-pin continuará como director artístico del Centro Nacional de Artes de Kaohsiung - Weiwuying. La ceremonia de toma de posesión tendrá lugar el 20 de abril en Weiwuying.      Chiu Yuan era la directora artística general de la Ópera Nacional de Taichung. Este cambio de personal supone un traslado de puesto. La ceremonia de toma de posesión de Chien Wen-pin se celebrará en Weiwuying debido a los ensayos de un concierto.</p>
+</div>
+
+
+<div id="story-content-17">
+<p>La exposición "Caminata por la Tierra" del Festival Literario de Taipéi se exhibirá del 18 de abril al 17 de mayo en el distrito histórico de Bopiliao.  Organizada por el Departamento de Cultura de la ciudad de Taipéi y gestionada por la revista Wenxun, la exposición invita a ocho escritores, incluyendo a Cheng Ting Apyang Imiq, Li Lu, Lin Li-ching, Hsu Chen-fu, Chen Hao-jen, Deng Jiu-yun, Lo I-shan y Yen Chung-hsien, a explorar varios lugares de Taipéi, como el Parque Forestal Daan, Neihu Tatayou, Wanhua, la llanura de Guandu, Guizikeng, Wenshan y Yangmingshan.  La sección "Asuntos de la Tierra" presentará sus creaciones literarias sobre la tierra, mientras que la sección "Obras de la Tierra" compartirá su conocimiento y sentimientos sobre el suelo. La exposición ofrecerá "Notas de Campo" para animar al público a registrar sus observaciones de la tierra.  A través de la perspectiva de los escritores, la exposición busca descubrir y presentar la memoria y las historias de la tierra de Taipéi.</p>
+</div>
+
+
+<div id="story-content-18">
+<p>Falleció Lin Huang-jiao, conservadora del tejido de junco de Taitung, a una edad avanzada.</p><p>Lin Huang-jiao nació en 1932 en Qingshui, Taichung. A los 17 años, aprendió técnicas de tejido de junco para mejorar la economía familiar. Después de mudarse a Taitung, retomó el tejido de junco a los 52 años, transformando el tejido plano en creaciones tridimensionales, elevándolo a un nivel artístico.</p><p>El Ministerio de Cultura señaló que la obra de Lin Huang-jiao combina la técnica occidental con las características culturales orientales, convirtiéndola en una figura representativa del tejido de junco de Taitung. En 2019, fue reconocida por el gobierno del condado de Taitung como conservadora de la artesanía tradicional. El Ministerio de Cultura emitirá un certificado de reconocimiento para honrar sus más de seis décadas de experiencia, su exquisita artesanía y su contribución a la preservación de la artesanía tradicional mediante la formación de las generaciones futuras.</p>
+</div>
+
+
+<div id="story-content-19">
+<p>La Federación Nacional de Sindicatos de Docentes (全教產) citó estadísticas del Ministerio de Educación (教育部) que indican que los casos notificados de suicidio y autolesión entre estudiantes de todos los niveles educativos aumentaron de 1.155 en el año fiscal 2016 a 20.271 en el año fiscal 2024.      La Federación Nacional de Sindicatos de Docentes sugirió tomar como referencia el modelo "Girasol" (向日葵學園), que permite la colaboración entre los sistemas médico y educativo para proporcionar un espacio de transición donde la terapia y el aprendizaje coexistan.      El Ministerio de Educación respondió que ya está cooperando con el Ministerio de Salud y Bienestar Social (衛福部) para proporcionar una intervención temprana de salud mental para los estudiantes con problemas emocionales y de conducta graves. A través de la coordinación interministerial, el Ministerio de Salud y Bienestar Social evaluará los recursos médicos y fortalecerá la conexión entre el apoyo médico y educativo.      El Ministerio de Educación declaró que proporciona orientación de tres niveles de acuerdo con la "Ley de Orientación Estudiantil" (學生輔導法) y ha establecido el "Centro de Servicios de Apoyo al Comportamiento Emocional de Estudiantes de Educación Especial" (特殊教育學生情緒行為支持服務中心), subsidiando a los gobiernos locales para establecer equipos de apoyo para problemas de comportamiento emocional.</p>
+</div>
+
+
+<div id="story-content-20">
+<p>El Departamento de Bomberos de Nueva Taipei, en colaboración con el Hospital Far Eastern Memorial, ha implementado el sistema "Doctor Car" (Coche Médico), permitiendo que los médicos lleguen al lugar de los incidentes de inmediato para brindar apoyo y aumentar la tasa de supervivencia de pacientes en estado crítico.</p><p>Según la literatura, el despliegue conjunto de médicos, enfermeras y técnicos de emergencias médicas puede aumentar la tasa de supervivencia general de pacientes en estado crítico en 1.2 veces, y la tasa de supervivencia de pacientes con paro cardiorrespiratorio extrahospitalario (OHCA, por sus siglas en inglés) en 1.5 veces. En el primer trimestre de este año, "Doctor Car" ya ha sido desplegado 36 veces, logrando la recuperación del latido cardíaco en 8 pacientes con OHCA y el alta hospitalaria con recuperación en 4 pacientes.</p><p>La tasa de alta hospitalaria con recuperación de pacientes con OHCA en Nueva Taipei ha aumentado del 3.1% en 2010 al 12.13% en 2025 (año 114 según el calendario Minguo de Taiwán), salvando a más de 3000 personas en total. El alcalde Hou Yu-ih ha declarado que continuará fortaleciendo la red de protección AED (desfibrilador externo automático) y profundizando la cooperación interhospitalaria para proteger la seguridad de los ciudadanos.</p>
+</div>
+
+  </div>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lb-title">
+    <div class="lb-backdrop" id="lb-backdrop"></div>
+    <div class="lb-panel">
+      <button class="lb-close" id="lb-close" aria-label="關閉">✕</button>
+      <div class="lb-scroll" id="lb-scroll">
+        <div class="lb-meta">
+          <span class="lb-category tag-default" id="lb-category"></span>
+          <span class="lb-time" id="lb-time"></span>
+        </div>
+        <h2 class="lb-title" id="lb-title"></h2>
+        <div class="lb-image-wrap" id="lb-image-wrap">
+          <img id="lb-image" src="" alt="" loading="eager">
+        </div>
+        <div class="lb-body" id="lb-body"></div>
+        <a class="lb-source" id="lb-source" href="#" target="_blank" rel="noopener">查看原文</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">Noticias Rápidas (CNA)</div>
+      <div class="footer-links">
+        <a href="https://u0401006.github.io/video-quotes/news/">歷史存檔</a>
+        <a href="https://u0401006.github.io/video-quotes/news/">訂閱電子報</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Noticias Rápidas (CNA) · 版權所有</span>
+      <span class="footer-generated">Generated at 2026-04-17T04:18:10.097327+00:00</span>
+    </div>
+  </footer>
+
+</div><!-- /.page-wrapper -->
+
+<script>
+  var TAG_CLASSES = {
+    '政治': 'tag-politics', '國內': 'tag-politics',
+    '國際': 'tag-intl',     '外交': 'tag-intl',
+    '財經': 'tag-finance',  '經濟': 'tag-finance',
+    '體育': 'tag-sports',
+    '科技': 'tag-tech',     '科學': 'tag-tech',
+    '社會': 'tag-society',  '生活': 'tag-society'
+  };
+
+  function openLightbox(id) {
+    var card = document.querySelector('.story-card[data-id="' + id + '"]');
+    var contentEl = document.getElementById('story-content-' + id);
+    if (!card) return;
+
+    var category  = card.dataset.category  || '';
+    var time      = card.dataset.time      || '';
+    var image     = card.dataset.image     || '';
+    var source    = card.dataset.source    || '';
+    var tagClass  = card.dataset.tagClass  || TAG_CLASSES[category] || 'tag-default';
+    var title     = card.querySelector('.story-title').textContent.trim();
+    var fullHtml  = contentEl ? contentEl.innerHTML : '';
+
+    // Populate lightbox fields
+    var catEl = document.getElementById('lb-category');
+    catEl.textContent = category;
+    catEl.className   = 'lb-category ' + tagClass;
+
+    document.getElementById('lb-time').textContent  = time;
+    document.getElementById('lb-title').textContent = title;
+    document.getElementById('lb-body').innerHTML    = fullHtml;
+
+    var imgWrap = document.getElementById('lb-image-wrap');
+    var imgEl   = document.getElementById('lb-image');
+    if (image) {
+      imgEl.src = image;
+      imgEl.alt = title;
+      imgWrap.style.display = 'block';
+    } else {
+      imgWrap.style.display = 'none';
+    }
+
+    var srcEl = document.getElementById('lb-source');
+    if (source) {
+      srcEl.href         = source;
+      srcEl.style.display = 'inline-flex';
+    } else {
+      srcEl.style.display = 'none';
+    }
+
+    // Scroll lightbox content to top
+    document.getElementById('lb-scroll').scrollTop = 0;
+
+    // Open with animation
+    var lb = document.getElementById('lightbox');
+    lb.classList.add('is-open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    var lb = document.getElementById('lightbox');
+    lb.classList.remove('is-open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Close on backdrop click
+  document.getElementById('lb-backdrop').addEventListener('click', closeLightbox);
+  // Close button
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  // ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body>
+</html>
