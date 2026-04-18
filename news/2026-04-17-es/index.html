@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="中央社外語選稿 西班牙語 — 2026-04-17 西班牙語 精選新聞">
+  <title>中央社外語選稿 西班牙語 — 2026-04-17 西班牙語</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+                   "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: #f8f4ee;
+      color: #1a1008;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ===== PAGE WRAPPER ===== */
+    .page-wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 0 48px;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      background: #2a1c0f;
+      color: #f0e8d8;
+      padding: 28px 32px 22px;
+    }
+    .header-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .brand-name {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: #f5ead6;
+      line-height: 1.2;
+    }
+    .brand-tagline {
+      font-size: 11px;
+      color: #9a8468;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+    .header-meta {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .header-date {
+      font-size: 14px;
+      color: #c8b498;
+      font-weight: 500;
+    }
+    .header-count {
+      font-size: 11px;
+      color: #806850;
+      margin-top: 3px;
+    }
+    .header-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 12px;
+    }
+    .header-categories {
+      font-size: 12px;
+      color: #806850;
+      letter-spacing: 0.3px;
+    }
+    .header-categories strong {
+      color: #c8a878;
+    }
+
+    /* ===== SECTION LABEL ===== */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 24px 32px 0;
+    }
+    .section-label span {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #9b5a2a;
+      white-space: nowrap;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e5ddd3;
+    }
+
+    /* ===== STORY LIST ===== */
+    .story-list {
+      padding: 16px 32px 0;
+    }
+
+    /* ===== STORY CARD ===== */
+    .story-card {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid #ede5d8;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      transition: box-shadow 0.2s ease, transform 0.15s ease;
+    }
+    .story-card:hover {
+      box-shadow: 0 4px 20px rgba(60, 35, 10, 0.09);
+      transform: translateY(-2px);
+    }
+
+    /* Story image */
+    .story-image-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      background: linear-gradient(135deg, #f0e8de, #e8ddd0);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .story-image-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .story-card:hover .story-image-wrap img {
+      transform: scale(1.03);
+    }
+    .story-img-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f0e8de, #e4d8cc);
+      color: #c8b098;
+      font-size: 36px;
+    }
+    .story-category-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+
+    /* Category tag colors — warm palette */
+    .tag-politics { background: #fff0e8; color: #b04520; }
+    .tag-intl     { background: #fff8e8; color: #9a6010; }
+    .tag-finance  { background: #eef5e8; color: #3d7025; }
+    .tag-sports   { background: #fef0e0; color: #a04510; }
+    .tag-tech     { background: #f0ecf8; color: #6040a0; }
+    .tag-society  { background: #fdf0f4; color: #902848; }
+    .tag-default  { background: #f0ece4; color: #5c4830; }
+
+    /* Card body */
+    .story-body {
+      padding: 18px 20px 20px;
+    }
+    .story-meta {
+      margin-bottom: 8px;
+    }
+    .story-time {
+      font-size: 12px;
+      color: #9a8070;
+      font-weight: 400;
+    }
+    .story-title {
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.45;
+      color: #1a1008;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: color 0.15s ease;
+    }
+    .story-title:hover {
+      color: #9b5a2a;
+    }
+    .story-excerpt {
+      font-size: 14px;
+      color: #4a3828;
+      line-height: 1.75;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .read-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: none;
+      border: 1.5px solid #c8a878;
+      color: #9b5a2a;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .read-more-btn:hover {
+      background: #9b5a2a;
+      color: #ffffff;
+      border-color: #9b5a2a;
+    }
+    .read-more-btn::after {
+      content: '→';
+      font-size: 14px;
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    .lightbox.is-open {
+      visibility: visible;
+      opacity: 1;
+    }
+    .lb-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(28, 18, 8, 0.65);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+    .lb-panel {
+      position: relative;
+      background: #fffbf7;
+      border-radius: 12px;
+      max-width: 660px;
+      width: 100%;
+      max-height: 88vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 60px rgba(28, 18, 8, 0.3);
+      transform: translateY(16px) scale(0.98);
+      transition: transform 0.25s ease;
+      z-index: 1;
+    }
+    .lightbox.is-open .lb-panel {
+      transform: translateY(0) scale(1);
+    }
+    .lb-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      background: rgba(28, 18, 8, 0.07);
+      border: none;
+      border-radius: 50%;
+      font-size: 16px;
+      color: #5c4830;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      transition: background 0.15s ease, color 0.15s ease;
+      line-height: 1;
+    }
+    .lb-close:hover {
+      background: rgba(28, 18, 8, 0.14);
+      color: #1a1008;
+    }
+    .lb-scroll {
+      overflow-y: auto;
+      padding: 28px 30px 32px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .lb-scroll::-webkit-scrollbar { width: 4px; }
+    .lb-scroll::-webkit-scrollbar-track { background: #f0e8de; }
+    .lb-scroll::-webkit-scrollbar-thumb { background: #c8a878; border-radius: 2px; }
+
+    .lb-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .lb-category {
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .lb-time {
+      font-size: 12px;
+      color: #9a8070;
+    }
+    .lb-title {
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.4;
+      color: #1a1008;
+      margin-bottom: 18px;
+      padding-right: 28px;
+    }
+    .lb-image-wrap {
+      width: 100%;
+      padding-bottom: 56.25%;
+      position: relative;
+      background: linear-gradient(135deg, #f0e8de, #e4d8cc);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+    .lb-image-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .lb-body {
+      font-size: 15px;
+      color: #2d1e10;
+      line-height: 1.85;
+    }
+    .lb-body p { margin-bottom: 16px; }
+    .lb-body p:last-child { margin-bottom: 0; }
+    .lb-body strong { font-weight: 700; color: #1a1008; }
+    .lb-body a { color: #9b5a2a; text-decoration: underline; text-underline-offset: 3px; }
+    .lb-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 22px;
+      color: #9b5a2a;
+      font-size: 13px;
+      font-weight: 700;
+      border-bottom: 1.5px solid currentColor;
+      padding-bottom: 1px;
+      transition: opacity 0.15s ease;
+    }
+    .lb-source:hover { opacity: 0.7; }
+    .lb-source::after { content: '→'; }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: #2a1c0f;
+      color: #806850;
+      padding: 24px 32px;
+      margin-top: 8px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .footer-brand {
+      font-size: 15px;
+      font-weight: 800;
+      color: #c8b498;
+    }
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      font-size: 12px;
+    }
+    .footer-links a {
+      color: #806850;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .footer-links a:hover { color: #c8b498; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+    }
+    .footer-generated {
+      font-family: "SF Mono", "Fira Code", monospace;
+      font-size: 10px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .page-wrapper { padding-bottom: 32px; }
+      .site-header,
+      .story-list,
+      .section-label,
+      .site-footer { padding-left: 16px; padding-right: 16px; }
+      .header-top { flex-direction: column; }
+      .header-meta { text-align: left; }
+      .brand-name { font-size: 20px; }
+      .story-title { font-size: 16px; }
+      .lb-panel { border-radius: 8px; max-height: 92vh; }
+      .lb-scroll { padding: 22px 20px 24px; }
+      .lb-title { font-size: 19px; }
+      .lb-body { font-size: 14px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-top">
+      <div>
+        <div class="brand-name">中央社外語選稿 西班牙語</div>
+        <div class="brand-tagline">AI 新聞精選 · 每小時更新</div>
+      </div>
+      <div class="header-meta">
+        <div class="header-date">2026-04-17 西班牙語</div>
+        <div class="header-count">20 則精選</div>
+      </div>
+    </div>
+    <hr class="header-divider">
+    <div class="header-categories">
+      涵蓋 <strong>外語選稿</strong>
+    </div>
+  </header>
+
+  <!-- ===== SECTION LABEL ===== -->
+  <div class="section-label">
+    <span>今日要聞</span>
+  </div>
+
+  <!-- ===== STORY LIST ===== -->
+  <main class="story-list" id="story-list">
+    <article class="story-card" data-id="1" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170035.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(1)">
+    <img src="" alt="Informe de IA de Stanford 2026: EE.UU. domina la capacidad computacional, TSMC controla la fabricación | Tecnología | CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(1)">Informe de IA de Stanford 2026: EE.UU. domina la capacidad computacional, TSMC controla la fabricación | Tecnología | CNA</h2>
+    <p class="story-excerpt">Este es el noveno informe del Índice de Inteligencia Artificial (AI Index) publicado por la Universidad de Stanford. A diferencia de años anteriores, que incluían a Taiwán solo en la lista estadística, este año se enfatiza la importancia económica y la posición clave de Taiwán en la cadena de suministro.</p>
+    <button class="read-more-btn" onclick="openLightbox(1)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="2" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170018.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(2)">
+    <img src="" alt="Taiwán asciende a cuarto mayor socio comercial de EE.UU.; el Congreso de Massachusetts aprueba resolución para profundizar la cooperación | Política | Agencia Central de Noticias CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(2)">Taiwán asciende a cuarto mayor socio comercial de EE.UU.; el Congreso de Massachusetts aprueba resolución para profundizar la cooperación | Política | Agencia Central de Noticias CNA</h2>
+    <p class="story-excerpt">El 15 de abril, la Cámara de Representantes y el Senado de Massachusetts aprobaron por separado una resolución amistosa hacia Taiwán, enfatizando que ambas partes comparten la democracia y el estado de derecho, y apoyan profundizar la cooperación bilateral. El director de la oficina en Boston, Liao Chaohong, estuvo presente para expresar sus saludos.</p>
+    <button class="read-more-btn" onclick="openLightbox(2)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="3" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170208.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(3)">
+    <img src="" alt="El Parlamento establece la Asociación de Amistad Parlamentaria Taiwán-Canadá; Jiang Qichen: Plataforma importante para el intercambio bilateral | Política | Agencia Central de Noticias CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(3)">El Parlamento establece la Asociación de Amistad Parlamentaria Taiwán-Canadá; Jiang Qichen: Plataforma importante para el intercambio bilateral | Política | Agencia Central de Noticias CNA</h2>
+    <p class="story-excerpt">El Yuan Legislativo emitió hoy un comunicado de prensa indicando que Jiang Qichen asistió esta mañana a la ceremonia de establecimiento de la &quot;Asociación de Amistad Parlamentaria entre la República de China y Canadá&quot;, iniciada por el legislador del Kuomintang Chen Jinghui. Entre los invitados presentes se encontraban decenas de legisladores del Kuomintang, así como el viceministro de Relaciones Exteriores Chen Mingqi y la representante de la Oficina Comercial de Canadá en Taipéi, He Manli.</p>
+    <button class="read-more-btn" onclick="openLightbox(3)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="4" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170210.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(4)">
+    <img src="" alt="Director de la Oficina de Taipei en Los Ángeles ingresa al Congreso de Arizona y brinda con té de burbujas para testimoniar la amistad | Política | CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(4)">Director de la Oficina de Taipei en Los Ángeles ingresa al Congreso de Arizona y brinda con té de burbujas para testimoniar la amistad | Política | CNA</h2>
+    <p class="story-excerpt">El Congreso del estado de Arizona anunció hoy la creación del &quot;Caucus Legislativo Conjunto de Taiwán&quot; que abarca ambas cámaras, dedicado a promover el intercambio con Taiwán. Tanto el Senado como la Cámara de Representantes emitieron declaraciones de apoyo a Taiwán, resolviendo respaldar la participación de Taiwán en organizaciones internacionales.</p>
+    <button class="read-more-btn" onclick="openLightbox(4)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="5" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170090.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(5)">
+    <img src="" alt="Estreno en francés de &quot;造山者&quot; en Quebec: Expone el espíritu de Taiwán para superar la adversidad | Internacional | CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(5)">Estreno en francés de &quot;造山者&quot; en Quebec: Expone el espíritu de Taiwán para superar la adversidad | Internacional | CNA</h2>
+    <p class="story-excerpt">Esta proyección fue organizada conjuntamente por la Oficina de Representación de Taipei en Montreal, la Universidad de Montreal (Université de Montréal) y la Fundación Asia-Pacífico de Canadá (APFC) en el cine de la Universidad de Montreal.</p>
+    <button class="read-more-btn" onclick="openLightbox(5)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="6" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170239.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(6)">
+    <img src="" alt="Exgeneral estadounidense advierte que eliminar ítems de venta comercial en compras militares debilitará la interoperabilidad y capacidad de combate entre Taiwán y EE.UU. | Política | CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(6)">Exgeneral estadounidense advierte que eliminar ítems de venta comercial en compras militares debilitará la interoperabilidad y capacidad de combate entre Taiwán y EE.UU. | Política | CNA</h2>
+    <p class="story-excerpt">NOWnews organizó el 17 de abril un foro titulado &quot;Decisiones clave para Taiwán: Seguridad nacional, política energética y desarrollo económico&quot;, invitando a expertos nacionales e internacionales a participar.</p>
+    <button class="read-more-btn" onclick="openLightbox(6)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="7" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170127.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(7)">
+    <img src="" alt="El presidente inspecciona el departamento de entrenamiento de infantería y reitera acelerar la aprobación del presupuesto de compras militares para prepararse para la guerra y evitarla" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(7)">El presidente inspecciona el departamento de entrenamiento de infantería y reitera acelerar la aprobación del presupuesto de compras militares para prepararse para la guerra y evitarla</h2>
+    <p class="story-excerpt">El presidente Lai, acompañado por el secretario general del Consejo de Seguridad Nacional, Wu Zhaoxie, y el ministro de Defensa, Gu Lixiong, visitó esta mañana el cuartel Jintang del Comando de Entrenamiento de Infantería del Ejército para inspeccionar y expresar su apoyo, además de otorgar un bono adicional. El presidente no solo se informó sobre la situación de los equipos de entrenamiento y observó simulaciones con vehículos blindados de ruedas, sino que también revisó el material didáctico de rifles de francotirador desarrollados por el propio ejército.</p>
+    <button class="read-more-btn" onclick="openLightbox(7)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="8" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170105.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(8)">
+    <img src="" alt="Instituto de Economía de Taiwán: Revisión al alza de la previsión de crecimiento económico para este año al 7.22%" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(8)">Instituto de Economía de Taiwán: Revisión al alza de la previsión de crecimiento económico para este año al 7.22%</h2>
+    <p class="story-excerpt">El Instituto de Economía de Taiwán (中經院) publicó su última previsión económica el 17 de abril, ajustando al alza la tasa de crecimiento económico para 2026 al 7.22%, a pesar de las interferencias causadas por el conflicto en Medio Oriente. La fuerte demanda y el desarrollo próspero de la tecnología de inteligencia artificial (IA) han impulsado este crecimiento. En enero, la previsión anterior estimaba un crecimiento del 4.14% para este año y del 2.95% para el siguiente, con un aumento anual del índice de precios al consumidor (IPC) de 1.64% y 1.58%, respectivamente. La nueva estimación eleva el IPC para este año a 1.98% y para el próximo a 1.83%.</p>
+    <button class="read-more-btn" onclick="openLightbox(8)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="9" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170084.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(9)">
+    <img src="" alt="Cheng Ming-Chien: Mejorar la protección de tecnologías clave para fortalecer la competitividad de alta tecnología de Taiwán | Política | CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(9)">Cheng Ming-Chien: Mejorar la protección de tecnologías clave para fortalecer la competitividad de alta tecnología de Taiwán | Política | CNA</h2>
+    <p class="story-excerpt">La Fundación Internacional de Investigación Legal en Inteligencia Artificial organizó esta mañana el &quot;Foro Internacional sobre Pensamiento y Estrategias de Protección en la Coproducción Taiwán-Estados Unidos&quot;, invitando a representantes de think tanks, industria, academia, derecho y contabilidad de Taiwán y Estados Unidos para dialogar interdisciplinariamente sobre las oportunidades y riesgos en la reestructuración de la cadena de suministro. Cheng Ming-Chien y Hou Yi-Hsiu, subsecretaria del Ministerio de Desarrollo Digital, fueron invitados a dar los discursos de apertura.</p>
+    <button class="read-more-btn" onclick="openLightbox(9)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="10" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170187.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(10)">
+    <img src="" alt="Lian Xianming: La industria entre ambos lados del estrecho pasa de complementaria a competitiva; 10 medidas de China hacia Taiwán tienen efecto limitado | Economía y Industria | Agencia Central de Noticias CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(10)">Lian Xianming: La industria entre ambos lados del estrecho pasa de complementaria a competitiva; 10 medidas de China hacia Taiwán tienen efecto limitado | Economía y Industria | Agencia Central de Noticias CNA</h2>
+    <p class="story-excerpt">El Instituto de Investigación Económica de Taiwán publicó hoy su última previsión económica. A pesar de las interferencias del conflicto en Medio Oriente, debido al auge de la tecnología de IA y la fuerte demanda, se estima que la tasa de crecimiento económico de este año alcanzará el 7.22%. Sin embargo, la presión inflacionaria ha aumentado ligeramente, y la tasa anual del índice de precios al consumidor (IPC) para todo el año se pronostica en 1.98%, acercándose al límite de alerta inflacionaria del 2%.</p>
+    <button class="read-more-btn" onclick="openLightbox(10)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="11" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170226.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(11)">
+    <img src="" alt="El Academia Sinica implementa el modelo de NVIDIA para impulsar la tecnología de calibración de procesadores cuánticos de IA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(11)">El Academia Sinica implementa el modelo de NVIDIA para impulsar la tecnología de calibración de procesadores cuánticos de IA</h2>
+    <p class="story-excerpt">El procesador cuántico (QPU) es el núcleo de la computadora cuántica superconductora. Anteriormente, la calibración del QPU dependía en gran medida de la experiencia manual y de programas de corrección cíclicos, lo que no solo limitaba la eficiencia, sino que también dificultaba satisfacer las demandas de sistemas a gran escala.</p>
+    <button class="read-more-btn" onclick="openLightbox(11)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="12" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170174.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(12)">
+    <img src="" alt="Inauguración de la Base de Manufactura Verde y Baja en Carbono de la Universidad Chung Cheng: Formación de Ingenieros Dualistas" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(12)">Inauguración de la Base de Manufactura Verde y Baja en Carbono de la Universidad Chung Cheng: Formación de Ingenieros Dualistas</h2>
+    <p class="story-excerpt">El Viceministro Permanente del Ministerio de Educación, Zhu Junzhang, el Vicealcalde del Condado de Chiayi, Liu Peidong, el Rector de la Universidad Chung Cheng, Cai Shaozheng, junto con más de cien personas del ámbito académico e industrial, asistieron hoy a la ceremonia de inauguración y al foro, donde observaron el funcionamiento de equipos de mecanizado de cinco ejes, exhibiciones de portaherramientas inteligentes, modelos de IA inspirados en la física y gemelos digitales.</p>
+    <button class="read-more-btn" onclick="openLightbox(12)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="13" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170169.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(13)">
+    <img src="" alt="Con 6 centrales hidroeléctricas pequeñas y 4 geotérmicas, Taitung: 60% de generación autónoma para 2030 | Local | Agencia Central de Noticias CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(13)">Con 6 centrales hidroeléctricas pequeñas y 4 geotérmicas, Taitung: 60% de generación autónoma para 2030 | Local | Agencia Central de Noticias CNA</h2>
+    <p class="story-excerpt">La electricidad de Taitung depende completamente del suministro desde la región occidental, con un consumo anual aproximado de mil millones de kilovatios-hora. En caso de un desastre grave que afecte la electricidad en el oeste, Taitung podría sufrir un corte de energía. Por ello, el gobierno del condado de Taitung ha acelerado en los últimos seis años el desarrollo de microrredes de generación con energía geotérmica y pequeñas centrales hidroeléctricas, con la meta de alcanzar una generación autónoma de 600 millones de kilovatios-hora para 2030.</p>
+    <button class="read-more-btn" onclick="openLightbox(13)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="14" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170299.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(14)">
+    <img src="" alt="Fu Wei Energy aumenta presupuesto para la segunda fase de energía eólica marina; Taipower acuerda pagar más de 5.5 mil millones" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(14)">Fu Wei Energy aumenta presupuesto para la segunda fase de energía eólica marina; Taipower acuerda pagar más de 5.5 mil millones</h2>
+    <p class="story-excerpt">Zheng Wei y sus filiales Sen Wei Energy y Yong Wei Investment Holdings celebraron una conferencia de prensa sobre información importante el 13 de noviembre de 2025. Sen Wei Energy anunció que Fu Wei Energy, bajo su gestión, reconoció pérdidas debido a la contratación del proyecto de la segunda fase de energía eólica marina, lo que causó una pérdida contable de 7,736 millones de NT$ en el tercer trimestre del año pasado. Zheng Wei y Yong Wei reconocieron pérdidas proporcionales a sus participaciones del 24.87% y 44.16%, respectivamente.</p>
+    <button class="read-more-btn" onclick="openLightbox(14)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="15" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170283.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(15)">
+    <img src="" alt="Subsidiaria de Wistron invierte más de 1,900 millones de NT$; planta en California cambia de arrendamiento a compra | Industria y Economía | Agencia Central de Noticias CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(15)">Subsidiaria de Wistron invierte más de 1,900 millones de NT$; planta en California cambia de arrendamiento a compra | Industria y Economía | Agencia Central de Noticias CNA</h2>
+    <p class="story-excerpt">La subsidiaria de Wistron anunció el 10 de mayo de 2024 que ha arrendado la planta en Fremont, California, y que el contrato de arrendamiento original terminará tras la finalización de esta transacción. El mercado interpreta que la planta en California cambia de arrendamiento a compra, lo que significa que la estrategia de Wistron en el mercado norteamericano pasa de un modelo de &quot;arrendamiento ligero de activos&quot; a un enfoque de &quot;inversión profunda en activos&quot;.</p>
+    <button class="read-more-btn" onclick="openLightbox(15)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="16" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170273.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(16)">
+    <img src="" alt="iPASS aumenta capital en 300 millones para expandir la escala de pagos electrónicos y busca rentabilidad mediante expansión | Economía | Agencia Central de Noticias CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(16)">iPASS aumenta capital en 300 millones para expandir la escala de pagos electrónicos y busca rentabilidad mediante expansión | Economía | Agencia Central de Noticias CNA</h2>
+    <p class="story-excerpt">Zheng Kaiyin asistió a una conferencia de prensa por la tarde y declaró que el aumento de capital de 300 millones aprobado a principios de este año ajustó el precio de la ronda anterior de 15 a 10 dólares, debido a las fluctuaciones en el precio de las acciones de la industria, con el objetivo de recompensar a los accionistas existentes. Actualmente, los accionistas apoyan firmemente el plan de expansión del negocio.</p>
+    <button class="read-more-btn" onclick="openLightbox(16)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="17" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170253.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(17)">
+    <img src="" alt="La disputa por el control de Zhonggong llega a su fin: Baojia y Weijing acuerdan gobernar conjuntamente | Industria y Economía | Agencia Central de Noticias CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(17)">La disputa por el control de Zhonggong llega a su fin: Baojia y Weijing acuerdan gobernar conjuntamente | Industria y Economía | Agencia Central de Noticias CNA</h2>
+    <p class="story-excerpt">Zhonggong declaró hoy mediante un comunicado que ambas partes priorizan el crecimiento sostenible de la empresa y el máximo beneficio para todos los accionistas, y han decidido participar conjuntamente en la gobernanza de la compañía, con la esperanza de inyectar nueva energía a Zhonggong.</p>
+    <button class="read-more-btn" onclick="openLightbox(17)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="18" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170260.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(18)">
+    <img src="" alt="El mercado de valores de Taiwán sube 1386 puntos esta semana; la capitalización total de las empresas listadas supera los 120 billones de NT$ | Valores | Agencia Central de Noticias CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(18)">El mercado de valores de Taiwán sube 1386 puntos esta semana; la capitalización total de las empresas listadas supera los 120 billones de NT$ | Valores | Agencia Central de Noticias CNA</h2>
+    <p class="story-excerpt">Según las estadísticas de la Bolsa de Valores de Taiwán, la capitalización total de las empresas listadas alcanzó los 120 billones 594 mil millones de nuevos dólares taiwaneses, un aumento de aproximadamente 4.5 billones en comparación con la semana pasada.</p>
+    <button class="read-more-btn" onclick="openLightbox(18)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="19" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170243.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(19)">
+    <img src="" alt="Yitech incrementa sus ganancias en marzo un 214% anual, con una ganancia neta por acción de 2.27 yuanes | Valores | Agencia Central de Noticias CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(19)">Yitech incrementa sus ganancias en marzo un 214% anual, con una ganancia neta por acción de 2.27 yuanes | Valores | Agencia Central de Noticias CNA</h2>
+    <p class="story-excerpt">Yitech señaló que, con la próxima finalización del ajuste de su estructura operativa, la gestión interna y la asignación de recursos se han vuelto más eficientes. Actualmente, los pedidos son estables y la empresa continuará optimizando la combinación de productos para impulsar el margen bruto.</p>
+    <button class="read-more-btn" onclick="openLightbox(19)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="20" data-category="西班牙語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170125.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(20)">
+    <img src="" alt="La marca taiwanesa de suministro no rojo gana confianza por su calidad, alta demanda en la feria industrial de Vietnam | Industria y economía | Agencia Central de Noticias CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(20)">La marca taiwanesa de suministro no rojo gana confianza por su calidad, alta demanda en la feria industrial de Vietnam | Industria y economía | Agencia Central de Noticias CNA</h2>
+    <p class="story-excerpt">La Feria Industrial y de Manufactura de Vietnam (VIMF) se llevó a cabo en Haiphong del 15 al 17 de abril, siendo la primera vez que esta feria se realiza en esta ciudad, la tercera más grande de Vietnam y el mayor puerto del norte del país, además de una zona industrial emergente con gran potencial de desarrollo. La exposición reunió cientos de stands de Japón, Corea del Sur, Taiwán y otros países del sudeste asiático, con la participación de profesionales de la industria regional.</p>
+    <button class="read-more-btn" onclick="openLightbox(20)">看全文</button>
+  </div>
+</article>
+  </main>
+
+  <!-- ===== HIDDEN FULL CONTENTS (read by lightbox JS) ===== -->
+  <div id="story-contents" style="display:none;">
+    <div id="story-content-1"><p>Este es el noveno informe del Índice de Inteligencia Artificial (AI Index) publicado por la Universidad de Stanford. A diferencia de años anteriores, que incluían a Taiwán solo en la lista estadística, este año se enfatiza la importancia económica y la posición clave de Taiwán en la cadena de suministro.</p><p>En el informe de 423 páginas, Stanford enumera 10 conclusiones principales; una de ellas destaca la posición clave de TSMC en la cadena global de suministro de hardware para IA. El texto explica que desde 2022, la capacidad computacional de los modelos de IA ha crecido aproximadamente 3.3 veces por año, y la demanda de cómputo depende casi exclusivamente de una sola fundición de obleas en Taiwán, lo que resalta la vulnerabilidad de la cadena de suministro de hardware.</p><p>En 2025, Estados Unidos cuenta con 5,427 centros de datos, más de diez veces la cantidad de cualquier otro país. TSMC es clave en la cadena de suministro de chips para IA. Los chips de NVIDIA y AMD son fabricados por TSMC, y cada nivel de la cadena de suministro requiere un alto umbral tecnológico, acumulación de décadas de experiencia, inversión en equipos especializados y un gran capital.</p><p>Además, la tasa de adopción de IA en Taiwán en la segunda mitad de 2025 fue del 28.4%. En cuanto a la automatización industrial, el informe compara 2023 y 2024, señalando que Taiwán tuvo el mayor crecimiento mundial en la instalación de robots industriales, con una tasa anual de crecimiento del 33%.</p><p>En los últimos años, el desempeño de los modelos de IA de Estados Unidos y China ha sido un foco importante del informe. La conclusión principal indica que la brecha de liderazgo de EE.UU. se ha reducido, y desde principios de 2025, ambos países han superado repetidamente los modelos del otro. En febrero, el modelo chino DeepSeek-R1 igualó temporalmente a los mejores modelos estadounidenses; hasta marzo, el modelo más fuerte de Anthropic en EE.UU. lideraba con una diferencia del 2.7%.</p><p>En 2025, la inversión privada en IA en Estados Unidos alcanzó los 285.9 mil millones de dólares (aproximadamente 9.2 billones de nuevos dólares taiwaneses), más de 23 veces la inversión privada de China, que fue de 12.4 mil millones de dólares. Sin embargo, esta cifra china no incluye la inversión gubernamental, por lo que no representa el gasto total en IA de China.</p><p>Un dato relevante es que el número de investigadores y desarrolladores de IA que emigran a Estados Unidos ha disminuido un 89% desde 2017, con una caída del 80% solo en el último año.</p><p>Respecto al impacto de la IA en el empleo, existe una gran discrepancia entre la opinión de expertos y la del público general: el 73% de los expertos espera un impacto positivo de la IA, mientras que solo el 23% del público comparte esta visión, una diferencia de 50 puntos porcentuales.</p></div>
+<div id="story-content-2"><p>El 15 de abril, la Cámara de Representantes y el Senado de Massachusetts aprobaron por separado una resolución amistosa hacia Taiwán, enfatizando que ambas partes comparten la democracia y el estado de derecho, y apoyan profundizar la cooperación bilateral. El director de la oficina en Boston, Liao Chaohong, estuvo presente para expresar sus saludos.</p><p>La resolución de la Cámara de Representantes felicitó al presidente Lai Ching-te y a la vicepresidenta Hsiao Bi-khim por el segundo aniversario de su toma de posesión, reconociendo los logros democráticos de Taiwán, valorando la amistad entre estados hermanos y el compromiso común entre Taiwán y EE.UU. con los valores de democracia, libertad y estado de derecho. Se promueve una &quot;diplomacia integral&quot; para profundizar la asociación integral entre Taiwán y EE.UU., apoyando la ampliación de la participación internacional de Taiwán.</p><p>La resolución señala que 2026 no solo será el 250º aniversario de la fundación de Estados Unidos, sino también el 30º aniversario de la elección directa del presidente por parte del pueblo taiwanés, simbolizando el firme compromiso de Taiwán y EE.UU. con la libertad, la democracia y el estado de derecho. En 2025, Taiwán se convirtió en el cuarto mayor socio comercial de EE.UU. y el quinto mayor mercado de exportación de Massachusetts en Asia, con un crecimiento continuo en el comercio y la inversión entre Taiwán y Massachusetts.</p><p>En el futuro, ambas partes pueden profundizar la cooperación en áreas clave como biotecnología, semiconductores, manufactura avanzada, inteligencia artificial e industria de defensa mediante la firma de un memorando de entendimiento para el intercambio económico y comercial y el establecimiento de una oficina comercial en Taiwán. Se apoya la firma de un acuerdo para evitar la doble imposición entre Taiwán y EE.UU., promoviendo la inversión y el empleo, y alentando la expansión de intercambios educativos y civiles.</p><p>La resolución indica que la política estadounidense hacia Taiwán se basa en la Ley de Relaciones con Taiwán de 1979, apoyando la participación de Taiwán en organizaciones internacionales como la Organización Mundial de la Salud (OMS) y la Organización de Aviación Civil Internacional (OACI), contribuyendo a la comunidad internacional.</p><p>El Senado de Massachusetts también aprobó por primera vez en casi 10 años una resolución amistosa hacia Taiwán, enfatizando el compromiso mutuo con la democracia, la libertad y el estado de derecho, y mostrando apoyo para profundizar aún más la cooperación económica y comercial entre Taiwán, EE.UU. y Massachusetts.</p></div>
+<div id="story-content-3"><p>El Yuan Legislativo emitió hoy un comunicado de prensa indicando que Jiang Qichen asistió esta mañana a la ceremonia de establecimiento de la &quot;Asociación de Amistad Parlamentaria entre la República de China y Canadá&quot;, iniciada por el legislador del Kuomintang Chen Jinghui. Entre los invitados presentes se encontraban decenas de legisladores del Kuomintang, así como el viceministro de Relaciones Exteriores Chen Mingqi y la representante de la Oficina Comercial de Canadá en Taipéi, He Manli.</p><p>Jiang Qichen expresó su alegría por presenciar la fundación de la &quot;Asociación de Amistad Parlamentaria entre la República de China y Canadá&quot;, enfatizando la estrecha y amistosa relación de intercambio entre los parlamentos de Taiwán y Canadá. Desde que asumió el cargo de vicepresidente del Yuan Legislativo, ha recibido cinco delegaciones de parlamentarios canadienses. Aunque Taiwán y Canadá están geográficamente distantes y difieren mucho en tamaño territorial, poseen una fuerte complementariedad y pueden convertirse en los mejores socios de cooperación.</p><p>Jiang Qichen señaló que Canadá cuenta con una comunidad taiwanesa considerable, y que sus paisajes naturales y su multiculturalidad atraen cada año a muchos taiwaneses a viajar a Canadá. Las relaciones bilaterales son profundas y tienen espacio para un mayor desarrollo y expansión.</p><p>Jiang Qichen enfatizó que, a diferencia de los intercambios entre gobiernos o empresas, las relaciones entre parlamentos son más flexibles, permitiendo una comunicación plena y un intercambio honesto de opiniones. En el futuro, la &quot;Asociación de Amistad Parlamentaria entre la República de China y Canadá&quot; se convertirá en una plataforma importante para el intercambio entre los parlamentos de Taiwán y Canadá. Ya sea para recibir visitas de parlamentarios canadienses o para organizar delegaciones a Canadá, se espera que esto fortalezca las relaciones bilaterales, promueva una cooperación más estrecha y, en última instancia, mejore el bienestar de los pueblos de ambos países. (Edición: Zhang Ruoyao) 1150417</p></div>
+<div id="story-content-4"><p>El Congreso del estado de Arizona anunció hoy la creación del &quot;Caucus Legislativo Conjunto de Taiwán&quot; que abarca ambas cámaras, dedicado a promover el intercambio con Taiwán. Tanto el Senado como la Cámara de Representantes emitieron declaraciones de apoyo a Taiwán, resolviendo respaldar la participación de Taiwán en organizaciones internacionales.</p><p>Tony Rivero, presidente del Comité de Comercio Internacional de la Cámara de Representantes y presidente del Caucus de Taiwán, y Frank Carroll, líder de la mayoría en el Senado estatal, presentaron a Ma Boyuan ante todos los legisladores durante la aprobación de la declaración de apoyo a Taiwán.</p><p>Es importante destacar que esta declaración del Congreso estatal aborda temas centrales sobre la participación de Taiwán en la comunidad internacional, y es la primera vez que el Congreso de Arizona menciona la Resolución 2758 de la Asamblea General de las Naciones Unidas, señalando que dicha resolución no excluye la participación de Taiwán en organizaciones internacionales ni autoriza a la República Popular China a representar a Taiwán.</p><p>El Congreso estatal anunció su apoyo a la participación de Taiwán en organizaciones internacionales, incluyendo el sistema de las Naciones Unidas, la Organización Mundial de la Salud, la Organización de Aviación Civil Internacional, la Convención Marco de las Naciones Unidas sobre el Cambio Climático y la Interpol, entre otras.</p><p>Después de la reunión, Ma Boyuan agasajó a los legisladores estatales con bocadillos taiwaneses y té de burbujas, agradeciendo el apoyo bipartidista del Congreso estatal. Ambas partes, taiwaneses y estadounidenses, brindaron con té de burbujas para celebrar la amistad.</p><p>Tony Rivero, presidente del Caucus de Taiwán en la Cámara de Representantes, expresó que para Arizona el tema de Taiwán no es un asunto político, y que el apoyo del Congreso estatal a Taiwán siempre ha sido a través de todo el espectro político.</p><p>Frank Carroll, líder de la mayoría en el Senado, comentó que pasa todos los días frente a la planta de TSMC y ha sido testigo del rápido avance de la construcción. Espera que TSMC atraiga a más talentos, que la comunidad taiwanesa continúe creciendo y que haya más intercambios culturales en el futuro.</p><p>Ma Boyuan, director de la Oficina de Taipei en Los Ángeles, fue recibido con aplausos por los legisladores de la Cámara de Representantes de Arizona el día 16, al presenciar la declaración de apoyo a Taiwán en el Senado estatal.</p><p>En una fotografía proporcionada por la Oficina de Los Ángeles, Ma Boyuan (de pie) se reunió con legisladores estatales de Arizona el 17 de abril de 2026, y ambas partes brindaron con té de burbujas para celebrar la amistad entre Taiwán y Estados Unidos.</p><p>Otra imagen muestra al presidente de la Cámara de Representantes de Arizona, Steve Montenegro (izquierda), estrechando la mano con Ma Boyuan (derecha) dentro del recinto legislativo.</p><p>Etiquetas relacionadas: #TSMC #Resolución2758 #ConvenciónMarcoDeCambioClimáticoDeLaONU</p><p>Lecturas relacionadas: Taiwán se convierte en el cuarto mayor socio comercial de EE.UU.; el Congreso de Massachusetts decide profundizar la cooperación; el Congreso de Oklahoma fortalece la asociación y apoya la paz en el Estrecho de Taiwán; Chen Chi-mai lidera delegación en EE.UU. con primera parada en Arizona; cooperación en semiconductores entre Taiwán, EE.UU. y Japón.</p></div>
+<div id="story-content-5"><p>Esta proyección fue organizada conjuntamente por la Oficina de Representación de Taipei en Montreal, la Universidad de Montreal (Université de Montréal) y la Fundación Asia-Pacífico de Canadá (APFC) en el cine de la Universidad de Montreal.</p><p>Chen Shurong, directora de la Oficina Económica y Cultural de Taipei en Montreal, expresó que &quot;造山者&quot; es una historia que convierte la crisis en oportunidad y es la mejor representación del espíritu de Taiwán; la economía taiwanesa prospera y crece en democracia, y ella hizo un llamado a la comunidad internacional para proteger conjuntamente la democracia y la libertad.</p><p>Alexandre Veilleux, representante de la Fundación Asia-Pacífico de Canadá en Montreal, señaló que los semiconductores no solo representan un avance tecnológico, sino también un proceso de desarrollo que combina el esfuerzo humano, la visión política y la planificación industrial. Esto no solo tiene un impacto profundo en la economía global, sino que también convierte a Taiwán en un socio indispensable a nivel mundial.</p><p>Veilleux añadió que, según la última encuesta de la Fundación Asia-Pacífico de Canadá, el público canadiense mantiene una percepción muy positiva hacia Taiwán, y la simpatía hacia Taiwán en la región asiática es alta, lo que demuestra que las relaciones entre Canadá y Taiwán cuentan con un amplio apoyo popular.</p><p>El debate posterior a la proyección fue moderado por la profesora asistente del Departamento de Historia de la Universidad de Montreal, Cai Xiaolin, quien invitó a la profesora asistente del Departamento de Ingeniería Eléctrica y Computación de la Universidad de Minnesota, Zheng Fangfang, y a la profesora del Departamento de Historia de la Universidad de Quebec en Montreal, Olga Alexeeva, a dialogar. Ellas destacaron que los logros de Taiwán en el desarrollo de la industria de semiconductores merecen reconocimiento internacional, y que Taiwán debe manejar con cautela los grandes desafíos en el contexto de la competencia entre Estados Unidos y China.</p><p>Las profesoras interactuaron con el público presente, discutiendo temas como la relación entre el desarrollo tecnológico y la democratización de Taiwán tras el levantamiento del estado de emergencia, la posición geopolítica de los semiconductores taiwaneses, la política estadounidense hacia Taiwán y su relación con el &quot;Escudo de Silicio&quot; (Silicon Shield), las futuras direcciones de la industria de semiconductores en Taiwán, así como la interacción industrial actual entre Taiwán y Canadá, generando un intercambio muy animado. (Edición: Tang Shengyang)</p><p>La historia del desarrollo de los semiconductores en Taiwán, &quot;造山者&quot;, tuvo su proyección el 15 por la noche en el cine de la Universidad de Montreal, donde el público asistente observó atentamente. (Proporcionado por la Oficina de Representación en Montreal)</p><p>Alexandre Veilleux, representante de la Fundación Asia-Pacífico de Canadá en Montreal, pronunció un discurso en la proyección del documental &quot;造山者&quot; la noche del 15, afirmando que los semiconductores han convertido a Taiwán en un socio global indispensable. (Proporcionado por la Oficina de Representación en Montreal)</p><p>Reportera de CNA Hu Yuli, desde Toronto, 17 de abril de 2026.</p><p>#Chen Shurong #Semiconductores de Taiwán #造山者</p><p>Apoye a CNA eligiendo estar del lado de los hechos; cada donación es una fuerza para proteger la libertad de prensa.</p><p>Descargue la APP &quot;Noticias de primera mano&quot; de CNA para obtener las últimas noticias al instante.</p><p>Los textos, imágenes y videos de este sitio web no pueden ser reproducidos, transmitidos públicamente ni utilizados sin autorización.</p></div>
+<div id="story-content-6"><p>NOWnews organizó el 17 de abril un foro titulado &quot;Decisiones clave para Taiwán: Seguridad nacional, política energética y desarrollo económico&quot;, invitando a expertos nacionales e internacionales a participar.</p><p>Mark Montgomery, exgeneral de la Marina de EE.UU., explicó que la interoperabilidad entre las fuerzas armadas estadounidenses y de otros países tiene cuatro niveles: el más básico es la desconflicción (de-conflicted), seguido por la coordinación (coordinated), luego la integración (integrated) y finalmente la unificación (unified). Por ejemplo, las fuerzas de EE.UU. y Corea del Sur han alcanzado el nivel de unificación con un mando conjunto; EE.UU. y Japón están en integración; Filipinas en coordinación; y Taiwán y EE.UU. solo han alcanzado la desconflicción.</p><p>Montgomery señaló que el presupuesto especial para compras militares de Taiwán está destinado a lograr la interoperabilidad con EE.UU., pero la actual separación entre las ventas militares (FMS) y las ventas comerciales (DCS) de armas estadounidenses a Taiwán no solo carece de beneficios, sino que es &quot;estúpida y contraproducente&quot;. Esto debilitará directamente la interoperabilidad y la capacidad de combate entre Taiwán y las fuerzas estadounidenses, ya que la mejora de sistemas de armas y contratos de vehículos no tripulados dependen en gran medida de las ventas comerciales.</p><p>Montgomery comparó la próxima reunión entre Trump y Xi Jinping en mayo como una &quot;elección&quot; con solo dos votantes, el presidente estadounidense Donald Trump y el presidente chino Xi Jinping. Para que Taiwán gane esta &quot;elección&quot;, debe aprobar rápidamente el presupuesto especial de compras militares y convertirse en un aliado modelo para EE.UU.</p><p>Michael Sobolik, investigador senior del Hudson Institute en Washington, afirmó que la base de la relación entre EE.UU. y Taiwán es fuerte y estable, pero la relación militar es una variable. Trump siempre espera que sus socios inviertan en su propia seguridad y tengan una capacidad confiable de autodefensa. La razón por la que Trump admira a Israel es porque Israel valora su seguridad y lucha por ganar.</p><p>Sobolik, quien fue asesor del senador estadounidense Ted Cruz, indicó que los legisladores estadounidenses quieren ver a Taiwán preparado con capacidades asimétricas, resiliencia fuerte y producción autónoma de armas clave para no depender de socios externos en caso de conflicto.</p><p>Sobolik agregó que el Partido Comunista Chino y Xi Jinping no quieren que el mundo crea que Taiwán tiene la iniciativa, y buscan aislar a Taiwán para convencer al mundo de que no puede protegerse. Si Taiwán aprueba el presupuesto especial de compras militares, fortalecerá la base de la relación con EE.UU. y estará en una posición muy favorable.</p><p>Hsu Yu-jen, exdiputado del Kuomintang y también investigador senior del Hudson Institute, señaló que EE.UU. ve dos aspectos clave en el presupuesto especial de compras militares de Taiwán: primero, si Taiwán se preocupa por su autodefensa; segundo, si el estancamiento del presupuesto se percibe en Washington como un problema político interno que se convierte en un tema internacional. Esto haría que Trump vea a Taiwán como un generador de problemas, permitiendo a Xi Jinping usar esta situación para ejercer presión. Cuando la incertidumbre interna de Taiwán se convierte en una vulnerabilidad externa, China puede aprovecharla.</p><p>El 17 de abril, NOWnews organizó un foro con la participación de Mark Montgomery (exgeneral de la Marina de EE.UU.), Michael Sobolik y Hsu Yu-jen, ambos investigadores senior del Hudson Institute. La foto fue tomada por el reportero Wu Shuwei de la Agencia Central de Noticias (CNA).</p></div>
+<div id="story-content-7"><p>El presidente Lai, acompañado por el secretario general del Consejo de Seguridad Nacional, Wu Zhaoxie, y el ministro de Defensa, Gu Lixiong, visitó esta mañana el cuartel Jintang del Comando de Entrenamiento de Infantería del Ejército para inspeccionar y expresar su apoyo, además de otorgar un bono adicional. El presidente no solo se informó sobre la situación de los equipos de entrenamiento y observó simulaciones con vehículos blindados de ruedas, sino que también revisó el material didáctico de rifles de francotirador desarrollados por el propio ejército.</p><p>Antes de la comida, en su discurso, el presidente mencionó que anteriormente visitó el Comando de Entrenamiento de Vuelo de la Fuerza Aérea y el Centro de Entrenamiento de Supervivencia para el personal aéreo militar, para conocer de primera mano cómo el ejército se mantiene sereno ante situaciones simuladas realistas. Como comandante en jefe de las tres fuerzas armadas, está consciente de que, además de las tareas de defensa en primera línea, es fundamental prestar atención al entrenamiento a largo plazo. Sin embargo, solo tener espíritu de lucha no es suficiente, también se debe brindar el apoyo más fuerte y sólido a los hermanos y hermanas del ejército.</p><p>El presidente enfatizó que por eso el gobierno debe impulsar firmemente el presupuesto especial de defensa y diversas construcciones militares. El gobierno insiste en no hacer concesiones y en que debe aprobarse lo antes posible. Este presupuesto ha sido estudiado y discutido profesionalmente, y con el crecimiento económico anual de Taiwán, es un gasto absolutamente valioso y asequible. Además, es una inversión concreta para proteger la democracia y la libertad, construir el escudo de Taiwán y apoyar a los oficiales y soldados del ejército.</p><p>El presidente señaló que ante la compleja situación regional continua, se debe acelerar la preparación de armas de alta movilidad y alta precisión mediante el presupuesto especial. Para las unidades de infantería, estos equipos les permitirán responder de manera más efectiva a los desafíos del campo de batalla moderno.</p><p>El presidente indicó que todos desean la paz, y todos saben que solo con fuerza se puede obtener una paz verdadera. El gobierno impulsa el presupuesto especial de defensa y realiza diversas construcciones militares para enviar un mensaje claro a la comunidad internacional: Taiwán tiene la determinación, la capacidad y la voluntad de defenderse, proteger la paz y salvaguardar la soberanía. Solo con preparación continua se puede disuadir amenazas; prepararse para la guerra es para evitarla, y poder luchar es para detener la guerra, logrando así una paz verdadera.</p><p>Finalmente, el presidente Lai alentó a todos a continuar con el espíritu de la escuela de infantería, mejorar las habilidades de combate, avanzar con los tiempos y seguir hacia nuevas metas de entrenamiento, pensamiento, equipamiento y tecnología, para que todos los ciudadanos puedan estar tranquilos y confiados, porque mientras el ejército esté presente, la seguridad de Taiwán estará garantizada. Todos deben seguir esforzándose juntos para defender la seguridad nacional, proteger la democracia y la libertad, y salvaguardar la vida y la propiedad de toda la población.</p></div>
+<div id="story-content-8"><p>El Instituto de Economía de Taiwán (中經院) publicó su última previsión económica el 17 de abril, ajustando al alza la tasa de crecimiento económico para 2026 al 7.22%, a pesar de las interferencias causadas por el conflicto en Medio Oriente. La fuerte demanda y el desarrollo próspero de la tecnología de inteligencia artificial (IA) han impulsado este crecimiento. En enero, la previsión anterior estimaba un crecimiento del 4.14% para este año y del 2.95% para el siguiente, con un aumento anual del índice de precios al consumidor (IPC) de 1.64% y 1.58%, respectivamente. La nueva estimación eleva el IPC para este año a 1.98% y para el próximo a 1.83%.</p><p>El director del Instituto, Lian Xianming (連賢明), explicó que, aunque el conflicto en Medio Oriente genera incertidumbre, la perspectiva para el crecimiento económico de este año sigue siendo positiva, principalmente debido a la fuerte demanda de exportaciones taiwanesas, especialmente en productos relacionados con IA, que impulsaron un crecimiento económico superior al 13% en el primer trimestre.</p><p>Según la previsión del Instituto, el modelo de crecimiento económico de Taiwán se caracteriza por un &quot;calor externo y temperatura interna moderada&quot;. En cuanto a la demanda externa, a pesar de que el conflicto en Medio Oriente afecta el comercio y transporte de mercancías, el desarrollo vigoroso de la industria de IA permite que las exportaciones e importaciones de productos relacionados con tecnologías de la información, electrónica y semiconductores mantengan un crecimiento estable, con tasas anuales del 19.83% y 18.24%, respectivamente.</p><p>En cuanto a la demanda interna, el consumo privado se ha visto favorecido por la mejora en el mercado laboral y el efecto riqueza del mercado bursátil, con un crecimiento anual del 2.16%, superando el desempeño del año anterior.</p><p>Lian Xianming añadió que la previsión económica del Instituto se basa en supuestos que consideran las opiniones de organismos internacionales, asumiendo que el conflicto no se prolongará a largo plazo y que el precio internacional del petróleo alcanzó su punto máximo en abril. Sin embargo, el conflicto en Medio Oriente involucra cambios en energía y cadenas de suministro, lo que podría afectar las tasas de interés y aumentar la incertidumbre en las previsiones económicas.</p><p>Respecto a las preocupaciones sobre la inflación derivada del conflicto, Lian señaló que la duración del conflicto, la continuidad del congelamiento de precios energéticos en Taiwán y las medidas gubernamentales para controlar los precios serán factores clave para la evolución futura de los precios.</p><p>La directora de la Oficina de Desarrollo Económico del Consejo Nacional de Desarrollo, Chen Meiju (陳美菊), indicó que tras el estallido del conflicto en Medio Oriente, el gobierno activó rápidamente múltiples medidas para estabilizar los precios, convocando reuniones frecuentes para monitorear los cambios en los precios. El Ministerio de Economía incluso lanzó un &quot;proyecto de bolsas de plástico a precio accesible&quot; debido a la volatilidad en el mercado de materias primas petroquímicas, con el objetivo de controlar la inflación desde la raíz y suprimir las expectativas inflacionarias.</p><p>Lian Xianming afirmó que la previsión actual del IPC está muy cerca del 2%, y si el gobierno no mantiene el congelamiento de precios, la tasa anual del IPC podría superar el 2%.</p><p>En cuanto al tipo de cambio, el Instituto considera que, debido a la incertidumbre en la inflación y las políticas monetarias en Europa y Estados Unidos, junto con el fortalecimiento del dólar impulsado por riesgos geopolíticos, se espera que el tipo de cambio del dólar estadounidense frente al nuevo dólar taiwanés se aprecie suavemente desde 31.63 en el primer trimestre hasta 31.04 en el cuarto trimestre de 2026, con un promedio anual de aproximadamente 31.4, lo que representa una depreciación de alrededor del 0.65% en comparación con 2025.</p></div>
+<div id="story-content-9"><p>La Fundación Internacional de Investigación Legal en Inteligencia Artificial organizó esta mañana el &quot;Foro Internacional sobre Pensamiento y Estrategias de Protección en la Coproducción Taiwán-Estados Unidos&quot;, invitando a representantes de think tanks, industria, academia, derecho y contabilidad de Taiwán y Estados Unidos para dialogar interdisciplinariamente sobre las oportunidades y riesgos en la reestructuración de la cadena de suministro. Cheng Ming-Chien y Hou Yi-Hsiu, subsecretaria del Ministerio de Desarrollo Digital, fueron invitados a dar los discursos de apertura.</p><p>Cheng Ming-Chien señaló que en este momento clave de la reestructuración global de la cadena de suministro, Taiwán debe equilibrar la protección de tecnologías clave y mejorar la competitividad industrial y la cooperación internacional. El foro de hoy se centra en la coproducción entre Taiwán y Estados Unidos y la protección de la competitividad central.</p><p>Expresó que el Ministerio de Justicia, como la autoridad legal principal, otorga gran importancia a construir un sistema de protección multinivel desde las empresas hasta el Estado. La disposición transfronteriza de la coproducción entre Taiwán y Estados Unidos es fundamental para proteger las tecnologías clave. Actualmente, no se trata solo de problemas internos de la industria o cumplimiento legal, sino de la competitividad nacional a nivel de seguridad estatal y la reorganización de la industria tecnológica mundial, por lo que el Ministerio de Justicia tiene una responsabilidad ineludible.</p><p>En cuanto a fortalecer los mecanismos de protección, Cheng explicó que se hará a través de tres niveles: legislación, aplicación de la ley y gobernanza. En el aspecto legislativo, se continuará promoviendo la reforma de la Ley de Seguridad Nacional para definir los requisitos y procedimientos para las tecnologías clave nacionales. Además, se añadirán delitos de espionaje económico y uso extraterritorial de secretos comerciales de tecnologías clave nacionales, construyendo una protección escalonada junto con la Ley de Secretos Comerciales, elevando la protección de tecnologías clave al nivel de seguridad nacional.</p><p>Respecto a la aplicación de la ley, Cheng indicó que las autoridades encargadas cuentan con fiscales especializados en casos de seguridad nacional y tribunales especializados para fortalecer la protección y evitar la fuga de tecnologías clave nacionales. En el nivel de gobernanza, las fiscalías colaboran activamente con los parques científicos para organizar foros de protección de secretos comerciales, mediante seminarios y compartición de casos, ayudando a las empresas a establecer mecanismos de protección y control de riesgos, y creando plataformas de conexión para que las empresas reciban información y asistencia oportunas, perfeccionando así el mecanismo de protección de tecnologías clave.</p><p>Hou Yi-Hsiu, en su discurso, manifestó que cuando la industria taiwanesa se traslada al extranjero, es necesario formar una cadena ecológica resiliente que proteja las industrias clave originarias de Taiwán y mantenga una buena comunicación con las sedes empresariales. Esto requiere colaboración en aspectos legales, fiscales y de talento en servicios de software. La protección y la coproducción no son contradictorias, sino complementarias, combinando defensa y ataque, constituyendo una estrategia industrial a nivel nacional.</p></div>
+<div id="story-content-10"><p>El Instituto de Investigación Económica de Taiwán publicó hoy su última previsión económica. A pesar de las interferencias del conflicto en Medio Oriente, debido al auge de la tecnología de IA y la fuerte demanda, se estima que la tasa de crecimiento económico de este año alcanzará el 7.22%. Sin embargo, la presión inflacionaria ha aumentado ligeramente, y la tasa anual del índice de precios al consumidor (IPC) para todo el año se pronostica en 1.98%, acercándose al límite de alerta inflacionaria del 2%.</p><p>Ante preguntas de los medios sobre si las 10 medidas anunciadas el día 12 por la Oficina de Asuntos de Taiwán del Comité Central del Partido Comunista Chino, tras la reunión entre Xi y Zheng, que incluyen la importación de productos agrícolas y pesqueros taiwaneses a China continental y la promoción de la reanudación del turismo individual desde Shanghai y la provincia de Fujian hacia Taiwán (isla principal), ayudarán a estimular la economía, Lian Xianming respondió que medidas como el turismo individual y la apertura a productos agrícolas ya se han implementado en el pasado, y su efecto para estimular la demanda interna es limitado. El verdadero impacto directo en la industria proviene de problemas como el exceso de capacidad productiva y la competencia interna en China.</p><p>Lian Xianming afirmó con franqueza que el tema realista entre ambos lados del estrecho ha cambiado de ser complementario a competitivo. Especialmente en las industrias tradicionales, actualmente China y Taiwán compiten directamente, con una gran presión en los precios, lo que se siente mucho en la industria petroquímica. Por lo tanto, si la competencia interna en China se alivia, será de mayor ayuda para la industria taiwanesa.</p><p>Lian Xianming también señaló que en los últimos años China ha impulsado fuertemente la inteligencia artificial, pero Taiwán no puede aprovechar fácilmente las oportunidades comerciales en este campo, en parte porque Estados Unidos ya tiene muchos pedidos. En cuanto a las industrias no relacionadas con la IA, la mayoría en Taiwán han sido reemplazadas por la cadena de suministro roja (china). Actualmente, la relación entre ambos lados del estrecho tiende a ser competitiva.</p></div>
+<div id="story-content-11"><p>El procesador cuántico (QPU) es el núcleo de la computadora cuántica superconductora. Anteriormente, la calibración del QPU dependía en gran medida de la experiencia manual y de programas de corrección cíclicos, lo que no solo limitaba la eficiencia, sino que también dificultaba satisfacer las demandas de sistemas a gran escala.</p><p>El Academia Sinica emitió hoy un comunicado de prensa señalando que, para superar las limitaciones de los métodos tradicionales de calibración de QPU, ha iniciado una colaboración reciente con NVIDIA, utilizando el modelo de IA de la serie Ising de NVIDIA para desarrollar una tecnología de calibración automatizada impulsada por inteligencia artificial. Esto permite acelerar el proceso de desarrollo y prueba de QPU bajo una arquitectura integrada de computación cuántica y procesadores gráficos (GPU), acortando efectivamente la brecha entre la capacidad actual del hardware y las aplicaciones cuánticas prácticas.</p><p>Chen Qidong, director ejecutivo del Centro de Temas Clave de Computación Cuántica del Academia Sinica, indicó que este sistema ya se ha integrado en la plataforma de computación cuántica del Academia Sinica. A través de una arquitectura colaborativa automatizada de múltiples agentes, ofrece múltiples capacidades clave. El sistema soporta la optimización de parámetros en circuito cerrado, ajustando automáticamente los parámetros experimentales y detectando la frecuencia de los qubits mediante un ciclo continuo de &quot;ejecución - detección - ajuste&quot;.</p><p>Chen Qidong expresó que con solo ingresar una instrucción en lenguaje natural, se puede completar la calibración de lectura en un chip cuántico que contiene 5 qubits y 4 acopladores, generando automáticamente el proceso experimental, demostrando su potencial de aplicación en el chip de 20 qubits recientemente publicado por el centro temático.</p><p>El Academia Sinica afirmó que, a través de la cooperación con NVIDIA, está estableciendo una infraestructura de prueba cuántica que combina alta confiabilidad, alta eficiencia y escalabilidad. Además, abrirá estos recursos de plataforma para servir a la academia y la industria nacionales, promoviendo el desarrollo y la aplicación de la tecnología cuántica, y fortaleciendo aún más el ecosistema general de tecnología cuántica en Taiwán.</p></div>
+<div id="story-content-12"><p>El Viceministro Permanente del Ministerio de Educación, Zhu Junzhang, el Vicealcalde del Condado de Chiayi, Liu Peidong, el Rector de la Universidad Chung Cheng, Cai Shaozheng, junto con más de cien personas del ámbito académico e industrial, asistieron hoy a la ceremonia de inauguración y al foro, donde observaron el funcionamiento de equipos de mecanizado de cinco ejes, exhibiciones de portaherramientas inteligentes, modelos de IA inspirados en la física y gemelos digitales.</p><p>Zhu Junzhang declaró en una entrevista con los medios que el Ministerio de Educación subsidia la creación de la &quot;Base de Manufactura Verde y Baja en Carbono de Vanguardia&quot; con el propósito de permitir que la industria aproveche la capacidad investigativa de la Universidad Chung Cheng para la transformación hacia emisiones netas cero de carbono. Además, se busca la formación de talento, donde los estudiantes aprenden a utilizar la inteligencia artificial junto con equipos de mecanizado, para que puedan incorporarse inmediatamente al sector industrial tras graduarse.</p><p>Cai Shaozheng señaló que la característica principal de la &quot;Base de Manufactura Verde y Baja en Carbono de Vanguardia&quot; es utilizar inteligencia artificial para transformar la experiencia práctica de los maestros artesanos en activos digitales, logrando una &quot;predicción previa&quot; en los procesos de manufactura en lugar de una &quot;corrección posterior&quot;, reduciendo errores en el proceso y alcanzando el objetivo de ahorro energético y reducción de carbono.</p><p>Cai Shaozheng añadió que, además de la Universidad Chung Cheng, otras cuatro universidades asociadas — Universidad Tecnológica de Huwei, Universidad Tecnológica de Qin Yi, Universidad Tecnológica de Xiuping y Universidad Tecnológica de Wufeng — trabajan conjuntamente para difundir los resultados educativos.</p><p>Cai expresó la esperanza de que la Universidad Chung Cheng pueda desempeñar un papel de locomotora en la reducción de energía y carbono, transfiriendo las tecnologías investigadas por profesores y estudiantes a las empresas, ayudando a la actualización industrial y alcanzando la meta nacional de emisiones netas cero para 2050.</p><p>La Universidad Chung Cheng indicó que el establecimiento de la &quot;Base de Manufactura Verde y Baja en Carbono de Vanguardia&quot; es parte de la política del Departamento de Educación Técnica y Vocacional del Ministerio de Educación para &quot;establecer bases regionales de talento y capacitación técnica en la industria&quot;, con el objetivo de promover la cooperación entre universidades y clústeres industriales para formar profesionales técnicos especializados.</p></div>
+<div id="story-content-13"><p>La electricidad de Taitung depende completamente del suministro desde la región occidental, con un consumo anual aproximado de mil millones de kilovatios-hora. En caso de un desastre grave que afecte la electricidad en el oeste, Taitung podría sufrir un corte de energía. Por ello, el gobierno del condado de Taitung ha acelerado en los últimos seis años el desarrollo de microrredes de generación con energía geotérmica y pequeñas centrales hidroeléctricas, con la meta de alcanzar una generación autónoma de 600 millones de kilovatios-hora para 2030.</p><p>El director de Finanzas y Desarrollo Económico del condado de Taitung, Zhang Zhengwen, informó hoy a la Agencia Central de Noticias que en las zonas montañosas de Taitung hay muchos arroyos con grandes desniveles. Mediante tuberías que conducen el agua hacia pequeñas turbinas hidroeléctricas, se puede generar electricidad. Actualmente, el gobierno de Taitung, en cooperación con comunidades indígenas, ha encargado a empresas la construcción de seis pequeñas centrales hidroeléctricas, de las cuales cuatro ya están en operación.</p><p>Este año se planea construir la séptima pequeña central hidroeléctrica en el arroyo Wufu en el municipio de Daren, con una capacidad estimada de generación de 132 kilovatios por hora. El agua utilizada podrá regresar al arroyo para su reutilización. La electricidad generada podría priorizarse para el uso de las comunidades indígenas, y el excedente se vendería a la empresa estatal Taiwan Power Company (Taipower). Los habitantes de las comunidades también esperan que estas instalaciones se conviertan en un atractivo turístico.</p><p>En cuanto a la generación geotérmica, hay una planta en operación comercial y otras tres en construcción.</p><p>Zhang Zhengwen señaló que aunque Taitung no cuenta con centrales eléctricas propias, puede aprovechar la energía geotérmica y la hidroeléctrica pequeña para generar electricidad de manera autónoma mediante microrredes, ya que los recursos son abundantes. El consumo anual de electricidad en Taitung es de aproximadamente mil millones de kilovatios-hora, y se estima que al completar estas dos fuentes de energía renovable, para 2030 se podrá generar de forma autónoma alrededor de 600 millones de kilovatios-hora al año.</p><p>Agregó que la generación de energía renovable tiene un bajo impacto ambiental. En el futuro, si se construyen más pequeñas centrales de este tipo y se conectan exitosamente para formar una red regional, se podrá lograr la generación autónoma y evitar cortes masivos de electricidad causados por desastres.</p><p>El ingeniero consultor de proyectos de generación eléctrica, Huang Junkai, explicó que la electricidad generada por las pequeñas centrales hidroeléctricas se suministra primero a las comunidades indígenas y luego se conecta a la red eléctrica general. Gao Hefeng, presidente de la Asociación de Desarrollo Comunitario de Nantian en el municipio de Daren, Taitung, manifestó que la combinación de pequeñas centrales hidroeléctricas con el turismo bajo en carbono puede promover la educación ambiental.</p></div>
+<div id="story-content-14"><p>Zheng Wei y sus filiales Sen Wei Energy y Yong Wei Investment Holdings celebraron una conferencia de prensa sobre información importante el 13 de noviembre de 2025. Sen Wei Energy anunció que Fu Wei Energy, bajo su gestión, reconoció pérdidas debido a la contratación del proyecto de la segunda fase de energía eólica marina, lo que causó una pérdida contable de 7,736 millones de NT$ en el tercer trimestre del año pasado. Zheng Wei y Yong Wei reconocieron pérdidas proporcionales a sus participaciones del 24.87% y 44.16%, respectivamente.</p><p>Sen Wei Energy reportó una pérdida contable de 7,736 millones de NT$ en el tercer trimestre de 2025, sumando una pérdida acumulada de 4,430 millones de NT$ en la primera mitad del año, con una pérdida total de 12,172 millones de NT$ en los primeros tres trimestres del año pasado. Sin embargo, Sen Wei Energy enfatizó que su valor neto aún se mantiene en 4,869 millones de NT$, indicando una estructura financiera sólida.</p><p>En ese momento, Sen Wei también anunció cambios en la alta dirección: el gerente general de Sen Wei Energy, Hu Huishen, renunció y su puesto fue asumido temporalmente por el presidente de la junta, Guo Taiqiang; el gerente general de Fu Wei Energy, Pu Dawei, también renunció, y su puesto fue asumido temporalmente por Hu Huishen, presidente de Fu Wei Energy.</p><p>Sen Wei Energy explicó que la solicitud de presupuesto adicional presentada a Taipower inicialmente no fue aprobada. Tras la mediación de la Comisión de Obras Públicas del Yuan Ejecutivo, hoy se obtuvo un acuerdo de mediación de dicha comisión, y Taipower acordó pagar 5,556,936,970 NT$.</p></div>
+<div id="story-content-15"><p>La subsidiaria de Wistron anunció el 10 de mayo de 2024 que ha arrendado la planta en Fremont, California, y que el contrato de arrendamiento original terminará tras la finalización de esta transacción. El mercado interpreta que la planta en California cambia de arrendamiento a compra, lo que significa que la estrategia de Wistron en el mercado norteamericano pasa de un modelo de &quot;arrendamiento ligero de activos&quot; a un enfoque de &quot;inversión profunda en activos&quot;.</p><p>Wistron emitió un comunicado importante indicando que la compra de la planta tiene como objetivo &quot;responder a las necesidades de desarrollo comercial y planificación estratégica&quot;.</p><p>En marzo de este año, Wistron realizó una reunión con inversionistas donde señaló que el gasto de capital del año pasado fue de 35,500 millones de NT$, y que para este año se planea aumentar a 60,000 millones de NT$, principalmente destinados a las dos principales bases de producción en Taiwán y Estados Unidos. El presidente de Wistron, Lin Hsien-ming, afirmó en ese momento que la planta en Estados Unidos es una &quot;pieza activa&quot; cercana al cliente, y que también tendrá un impacto positivo frente a posibles temas arancelarios futuros.</p></div>
+<div id="story-content-16"><p>Zheng Kaiyin asistió a una conferencia de prensa por la tarde y declaró que el aumento de capital de 300 millones aprobado a principios de este año ajustó el precio de la ronda anterior de 15 a 10 dólares, debido a las fluctuaciones en el precio de las acciones de la industria, con el objetivo de recompensar a los accionistas existentes. Actualmente, los accionistas apoyan firmemente el plan de expansión del negocio.</p><p>Respecto al progreso de la OPI (Oferta Pública Inicial) que preocupa al mercado, Zheng Kaiyin señaló que revertir las pérdidas para obtener ganancias es un hito necesario antes de la OPI. Internamente ya se ha estimado un calendario para lograr la rentabilidad, pero este año &quot;definitivamente no será&quot;.</p><p>Dijo que aunque no se descarta la posibilidad de una OPI en el futuro, la tarea principal en esta etapa es expandir el negocio de pagos electrónicos. Actualmente, la aplicación iPASS MONEY de iPASS ha alcanzado 4 millones de descargas, con aproximadamente 2 millones de usuarios activos mensuales y entre 300,000 y 400,000 usuarios activos diarios. El monto de pagos y cobros alcanzó un mínimo de 1,420 millones de dólares en enero de este año, y la velocidad de recuperación superó las expectativas internas, llegando a 1,520 millones en febrero y aumentando a 1,820 millones en marzo.</p><p>Al hablar sobre los desafíos tras la separación de LINE Pay, Zheng Kaiyin admitió que efectivamente hubo un impacto. Debido a que ya no pueden cobrar comisiones por cooperación y han perdido la ventaja del escenario de transferencias en el chat de LINE, los montos de transferencias y recargas han disminuido. Además, los canales que antes se conectaban a través de LINE Pay necesitan ser reconectados, lo que se estima tomará entre 6 y 12 meses.</p><p>A pesar de los desafíos, Zheng Kaiyin enfatizó que iPASS adoptará una estrategia de expansión en lugar de reducir la escala de pagos electrónicos. iPASS es actualmente la única institución de pagos electrónicos con inversión del gobierno central y local, y promoverá activamente las políticas gubernamentales. La aplicación independiente puede gestionar simultáneamente la tarjeta física y los pagos electrónicos, una integración vertical difícil de alcanzar para los competidores. Con la aplicación independiente, también pueden decidir de forma autónoma con qué empresas cooperar.</p><p>En cuanto a la economía de puntos, Zheng Kaiyin explicó que los &quot;puntos verdes&quot; de iPASS se posicionan como puntos de política, combinados con la política de carbono neutralidad, y se utilizan para descontar en transporte público, pagos de servicios y consumo en canales verdes. La emisión anual de puntos verdes ha crecido exponencialmente, con una tasa de canje del 60% al 80%. En el futuro se anunciarán proyectos de cooperación de puntos a mayor escala.</p></div>
+<div id="story-content-17"><p>Zhonggong declaró hoy mediante un comunicado que ambas partes priorizan el crecimiento sostenible de la empresa y el máximo beneficio para todos los accionistas, y han decidido participar conjuntamente en la gobernanza de la compañía, con la esperanza de inyectar nueva energía a Zhonggong.</p><p>Zhonggong señaló que, tras una comunicación plena y una coordinación de buena fe entre ambas partes, se ha alcanzado un consenso armonioso para la reelección de la junta directiva actual. En ese momento, integrarán y propondrán conjuntamente una lista de candidatos más adecuada para participar en la elección, seleccionándola de entre las tres listas de candidatos ya presentadas.</p><p>Se informa que, de los siete puestos en la junta directiva, Baojia obtendrá cuatro y el grupo Weijing tres, aunque Zhonggong no ha confirmado esta información.</p><p>Zhonggong explicó que esta medida no solo demuestra plenamente la determinación de los principales accionistas para resolver sus diferencias, sino que también establece un ejemplo en el mercado de capitales de Taiwán, priorizando el panorama general y negociando pacíficamente para buscar el beneficio empresarial común.</p><p>Zhonggong indicó que en el futuro ambas partes dejarán atrás las disputas pasadas y, con un espíritu de cooperación honesta y beneficio mutuo, ayudarán al desarrollo operativo de la empresa. El equipo de gestión futuro de Zhonggong también estabilizará la moral y continuará enfocándose en su negocio principal, caminando junto a los principales accionistas.</p></div>
+<div id="story-content-18"><p>Según las estadísticas de la Bolsa de Valores de Taiwán, la capitalización total de las empresas listadas alcanzó los 120 billones 594 mil millones de nuevos dólares taiwaneses, un aumento de aproximadamente 4.5 billones en comparación con la semana pasada.</p><p>En cuanto a los índices por industria, el índice con mayor aumento esta semana fue el de vidrio y cerámica, que subió un 26.51%, mientras que el índice con mayor caída fue el de papel, que bajó un 1.57%. Otros índices excluyendo el sector financiero subieron 1324.65 puntos, con un aumento aproximado del 4.17%; el índice excluyendo el sector electrónico subió 508.83 puntos, con un aumento del 2.56%; y el índice excluyendo los sectores financiero y electrónico subió 497.71 puntos, con un aumento del 3.60%.</p><p>El monto total de transacciones de acciones listadas esta semana fue de 4.3819 billones de nuevos dólares taiwaneses. Las tres industrias con mayor monto de transacciones fueron: semiconductores con 1.6299 billones, representando el 37.20% del total; componentes electrónicos con 966.512 mil millones, representando el 22.06%; y optoelectrónica con 330.043 mil millones, representando el 7.53%.</p><p>Además, la tasa de rotación del volumen de acciones esta semana fue del 4.25%. Las tres industrias con mayor tasa de rotación fueron vidrio y cerámica con 34.14%, optoelectrónica con 21.25% y componentes electrónicos con 14.52%.</p><p>Desde el inicio del año hasta la fecha, en 66 días hábiles, el monto total de transacciones en el mercado concentrado fue de 53.7202 billones de nuevos dólares taiwaneses, con un promedio diario de 8139.44 mil millones. La tasa de rotación del volumen de acciones fue del 54.97%, y la tasa de rotación diaria promedio fue del 0.83%.</p></div>
+<div id="story-content-19"><p>Yitech señaló que, con la próxima finalización del ajuste de su estructura operativa, la gestión interna y la asignación de recursos se han vuelto más eficientes. Actualmente, los pedidos son estables y la empresa continuará optimizando la combinación de productos para impulsar el margen bruto.</p><p>De cara al futuro, Yitech indicó que, frente al aumento de la demanda de capacidad computacional para inteligencia artificial generativa (IA), y al incremento en la complejidad de la verificación y análisis de semiconductores, la empresa seguirá profundizando en tecnologías como fotónica de silicio (SiPh) y óptica de empaquetado conjunto (CPO). Actualmente, ya ha construido una plataforma madura y completa de verificación y análisis optoelectrónico integral.</p><p>Yitech destacó que el volumen de proyectos relacionados está creciendo de manera estable, lo que ayudará a clientes líderes en chips de IA, fabricantes de chips de comunicaciones móviles y fundiciones de semiconductores a superar cuellos de botella tecnológicos, acelerar el lanzamiento de productos y promover el crecimiento del negocio de empaquetado avanzado.</p></div>
+<div id="story-content-20"><p>La Feria Industrial y de Manufactura de Vietnam (VIMF) se llevó a cabo en Haiphong del 15 al 17 de abril, siendo la primera vez que esta feria se realiza en esta ciudad, la tercera más grande de Vietnam y el mayor puerto del norte del país, además de una zona industrial emergente con gran potencial de desarrollo. La exposición reunió cientos de stands de Japón, Corea del Sur, Taiwán y otros países del sudeste asiático, con la participación de profesionales de la industria regional.</p><p>HIWIN es una de las tres principales marcas mundiales en tornillos de bolas de precisión y componentes de transmisión lineal, con una cuota de mercado global del 20%. Sus productos son esenciales para las industrias de semiconductores, automatización, robótica, infraestructura y AI, y sus clientes son grandes empresas internacionales.</p><p>Con la relocalización de líneas de producción de empresas como Apple, Samsung y NVIDIA a Vietnam, los productos electrónicos como teléfonos móviles y servidores requieren alta precisión y una rápida implementación de líneas automatizadas, lo que demanda sistemas modulares de transmisión de precisión.</p><p>El representante de ventas Chen Minghui comentó a la Agencia Central de Noticias que muchas fábricas se trasladan desde China para construir una cadena de suministro no roja, y que tras mudarse a Vietnam, no desean usar componentes clave fabricados en China para evitar posibles bloqueos en la entrega debido a tensiones geopolíticas.</p><p>HIWIN produce el 100% de sus productos en Taiwán y ha estado presente en Vietnam a través de distribuidores durante más de 20 años, siendo testigo de la evolución industrial del país, desde la manufactura tradicional hasta la fabricación de precisión para teléfonos móviles y servidores.</p><p>Actualmente, los clientes del sector electrónico exigen mayor precisión y estabilidad, y muchos clientes finales de Europa y Estados Unidos solicitan altos estándares según normativas americanas y europeas, por lo que los clientes vietnamitas también se están orientando hacia productos fabricados en Taiwán. Además, la creciente escasez de mano de obra en Vietnam favorece las perspectivas de ventas de HIWIN.</p><p>Sobre las ventajas de Taiwán en la transferencia de cadenas de suministro, Chen Minghui señaló que las empresas taiwanesas son flexibles, rápidas y eficientes en su despliegue; que ya están bien establecidas en Vietnam y pueden suministrar inmediatamente a las empresas que se trasladen allí; y que el diseño de componentes de alta precisión depende en gran medida del talento tecnológico taiwanés.</p><p>“Los clientes vietnamitas confían más en las marcas taiwanesas. China tiene productos similares a un tercio del precio, pero los clientes prefieren las marcas taiwanesas porque simbolizan precisión y durabilidad, lo que afecta el resultado final de su producción”, explicó. Los clientes le dijeron que los productos baratos no duran y tienen riesgo de fallas, lo que no es rentable.</p><p>En la feria industrial se observaron numerosos stands de empresas taiwanesas con gran afluencia de consultas, lo que demuestra el papel importante de la cadena de suministro no roja de Taiwán en la transformación industrial de Vietnam, siendo campeones invisibles detrás de la cadena productiva.</p><p>Jianhexing, subsidiaria que produce terminales de prensado en frío, cobre-aluminio, conductores y materiales resistentes al agua, suministra productos relacionados con la electricidad y la corriente, con aplicaciones muy amplias.</p><p>Jianhexing ha operado en ventas en Vietnam por casi 10 años, con clientes en 150 países y cerca de 1,000 clientes en Vietnam, incluyendo grandes proyectos como parques eólicos marinos, aeropuertos internacionales y el mayor fabricante de automóviles de Vietnam, VinFast.</p><p>El vicepresidente Chen Changyue dijo a la Agencia Central que la población del sudeste asiático es suficientemente grande y la demanda eléctrica crece en correlación con la población, con un rápido crecimiento.</p><p>Sobre el potencial del mercado vietnamita, Chen Changyue afirmó: “La política vietnamita es concentrada, no intenta desarrollar todas las industrias, sino que se enfoca en la industria de alta tecnología. Los equipos de alta tecnología requieren muchos terminales para transmisión, junto con el soporte eléctrico y el diseño de redes eléctricas, todos relacionados directamente con Jianhexing.”</p><p>Por ejemplo, en Vung Tau se está construyendo una planta de energía de gas natural, y Vietnam y China planean construir una planta nuclear, todos clientes de Jianhexing. En los últimos años, Vietnam ha impulsado fuertemente obras públicas, y sus productos también están presentes en el metro de Hanoi.</p><p>Frente a la estrategia de precios bajos de China, Chen Changyue señaló que los objetivos de clientes son diferentes: las fábricas chinas se enfocan en productos de bajo costo para proyectos pequeños y artículos domésticos con menor exigencia de calidad.</p><p>“Pero clientes como aeropuertos no toleran fallas y exigen alta calidad. Nuestros productos superan a los chinos en todos los aspectos, cumplen con los estándares más altos y son más duraderos, por lo que en grandes proyectos, aeropuertos y automóviles, la mayoría prefiere trabajar con nosotros, esa es nuestra ventaja.”</p><p>La calidad de los productos taiwaneses está garantizada, y muchos clientes vietnamitas admiten que sus dos principales proveedores son Japón y Taiwán, y prefieren a estos países para el suministro eléctrico.</p><p>El gerente de la empresa Gongde, Li Yuyu, compartió una opinión similar. La empresa tiene una fábrica en el norte de Vietnam que produce bolsas aislantes y bolsas calefactoras, sirviendo como base de fabricación por contrato para Taiwán, con productos exportados a Taiwán, Japón y Singapur, y colabora estrechamente con fábricas de obleas taiwanesas.</p><p>Con la inversión extranjera aumentando y la transformación hacia la electrónica en Vietnam, la demanda interna crece, y los productos de Gongde, enfocados en ahorro energético, reducción de carbono y responsabilidad social corporativa, satisfacen las necesidades de las empresas vietnamitas.</p><p>Li Yuyu dijo: “La cadena industrial taiwanesa es muy completa, con liderazgo global en la industria de obleas, y los proveedores, como parte de la cadena, se desarrollan naturalmente y garantizan calidad.”</p><p>El vicepresidente de Jianhexing, Chen Changyue, declaró el 16 de abril en la feria industrial de Haiphong que la empresa tiene muchos grandes clientes de ingeniería en Vietnam y suministra al mayor fabricante de automóviles VinFast, siendo reconocida por su alta calidad. La directora de la oficina de la Asociación de Comercio Exterior de Taiwán en Hanoi, Shi Yitian (izquierda), y Chen Changyue (derecha) posaron juntos. Foto de la Agencia Central de Noticias, tomada por Zeng Tingxuan en Haiphong, 17 de abril de 2026.</p><p>El gerente de Gongde, Li Yuyu, participó en la feria industrial de Haiphong y afirmó que con el desarrollo de la manufactura electrónica y la tendencia de ahorro energético y reducción de carbono en Vietnam, la empresa tiene buenas perspectivas, y la cadena de suministro taiwanesa tiene un papel importante en este campo. Foto de la Agencia Central de Noticias, tomada por Zeng Tingxuan en Haiphong, 17 de abril de 2026.</p><p>La Feria Industrial y de Manufactura de Vietnam se realizó en Haiphong del 15 al 17 de abril, siendo la primera vez que se celebra en esta ciudad. Haiphong es la tercera ciudad más grande de Vietnam, el mayor puerto del norte y una zona industrial emergente con potencial de desarrollo. La feria reunió a fabricantes y compradores globales. Foto de la Agencia Central de Noticias, tomada por Zeng Tingxuan en Haiphong, 17 de abril de 2026.</p></div>
+  </div>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lb-title">
+    <div class="lb-backdrop" id="lb-backdrop"></div>
+    <div class="lb-panel">
+      <button class="lb-close" id="lb-close" aria-label="關閉">✕</button>
+      <div class="lb-scroll" id="lb-scroll">
+        <div class="lb-meta">
+          <span class="lb-category tag-default" id="lb-category"></span>
+          <span class="lb-time" id="lb-time"></span>
+        </div>
+        <h2 class="lb-title" id="lb-title"></h2>
+        <div class="lb-image-wrap" id="lb-image-wrap">
+          <img id="lb-image" src="" alt="" loading="eager">
+        </div>
+        <div class="lb-body" id="lb-body"></div>
+        <a class="lb-source" id="lb-source" href="#" target="_blank" rel="noopener">查看原文</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">中央社外語選稿 西班牙語</div>
+      <div class="footer-links">
+        <a href="https://u0401006.github.io/video-quotes/news/">歷史存檔</a>
+        <a href="https://u0401006.github.io/video-quotes/">訂閱電子報</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 中央社外語選稿 西班牙語 · 版權所有</span>
+      <span class="footer-generated">Generated at 2026-04-18T12:48:08</span>
+    </div>
+  </footer>
+
+</div><!-- /.page-wrapper -->
+
+<script>
+  var TAG_CLASSES = {
+    '政治': 'tag-politics', '國內': 'tag-politics',
+    '國際': 'tag-intl',     '外交': 'tag-intl',
+    '財經': 'tag-finance',  '經濟': 'tag-finance',
+    '體育': 'tag-sports',
+    '科技': 'tag-tech',     '科學': 'tag-tech',
+    '社會': 'tag-society',  '生活': 'tag-society'
+  };
+
+  function openLightbox(id) {
+    var card = document.querySelector('.story-card[data-id="' + id + '"]');
+    var contentEl = document.getElementById('story-content-' + id);
+    if (!card) return;
+
+    var category  = card.dataset.category  || '';
+    var time      = card.dataset.time      || '';
+    var image     = card.dataset.image     || '';
+    var source    = card.dataset.source    || '';
+    var tagClass  = card.dataset.tagClass  || TAG_CLASSES[category] || 'tag-default';
+    var title     = card.querySelector('.story-title').textContent.trim();
+    var fullHtml  = contentEl ? contentEl.innerHTML : '';
+
+    // Populate lightbox fields
+    var catEl = document.getElementById('lb-category');
+    catEl.textContent = category;
+    catEl.className   = 'lb-category ' + tagClass;
+
+    document.getElementById('lb-time').textContent  = time;
+    document.getElementById('lb-title').textContent = title;
+    document.getElementById('lb-body').innerHTML    = fullHtml;
+
+    var imgWrap = document.getElementById('lb-image-wrap');
+    var imgEl   = document.getElementById('lb-image');
+    if (image) {
+      imgEl.src = image;
+      imgEl.alt = title;
+      imgWrap.style.display = 'block';
+    } else {
+      imgWrap.style.display = 'none';
+    }
+
+    var srcEl = document.getElementById('lb-source');
+    if (source) {
+      srcEl.href         = source;
+      srcEl.style.display = 'inline-flex';
+    } else {
+      srcEl.style.display = 'none';
+    }
+
+    // Scroll lightbox content to top
+    document.getElementById('lb-scroll').scrollTop = 0;
+
+    // Open with animation
+    var lb = document.getElementById('lightbox');
+    lb.classList.add('is-open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    var lb = document.getElementById('lightbox');
+    lb.classList.remove('is-open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Close on backdrop click
+  document.getElementById('lb-backdrop').addEventListener('click', closeLightbox);
+  // Close button
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  // ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body>
+</html>

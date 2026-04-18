@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="中央社外語選稿 越南語 — 2026-04-17 越南語 精選新聞">
+  <title>中央社外語選稿 越南語 — 2026-04-17 越南語</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+                   "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: #f8f4ee;
+      color: #1a1008;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ===== PAGE WRAPPER ===== */
+    .page-wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 0 48px;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      background: #2a1c0f;
+      color: #f0e8d8;
+      padding: 28px 32px 22px;
+    }
+    .header-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .brand-name {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: #f5ead6;
+      line-height: 1.2;
+    }
+    .brand-tagline {
+      font-size: 11px;
+      color: #9a8468;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+    .header-meta {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .header-date {
+      font-size: 14px;
+      color: #c8b498;
+      font-weight: 500;
+    }
+    .header-count {
+      font-size: 11px;
+      color: #806850;
+      margin-top: 3px;
+    }
+    .header-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 12px;
+    }
+    .header-categories {
+      font-size: 12px;
+      color: #806850;
+      letter-spacing: 0.3px;
+    }
+    .header-categories strong {
+      color: #c8a878;
+    }
+
+    /* ===== SECTION LABEL ===== */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 24px 32px 0;
+    }
+    .section-label span {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #9b5a2a;
+      white-space: nowrap;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e5ddd3;
+    }
+
+    /* ===== STORY LIST ===== */
+    .story-list {
+      padding: 16px 32px 0;
+    }
+
+    /* ===== STORY CARD ===== */
+    .story-card {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid #ede5d8;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      transition: box-shadow 0.2s ease, transform 0.15s ease;
+    }
+    .story-card:hover {
+      box-shadow: 0 4px 20px rgba(60, 35, 10, 0.09);
+      transform: translateY(-2px);
+    }
+
+    /* Story image */
+    .story-image-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      background: linear-gradient(135deg, #f0e8de, #e8ddd0);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .story-image-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .story-card:hover .story-image-wrap img {
+      transform: scale(1.03);
+    }
+    .story-img-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f0e8de, #e4d8cc);
+      color: #c8b098;
+      font-size: 36px;
+    }
+    .story-category-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+
+    /* Category tag colors — warm palette */
+    .tag-politics { background: #fff0e8; color: #b04520; }
+    .tag-intl     { background: #fff8e8; color: #9a6010; }
+    .tag-finance  { background: #eef5e8; color: #3d7025; }
+    .tag-sports   { background: #fef0e0; color: #a04510; }
+    .tag-tech     { background: #f0ecf8; color: #6040a0; }
+    .tag-society  { background: #fdf0f4; color: #902848; }
+    .tag-default  { background: #f0ece4; color: #5c4830; }
+
+    /* Card body */
+    .story-body {
+      padding: 18px 20px 20px;
+    }
+    .story-meta {
+      margin-bottom: 8px;
+    }
+    .story-time {
+      font-size: 12px;
+      color: #9a8070;
+      font-weight: 400;
+    }
+    .story-title {
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.45;
+      color: #1a1008;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: color 0.15s ease;
+    }
+    .story-title:hover {
+      color: #9b5a2a;
+    }
+    .story-excerpt {
+      font-size: 14px;
+      color: #4a3828;
+      line-height: 1.75;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .read-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: none;
+      border: 1.5px solid #c8a878;
+      color: #9b5a2a;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .read-more-btn:hover {
+      background: #9b5a2a;
+      color: #ffffff;
+      border-color: #9b5a2a;
+    }
+    .read-more-btn::after {
+      content: '→';
+      font-size: 14px;
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    .lightbox.is-open {
+      visibility: visible;
+      opacity: 1;
+    }
+    .lb-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(28, 18, 8, 0.65);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+    .lb-panel {
+      position: relative;
+      background: #fffbf7;
+      border-radius: 12px;
+      max-width: 660px;
+      width: 100%;
+      max-height: 88vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 60px rgba(28, 18, 8, 0.3);
+      transform: translateY(16px) scale(0.98);
+      transition: transform 0.25s ease;
+      z-index: 1;
+    }
+    .lightbox.is-open .lb-panel {
+      transform: translateY(0) scale(1);
+    }
+    .lb-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      background: rgba(28, 18, 8, 0.07);
+      border: none;
+      border-radius: 50%;
+      font-size: 16px;
+      color: #5c4830;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      transition: background 0.15s ease, color 0.15s ease;
+      line-height: 1;
+    }
+    .lb-close:hover {
+      background: rgba(28, 18, 8, 0.14);
+      color: #1a1008;
+    }
+    .lb-scroll {
+      overflow-y: auto;
+      padding: 28px 30px 32px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .lb-scroll::-webkit-scrollbar { width: 4px; }
+    .lb-scroll::-webkit-scrollbar-track { background: #f0e8de; }
+    .lb-scroll::-webkit-scrollbar-thumb { background: #c8a878; border-radius: 2px; }
+
+    .lb-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .lb-category {
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .lb-time {
+      font-size: 12px;
+      color: #9a8070;
+    }
+    .lb-title {
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.4;
+      color: #1a1008;
+      margin-bottom: 18px;
+      padding-right: 28px;
+    }
+    .lb-image-wrap {
+      width: 100%;
+      padding-bottom: 56.25%;
+      position: relative;
+      background: linear-gradient(135deg, #f0e8de, #e4d8cc);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+    .lb-image-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .lb-body {
+      font-size: 15px;
+      color: #2d1e10;
+      line-height: 1.85;
+    }
+    .lb-body p { margin-bottom: 16px; }
+    .lb-body p:last-child { margin-bottom: 0; }
+    .lb-body strong { font-weight: 700; color: #1a1008; }
+    .lb-body a { color: #9b5a2a; text-decoration: underline; text-underline-offset: 3px; }
+    .lb-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 22px;
+      color: #9b5a2a;
+      font-size: 13px;
+      font-weight: 700;
+      border-bottom: 1.5px solid currentColor;
+      padding-bottom: 1px;
+      transition: opacity 0.15s ease;
+    }
+    .lb-source:hover { opacity: 0.7; }
+    .lb-source::after { content: '→'; }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: #2a1c0f;
+      color: #806850;
+      padding: 24px 32px;
+      margin-top: 8px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .footer-brand {
+      font-size: 15px;
+      font-weight: 800;
+      color: #c8b498;
+    }
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      font-size: 12px;
+    }
+    .footer-links a {
+      color: #806850;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .footer-links a:hover { color: #c8b498; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+    }
+    .footer-generated {
+      font-family: "SF Mono", "Fira Code", monospace;
+      font-size: 10px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .page-wrapper { padding-bottom: 32px; }
+      .site-header,
+      .story-list,
+      .section-label,
+      .site-footer { padding-left: 16px; padding-right: 16px; }
+      .header-top { flex-direction: column; }
+      .header-meta { text-align: left; }
+      .brand-name { font-size: 20px; }
+      .story-title { font-size: 16px; }
+      .lb-panel { border-radius: 8px; max-height: 92vh; }
+      .lb-scroll { padding: 22px 20px 24px; }
+      .lb-title { font-size: 19px; }
+      .lb-body { font-size: 14px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-top">
+      <div>
+        <div class="brand-name">中央社外語選稿 越南語</div>
+        <div class="brand-tagline">AI 新聞精選 · 每小時更新</div>
+      </div>
+      <div class="header-meta">
+        <div class="header-date">2026-04-17 越南語</div>
+        <div class="header-count">20 則精選</div>
+      </div>
+    </div>
+    <hr class="header-divider">
+    <div class="header-categories">
+      涵蓋 <strong>外語選稿</strong>
+    </div>
+  </header>
+
+  <!-- ===== SECTION LABEL ===== -->
+  <div class="section-label">
+    <span>今日要聞</span>
+  </div>
+
+  <!-- ===== STORY LIST ===== -->
+  <main class="story-list" id="story-list">
+    <article class="story-card" data-id="1" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170125.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(1)">
+    <img src="" alt="Thương hiệu Đài Loan cung cấp nguồn hàng chất lượng không từ Trung Quốc được tin tưởng, mức độ quan tâm cao tại Triển lãm Công nghiệp Việt Nam" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(1)">Thương hiệu Đài Loan cung cấp nguồn hàng chất lượng không từ Trung Quốc được tin tưởng, mức độ quan tâm cao tại Triển lãm Công nghiệp Việt Nam</h2>
+    <p class="story-excerpt">Triển lãm Công nghiệp và Sản xuất Việt Nam (VIMF) tại Hải Phòng diễn ra từ ngày 15 đến 17, đây cũng là lần đầu tiên triển lãm công nghiệp được tổ chức tại khu vực tập trung công nghiệp mới nổi, thành phố lớn thứ ba của Việt Nam - Hải Phòng. Việt Nam là trung tâm sản xuất toàn cầu, triển lãm quy tụ hàng trăm gian hàng từ Nhật Bản, Hàn Quốc, Đài Loan và các quốc gia Đông Nam Á khác, thu hút đông đảo các chuyên gia ngành công nghiệp trong khu vực tham gia.</p>
+    <button class="read-more-btn" onclick="openLightbox(1)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="2" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170261.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(2)">
+    <img src="" alt="Phối hợp với Trung Quốc phát biểu làm tổn hại chủ quyền Đài Loan, Bộ Ngoại giao bày tỏ không hài lòng với Việt Nam | Chính trị | Trung ương xã CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(2)">Phối hợp với Trung Quốc phát biểu làm tổn hại chủ quyền Đài Loan, Bộ Ngoại giao bày tỏ không hài lòng với Việt Nam | Chính trị | Trung ương xã CNA</h2>
+    <p class="story-excerpt">Bộ Ngoại giao chiều nay phát hành thông cáo báo chí chỉ ra, ngày 15/4, Tập Cận Bình đã gặp gỡ Tô Lâm, sau cuộc gặp chung phát biểu &quot;Cộng hòa xã hội chủ nghĩa Việt Nam và Cộng hòa nhân dân Trung Hoa về việc tiếp tục làm sâu sắc quan hệ đối tác chiến lược toàn diện trong thời kỳ mới, thúc đẩy xây dựng cộng đồng vận mệnh Việt - Trung có ý nghĩa chiến lược ở mức cao hơn&quot;, trong đó sai lầm gọi &quot;Đài Loan là một phần không thể tách rời của lãnh thổ Trung Quốc&quot;, Bộ Ngoại giao nghiêm túc bác bỏ.</p>
+    <button class="read-more-btn" onclick="openLightbox(2)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="3" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170064.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(3)">
+    <img src="" alt="Việc nhập khẩu lao động Ấn Độ gây tranh luận, phe KMT dự kiến mời Trác Vinh Thái đến Quốc hội báo cáo chuyên đề | Chính trị | Trung ương xã CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(3)">Việc nhập khẩu lao động Ấn Độ gây tranh luận, phe KMT dự kiến mời Trác Vinh Thái đến Quốc hội báo cáo chuyên đề | Chính trị | Trung ương xã CNA</h2>
+    <p class="story-excerpt">Hồng Thân Hàn trước đây cho biết, đợt lao động Ấn Độ đầu tiên có thể được nhập khẩu sớm nhất trong năm nay, điều này đã gây lo ngại trong một số người dân, có người lo ngại sẽ ảnh hưởng đến an ninh trật tự. Bộ Lao động ngày 10 cho biết sẽ đánh giá và kiểm soát đầy đủ, không vội vàng, mong người dân yên tâm.</p>
+    <button class="read-more-btn" onclick="openLightbox(3)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="4" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170269.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(4)">
+    <img src="" alt="Hệ thống lao động di cư tại Singapore nghiêm ngặt: Cân bằng giữa mở cửa nhân lực và trật tự xã hội" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(4)">Hệ thống lao động di cư tại Singapore nghiêm ngặt: Cân bằng giữa mở cửa nhân lực và trật tự xã hội</h2>
+    <p class="story-excerpt">Tại Singapore, các giấy phép lao động dành cho người nước ngoài bao gồm Employment Pass (EP), S Pass và Work Permit (WP). Sự khác biệt về tư cách không chỉ thể hiện trong luật pháp mà còn thấm sâu vào từng chi tiết công việc của mỗi người.</p>
+    <button class="read-more-btn" onclick="openLightbox(4)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="5" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170117.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(5)">
+    <img src="" alt="Far Eastern Electronic Toll Collection hợp tác với tập đoàn BGSR xây dựng hệ thống thu phí điện tử trên đường cao tốc Thái Lan | Đời sống | Trung ương xã CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(5)">Far Eastern Electronic Toll Collection hợp tác với tập đoàn BGSR xây dựng hệ thống thu phí điện tử trên đường cao tốc Thái Lan | Đời sống | Trung ương xã CNA</h2>
+    <p class="story-excerpt">Far Eastern Electronic Toll Collection hôm nay phát hành thông cáo báo chí cho biết, cùng với công ty con Far Eastern International (Thailand) Co., Ltd., đã hợp tác với tập đoàn liên doanh BGSR của Thái Lan để xây dựng hệ thống thu phí điện tử đa làn M-Flow cho đường cao tốc liên tỉnh M81 (Bang Yai – Tỉnh Kanchanaburi), hệ thống này đã chính thức đi vào vận hành.</p>
+    <button class="read-more-btn" onclick="openLightbox(5)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="6" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170035.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(6)">
+    <img src="" alt="Báo cáo AI Stanford 2026: Mỹ thống trị sức mạnh tính toán, TSMC kiểm soát sản xuất | Công nghệ | Trung ương xã CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(6)">Báo cáo AI Stanford 2026: Mỹ thống trị sức mạnh tính toán, TSMC kiểm soát sản xuất | Công nghệ | Trung ương xã CNA</h2>
+    <p class="story-excerpt">Đây là báo cáo chỉ số trí tuệ nhân tạo (AI Index) lần thứ 9 do Đại học Stanford công bố. So với các năm trước thường chỉ liệt kê Đài Loan trong danh sách thống kê, năm nay nhấn mạnh dữ liệu kinh tế và vị trí then chốt trong chuỗi cung ứng của Đài Loan.</p>
+    <button class="read-more-btn" onclick="openLightbox(6)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="7" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170270.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(7)">
+    <img src="" alt="Chuyên gia an ninh mạng Christensen thăm Đài Loan, cảnh báo về độ bền hạ tầng và mối đe dọa deepfake" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(7)">Chuyên gia an ninh mạng Christensen thăm Đài Loan, cảnh báo về độ bền hạ tầng và mối đe dọa deepfake</h2>
+    <p class="story-excerpt">Guillermo Christensen, được mời bởi Văn phòng Phái bộ Hoa Kỳ tại Đài Loan chi nhánh Cao Hùng (AITK), đã có chuyến thăm Đài Loan từ ngày 14 đến 17, thảo luận về tầm quan trọng của an ninh mạng với Bộ Phát triển Kỹ thuật số, chính quyền thành phố Đài Nam, thành phố Cao Hùng và chính quyền huyện Bình Đông. Ông đã trình bày báo cáo &quot;Kinh nghiệm an ninh mạng học được từ Ukraine và Iran&quot; tại Bộ Phát triển Kỹ thuật số; hôm nay ông đến chính quyền thành phố Cao Hùng tiến hành diễn tập chiến lược bàn tròn, thảo luận cách chính phủ chuẩn bị ứng phó trước các mối đe dọa mạng ngày càng gia tăng.</p>
+    <button class="read-more-btn" onclick="openLightbox(7)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="8" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170301.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(8)">
+    <img src="" alt="Rủi ro lừa đảo AI và deepfake gia tăng, doanh nghiệp an ninh mạng: Gia đình trở thành bối cảnh bảo vệ mới" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(8)">Rủi ro lừa đảo AI và deepfake gia tăng, doanh nghiệp an ninh mạng: Gia đình trở thành bối cảnh bảo vệ mới</h2>
+    <p class="story-excerpt">Trend Micro gần đây công bố ra mắt thương hiệu mới cho nhóm kinh doanh tiêu dùng mang tên TrendLife, đồng thời quan sát thấy AI đang thay đổi cách sử dụng kỹ thuật số trong gia đình, nhu cầu bảo vệ an ninh mạng cũng dần mở rộng từ cá nhân sang bối cảnh gia đình.</p>
+    <button class="read-more-btn" onclick="openLightbox(8)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="9" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170226.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(9)">
+    <img src="" alt="Viện Nghiên cứu Trung ương áp dụng mô hình NVIDIA thúc đẩy công nghệ hiệu chuẩn bộ xử lý lượng tử AI" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(9)">Viện Nghiên cứu Trung ương áp dụng mô hình NVIDIA thúc đẩy công nghệ hiệu chuẩn bộ xử lý lượng tử AI</h2>
+    <p class="story-excerpt">Bộ xử lý lượng tử (QPU) là lõi của máy tính lượng tử siêu dẫn, trước đây việc hiệu chuẩn QPU chủ yếu dựa vào kinh nghiệm thủ công và các chương trình sửa lỗi tuần hoàn, không chỉ hiệu quả hạn chế mà còn khó đáp ứng nhu cầu hệ thống lớn.</p>
+    <button class="read-more-btn" onclick="openLightbox(9)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="10" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170174.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(10)">
+    <img src="" alt="Trường Đại học Trung Chính Khánh thành Cơ sở Sản xuất Xanh và Giảm Carbon, Đào tạo Kỹ sư Đa năng" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(10)">Trường Đại học Trung Chính Khánh thành Cơ sở Sản xuất Xanh và Giảm Carbon, Đào tạo Kỹ sư Đa năng</h2>
+    <p class="story-excerpt">Thứ trưởng thường trực Bộ Giáo dục Chu Tuấn Chương, Phó Chủ tịch huyện Gia Nghĩa Lưu Bồi Đông, Hiệu trưởng Đại học Trung Chính Thái Thiểu Chính cùng hơn một trăm đại diện từ giới học thuật và doanh nghiệp đã tham dự lễ khánh thành và diễn đàn hôm nay, đồng thời xem trình diễn vận hành thiết bị gia công năm trục, trưng bày dao thông minh, mô hình AI cảm hứng vật lý và bản sao kỹ thuật số.</p>
+    <button class="read-more-btn" onclick="openLightbox(10)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="11" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170169.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(11)">
+    <img src="" alt="Sở hữu 6 nhà máy thủy điện nhỏ và 4 nhà máy điện địa nhiệt, Đài Đông: Đến năm 2030 tự chủ phát điện đạt 60%" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(11)">Sở hữu 6 nhà máy thủy điện nhỏ và 4 nhà máy điện địa nhiệt, Đài Đông: Đến năm 2030 tự chủ phát điện đạt 60%</h2>
+    <p class="story-excerpt">Tỉnh Đài Đông hiện phụ thuộc hoàn toàn vào điện truyền từ phía Tây, với mức tiêu thụ khoảng 1 tỷ kWh mỗi năm. Nếu xảy ra thảm họa lớn ở phía Tây, Đài Đông có thể bị mất điện. Chính quyền tỉnh Đài Đông đã đẩy nhanh phát triển lưới điện vi mô sử dụng điện địa nhiệt và thủy điện nhỏ trong 6 năm qua, dự kiến đến năm 2030 sẽ đạt mục tiêu tự chủ phát điện 600 triệu kWh.</p>
+    <button class="read-more-btn" onclick="openLightbox(11)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="12" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170299.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(12)">
+    <img src="" alt="Fu Wei Energy bổ sung ngân sách giai đoạn 2 điện gió ngoài khơi, Tập đoàn Điện lực Đài Loan đồng ý chi trả hơn 5,5 tỷ Đài tệ | Kinh tế | Trung ương xã CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(12)">Fu Wei Energy bổ sung ngân sách giai đoạn 2 điện gió ngoài khơi, Tập đoàn Điện lực Đài Loan đồng ý chi trả hơn 5,5 tỷ Đài tệ | Kinh tế | Trung ương xã CNA</h2>
+    <p class="story-excerpt">Chính Phát và các công ty con thuộc tập đoàn như Sen Wei Energy và Yong Wei Holdings đã tổ chức họp báo thông báo tin tức quan trọng vào ngày 13 tháng 11 năm 2025. Sen Wei Energy công bố rằng Fu Wei Energy, công ty con chịu trách nhiệm thi công dự án điện gió ngoài khơi giai đoạn 2, đã ghi nhận khoản lỗ trước do ảnh hưởng của dự án này, dẫn đến thua lỗ trên sổ sách 7,736 tỷ Đài tệ trong quý 3 năm ngoái. Chính Phát và Yong Wei lần lượt ghi nhận khoản lỗ theo tỷ lệ sở hữu là 24,87% và 44,16%.</p>
+    <button class="read-more-btn" onclick="openLightbox(12)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="13" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170283.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(13)">
+    <img src="" alt="Công ty con của Wistron đầu tư hơn 1,9 tỷ NTD, nhà máy tại California chuyển từ thuê sang mua | Kinh tế | Trung ương xã CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(13)">Công ty con của Wistron đầu tư hơn 1,9 tỷ NTD, nhà máy tại California chuyển từ thuê sang mua | Kinh tế | Trung ương xã CNA</h2>
+    <p class="story-excerpt">Công ty con của Wistron đã công bố vào ngày 10 tháng 5 năm 2024 việc thuê lại nhà máy tại Fremont, California, hợp đồng thuê ban đầu sẽ chấm dứt sau khi giao dịch này hoàn tất. Thị trường nhận định việc chuyển từ thuê sang mua nhà máy tại California cho thấy chiến lược của Wistron tại thị trường Bắc Mỹ chuyển từ &quot;thuê tài sản nhẹ&quot; sang &quot;đầu tư tài sản nặng và phát triển sâu rộng&quot;.</p>
+    <button class="read-more-btn" onclick="openLightbox(13)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="14" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170018.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(14)">
+    <img src="" alt="Đài Loan vươn lên thành đối tác thương mại lớn thứ 4 của Mỹ, nghị viện bang Massachusetts thông qua nghị quyết tăng cường hợp tác" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(14)">Đài Loan vươn lên thành đối tác thương mại lớn thứ 4 của Mỹ, nghị viện bang Massachusetts thông qua nghị quyết tăng cường hợp tác</h2>
+    <p class="story-excerpt">Ngày 15, Hạ viện và Thượng viện bang Massachusetts lần lượt thông qua nghị quyết thân thiện với Đài Loan, nhấn mạnh hai bên cùng chia sẻ giá trị dân chủ pháp trị và ủng hộ tăng cường hợp tác song phương. Giám đốc Văn phòng đại diện tại Boston, Liêu Triều Hồng, đã có mặt để gửi lời chào mừng.</p>
+    <button class="read-more-btn" onclick="openLightbox(14)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="15" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170239.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(15)">
+    <img src="" alt="Cựu tướng Mỹ chỉ trích việc cắt giảm mục quân mua thương mại sẽ làm suy yếu khả năng tương tác và sức mạnh chiến đấu giữa Đài Loan và Mỹ | Chính trị | Trung ương xã CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(15)">Cựu tướng Mỹ chỉ trích việc cắt giảm mục quân mua thương mại sẽ làm suy yếu khả năng tương tác và sức mạnh chiến đấu giữa Đài Loan và Mỹ | Chính trị | Trung ương xã CNA</h2>
+    <p class="story-excerpt">NOWnews hôm nay tổ chức diễn đàn “Lựa chọn then chốt của Đài Loan: Thử thách thực tế về an ninh quốc phòng, chính sách năng lượng và phát triển kinh tế”, mời các chuyên gia học giả trong và ngoài nước tham dự.</p>
+    <button class="read-more-btn" onclick="openLightbox(15)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="16" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170127.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(16)">
+    <img src="" alt="Tổng thống thị sát Bộ chỉ huy huấn luyện bộ binh, tái khẳng định đẩy nhanh thông qua ngân sách mua sắm quân sự để chuẩn bị chiến tranh nhằm ngăn chặn chiến tranh | Chính trị | Trung ương xã CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(16)">Tổng thống thị sát Bộ chỉ huy huấn luyện bộ binh, tái khẳng định đẩy nhanh thông qua ngân sách mua sắm quân sự để chuẩn bị chiến tranh nhằm ngăn chặn chiến tranh | Chính trị | Trung ương xã CNA</h2>
+    <p class="story-excerpt">Sáng nay, Tổng thống Lai cùng với Thư ký Hội đồng An ninh Quốc gia Ngô Triệu Thiệp, Bộ trưởng Quốc phòng Cố Lập Hùng và các quan chức khác đã đến thị sát và động viên tại doanh trại Kim Thang của Bộ chỉ huy huấn luyện bộ binh, đồng thời trao thưởng thêm tiền cho binh sĩ. Tổng thống không chỉ trực tiếp nắm bắt tình hình các lớp huấn luyện, xem mô phỏng huấn luyện xe bọc thép bánh lốp mà còn kiểm tra tài liệu tự biên soạn về súng bắn tỉa của quân đội.</p>
+    <button class="read-more-btn" onclick="openLightbox(16)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="17" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170208.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(17)">
+    <img src="" alt="Quốc hội thành lập Hội Hữu nghị Quốc hội Đài Loan - Canada, Giang Khởi Thần: Nền tảng giao lưu quan trọng giữa hai nước | Chính trị | Trung ương xã CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(17)">Quốc hội thành lập Hội Hữu nghị Quốc hội Đài Loan - Canada, Giang Khởi Thần: Nền tảng giao lưu quan trọng giữa hai nước | Chính trị | Trung ương xã CNA</h2>
+    <p class="story-excerpt">Quốc hội hôm nay phát hành thông cáo báo chí cho biết, Giang Khởi Thần sáng nay tham dự đại hội thành lập &quot;Hội Hữu nghị Quốc hội Trung Hoa Dân Quốc và Canada&quot; do đại biểu Quốc hội Quốc Dân Đảng Trần Tinh Huệ khởi xướng. Các khách quý tham dự tại hiện trường bao gồm hàng chục đại biểu Quốc hội Quốc Dân Đảng, cùng với Thứ trưởng Bộ Ngoại giao Trần Minh Kỳ và đại diện Văn phòng Thương mại Canada tại Đài Bắc Hà Mạn Lệ.</p>
+    <button class="read-more-btn" onclick="openLightbox(17)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="18" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170210.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(18)">
+    <img src="" alt="Trưởng văn phòng Đài Bắc tại Los Angeles tiến vào Quốc hội Arizona, nâng ly trà sữa chứng kiến tình hữu nghị" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(18)">Trưởng văn phòng Đài Bắc tại Los Angeles tiến vào Quốc hội Arizona, nâng ly trà sữa chứng kiến tình hữu nghị</h2>
+    <p class="story-excerpt">Quốc hội bang Arizona hôm nay công bố thành lập &quot;Liên minh Đài Loan Liên bang Lưỡng viện&quot; (Joint Legislative Taiwan Caucus) nhằm thúc đẩy giao lưu với Đài Loan, Hạ viện và Thượng viện bang lần lượt phát hành &quot;Tuyên bố hữu nghị với Đài Loan&quot;, quyết định ủng hộ Đài Loan tham gia các tổ chức quốc tế.</p>
+    <button class="read-more-btn" onclick="openLightbox(18)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="19" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170048.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(19)">
+    <img src="" alt="Lâm Gia Long tiếp kiến Thứ trưởng Bộ Giáo dục Belize, vui mừng về tiến triển hợp tác đại học giữa Đài Loan và Belize | Chính trị | Trung ương xã CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(19)">Lâm Gia Long tiếp kiến Thứ trưởng Bộ Giáo dục Belize, vui mừng về tiến triển hợp tác đại học giữa Đài Loan và Belize | Chính trị | Trung ương xã CNA</h2>
+    <p class="story-excerpt">Bộ Ngoại giao sáng nay phát hành thông cáo báo chí cho biết, Lâm Gia Long đã tiếp kiến ông Mahia và ông Palacio (Vincent Palacio, còn gọi là Bọ Lạp Tu), đồng thời hoan nghênh ông Mahia đến thăm Đài Loan lần thứ hai.</p>
+    <button class="read-more-btn" onclick="openLightbox(19)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="20" data-category="越南語" data-time="2026-04-17" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170105.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(20)">
+    <img src="" alt="Viện Kinh tế Trung ương: Điều chỉnh tăng dự báo tăng trưởng kinh tế năm nay lên 7,22%" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-default">越南語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(20)">Viện Kinh tế Trung ương: Điều chỉnh tăng dự báo tăng trưởng kinh tế năm nay lên 7,22%</h2>
+    <p class="story-excerpt">Viện Kinh tế Trung ương (CIER) lần trước dự báo kinh tế vào tháng 1 năm nay, ước tính tăng trưởng kinh tế năm nay và năm sau lần lượt là 4,14% và 2,95%, chỉ số giá tiêu dùng (CPI) cả năm tăng 1,64% và 1,58%. Dự báo mới nhất công bố hôm nay đã điều chỉnh tăng mạnh tỷ lệ tăng trưởng kinh tế cả năm nay lên 7,22%, dự báo năm sau là 3,4%; do ảnh hưởng của chiến sự Trung Đông đẩy giá cả tăng, dự báo CPI năm nay được điều chỉnh lên 1,98%, năm sau là 1,83%.</p>
+    <button class="read-more-btn" onclick="openLightbox(20)">看全文</button>
+  </div>
+</article>
+  </main>
+
+  <!-- ===== HIDDEN FULL CONTENTS (read by lightbox JS) ===== -->
+  <div id="story-contents" style="display:none;">
+    <div id="story-content-1"><p>Triển lãm Công nghiệp và Sản xuất Việt Nam (VIMF) tại Hải Phòng diễn ra từ ngày 15 đến 17, đây cũng là lần đầu tiên triển lãm công nghiệp được tổ chức tại khu vực tập trung công nghiệp mới nổi, thành phố lớn thứ ba của Việt Nam - Hải Phòng. Việt Nam là trung tâm sản xuất toàn cầu, triển lãm quy tụ hàng trăm gian hàng từ Nhật Bản, Hàn Quốc, Đài Loan và các quốc gia Đông Nam Á khác, thu hút đông đảo các chuyên gia ngành công nghiệp trong khu vực tham gia.</p><p>Thương hiệu Hiwin là một trong ba thương hiệu hàng đầu thế giới về trục vít bi chính xác và các linh kiện truyền động tuyến tính, chiếm tới 20% thị phần toàn cầu. Sản phẩm của Hiwin được sử dụng rộng rãi trong các ngành công nghiệp bán dẫn, tự động hóa, robot, cơ sở hạ tầng và trí tuệ nhân tạo, với khách hàng là các tập đoàn lớn trên toàn thế giới.</p><p>Khi các dây chuyền sản xuất của các chuỗi cung ứng như Apple, Samsung, NVIDIA chuyển sang Việt Nam, các sản phẩm điện tử như điện thoại di động, máy chủ đòi hỏi độ chính xác cao và cần nhanh chóng triển khai dây chuyền tự động hóa, do đó cần sử dụng hệ thống truyền động chính xác mô-đun hóa.</p><p>Đại diện kinh doanh Trần Minh Huy cho biết với hãng, nhiều nhà máy chuyển từ Trung Quốc sang Việt Nam nhằm xây dựng chuỗi cung ứng không phụ thuộc Trung Quốc. &quot;Sau khi chuyển sang Việt Nam, họ cũng không muốn sử dụng các linh kiện quan trọng sản xuất tại Trung Quốc để tránh rủi ro gián đoạn giao hàng do các vấn đề địa chính trị.&quot;</p><p>Hiwin sản xuất 100% tại Đài Loan và đã có mặt tại Việt Nam qua các nhà phân phối hơn 20 năm, chứng kiến sự thay đổi của ngành công nghiệp Việt Nam từ sản xuất truyền thống sang sản xuất chính xác cho điện thoại di động và máy chủ.</p><p>Khách hàng ngành điện tử hiện yêu cầu độ chính xác và ổn định cao hơn, nhiều khách hàng cuối châu Âu và Mỹ cũng đưa ra các tiêu chuẩn cao theo quy chuẩn Mỹ và châu Âu, do đó khách hàng Việt Nam cũng chuyển sang sử dụng sản phẩm sản xuất tại Đài Loan. Thêm vào đó, vấn đề thiếu hụt lao động ngày càng nghiêm trọng tại Việt Nam cũng giúp triển vọng kinh doanh của Hiwin rất khả quan.</p><p>Khi nói về lợi thế của Đài Loan trong việc chuyển dịch chuỗi cung ứng, ông Trần Minh Huy cho biết: &quot;Thứ nhất, các doanh nghiệp Đài Loan rất linh hoạt, triển khai nhanh và hiệu quả; thứ hai, các doanh nghiệp Đài Loan đã có mặt sâu rộng tại Việt Nam, có thể cung cấp ngay cho các doanh nghiệp mới chuyển đến; thứ ba, thiết kế các linh kiện chính xác cao chắc chắn dựa vào nhân tài công nghệ Đài Loan.&quot;</p><p>&quot;Khách hàng Việt Nam vẫn tin tưởng thương hiệu Đài Loan hơn. Trung Quốc có sản phẩm tương tự với giá chỉ bằng một phần ba, nhưng khách hàng vẫn chọn thương hiệu Đài Loan vì nó tượng trưng cho độ chính xác và tuổi thọ, ảnh hưởng đến kết quả sản xuất cuối cùng.&quot; Khách hàng nói với ông rằng dùng hàng giá rẻ không bền, có nguy cơ đứt gãy dây chuyền, không có lợi về lâu dài.</p><p>Tại triển lãm công nghiệp, nhiều công ty Đài Loan có gian hàng với lượng khách hỏi thăm liên tục, cho thấy chuỗi cung ứng &quot;không từ Trung Quốc&quot; của Đài Loan đóng vai trò quan trọng trong quá trình chuyển đổi công nghiệp tại Việt Nam, trở thành nhà vô địch ngầm phía sau chuỗi ngành.</p><p>Công ty Kiện Hòa Hưng sản xuất các loại đầu nối ép nguội, đồng-nhôm, dẫn điện, chống nước và các nguyên liệu dây buộc, sản phẩm liên quan đến điện và dòng điện, ứng dụng rộng rãi.</p><p>Kiện Hòa Hưng đã kinh doanh tại Việt Nam gần 10 năm, có khách hàng ở 150 quốc gia, với gần 1000 khách hàng tại Việt Nam, bao gồm nhiều khách hàng dự án lớn như điện gió ngoài khơi, sân bay quốc tế và nhà sản xuất ô tô lớn nhất Việt Nam VinFast.</p><p>Phó tổng giám đốc Trần Xương Nhạc cho biết dân số Đông Nam Á lớn, nhu cầu điện năng tăng nhanh theo dân số.</p><p>Khi nói về tiềm năng thị trường Việt Nam, ông Trần Xương Nhạc cho biết: &quot;Chính sách Việt Nam tập trung, không muốn phát triển tất cả các ngành mà chỉ nhắm vào ngành công nghệ cao. Thiết bị công nghệ cao cần nhiều đầu nối truyền tải, cộng với hệ thống điện và thiết kế lưới điện xung quanh đều liên quan trực tiếp đến Kiện Hòa Hưng.&quot;</p><p>Ví dụ như nhà máy điện khí tự nhiên đang xây dựng tại Bà Rịa - Vũng Tàu, và Việt Nam - Trung Quốc dự kiến xây dựng nhà máy điện hạt nhân, đều là khách hàng của Kiện Hòa Hưng. Đặc biệt trong một hai năm gần đây, Việt Nam đẩy mạnh các công trình công cộng, sản phẩm của công ty cũng có mặt trong tuyến metro Hà Nội.</p><p>Trước chiến lược giá thấp của Trung Quốc, ông Trần Xương Nhạc cho biết hai bên nhắm đến nhóm khách hàng khác nhau, Trung Quốc chủ yếu cung cấp sản phẩm giá rẻ cho các dự án nhỏ, đồ gia dụng, yêu cầu chất lượng không cao.</p><p>Ông nói: &quot;Tuy nhiên, khách hàng như sân bay không thể chấp nhận rủi ro, họ yêu cầu chất lượng cao. Sản phẩm của chúng tôi vượt trội hơn sản phẩm Trung Quốc về mọi mặt, đáp ứng tiêu chuẩn cao nhất và bền hơn, do đó các dự án lớn, sân bay, ô tô vẫn ưu tiên hợp tác với chúng tôi, đó là lợi thế của chúng tôi.&quot;</p><p>Sản phẩm Đài Loan được đảm bảo chất lượng, nhiều khách hàng Việt Nam thẳng thắn chia sẻ hai thương hiệu hàng đầu trong tâm trí họ là Nhật Bản và Đài Loan, &quot;nhiều khách hàng có xu hướng chọn nhà cung cấp điện lực từ Nhật Bản hoặc Đài Loan.&quot;</p><p>Giám đốc công ty Công Đức Lý Dục Dụ cũng có quan điểm tương tự. Công ty có nhà máy tại Bắc Việt, sản xuất túi cách nhiệt và túi nhiệt điện, là cơ sở gia công của Đài Loan, sản phẩm xuất khẩu sang Đài Loan, Nhật Bản, Singapore, hợp tác chặt chẽ với các nhà máy sản xuất wafer Đài Loan.</p><p>Hiện nay, khi các nhà đầu tư nước ngoài tăng cường đầu tư vào Việt Nam và chuyển đổi sang ngành điện tử, nhu cầu nội địa Việt Nam tăng, sản phẩm của Công Đức tập trung vào tiết kiệm năng lượng, giảm phát thải carbon và trách nhiệm xã hội doanh nghiệp, phù hợp với nhu cầu của doanh nghiệp Việt Nam.</p><p>Ông Lý Dục Dụ nói: &quot;Chuỗi cung ứng của Đài Loan rất hoàn chỉnh, ngành sản xuất wafer dẫn đầu toàn cầu, các nhà cung cấp là thành viên trong chuỗi ngành, tất nhiên phát triển hoàn thiện và đảm bảo chất lượng.&quot;</p></div>
+<div id="story-content-2"><p>Bộ Ngoại giao chiều nay phát hành thông cáo báo chí chỉ ra, ngày 15/4, Tập Cận Bình đã gặp gỡ Tô Lâm, sau cuộc gặp chung phát biểu &quot;Cộng hòa xã hội chủ nghĩa Việt Nam và Cộng hòa nhân dân Trung Hoa về việc tiếp tục làm sâu sắc quan hệ đối tác chiến lược toàn diện trong thời kỳ mới, thúc đẩy xây dựng cộng đồng vận mệnh Việt - Trung có ý nghĩa chiến lược ở mức cao hơn&quot;, trong đó sai lầm gọi &quot;Đài Loan là một phần không thể tách rời của lãnh thổ Trung Quốc&quot;, Bộ Ngoại giao nghiêm túc bác bỏ.</p><p>Bộ Ngoại giao nghiêm túc khẳng định, Trung Hoa Dân Quốc Đài Loan là quốc gia dân chủ tự do, không thuộc quyền cai trị của Cộng hòa nhân dân Trung Hoa độc tài, đây là sự thật khách quan được cộng đồng quốc tế công nhận lâu dài, cũng là hiện trạng eo biển Đài Loan hiện nay. Cộng hòa nhân dân Trung Hoa chưa từng cai trị Đài Loan, Đài Loan cũng không phải là một phần của Cộng hòa nhân dân Trung Hoa. Chỉ có chính phủ do Đài Loan bầu ra theo quy trình dân chủ mới có quyền đại diện cho người dân Đài Loan trên trường quốc tế, bao gồm cả hệ thống Liên Hiệp Quốc, Trung Quốc và các quốc gia đồng thuận không có quyền can thiệp.</p><p>Bộ Ngoại giao chỉ ra, đối với việc chính phủ Trung Quốc nhiều lần lợi dụng cơ hội gặp gỡ lãnh đạo các nước để phát biểu những lời nói sai sự thật làm tổn hại chủ quyền Đài Loan, và liên tục gây hiểu lầm cho quốc tế, Bộ Ngoại giao nghiêm khắc lên án; Việt Nam từng vào tháng 8 năm 2024 cùng Trung Quốc phát biểu tuyên bố không thân thiện với Đài Loan, sau đó qua nỗ lực của hai bên Đài - Việt đã ổn định quan hệ song phương, nhưng lần này phía Việt Nam lại phối hợp với Trung Quốc phát biểu làm tổn hại chủ quyền Đài Loan, Bộ Ngoại giao đã bày tỏ sự tiếc nuối và không hài lòng mạnh mẽ với chính phủ Việt Nam.</p><p>Bộ Ngoại giao một lần nữa kêu gọi các quốc gia liên quan đừng phớt lờ sự thật lịch sử, cần nhìn nhận đúng bản chất độc tài chuyên chế của Trung Quốc, tránh đồng thuận với những luận điệu đảo lộn đúng sai, làm giảm giá trị chủ quyền Đài Loan hoặc hợp lý hóa ý đồ mở rộng quyền lực độc tài, cộng đồng quốc tế nên cùng nhau phòng ngừa những rủi ro hỗn loạn và xung đột do những phát ngôn này gây ra.</p><p>Bộ Ngoại giao nhấn mạnh, Đài Loan sẽ tiếp tục bảo vệ giá trị tự do dân chủ, đồng thời tăng cường hợp tác với tất cả các đối tác trong khối dân chủ, cùng nhau kiềm chế sự mở rộng của chủ nghĩa độc tài, kiên định bảo vệ hòa bình và an ninh eo biển Đài Loan, cũng như duy trì tự do, mở cửa và thịnh vượng khu vực Ấn Độ - Thái Bình Dương. (Biên tập: Lâm Hưng Mệnh) 1150417</p></div>
+<div id="story-content-3"><p>Hồng Thân Hàn trước đây cho biết, đợt lao động Ấn Độ đầu tiên có thể được nhập khẩu sớm nhất trong năm nay, điều này đã gây lo ngại trong một số người dân, có người lo ngại sẽ ảnh hưởng đến an ninh trật tự. Bộ Lao động ngày 10 cho biết sẽ đánh giá và kiểm soát đầy đủ, không vội vàng, mong người dân yên tâm.</p><p>Quốc hội hôm nay tổ chức phiên họp, Tổng thư ký Đảng KMT tại Quốc hội Phó Khôn Kỳ sau cuộc họp đảng cho biết, chương trình nghị sự phiên họp hôm nay, việc quan trọng hơn là lao động Ấn Độ, các đảng đối lập hy vọng Trác Vinh Thái có thể đến Quốc hội giải thích rõ ràng với toàn dân.</p><p>Phó Khôn Kỳ chỉ ra, lao động Ấn Độ sẽ vào Đài Loan như thế nào, và Đài Loan có nhu cầu gì, cần nhập khẩu số lượng lớn lao động Ấn Độ ra sao. Rốt cuộc hiện nay trong nước có gần 100.000 lao động nước ngoài bỏ trốn, chính phủ vẫn chưa có đối sách rõ ràng, lại còn muốn mở cửa đón thêm một đợt lao động có văn hóa khác với Đài Loan, nên chính phủ phải có các biện pháp hoàn chỉnh, an toàn để xã hội có thể ổn định.</p><p>Phó Khôn Kỳ nói, đặc biệt Ấn Độ rất thiếu tôn trọng phụ nữ, để bảo vệ phụ nữ Đài Loan, đối mặt với làn sóng lao động Ấn Độ tràn vào, về lo ngại an ninh trong nước, chính phủ đã chuẩn bị xong chưa, cần để toàn dân hiểu rõ.</p><p>Về việc trình dự toán ngân sách tổng thể, Phó Khôn Kỳ cho biết, sau nhiều tháng kiên trì, cuối cùng đã đạt được thỏa thuận với Hành chính viện, đối với việc Quốc hội trước đó thông qua tăng lương quân nhân, nâng tỷ lệ thay thế thu nhập hưu trí của cảnh sát và cứu hỏa, Hành chính viện sẽ trình dự thảo sửa đổi luật phiên bản viện, phù hợp với tinh thần lập pháp lúc đó, để toàn quốc quân cảnh được chăm sóc và đối xử tốt nhất.</p><p>Về dự thảo sửa đổi luật phòng chống tham nhũng liên quan đến trường hợp công chức tham nhũng nhẹ, dưới 50.000 Đài tệ có thể miễn truy cứu hình sự, Phó Khôn Kỳ cho biết các đảng trong và ngoài chính quyền đều có đồng thuận, nhưng hy vọng không ai sau khi thảo luận xong lại ra ngoài đường chửi bới người khác, điều này không phải là hoạt động và đạo đức bình thường của Quốc hội, mong Quốc hội có thể thảo luận lý trí để hoạt động Quốc hội được thuận lợi.</p></div>
+<div id="story-content-4"><p>Tại Singapore, các giấy phép lao động dành cho người nước ngoài bao gồm Employment Pass (EP), S Pass và Work Permit (WP). Sự khác biệt về tư cách không chỉ thể hiện trong luật pháp mà còn thấm sâu vào từng chi tiết công việc của mỗi người.</p><p>EP và S Pass chủ yếu dành cho các chuyên gia hoặc người có kỹ năng chuyên môn, với mức lương tối thiểu liên tục được nâng cao. Trong khi đó, WP thường dành cho các vị trí lao động phổ thông và kỹ thuật, tập trung trong các ngành xây dựng, sản xuất, hàng hải, chế biến hoặc dịch vụ.</p><p>Theo tìm hiểu, đa số người giữ WP tại Singapore đến từ các quốc gia Nam Á và Đông Nam Á, bao gồm Ấn Độ, Bangladesh, Philippines, v.v.</p><p>Bộ trưởng Nhân lực Singapore, ông Chan Chun Sing, từng phát biểu tại Quốc hội năm 2021 rằng tỷ lệ người giữ EP đến từ Ấn Độ đã tăng từ khoảng 1/7 năm 2005 lên 1/4 năm 2020. Ông cũng cho biết, vì lý do chính sách ngoại giao, chính phủ Singapore thường không công bố số liệu chi tiết về lao động nước ngoài, đặc biệt là theo quốc tịch.</p><p>Theo dữ liệu trên trang web Bộ Nhân lực Singapore, tính đến tháng 12 năm 2025, tổng số lao động nước ngoài là 1.635.700 người; trong đó có 203.300 người giữ EP, 178.900 người giữ S Pass và 1.222.700 người giữ WP.</p><p>Singapore áp dụng hệ thống quản lý giấy phép lao động tương đối nghiêm ngặt và thận trọng, thông qua các giới hạn ngành nghề, quy định hạn ngạch và quản lý chỗ ở. Lao động di cư chỉ được phép làm việc trong các ngành nghề nhất định như xây dựng, sản xuất, hàng hải và một số ngành dịch vụ, đồng thời phải tuân thủ các quy định của chính phủ đối với người sử dụng lao động nhằm đảm bảo trật tự thị trường lao động và bảo vệ quyền lợi cơ bản của người lao động.</p><p>Chính phủ Singapore yêu cầu người sử dụng lao động phải sắp xếp cho lao động kiểm tra sức khỏe bởi bác sĩ đăng ký tại Singapore. Nếu được xác định không phù hợp làm việc, giấy phép lao động sẽ bị thu hồi. Người lao động chỉ được làm việc cho người sử dụng lao động và ngành nghề được chỉ định trong giấy phép, không được tham gia các hoạt động kinh doanh khác.</p><p>Ngoài ra, người giữ giấy phép lao động chỉ được cư trú tại địa chỉ được chỉ định khi bắt đầu làm việc và không được kết hôn với công dân Singapore hoặc thường trú nhân nếu chưa được Bộ Nhân lực chấp thuận.</p><p>Singapore nghiêm túc xử lý mọi hành vi vi phạm pháp luật. Theo quy định, người che giấu hoặc thuê lao động vi phạm luật di trú có thể bị phạt tù tối đa 24 tháng, phạt tiền lên đến 6.000 đô la Singapore (khoảng 149.000 Đài tệ) hoặc cả hai hình phạt.</p><p>Cố vấn Nhà nước Singapore, ông Lý Hiển Long, từng phát biểu vào tháng 8 năm 2024 rằng, tính theo đầu người, dân số nước ngoài tại Singapore tuân thủ pháp luật hơn cả người Singapore. &quot;Xét theo tỷ lệ tội phạm trên đầu người, con số rất thấp.&quot;</p><p>Để giải quyết quan hệ lao động, chính quyền Singapore đã tiến hành điều tra hơn một nghìn người sử dụng lao động. Kết quả công bố năm ngoái cho thấy 70,8% người sử dụng lao động hài lòng với hiệu suất của lao động di cư, chỉ 1,4% không hài lòng, còn lại 27,8% giữ thái độ trung lập.</p><p>Ông Tse Wai Hong, người Singapore, hiện là Giám đốc Truyền thông và Xuất bản của Hiệp hội Trí tuệ Nhân tạo Châu Á (Asia AI Association), chuyên nghiên cứu các vấn đề trung tâm dữ liệu Đông Nam Á và chính sách liên quan. Ông cho biết, tại Singapore, mỗi khi một trung tâm dữ liệu được xây dựng hoặc một nhà máy chip mọc lên, luôn có sự hiện diện của lao động di cư từ Ấn Độ và các nơi khác, đóng vai trò lực lượng lao động cơ bản nhưng không thể thiếu.</p><p>Ông Tse Wai Hong nhấn mạnh, việc ứng dụng AI trong trung tâm dữ liệu dựa vào hàng loạt máy chủ xử lý và lưu trữ dữ liệu; máy chủ cần lượng điện lớn. AI vận hành không chỉ dựa vào quy trình sản xuất tiên tiến mà còn cần một hệ thống hạ tầng cơ sở từ việc thu hồi đất, cung cấp điện, hệ thống làm mát, xây dựng công trình đến mạng lưới kết nối, tất cả tạo thành nền tảng để công nghệ này phát triển bền vững.</p><p>Nhà nghiên cứu văn hóa và xã hội Singapore, ông Shen Zongyou, cho biết nhiều lĩnh vực tại Singapore cần lực lượng lao động phổ thông làm nền tảng, một số công việc do điều kiện lao động và đặc thù ngành nghề nên lao động bản địa tham gia hạn chế. &quot;Dù lao động đến từ đâu, điều then chốt là hệ thống quản lý. Các quốc gia đều quan tâm đến trật tự xã hội, nhưng vấn đề không liên quan trực tiếp đến nhóm dân tộc nào. Xây dựng cơ chế quản lý nghiêm ngặt và hoàn chỉnh mới là cốt lõi để đảm bảo ổn định xã hội và sự tin tưởng lẫn nhau.&quot;</p><p>Ông cũng chỉ ra rằng, vào dịp lễ hội dân tộc Deepavali của cộng đồng Ấn Độ, khu vực Little India tràn ngập ánh đèn và trang trí nhiều màu sắc; những nét đặc trưng thể hiện sự hòa nhập dân tộc này giúp Singapore duy trì quan hệ với cộng đồng Ấn Độ, đồng thời nâng cao hình ảnh quốc tế của đất nước.</p></div>
+<div id="story-content-5"><p>Far Eastern Electronic Toll Collection hôm nay phát hành thông cáo báo chí cho biết, cùng với công ty con Far Eastern International (Thailand) Co., Ltd., đã hợp tác với tập đoàn liên doanh BGSR của Thái Lan để xây dựng hệ thống thu phí điện tử đa làn M-Flow cho đường cao tốc liên tỉnh M81 (Bang Yai – Tỉnh Kanchanaburi), hệ thống này đã chính thức đi vào vận hành.</p><p>Điều này không chỉ đánh dấu việc hình thành &quot;vùng sinh hoạt một ngày&quot; từ Bangkok đến Kanchanaburi mà còn là minh chứng cụ thể cho sự hỗ trợ thành công của đội ETC Đài Loan giúp Thái Lan thúc đẩy chuyển đổi số trên đường cao tốc, tạo nên một cột mốc mới trong lĩnh vực này.</p><p>Ông Trần Thanh Khánh, Giám đốc điều hành Far Eastern International (Thailand), cho biết, M81 thể hiện rõ ưu điểm &quot;khả năng thích ứng cao&quot; của ETC Đài Loan phù hợp với điều kiện địa phương. Far Eastern International (Thailand) không chỉ chịu trách nhiệm thiết kế, lắp đặt và triển khai toàn bộ hệ thống thu phí và trung tâm điều khiển giao thông (TOC), mà hệ thống còn tích hợp sâu sắc công nghệ AI và Internet vạn vật (IoT), xây dựng nền tảng quyết định vận hành thông minh dựa trên dữ liệu, đồng thời trong tương lai có thể mở rộng ứng dụng quản lý giao thông như cân động lực học.</p><p>Đối mặt với thách thức về kiểu xe, ký tự và màu sắc biển số phức tạp hơn so với Đài Loan, ông Trần cho biết đội ngũ đã sử dụng công nghệ nhận dạng hình ảnh AI tiên tiến (ALPR) để đạt độ chính xác cao trong việc đọc biển số, kết hợp với nhiều công cụ thanh toán kỹ thuật số đa dạng, mang lại trải nghiệm lưu thông không cảm giác cho người dùng khi sử dụng M-Flow.</p><p>Theo thống kê, sau khi toàn tuyến M81 được thông xe, thời gian di chuyển một chiều từ Bangkok đến Kanchanaburi đã rút ngắn đáng kể từ gần 2 giờ xuống còn 48 phút, lưu lượng giao thông trong ngày cuối tuần đã đạt 55.000 lượt xe, nâng cao rõ rệt năng lực cạnh tranh du lịch và hiệu quả vận chuyển logistics khu vực Tây Thái Lan.</p><p>Ngoài việc M81 chính thức vận hành, Far Eastern Electronic Toll Collection cho biết đội ngũ của họ còn chịu trách nhiệm xây dựng hệ thống thu phí điện tử cho đường cao tốc M6 (Bang Pa-in – Tỉnh Nakhon Ratchasima), với tổng chiều dài 196 km, gồm 9 nút giao, là tuyến đường quan trọng kết nối Bangkok với khu vực Đông Bắc và vùng sông Mekong. Hiện công trình chính vẫn đang được triển khai, một số đoạn đã hoàn thành được mở cho người dân thử nghiệm, dự kiến toàn tuyến sẽ hoàn thành và đi vào vận hành vào năm 2028.</p><p>Từ năm 2022, đội ngũ Far Eastern còn hỗ trợ xây dựng và vận hành hệ thống M-Flow cho đường cao tốc M9, đồng thời tư vấn thiết kế cổng thu phí và vận hành sau đó. Theo số liệu của Cục Đường bộ Thái Lan, kể từ khi đưa vào sử dụng, hệ thống không chỉ nâng cao hiệu quả lưu thông lên gấp 5 lần, tiết kiệm 3,33 triệu giờ di chuyển hàng năm cho người dùng, mà còn tạo ra tỷ lệ lợi ích trên chi phí lên đến 6,94, tức là mỗi đồng chi phí đầu tư tạo ra gần 7 đồng lợi ích xã hội; về mặt bền vững môi trường, mỗi năm tiết kiệm được 13,91 triệu lít nhiên liệu và giảm hơn 36.000 tấn khí thải CO2.</p><p>(Biên tập: Lý Tịch Trang) 1150417</p></div>
+<div id="story-content-6"><p>Đây là báo cáo chỉ số trí tuệ nhân tạo (AI Index) lần thứ 9 do Đại học Stanford công bố. So với các năm trước thường chỉ liệt kê Đài Loan trong danh sách thống kê, năm nay nhấn mạnh dữ liệu kinh tế và vị trí then chốt trong chuỗi cung ứng của Đài Loan.</p><p>Báo cáo dài 423 trang, Đại học Stanford liệt kê 10 kết luận cốt lõi trên trang web; trong đó vị trí then chốt của TSMC trong chuỗi cung ứng phần cứng AI toàn cầu là một điểm nổi bật. Nội dung cho thấy từ năm 2022, khả năng tính toán của các mô hình AI tăng khoảng 3,3 lần mỗi năm, nhu cầu tính toán gần như phụ thuộc vào một nhà máy đúc chip ở Đài Loan, điều này làm nổi bật sự mong manh của chuỗi cung ứng phần cứng.</p><p>Năm 2025, Mỹ sở hữu 5.427 trung tâm dữ liệu, số lượng gấp hơn 10 lần bất kỳ quốc gia nào khác. TSMC là mắt xích then chốt trong chuỗi cung ứng chip AI. Chip của NVIDIA và AMD đều do TSMC sản xuất, mỗi tầng trong chuỗi cung ứng đều có rào cản kỹ thuật rất cao, đòi hỏi kinh nghiệm tích lũy hàng chục năm, đầu tư thiết bị chuyên dụng và vốn lớn.</p><p>Ngoài ra, tỷ lệ áp dụng AI của Đài Loan trong nửa cuối năm 2025 đạt 28,4%; về tự động hóa công nghiệp, báo cáo so sánh năm 2023 và 2024, chỉ ra Đài Loan có tốc độ tăng trưởng lắp đặt robot công nghiệp cao nhất thế giới, với tỷ lệ tăng trưởng hàng năm đạt 33%.</p><p>Trong những năm gần đây, hiệu suất mô hình AI của Mỹ và Trung Quốc luôn là trọng tâm của báo cáo. Kết luận cốt lõi cho thấy Mỹ vẫn dẫn đầu nhưng khoảng cách đang thu hẹp, từ đầu năm 2025, hai nước nhiều lần vượt qua nhau. Tháng 2, mô hình DeepSeek-R1 của Trung Quốc từng ngang bằng với các mô hình hàng đầu của Mỹ; đến tháng 3, mô hình mạnh nhất của Anthropic (Mỹ) dẫn trước với khoảng cách 2,7%.</p><p>Ngoài ra, tổng đầu tư AI tư nhân của Mỹ năm 2025 đạt 285,9 tỷ USD (khoảng 9,2 nghìn tỷ Đài tệ), gấp hơn 23 lần so với 12,4 tỷ USD của Trung Quốc, nhưng con số 12,4 tỷ USD không bao gồm vốn đầu tư của chính phủ Trung Quốc, không đại diện cho tổng chi tiêu AI của Trung Quốc.</p><p>Điều đáng chú ý là số lượng nhà nghiên cứu và phát triển AI di cư sang Mỹ đã giảm 89% kể từ năm 2017, riêng năm ngoái giảm tới 80%.</p><p>Về tác động của AI đối với công việc, quan điểm giữa chuyên gia AI và công chúng có sự khác biệt lớn, 73% chuyên gia dự đoán AI sẽ mang lại ảnh hưởng tích cực; trong khi chỉ có 23% công chúng đồng ý, khoảng cách lên tới 50 điểm phần trăm.</p></div>
+<div id="story-content-7"><p>Guillermo Christensen, được mời bởi Văn phòng Phái bộ Hoa Kỳ tại Đài Loan chi nhánh Cao Hùng (AITK), đã có chuyến thăm Đài Loan từ ngày 14 đến 17, thảo luận về tầm quan trọng của an ninh mạng với Bộ Phát triển Kỹ thuật số, chính quyền thành phố Đài Nam, thành phố Cao Hùng và chính quyền huyện Bình Đông. Ông đã trình bày báo cáo &quot;Kinh nghiệm an ninh mạng học được từ Ukraine và Iran&quot; tại Bộ Phát triển Kỹ thuật số; hôm nay ông đến chính quyền thành phố Cao Hùng tiến hành diễn tập chiến lược bàn tròn, thảo luận cách chính phủ chuẩn bị ứng phó trước các mối đe dọa mạng ngày càng gia tăng.</p><p>Chiều nay tại AITK, Christensen chia sẻ với truyền thông về kinh nghiệm chuyến đi. Ông cho biết, chiến tranh Nga-Ukraine đã cung cấp bài học quan trọng cho phòng thủ an ninh mạng toàn cầu. Trước khi chiến sự bùng nổ, Ukraine đã chịu các cuộc tấn công mạng quy mô lớn vào hệ thống điện và mạng thông tin liên lạc, nhưng nhờ chính phủ và doanh nghiệp tư nhân đã thiết lập trao đổi thông tin tình báo chặt chẽ và chuyển dữ liệu lên đám mây dự phòng, nên xã hội vẫn duy trì hoạt động trong chiến tranh.</p><p>Christensen nói, Đài Loan và Ukraine đều nằm ở tiền tuyến địa chính trị, đối mặt với nguy cơ xâm nhập mạng cao. Hiện nay thế giới đang đối mặt với &quot;chiến tranh hỗn hợp&quot; kết hợp tấn công quân sự và mạng. Mặc dù không mong muốn xảy ra tại Đài Loan, nhưng Đài Loan rất có thể phải đối mặt với mối đe dọa này.</p><p>Ông dẫn chứng chiến tranh Nga-Ukraine năm 2022, Nga đã tiến hành các cuộc tấn công mạng nghiêm trọng và liên tục trước khi phát động tấn công quân sự chính thức. Nếu Đài Loan quan sát thấy tần suất tấn công mạng từ Trung Quốc tăng lên, có thể báo hiệu các hành động đe dọa nghiêm trọng hơn đang được chuẩn bị.</p><p>Christensen nhấn mạnh, dù ở Ukraine, Iran hay Mỹ, các cơ sở hạ tầng quan trọng luôn là mục tiêu hàng đầu của các hình thức tấn công khác nhau.</p><p>Nói về diễn tập bàn tròn tại chính quyền thành phố Cao Hùng hôm nay, ông cho biết, diễn tập dựa trên các tình huống thực tế đã xảy ra, mô phỏng quá trình ra quyết định của các cơ quan trong điều kiện áp lực lớn và thời gian gấp rút.</p><p>Christensen cho biết, mục đích chính của diễn tập không phải để tìm ra điểm yếu, mà là để có thể phạm sai lầm và thảo luận trong quá trình luyện tập, nhằm tránh ra quyết định sai lầm khi khủng hoảng thật sự xảy ra. Khi khủng hoảng xảy ra, điều thiếu nhất chính là thời gian, nhưng nếu có suy nghĩ và thảo luận trước, sẽ có thêm thời gian để ra quyết định.</p><p>Ông cũng nói, các cuộc tấn công mạng hiện nay khác với tấn công mã độc tống tiền trước đây, thường diễn ra âm thầm, khó đánh giá phạm vi. Ví dụ, Mỹ đặt tên cho các nhóm hacker Trung Quốc là &quot;Bão muối&quot; (Salt Typhoon) hay &quot;Bão điện&quot; (Volt Typhoon), những hacker này có thể ẩn mình nhiều năm mới bị phát hiện.</p><p>Về công nghệ AI phát triển nhanh trong những năm gần đây, Christensen cho rằng, kẻ tấn công đang sử dụng AI tạo ra các hình ảnh và giọng nói deepfake rất chân thực. Mặc dù AI là con dao hai lưỡi, có thể giúp người phòng thủ cũng như kẻ tấn công, &quot;hiện tại AI phát triển có xu hướng có lợi cho kẻ tấn công&quot;, kẻ tấn công chỉ cần dùng AI để tìm điểm yếu trong hệ thống để xâm nhập, trong khi người phòng thủ phải dùng nguồn lực lớn để bảo vệ hệ thống rộng lớn.</p></div>
+<div id="story-content-8"><p>Trend Micro gần đây công bố ra mắt thương hiệu mới cho nhóm kinh doanh tiêu dùng mang tên TrendLife, đồng thời quan sát thấy AI đang thay đổi cách sử dụng kỹ thuật số trong gia đình, nhu cầu bảo vệ an ninh mạng cũng dần mở rộng từ cá nhân sang bối cảnh gia đình.</p><p>Trend Micro hôm nay trong cuộc phỏng vấn với hãng thông tấn Trung ương Đài Loan (CNA) cho biết, đối mặt với tác động an ninh mạng do AI mang lại, có hai xu hướng và thay đổi nổi bật, trong đó một là sự biến đổi về bản chất của các hình thức đe dọa.</p><p>Trend Micro cho biết, AI làm mờ ranh giới giữa thật và giả, các thủ đoạn lừa đảo trở nên đa dạng và phát triển nhanh chóng. Từ các video đầu tư giả mạo người nổi tiếng do công nghệ deepfake tạo ra, các cuộc gọi giả danh cảnh sát và kiểm tra, đến giọng nói và hình ảnh giả cực kỳ chân thực, khiến các phương pháp nhận diện truyền thống dần mất hiệu quả. Công cụ AI cũng giúp các cuộc tấn công trở nên quy mô hóa và công nghiệp hóa; những hành vi lừa đảo trước đây cần nhiều nhân lực giờ có thể được sao chép và lan truyền nhanh chóng.</p><p>Một xu hướng khác là khoảng cách nhận thức trong gia đình đang ngày càng mở rộng. Trend Micro chỉ ra thế hệ trẻ lớn lên trong môi trường AI, mặc dù có khả năng sử dụng công cụ cao hơn, nhưng có thể giảm khả năng phát triển phán đoán độc lập; trong khi người lớn tuổi đối mặt với môi trường thông tin phức tạp hơn, được AI điều khiển, khiến việc phân biệt lừa đảo và thông tin sai lệch trở nên khó khăn hơn.</p><p>Trend Micro nhấn mạnh, các mối đe dọa an ninh mạng do AI đã mang lại nhiều ảnh hưởng cụ thể, bao gồm các thủ đoạn lừa đảo ngày càng khó nhận biết, như sử dụng công nghệ deepfake để tạo video đầu tư giả mạo người nổi tiếng, giả mạo chuyên gia xác nhận, hoặc mô phỏng các đơn vị cảnh sát và kiểm tra để lừa đảo. Những trường hợp này vẫn tiếp tục xảy ra tại Đài Loan và tỷ lệ thành công rõ ràng tăng lên.</p><p>Ngoài ra, quy mô tấn công cũng mở rộng nhanh chóng. AI cho phép nội dung lừa đảo được tạo ra và sao chép hàng loạt, từ tin nhắn, giọng nói đến hình ảnh, đều có thể được tùy chỉnh nhanh chóng, hình thành chuỗi công nghiệp lừa đảo hiệu quả hơn.</p><p>Trend Micro cho biết, trong tương lai, bảo vệ an ninh mạng sẽ chuyển từ bảo vệ thiết bị đơn lẻ hoặc cá nhân sang ứng dụng tích hợp đa thiết bị, đa thành viên, và dự kiến sẽ ra mắt công cụ AI lấy gia đình làm trung tâm vào nửa cuối năm nay. (Biên tập: Dương Lan Huyền) 1150417</p><p>Hãy chọn đứng về phía sự thật, mỗi sự ủng hộ của bạn là sức mạnh bảo vệ tự do báo chí.</p><p>Tải ứng dụng &quot;Tin tức một tay&quot; của Trung ương Đài Loan để cập nhật tin tức mới nhất.</p><p>Nội dung văn bản, hình ảnh và video trên trang web này không được phép sao chép, phát sóng công khai hoặc truyền tải và sử dụng khi chưa được phép.</p></div>
+<div id="story-content-9"><p>Bộ xử lý lượng tử (QPU) là lõi của máy tính lượng tử siêu dẫn, trước đây việc hiệu chuẩn QPU chủ yếu dựa vào kinh nghiệm thủ công và các chương trình sửa lỗi tuần hoàn, không chỉ hiệu quả hạn chế mà còn khó đáp ứng nhu cầu hệ thống lớn.</p><p>Viện Nghiên cứu Trung ương hôm nay phát hành thông cáo báo chí cho biết, nhằm vượt qua giới hạn của phương pháp hiệu chuẩn QPU truyền thống, đã hợp tác với NVIDIA gần đây, sử dụng mô hình AI dòng Ising của NVIDIA để phát triển công nghệ hiệu chuẩn tự động dựa trên trí tuệ nhân tạo, có thể tăng tốc quy trình phát triển sản xuất và thử nghiệm QPU trong kiến trúc tích hợp điện toán lượng tử và bộ xử lý đồ họa (GPU), hiệu quả rút ngắn khoảng cách giữa khả năng phần cứng hiện tại và ứng dụng lượng tử thực tiễn.</p><p>Ông Trần Khải Đông, Giám đốc Trung tâm chuyên đề máy tính lượng tử thuộc Trung tâm nghiên cứu các vấn đề then chốt của Viện Nghiên cứu Trung ương, cho biết hệ thống này đã được tích hợp vào nền tảng máy tính lượng tử của viện, thông qua kiến trúc hợp tác đa tác nhân tự động, cung cấp nhiều năng lực then chốt, hệ thống hỗ trợ tối ưu hóa tham số vòng kín, thực hiện chu trình &quot;thực thi - kiểm tra - điều chỉnh&quot; liên tục, tự động điều chỉnh tham số thí nghiệm và phát hiện tần số qubit.</p><p>Ông Trần Khải Đông cho biết chỉ cần nhập một câu lệnh ngôn ngữ tự nhiên duy nhất, có thể hoàn thành hiệu chuẩn đọc trên một chip lượng tử gồm 5 qubit và 4 bộ ghép nối, đồng thời tự động tạo quy trình thí nghiệm, thể hiện tiềm năng ứng dụng trên chip 20 qubit mới nhất được công bố tại trung tâm chuyên đề này.</p><p>Viện Nghiên cứu Trung ương cho biết, thông qua hợp tác với NVIDIA, đang xây dựng một cơ sở hạ tầng thử nghiệm lượng tử có độ tin cậy cao, hiệu quả và khả năng mở rộng, đồng thời mở cửa nguồn lực nền tảng này phục vụ học thuật và công nghiệp trong nước, thúc đẩy nghiên cứu và ứng dụng công nghệ lượng tử, góp phần tăng cường hệ sinh thái công nghệ lượng tử toàn diện của Đài Loan.</p></div>
+<div id="story-content-10"><p>Thứ trưởng thường trực Bộ Giáo dục Chu Tuấn Chương, Phó Chủ tịch huyện Gia Nghĩa Lưu Bồi Đông, Hiệu trưởng Đại học Trung Chính Thái Thiểu Chính cùng hơn một trăm đại diện từ giới học thuật và doanh nghiệp đã tham dự lễ khánh thành và diễn đàn hôm nay, đồng thời xem trình diễn vận hành thiết bị gia công năm trục, trưng bày dao thông minh, mô hình AI cảm hứng vật lý và bản sao kỹ thuật số.</p><p>Chu Tuấn Chương trong cuộc phỏng vấn với truyền thông cho biết, Bộ Giáo dục tài trợ thành lập &quot;Cơ sở Sản xuất Xanh và Giảm Carbon Tiên tiến&quot; nhằm giúp ngành công nghiệp tận dụng năng lực nghiên cứu của Đại học Trung Chính để chuyển đổi sang mô hình phát thải carbon bằng không. Mục tiêu thứ hai là đào tạo nhân lực, sinh viên sẽ học cách sử dụng AI phối hợp với thiết bị gia công tại cơ sở này, sau khi tốt nghiệp có thể ngay lập tức tham gia làm việc trong ngành.</p><p>Thái Thiểu Chính nhấn mạnh, điểm đặc sắc của &quot;Cơ sở Sản xuất Xanh và Giảm Carbon Tiên tiến&quot; là sử dụng trí tuệ nhân tạo để chuyển hóa kinh nghiệm thực tiễn của các thợ lành nghề thành tài sản số, thực hiện dự đoán quy trình sản xuất trước khi xảy ra sự cố thay vì sửa chữa sau, từ đó giảm thiểu lỗi trong quy trình, đạt được mục tiêu tiết kiệm năng lượng và giảm phát thải carbon.</p><p>Ông Thái cho biết, bên cạnh Đại học Trung Chính, còn có bốn trường đối tác gồm Đại học Khoa học Công nghệ Hổ Vĩ, Đại học Khoa học Công nghệ Cần Dục, Đại học Khoa học Công nghệ Tu Chính và Đại học Khoa học Công nghệ Ngô Phong cùng chung tay mở rộng kết quả giáo dục.</p><p>Thái Thiểu Chính bày tỏ hy vọng Đại học Trung Chính sẽ đóng vai trò đầu tàu trong tiết kiệm năng lượng và giảm phát thải carbon, chuyển giao công nghệ nghiên cứu của giảng viên và sinh viên cho doanh nghiệp, hỗ trợ nâng cấp ngành công nghiệp, góp phần đạt mục tiêu phát thải carbon bằng không của quốc gia vào năm 2050.</p><p>Đại học Trung Chính cho biết, việc thành lập &quot;Cơ sở Sản xuất Xanh và Giảm Carbon Tiên tiến&quot; là một phần trong chính sách &quot;Xây dựng cơ sở đào tạo nhân lực và kỹ thuật khu vực ngành công nghiệp&quot; của Cục Giáo dục Kỹ thuật và Nghề nghiệp thuộc Bộ Giáo dục, nhằm thúc đẩy hợp tác giữa các trường đại học và khu công nghiệp để đào tạo nhân lực kỹ thuật chuyên môn.</p></div>
+<div id="story-content-11"><p>Tỉnh Đài Đông hiện phụ thuộc hoàn toàn vào điện truyền từ phía Tây, với mức tiêu thụ khoảng 1 tỷ kWh mỗi năm. Nếu xảy ra thảm họa lớn ở phía Tây, Đài Đông có thể bị mất điện. Chính quyền tỉnh Đài Đông đã đẩy nhanh phát triển lưới điện vi mô sử dụng điện địa nhiệt và thủy điện nhỏ trong 6 năm qua, dự kiến đến năm 2030 sẽ đạt mục tiêu tự chủ phát điện 600 triệu kWh.</p><p>Ông Chương Chính Văn, Giám đốc Sở Tài chính và Phát triển Kinh tế tỉnh Đài Đông, hôm nay cho biết với địa hình núi nhiều suối nhỏ có độ cao chênh lệch lớn, nước được dẫn qua ống đến các máy phát thủy điện nhỏ để phát điện. Hiện chính quyền tỉnh Đài Đông phối hợp với các bộ lạc, đã mời doanh nghiệp xây dựng 6 nhà máy thủy điện nhỏ, trong đó 4 nhà máy đã đi vào vận hành.</p><p>Năm nay, sẽ xây dựng nhà máy thủy điện nhỏ thứ 7 tại xã Đạt Nhân, sử dụng suối Ngũ Phúc Cốc, dự kiến công suất phát điện 132 kW mỗi giờ. Nước sau khi phát điện sẽ được trả lại suối để tái sử dụng. Điện sản xuất ra có thể ưu tiên cung cấp cho các bộ lạc, phần còn lại bán cho Công ty Điện lực Đài Loan. Người dân bộ lạc cũng hy vọng đây sẽ trở thành điểm thu hút du lịch.</p><p>Về điện địa nhiệt, hiện có một nhà máy đang vận hành thương mại, và 3 nhà máy khác đang trong quá trình xây dựng.</p><p>Ông Chương Chính Văn cho biết Đài Đông không có nhà máy phát điện lớn, nhưng có thể sử dụng điện địa nhiệt và thủy điện nhỏ để tự chủ phát điện, hình thành lưới điện vi mô với nguồn tài nguyên rất dồi dào. Đài Đông tiêu thụ khoảng 1 tỷ kWh điện mỗi năm, khi hai nguồn điện xanh này hoàn thành, dự kiến đến năm 2030 có thể tự chủ phát điện khoảng 600 triệu kWh mỗi năm.</p><p>Ông cũng nhấn mạnh phát điện xanh ít gây tổn hại môi trường tự nhiên. Trong tương lai, nếu có thêm nhiều nhà máy thủy điện nhỏ được xây dựng và kết nối thành lưới điện khu vực, Đài Đông sẽ có thể tự chủ phát điện, không lo ngại mất điện quy mô lớn do thiên tai.</p><p>Kỹ sư tư vấn công trình phát điện Hoàng Tuấn Khải cho biết điện thủy điện nhỏ phát ra trước tiên sẽ cung cấp cho các bộ lạc, sau đó mới hòa vào lưới điện chung. Ông Cao Hòa Phong, Chủ tịch Hiệp hội Phát triển Cộng đồng Nam Điền, xã Đạt Nhân, tỉnh Đài Đông, cho biết thủy điện nhỏ kết hợp du lịch carbon thấp có thể thúc đẩy giáo dục môi trường.</p></div>
+<div id="story-content-12"><p>Chính Phát và các công ty con thuộc tập đoàn như Sen Wei Energy và Yong Wei Holdings đã tổ chức họp báo thông báo tin tức quan trọng vào ngày 13 tháng 11 năm 2025. Sen Wei Energy công bố rằng Fu Wei Energy, công ty con chịu trách nhiệm thi công dự án điện gió ngoài khơi giai đoạn 2, đã ghi nhận khoản lỗ trước do ảnh hưởng của dự án này, dẫn đến thua lỗ trên sổ sách 7,736 tỷ Đài tệ trong quý 3 năm ngoái. Chính Phát và Yong Wei lần lượt ghi nhận khoản lỗ theo tỷ lệ sở hữu là 24,87% và 44,16%.</p><p>Sen Wei Energy báo cáo thua lỗ trên sổ sách 7,736 tỷ Đài tệ trong quý 3 năm 2025, cộng với khoản lỗ 4,43 tỷ Đài tệ trong nửa đầu năm, tổng cộng lỗ lũy kế trong 3 quý đầu năm lên đến 12,172 tỷ Đài tệ. Tuy nhiên, Sen Wei Energy nhấn mạnh rằng giá trị tài sản ròng vẫn duy trì ở mức 4,869 tỷ Đài tệ, cho thấy tình hình tài chính vẫn ổn định.</p><p>Cùng thời điểm đó, Sen Wei Energy cũng công bố thay đổi nhân sự cấp cao. Tổng giám đốc Sen Wei Energy, ông Hồ Huệ Tôn, đã từ chức, vị trí này tạm thời do Chủ tịch Sen Wei Energy, ông Quách Thái Cường đảm nhiệm. Tổng giám đốc Fu Wei Energy, ông Bộc Đại Vi, cũng từ chức, vị trí này tạm thời do Chủ tịch Fu Wei Energy, ông Hồ Huệ Tôn đảm nhiệm.</p><p>Sen Wei Energy cho biết, đề xuất bổ sung ngân sách gửi đến Tập đoàn Điện lực Đài Loan ban đầu không được chấp thuận. Sau khi hòa giải với Ủy ban Công trình Công cộng của Hội đồng Hành chính, ngày hôm nay đã nhận được văn bản hòa giải chính thức từ Ủy ban này, theo đó Tập đoàn Điện lực Đài Loan đồng ý chi trả số tiền 5,556 tỷ Đài tệ (55 tỷ 5693 triệu 3697 Đài tệ). (Biên tập: Trương Lương Tri)</p></div>
+<div id="story-content-13"><p>Công ty con của Wistron đã công bố vào ngày 10 tháng 5 năm 2024 việc thuê lại nhà máy tại Fremont, California, hợp đồng thuê ban đầu sẽ chấm dứt sau khi giao dịch này hoàn tất. Thị trường nhận định việc chuyển từ thuê sang mua nhà máy tại California cho thấy chiến lược của Wistron tại thị trường Bắc Mỹ chuyển từ &quot;thuê tài sản nhẹ&quot; sang &quot;đầu tư tài sản nặng và phát triển sâu rộng&quot;.</p><p>Wistron phát đi thông tin quan trọng rằng mục đích mua nhà máy là &quot;đáp ứng nhu cầu phát triển kinh doanh và kế hoạch chiến lược&quot;.</p><p>Trong cuộc họp giải thích với các nhà đầu tư vào tháng 3 năm nay, Wistron cho biết chi phí đầu tư vốn năm ngoái là 35,5 tỷ NTD, năm nay dự kiến tăng lên 60 tỷ NTD, chủ yếu dành cho hai cơ sở sản xuất lớn tại Đài Loan và Mỹ. Chủ tịch Wistron, ông Lâm Hiến Minh, thẳng thắn cho biết nhà máy tại Mỹ là &quot;quân cờ sống&quot; gần gũi với khách hàng, đồng thời có tác động tích cực đối với các vấn đề thuế quan có thể xảy ra trong tương lai.</p></div>
+<div id="story-content-14"><p>Ngày 15, Hạ viện và Thượng viện bang Massachusetts lần lượt thông qua nghị quyết thân thiện với Đài Loan, nhấn mạnh hai bên cùng chia sẻ giá trị dân chủ pháp trị và ủng hộ tăng cường hợp tác song phương. Giám đốc Văn phòng đại diện tại Boston, Liêu Triều Hồng, đã có mặt để gửi lời chào mừng.</p><p>Nghị quyết của Hạ viện chúc mừng Tổng thống Lại Thanh Đức và Phó Tổng thống Tiêu Mỹ Cầm nhân dịp kỷ niệm 2 năm nhậm chức, khẳng định thành tựu dân chủ của Đài Loan, coi trọng tình hữu nghị giữa các bang chị em và cam kết chung của Đài Loan - Mỹ về giá trị dân chủ, tự do và pháp trị. Nghị quyết thúc đẩy &quot;ngoại giao tổng hợp&quot; nhằm tăng cường quan hệ đối tác toàn diện giữa Đài Loan và Mỹ, đồng thời ủng hộ mở rộng sự tham gia quốc tế của Đài Loan.</p><p>Nghị quyết nêu rõ, năm 2026 không chỉ là kỷ niệm 250 năm ngày thành lập nước Mỹ mà còn là 30 năm bầu cử tổng thống trực tiếp của nhân dân Đài Loan, biểu tượng cho cam kết kiên định của Đài Loan và Mỹ đối với tự do, dân chủ và pháp trị. Năm 2025, Đài Loan đã trở thành đối tác thương mại lớn thứ 4 của Mỹ và là thị trường xuất khẩu lớn thứ 5 của bang Massachusetts tại châu Á, với thương mại và đầu tư giữa Đài Loan và Massachusetts tiếp tục tăng trưởng.</p><p>Trong tương lai, hai bên có thể ký kết biên bản ghi nhớ về trao đổi kinh tế thương mại và thành lập văn phòng thương mại tại Đài Loan để tăng cường hợp tác trong các lĩnh vực then chốt như công nghệ sinh học, bán dẫn, sản xuất tiên tiến, trí tuệ nhân tạo và ngành quốc phòng; ủng hộ ký kết hiệp định tránh đánh thuế hai lần giữa Đài Loan và Mỹ, thúc đẩy đầu tư và việc làm, khuyến khích mở rộng giao lưu giáo dục và dân sự.</p><p>Nghị quyết cũng nêu rõ chính sách của Mỹ đối với Đài Loan dựa trên Đạo luật Quan hệ Đài Loan năm 1979, ủng hộ Đài Loan tham gia các tổ chức quốc tế như Tổ chức Y tế Thế giới (WHO) và Tổ chức Hàng không Dân dụng Quốc tế (ICAO), đóng góp cho cộng đồng quốc tế.</p><p>Thượng viện bang Massachusetts cũng lần đầu tiên trong gần 10 năm qua thông qua nghị quyết thân thiện với Đài Loan, nhấn mạnh cam kết chung về dân chủ, tự do và pháp trị, đồng thời thể hiện sự ủng hộ tăng cường hợp tác kinh tế thương mại và giao lưu giữa Đài Loan và Massachusetts.</p></div>
+<div id="story-content-15"><p>NOWnews hôm nay tổ chức diễn đàn “Lựa chọn then chốt của Đài Loan: Thử thách thực tế về an ninh quốc phòng, chính sách năng lượng và phát triển kinh tế”, mời các chuyên gia học giả trong và ngoài nước tham dự.</p><p>Montgomery (Mark Montgomery) cho biết, khả năng tương tác (interoperability) giữa quân đội Mỹ và các quốc gia khác gồm 4 cấp độ, thấp nhất là tránh xung đột (de-conflicted), tiếp theo là phối hợp (coordinated), cấp độ thứ 3 là tích hợp (integrated), và cuối cùng là thống nhất (unified). Ví dụ, quân đội Mỹ-Hàn đã đạt cấp độ thống nhất và thành lập Bộ Tư lệnh Liên hợp, Mỹ-Nhật đạt cấp độ tích hợp, Philippines là phối hợp, còn Đài Loan-Mỹ hiện chỉ đạt mức tránh xung đột.</p><p>Montgomery chỉ ra, ngân sách đặc biệt cho quân mua của Đài Loan nhằm đạt được khả năng tương tác với Mỹ, nhưng hiện nay cách tách riêng bán vũ khí chính phủ Mỹ cho Đài Loan (FMS) và bán thương mại (DCS) không những không có lợi mà còn là “ngu ngốc và phản tác dụng”, điều này sẽ trực tiếp làm suy yếu khả năng tương tác và sức mạnh chiến đấu giữa Đài Loan và quân đội Mỹ, vì các hợp đồng cải tiến phần mềm hệ thống vũ khí và thiết bị không người lái chủ yếu dựa vào kênh bán thương mại.</p><p>Montgomery ví von cuộc gặp thượng đỉnh Trump-Tập Cận Bình vào tháng 5 sắp tới đối với Đài Loan như một cuộc “bầu cử” chỉ có hai người bỏ phiếu, đó là Tổng thống Mỹ Trump và Chủ tịch Trung Quốc Tập Cận Bình. Nếu Đài Loan muốn thắng cuộc bầu cử này, cần nhanh chóng thông qua ngân sách đặc biệt quân mua để trở thành đồng minh mẫu mực của Mỹ, giành chiến thắng trong cuộc bầu cử này.</p><p>Michael Sobolik, nhà nghiên cứu cao cấp tại Viện Hudson ở Washington, cho biết nền tảng quan hệ Mỹ-Đài rất mạnh và ổn định, nhưng quan hệ quân sự là một biến số. Trump luôn mong muốn các đối tác của Mỹ đầu tư vào an ninh của chính họ và có khả năng tự vệ đáng tin cậy. Lý do Trump yêu thích Israel là vì Israel coi trọng an ninh bản thân và nỗ lực chiến thắng.</p><p>Sobolik, từng là trợ lý cho Thượng nghị sĩ Mỹ Ted Cruz, cho biết các nghị sĩ Mỹ muốn thấy Đài Loan chuẩn bị tốt, có khả năng chiến đấu bất đối xứng, sức bền mạnh mẽ và khả năng tự sản xuất vũ khí chủ chốt, để khi xảy ra xung đột không phải phụ thuộc vào đối tác bên ngoài.</p><p>Sobolik nói, Đảng Cộng sản Trung Quốc và Tập Cận Bình không muốn thế giới tin rằng Đài Loan có quyền chủ động, họ muốn cô lập Đài Loan để thuyết phục thế giới rằng Đài Loan không thể tự bảo vệ mình. Nếu Đài Loan thông qua ngân sách đặc biệt quân mua, sẽ củng cố nền tảng quan hệ Mỹ-Đài và đặt Đài Loan vào vị thế rất thuận lợi.</p><p>Hứa Dục Nhân, cựu nghị sĩ Quốc Dân Đảng và nhà nghiên cứu cao cấp tại Viện Hudson, chỉ ra Mỹ có hai điểm quan trọng khi nhìn nhận ngân sách đặc biệt quân mua của Đài Loan: một là Đài Loan có quan tâm đến tự vệ hay không, hai là khi ngân sách đặc biệt quân mua bị trì hoãn, Washington sẽ cho rằng Đài Loan biến tranh chấp chính trị nội bộ thành vấn đề quốc tế, điều này trong mắt Trump là gây rối, tạo đòn bẩy cho Tập Cận Bình thao túng Trump. Khi sự bất ổn nội bộ của Đài Loan trở thành lỗ hổng an ninh bên ngoài, Trung Quốc có thể lợi dụng lỗ hổng này.</p><p>NOWnews hôm 17/4 tổ chức diễn đàn, mời cựu Phó Đô đốc Hải quân Mỹ Montgomery (thứ 2 từ phải), nhà nghiên cứu cao cấp Viện Hudson Sobolik (thứ nhất từ phải), nhà nghiên cứu cao cấp Viện Hudson Hứa Dục Nhân (thứ 2 từ trái) tham gia thảo luận. Phóng viên Trung ương xã Ngô Thư Vĩ ghi hình, ngày 17/4/2026.</p></div>
+<div id="story-content-16"><p>Sáng nay, Tổng thống Lai cùng với Thư ký Hội đồng An ninh Quốc gia Ngô Triệu Thiệp, Bộ trưởng Quốc phòng Cố Lập Hùng và các quan chức khác đã đến thị sát và động viên tại doanh trại Kim Thang của Bộ chỉ huy huấn luyện bộ binh, đồng thời trao thưởng thêm tiền cho binh sĩ. Tổng thống không chỉ trực tiếp nắm bắt tình hình các lớp huấn luyện, xem mô phỏng huấn luyện xe bọc thép bánh lốp mà còn kiểm tra tài liệu tự biên soạn về súng bắn tỉa của quân đội.</p><p>Trước bữa tiệc, Tổng thống phát biểu rằng trước đó đã đến Bộ chỉ huy huấn luyện bay của Không quân và Trung tâm huấn luyện sinh tồn của nhân viên không quân để thực tế tìm hiểu cách quân đội ứng phó bình tĩnh trong các tình huống mô phỏng chân thực. Với tư cách là Tổng tư lệnh ba quân, Tổng thống hiểu rõ quân đội không chỉ thực hiện nhiệm vụ quốc phòng tuyến đầu mà còn cần chú trọng đến huấn luyện dài hạn phía sau. Tuy nhiên, chỉ có tinh thần chiến đấu thôi là chưa đủ, mà còn phải cung cấp sự hỗ trợ mạnh mẽ nhất cho các đồng đội trong quân đội.</p><p>Tổng thống nhấn mạnh đây là lý do tại sao chính phủ phải kiên định thúc đẩy ngân sách đặc biệt quốc phòng và các công trình quốc phòng. Chính phủ kiên quyết không giảm bớt, kiên quyết phải sớm thông qua. Ngân sách này đã được nghiên cứu và thảo luận chuyên nghiệp, trong bối cảnh kinh tế Đài Loan tăng trưởng hàng năm, đây là khoản chi phí hoàn toàn xứng đáng và có thể chi trả. Đây còn là khoản đầu tư thực chất để bảo vệ dân chủ tự do, xây dựng lá chắn cho Đài Loan và hỗ trợ các sĩ quan, binh sĩ quân đội.</p><p>Tổng thống nói rằng đối mặt với tình hình khu vực ngày càng phức tạp, cần thông qua ngân sách đặc biệt để đẩy nhanh việc chuẩn bị các loại vũ khí có tính cơ động cao và độ chính xác cao. Đối với các đơn vị bộ binh, những trang bị này sẽ giúp mọi người ứng phó hiệu quả hơn với các thách thức của chiến trường hiện đại.</p><p>Tổng thống chỉ ra rằng mọi người đều mong muốn hòa bình, và ai cũng biết chỉ có dựa vào sức mạnh mới có thể đạt được hòa bình thực sự. Chính phủ thúc đẩy ngân sách đặc biệt quốc phòng và tiến hành các công trình quốc phòng cũng nhằm gửi đi tín hiệu rõ ràng tới cộng đồng quốc tế. Đài Loan có quyết tâm, có năng lực và có ý chí bảo vệ chính mình, giữ gìn hòa bình và bảo vệ chủ quyền. Chỉ có chuẩn bị liên tục mới có thể răn đe các mối đe dọa; thông qua chuẩn bị chiến tranh để tránh chiến tranh, có thể chiến đấu để chấm dứt chiến tranh, từ đó đạt được hòa bình thực sự.</p><p>Cuối cùng, Tổng thống Lai cũng khích lệ mọi người tiếp tục giữ vững tinh thần của trường bộ binh, nâng cao kỹ năng chiến đấu, cập nhật theo thời đại, tiếp tục hướng tới các mục tiêu huấn luyện mới, tư duy mới, trang bị mới và công nghệ mới, để toàn thể người dân yên tâm và tin tưởng, vì chỉ cần có quân đội, an ninh Đài Loan sẽ được bảo đảm. Mọi người hãy cùng nhau nỗ lực, bảo vệ an ninh quốc gia, giữ gìn dân chủ tự do và bảo vệ an toàn tính mạng, tài sản của toàn dân.</p></div>
+<div id="story-content-17"><p>Quốc hội hôm nay phát hành thông cáo báo chí cho biết, Giang Khởi Thần sáng nay tham dự đại hội thành lập &quot;Hội Hữu nghị Quốc hội Trung Hoa Dân Quốc và Canada&quot; do đại biểu Quốc hội Quốc Dân Đảng Trần Tinh Huệ khởi xướng. Các khách quý tham dự tại hiện trường bao gồm hàng chục đại biểu Quốc hội Quốc Dân Đảng, cùng với Thứ trưởng Bộ Ngoại giao Trần Minh Kỳ và đại diện Văn phòng Thương mại Canada tại Đài Bắc Hà Mạn Lệ.</p><p>Giang Khởi Thần bày tỏ rất vui mừng được chứng kiến Trần Tinh Huệ khởi xướng thành lập &quot;Hội Hữu nghị Quốc hội Trung Hoa Dân Quốc và Canada&quot;, nhấn mạnh quan hệ giao lưu mật thiết và thân thiện giữa Quốc hội hai nước Đài Loan và Canada. Ông cho biết kể từ khi giữ chức Phó Chủ tịch Quốc hội, ông đã tiếp đón 5 đoàn nghị sĩ Canada. Mặc dù Đài Loan và Canada cách xa nhau về địa lý và có sự khác biệt lớn về quy mô lãnh thổ, nhưng tính bổ sung lẫn nhau rất mạnh, có thể trở thành đối tác hợp tác tốt nhất.</p><p>Giang Khởi Thần chỉ ra rằng Canada có cộng đồng người Đài Loan quy mô đáng kể, cảnh quan thiên nhiên và văn hóa đa dạng của Canada cũng thu hút nhiều người Đài Loan đến du lịch hàng năm. Mối quan hệ song phương rất sâu sắc và còn nhiều không gian để phát triển và mở rộng hơn nữa.</p><p>Ông nhấn mạnh, khác với giao lưu giữa chính phủ hoặc doanh nghiệp, quan hệ giữa Quốc hội với Quốc hội có tính linh hoạt hơn, có thể giao tiếp đầy đủ và trao đổi ý kiến một cách thẳng thắn. Trong tương lai, &quot;Hội Hữu nghị Quốc hội Trung Hoa Dân Quốc và Canada&quot; sẽ trở thành nền tảng giao lưu quan trọng giữa Quốc hội Đài Loan và Canada. Dù là tiếp đón các nghị sĩ Canada đến thăm hay tổ chức đoàn đi thăm Canada, đều có thể tăng cường quan hệ song phương, thúc đẩy hợp tác chặt chẽ hơn, từ đó nâng cao phúc lợi cho người dân hai nước.</p></div>
+<div id="story-content-18"><p>Quốc hội bang Arizona hôm nay công bố thành lập &quot;Liên minh Đài Loan Liên bang Lưỡng viện&quot; (Joint Legislative Taiwan Caucus) nhằm thúc đẩy giao lưu với Đài Loan, Hạ viện và Thượng viện bang lần lượt phát hành &quot;Tuyên bố hữu nghị với Đài Loan&quot;, quyết định ủng hộ Đài Loan tham gia các tổ chức quốc tế.</p><p>Chủ tịch Ủy ban Thương mại Quốc tế Hạ viện bang kiêm Chủ tịch Liên minh Đài Loan Tony Rivero và Đảng trưởng đa số Thượng viện Frank Carroll lần lượt giới thiệu ông Ma Bo-yuan trước toàn thể nghị sĩ khi thông qua tuyên bố hữu nghị với Đài Loan.</p><p>Điều đáng chú ý là tuyên bố của Quốc hội bang lần này đề cập đến vấn đề cốt lõi về sự tham gia của Đài Loan trong cộng đồng quốc tế, đồng thời đây cũng là lần đầu tiên Quốc hội bang nhắc đến Nghị quyết số 2758 của Đại hội đồng Liên Hợp Quốc, chỉ ra rằng nghị quyết này không loại trừ sự tham gia của Đài Loan vào các tổ chức quốc tế, cũng không ủy quyền cho Cộng hòa Nhân dân Trung Hoa đại diện cho Đài Loan.</p><p>Quốc hội bang tuyên bố ủng hộ Đài Loan tham gia các tổ chức quốc tế, bao gồm hệ thống Liên Hợp Quốc, Tổ chức Y tế Thế giới, Tổ chức Hàng không Dân dụng Quốc tế, Công ước khung Liên Hợp Quốc về biến đổi khí hậu và Tổ chức Cảnh sát Hình sự Quốc tế.</p><p>Ông Ma Bo-yuan sau buổi họp đã đãi các nghị sĩ Thượng viện và Hạ viện bang bằng các món ăn vặt Đài Loan và trà sữa trân châu, cảm ơn sự ủng hộ đa đảng của Quốc hội bang. Hai bên cùng nâng ly trà sữa, chúc mừng tình hữu nghị.</p><p>Chủ tịch Liên minh Đài Loan Hạ viện Tony Rivero cho biết, đối với bang Arizona, vấn đề Đài Loan không phải là vấn đề chính trị, sự ủng hộ của Quốc hội bang dành cho Đài Loan luôn vượt qua mọi phổ chính trị.</p><p>Đảng trưởng đa số Thượng viện Frank Carroll nói rằng ông mỗi ngày đi qua nhà máy TSMC, chứng kiến tiến độ công trình nhanh chóng, mong đợi TSMC thu hút thêm nhiều nhân tài, cộng đồng người Đài Loan tiếp tục phát triển, và trong tương lai sẽ có nhiều giao lưu văn hóa hơn.</p></div>
+<div id="story-content-19"><p>Bộ Ngoại giao sáng nay phát hành thông cáo báo chí cho biết, Lâm Gia Long đã tiếp kiến ông Mahia và ông Palacio (Vincent Palacio, còn gọi là Bọ Lạp Tu), đồng thời hoan nghênh ông Mahia đến thăm Đài Loan lần thứ hai.</p><p>Lâm Gia Long cho biết, giáo dục và đào tạo nhân tài luôn là chủ đề hợp tác quan trọng giữa Đài Loan và Belize. Chính phủ hai nước đã phối hợp lâu dài để thúc đẩy các chương trình học bổng. Sinh viên Belize học tập tại Đài Loan không chỉ là nguồn nhân lực quý giá của quốc gia mà còn là cầu nối văn hóa giữa Đài Loan và Belize.</p><p>Lâm Gia Long nhấn mạnh, ông đã đến thăm Belize bốn lần và rất ấn tượng với biển xanh và cảnh đẹp của Great Blue Hole. Belize sở hữu nguồn tài nguyên du lịch phong phú cùng vị trí địa lý chiến lược ở Trung Mỹ và vùng biển Caribe. Hai bên nên tiếp tục thúc đẩy du lịch bền vững, tăng cường đào tạo nhân lực trong lĩnh vực nhà hàng khách sạn và kỹ thuật nghề nghiệp, nâng cao năng lực cạnh tranh ngành, đồng thời xuất khẩu kinh nghiệm thành công và kiến thức chuyên môn của Đài Loan, học hỏi lẫn nhau để nâng cao toàn diện quan hệ đối tác song phương.</p><p>Ông Mahia cảm ơn Đài Loan đã chu đáo sắp xếp lịch trình và tiếp đón tận tình, cũng như đóng góp không ngừng trong việc hỗ trợ Belize đào tạo nhân lực. Ông khẳng định sinh viên Belize học tập tại Đài Loan đã trở thành tài sản quan trọng của xã hội quốc gia. Ông nhấn mạnh chuyến thăm các trường Đại học Trung Hưng, Đại học Đại Diệp và Đại học Khoa học Kỹ thuật Mỹ Hòa đã giúp ông có nhiều lợi ích khi được trao đổi trực tiếp về triết lý giáo dục và kinh nghiệm thực tiễn.</p><p>Ông Palacio bày tỏ lòng biết ơn chân thành đối với chính phủ Đài Loan về việc gần đây tặng thiết bị giảng dạy y khoa cho trường đại học của ông, đồng thời đặc biệt mong đợi hợp tác với các trường đại học Đài Loan trong nhiều lĩnh vực để cùng tạo ra lợi ích đôi bên.</p><p>Bộ Ngoại giao giải thích, Đại học Belize là trường đại học công lập duy nhất của quốc gia này. Sau khi ký kết biên bản ghi nhớ hợp tác (MOU) với Đại học Trung Hưng và Đại học Đại Diệp vào năm 2022, lần này trong thời gian ở Đài Loan, Đại học Belize cũng đã ký MOU với Đại học Khoa học Kỹ thuật Mỹ Hòa, góp phần thúc đẩy hợp tác giáo dục đại học giữa hai nước, cung cấp cho thanh niên nhiều cơ hội học tập đa dạng hơn.</p></div>
+<div id="story-content-20"><p>Viện Kinh tế Trung ương (CIER) lần trước dự báo kinh tế vào tháng 1 năm nay, ước tính tăng trưởng kinh tế năm nay và năm sau lần lượt là 4,14% và 2,95%, chỉ số giá tiêu dùng (CPI) cả năm tăng 1,64% và 1,58%. Dự báo mới nhất công bố hôm nay đã điều chỉnh tăng mạnh tỷ lệ tăng trưởng kinh tế cả năm nay lên 7,22%, dự báo năm sau là 3,4%; do ảnh hưởng của chiến sự Trung Đông đẩy giá cả tăng, dự báo CPI năm nay được điều chỉnh lên 1,98%, năm sau là 1,83%.</p><p>Giám đốc Viện Kinh tế Trung ương Liên Hiền Minh cho biết, mặc dù có sự gián đoạn do chiến sự Trung Đông, quan điểm về tăng trưởng kinh tế năm nay vẫn tích cực, nguyên nhân chính là xuất khẩu của Đài Loan rất mạnh mẽ, dưới sự thúc đẩy của nhu cầu sản phẩm AI, tăng trưởng kinh tế quý 1 thậm chí đạt trên 13%.</p><p>Theo dự báo của Viện Kinh tế Trung ương, mô hình tăng trưởng kinh tế Đài Loan là “nóng ở bên ngoài, ấm ở bên trong”. Về nhu cầu bên ngoài, mặc dù chiến sự Trung Đông ảnh hưởng đến thương mại hàng hóa và vận tải, nhưng ngành công nghiệp AI phát triển mạnh mẽ, dự kiến xuất nhập khẩu các sản phẩm liên quan đến công nghệ thông tin, điện tử và bán dẫn của Đài Loan sẽ mở rộng ổn định, với tỷ lệ tăng trưởng xuất khẩu và nhập khẩu lần lượt là 19,83% và 18,24%.</p><p>Về nhu cầu nội địa, tiêu dùng tư nhân tăng trưởng 2,16% nhờ cải thiện thị trường lao động và hiệu ứng tài sản từ thị trường chứng khoán, sức tăng trưởng tốt hơn năm trước.</p><p>Liên Hiền Minh bổ sung, giả định dự báo kinh tế của Viện dựa trên quan điểm của các tổ chức quốc tế, chiến tranh sẽ không kéo dài lâu dài, giá dầu quốc tế đạt đỉnh vào tháng 4, dự báo được thực hiện trong bối cảnh này; tuy nhiên chiến sự Trung Đông liên quan đến năng lượng và thay đổi chuỗi cung ứng, có thể ảnh hưởng đến lãi suất, nhiều bất định làm tăng độ khó dự báo kinh tế.</p><p>Về lo ngại lạm phát do chiến sự, Liên Hiền Minh cho biết thời gian kéo dài của chiến tranh Trung Đông, việc giá năng lượng trong nước có tiếp tục đóng băng hay không, và chính phủ có tiếp tục kiểm soát giá cả hay không là các yếu tố then chốt ảnh hưởng đến diễn biến giá cả trong tương lai.</p><p>Trưởng phòng Phát triển Kinh tế Ủy ban Phát triển Quốc gia Trần Mỹ Cúc cho biết, sau khi chiến sự Trung Đông bùng phát, chính phủ đã nhanh chóng triển khai nhiều biện pháp ổn định giá cả, thường xuyên tổ chức các cuộc họp để giám sát biến động giá cả, Bộ Kinh tế thậm chí đã ra mắt “Dự án túi nhựa giá rẻ” do biến động thị trường nguyên liệu hóa dầu, vì “giá cả sợ nhất là kỳ vọng lạm phát”, chính phủ đã hành động mạnh mẽ và quyết liệt nhằm kiểm soát từ gốc và kiềm chế kỳ vọng lạm phát.</p><p>Liên Hiền Minh thẳng thắn nói rằng dự báo giá cả hiện đã rất gần mức 2%, nếu giả định chính phủ không đóng băng giá, dự báo CPI cả năm sẽ vượt quá 2%.</p><p>Về tỷ giá, Viện Kinh tế Trung ương xem xét tình hình lạm phát chưa rõ ràng ở châu Âu và Mỹ, chính sách tiền tệ có thể thay đổi, cùng với rủi ro địa chính trị đẩy đồng đô la Mỹ mạnh lên, dự kiến tỷ giá đồng Đài tệ so với đô la Mỹ năm 2026 sẽ từ 31,63 Đài tệ trong quý 1 tăng nhẹ lên 31,04 Đài tệ trong quý 4, trung bình năm khoảng 31,4 Đài tệ, so với năm 2025 giảm giá khoảng 0,65%. (Biên tập: Trương Quân Mậu)</p><p>Viện Kinh tế Trung ương ngày 17 công bố dự báo kinh tế mới nhất, mặc dù có sự gián đoạn do chiến sự Trung Đông, nhờ sự phát triển mạnh mẽ của công nghệ AI và nhu cầu mạnh mẽ, ước tính tăng trưởng kinh tế năm nay đạt 7,22%. Ảnh là cảnh phố ở Đài Bắc. Phóng viên Trung ương xã Trương Tân Vĩ chụp, ngày 17 tháng 4 năm 115.</p><p>Các từ khóa: CPI, GDP, Viện Kinh tế Trung ương, tăng giá, chỉ số giá tiêu dùng, tăng trưởng kinh tế, Ủy ban Phát triển Quốc gia, giảm giá, tỷ giá Đài tệ so với đô la Mỹ, Liên Hiền Minh, Trần Mỹ Cúc, công nghệ AI, tỷ giá Đài tệ, chiến sự Trung Đông, dấu hiệu lạc quan, dự báo tỷ giá Đài tệ, ổn định giá cả.</p></div>
+  </div>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lb-title">
+    <div class="lb-backdrop" id="lb-backdrop"></div>
+    <div class="lb-panel">
+      <button class="lb-close" id="lb-close" aria-label="關閉">✕</button>
+      <div class="lb-scroll" id="lb-scroll">
+        <div class="lb-meta">
+          <span class="lb-category tag-default" id="lb-category"></span>
+          <span class="lb-time" id="lb-time"></span>
+        </div>
+        <h2 class="lb-title" id="lb-title"></h2>
+        <div class="lb-image-wrap" id="lb-image-wrap">
+          <img id="lb-image" src="" alt="" loading="eager">
+        </div>
+        <div class="lb-body" id="lb-body"></div>
+        <a class="lb-source" id="lb-source" href="#" target="_blank" rel="noopener">查看原文</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">中央社外語選稿 越南語</div>
+      <div class="footer-links">
+        <a href="https://u0401006.github.io/video-quotes/news/">歷史存檔</a>
+        <a href="https://u0401006.github.io/video-quotes/">訂閱電子報</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 中央社外語選稿 越南語 · 版權所有</span>
+      <span class="footer-generated">Generated at 2026-04-18T12:48:08</span>
+    </div>
+  </footer>
+
+</div><!-- /.page-wrapper -->
+
+<script>
+  var TAG_CLASSES = {
+    '政治': 'tag-politics', '國內': 'tag-politics',
+    '國際': 'tag-intl',     '外交': 'tag-intl',
+    '財經': 'tag-finance',  '經濟': 'tag-finance',
+    '體育': 'tag-sports',
+    '科技': 'tag-tech',     '科學': 'tag-tech',
+    '社會': 'tag-society',  '生活': 'tag-society'
+  };
+
+  function openLightbox(id) {
+    var card = document.querySelector('.story-card[data-id="' + id + '"]');
+    var contentEl = document.getElementById('story-content-' + id);
+    if (!card) return;
+
+    var category  = card.dataset.category  || '';
+    var time      = card.dataset.time      || '';
+    var image     = card.dataset.image     || '';
+    var source    = card.dataset.source    || '';
+    var tagClass  = card.dataset.tagClass  || TAG_CLASSES[category] || 'tag-default';
+    var title     = card.querySelector('.story-title').textContent.trim();
+    var fullHtml  = contentEl ? contentEl.innerHTML : '';
+
+    // Populate lightbox fields
+    var catEl = document.getElementById('lb-category');
+    catEl.textContent = category;
+    catEl.className   = 'lb-category ' + tagClass;
+
+    document.getElementById('lb-time').textContent  = time;
+    document.getElementById('lb-title').textContent = title;
+    document.getElementById('lb-body').innerHTML    = fullHtml;
+
+    var imgWrap = document.getElementById('lb-image-wrap');
+    var imgEl   = document.getElementById('lb-image');
+    if (image) {
+      imgEl.src = image;
+      imgEl.alt = title;
+      imgWrap.style.display = 'block';
+    } else {
+      imgWrap.style.display = 'none';
+    }
+
+    var srcEl = document.getElementById('lb-source');
+    if (source) {
+      srcEl.href         = source;
+      srcEl.style.display = 'inline-flex';
+    } else {
+      srcEl.style.display = 'none';
+    }
+
+    // Scroll lightbox content to top
+    document.getElementById('lb-scroll').scrollTop = 0;
+
+    // Open with animation
+    var lb = document.getElementById('lightbox');
+    lb.classList.add('is-open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    var lb = document.getElementById('lightbox');
+    lb.classList.remove('is-open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Close on backdrop click
+  document.getElementById('lb-backdrop').addEventListener('click', closeLightbox);
+  // Close button
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  // ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body>
+</html>
