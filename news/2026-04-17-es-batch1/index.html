@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CNA 外語選稿, 西班牙語 Batch 1 — 2026-04-17 精選新聞">
+  <title>CNA 外語選稿, 西班牙語 Batch 1 — 2026-04-17</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+                   "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: #f8f4ee;
+      color: #1a1008;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ===== PAGE WRAPPER ===== */
+    .page-wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 0 48px;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      background: #2a1c0f;
+      color: #f0e8d8;
+      padding: 28px 32px 22px;
+    }
+    .header-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .brand-name {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: #f5ead6;
+      line-height: 1.2;
+    }
+    .brand-tagline {
+      font-size: 11px;
+      color: #9a8468;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+    .header-meta {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .header-date {
+      font-size: 14px;
+      color: #c8b498;
+      font-weight: 500;
+    }
+    .header-count {
+      font-size: 11px;
+      color: #806850;
+      margin-top: 3px;
+    }
+    .header-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 12px;
+    }
+    .header-categories {
+      font-size: 12px;
+      color: #806850;
+      letter-spacing: 0.3px;
+    }
+    .header-categories strong {
+      color: #c8a878;
+    }
+
+    /* ===== SECTION LABEL ===== */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 24px 32px 0;
+    }
+    .section-label span {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #9b5a2a;
+      white-space: nowrap;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e5ddd3;
+    }
+
+    /* ===== STORY LIST ===== */
+    .story-list {
+      padding: 16px 32px 0;
+    }
+
+    /* ===== STORY CARD ===== */
+    .story-card {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid #ede5d8;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      transition: box-shadow 0.2s ease, transform 0.15s ease;
+    }
+    .story-card:hover {
+      box-shadow: 0 4px 20px rgba(60, 35, 10, 0.09);
+      transform: translateY(-2px);
+    }
+
+    /* Story image */
+    .story-image-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      background: linear-gradient(135deg, #f0e8de, #e8ddd0);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .story-image-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .story-card:hover .story-image-wrap img {
+      transform: scale(1.03);
+    }
+    .story-img-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f0e8de, #e4d8cc);
+      color: #c8b098;
+      font-size: 36px;
+    }
+    .story-category-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+
+    /* Category tag colors — warm palette */
+    .tag-politics { background: #fff0e8; color: #b04520; }
+    .tag-intl     { background: #fff8e8; color: #9a6010; }
+    .tag-finance  { background: #eef5e8; color: #3d7025; }
+    .tag-sports   { background: #fef0e0; color: #a04510; }
+    .tag-tech     { background: #f0ecf8; color: #6040a0; }
+    .tag-society  { background: #fdf0f4; color: #902848; }
+    .tag-default  { background: #f0ece4; color: #5c4830; }
+
+    /* Card body */
+    .story-body {
+      padding: 18px 20px 20px;
+    }
+    .story-meta {
+      margin-bottom: 8px;
+    }
+    .story-time {
+      font-size: 12px;
+      color: #9a8070;
+      font-weight: 400;
+    }
+    .story-title {
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.45;
+      color: #1a1008;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: color 0.15s ease;
+    }
+    .story-title:hover {
+      color: #9b5a2a;
+    }
+    .story-excerpt {
+      font-size: 14px;
+      color: #4a3828;
+      line-height: 1.75;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .read-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: none;
+      border: 1.5px solid #c8a878;
+      color: #9b5a2a;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .read-more-btn:hover {
+      background: #9b5a2a;
+      color: #ffffff;
+      border-color: #9b5a2a;
+    }
+    .read-more-btn::after {
+      content: '→';
+      font-size: 14px;
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    .lightbox.is-open {
+      visibility: visible;
+      opacity: 1;
+    }
+    .lb-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(28, 18, 8, 0.65);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+    .lb-panel {
+      position: relative;
+      background: #fffbf7;
+      border-radius: 12px;
+      max-width: 660px;
+      width: 100%;
+      max-height: 88vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 60px rgba(28, 18, 8, 0.3);
+      transform: translateY(16px) scale(0.98);
+      transition: transform 0.25s ease;
+      z-index: 1;
+    }
+    .lightbox.is-open .lb-panel {
+      transform: translateY(0) scale(1);
+    }
+    .lb-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      background: rgba(28, 18, 8, 0.07);
+      border: none;
+      border-radius: 50%;
+      font-size: 16px;
+      color: #5c4830;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      transition: background 0.15s ease, color 0.15s ease;
+      line-height: 1;
+    }
+    .lb-close:hover {
+      background: rgba(28, 18, 8, 0.14);
+      color: #1a1008;
+    }
+    .lb-scroll {
+      overflow-y: auto;
+      padding: 28px 30px 32px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .lb-scroll::-webkit-scrollbar { width: 4px; }
+    .lb-scroll::-webkit-scrollbar-track { background: #f0e8de; }
+    .lb-scroll::-webkit-scrollbar-thumb { background: #c8a878; border-radius: 2px; }
+
+    .lb-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .lb-category {
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .lb-time {
+      font-size: 12px;
+      color: #9a8070;
+    }
+    .lb-title {
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.4;
+      color: #1a1008;
+      margin-bottom: 18px;
+      padding-right: 28px;
+    }
+    .lb-image-wrap {
+      width: 100%;
+      padding-bottom: 56.25%;
+      position: relative;
+      background: linear-gradient(135deg, #f0e8de, #e4d8cc);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+    .lb-image-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .lb-body {
+      font-size: 15px;
+      color: #2d1e10;
+      line-height: 1.85;
+    }
+    .lb-body p { margin-bottom: 16px; }
+    .lb-body p:last-child { margin-bottom: 0; }
+    .lb-body strong { font-weight: 700; color: #1a1008; }
+    .lb-body a { color: #9b5a2a; text-decoration: underline; text-underline-offset: 3px; }
+    .lb-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 22px;
+      color: #9b5a2a;
+      font-size: 13px;
+      font-weight: 700;
+      border-bottom: 1.5px solid currentColor;
+      padding-bottom: 1px;
+      transition: opacity 0.15s ease;
+    }
+    .lb-source:hover { opacity: 0.7; }
+    .lb-source::after { content: '→'; }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: #2a1c0f;
+      color: #806850;
+      padding: 24px 32px;
+      margin-top: 8px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .footer-brand {
+      font-size: 15px;
+      font-weight: 800;
+      color: #c8b498;
+    }
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      font-size: 12px;
+    }
+    .footer-links a {
+      color: #806850;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .footer-links a:hover { color: #c8b498; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+    }
+    .footer-generated {
+      font-family: "SF Mono", "Fira Code", monospace;
+      font-size: 10px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .page-wrapper { padding-bottom: 32px; }
+      .site-header,
+      .story-list,
+      .section-label,
+      .site-footer { padding-left: 16px; padding-right: 16px; }
+      .header-top { flex-direction: column; }
+      .header-meta { text-align: left; }
+      .brand-name { font-size: 20px; }
+      .story-title { font-size: 16px; }
+      .lb-panel { border-radius: 8px; max-height: 92vh; }
+      .lb-scroll { padding: 22px 20px 24px; }
+      .lb-title { font-size: 19px; }
+      .lb-body { font-size: 14px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-top">
+      <div>
+        <div class="brand-name">CNA 外語選稿, 西班牙語 Batch 1</div>
+        <div class="brand-tagline">AI 新聞精選 · 每小時更新</div>
+      </div>
+      <div class="header-meta">
+        <div class="header-date">2026-04-17</div>
+        <div class="header-count">10 則精選</div>
+      </div>
+    </div>
+    <hr class="header-divider">
+    <div class="header-categories">
+      涵蓋 <strong>西班牙語</strong>
+    </div>
+  </header>
+
+  <!-- ===== SECTION LABEL ===== -->
+  <div class="section-label">
+    <span>今日要聞</span>
+  </div>
+
+  <!-- ===== STORY LIST ===== -->
+  <main class="story-list" id="story-list">
+    <article class="story-card" data-id="1" data-category="西班牙語" data-time="2026-04-17" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260417/1280x717_wmkn_647259342524_0.jpg" data-source="https://www.cna.com.tw/news/aall/202604170035.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(1)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260417/1280x717_wmkn_647259342524_0.jpg" alt="Informe Stanford AI 2026: EE.UU. domina la capacidad de cómputo y TSMC controla la fabricación" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-intl">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(1)">Informe Stanford AI 2026: EE.UU. domina la capacidad de cómputo y TSMC controla la fabricación</h2>
+    <p class="story-excerpt">Este es el noveno informe del AI Index publicado por Stanford University. A diferencia de años anteriores, en los que Taiwán solía figurar principalmente en las listas estadísticas, este año se destacó la información económica de Taiwán y su posición clave en la cadena de suministro.</p>
+    <button class="read-more-btn" onclick="openLightbox(1)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="2" data-category="西班牙語" data-time="2026-04-17" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260417/1024x768_wmkn_0_C20260417000001.jpg" data-source="https://www.cna.com.tw/news/aall/202604170018.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(2)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260417/1024x768_wmkn_0_C20260417000001.jpg" alt="Taiwán asciende al cuarto puesto entre los socios comerciales de Estados Unidos; la Legislatura de Massachusetts aprueba una resolución para profundizar la cooperación" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-intl">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(2)">Taiwán asciende al cuarto puesto entre los socios comerciales de Estados Unidos; la Legislatura de Massachusetts aprueba una resolución para profundizar la cooperación</h2>
+    <p class="story-excerpt">La Cámara de Representantes y el Senado del estado de Massachusetts aprobaron por separado el día 15 resoluciones de apoyo a Taiwán, en las que subrayaron los valores compartidos de democracia y Estado de derecho, así como su respaldo a una mayor profundización de la cooperación bilateral. El director de la Oficina Económica y Cultural de Taipei en Boston, Liao Chao-hung, acudió al lugar para expresar su agradecimiento.</p>
+    <button class="read-more-btn" onclick="openLightbox(2)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="3" data-category="西班牙語" data-time="2026-04-17" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260417/1152x768_wmkn_0_C20260417000100.jpg" data-source="https://www.cna.com.tw/news/aall/202604170208.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(3)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260417/1152x768_wmkn_0_C20260417000100.jpg" alt="Yuan Legislativo de Taiwán crea grupo de amistad parlamentaria con Canadá; Chiang Chi-chen lo califica de plataforma clave de intercambio bilateral" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-intl">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(3)">Yuan Legislativo de Taiwán crea grupo de amistad parlamentaria con Canadá; Chiang Chi-chen lo califica de plataforma clave de intercambio bilateral</h2>
+    <p class="story-excerpt">El Yuan Legislativo informó hoy mediante un comunicado de prensa que Chiang Chi-chen asistió esta mañana a la ceremonia de fundación del "Grupo de Amistad Parlamentaria entre la República de China y Canadá", iniciativa impulsada por la legisladora del Kuomintang Chen Ching-hui. Entre los distinguidos invitados presentes se encontraban decenas de legisladores del Kuomintang, el viceministro de Relaciones Exteriores Chen Ming-chi y la representante de la Oficina Comercial de Canadá en Taipei, Manon Giguère.</p>
+    <button class="read-more-btn" onclick="openLightbox(3)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="4" data-category="西班牙語" data-time="2026-04-17" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260417/1151x768_wmkn_0_C20260417000101.jpg" data-source="https://www.cna.com.tw/news/aall/202604170210.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(4)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260417/1151x768_wmkn_0_C20260417000101.jpg" alt="Representante de Taiwán en Los Ángeles entra en la Legislatura de Arizona y brinda con té de burbujas para dar testimonio de la amistad" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-intl">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(4)">Representante de Taiwán en Los Ángeles entra en la Legislatura de Arizona y brinda con té de burbujas para dar testimonio de la amistad</h2>
+    <p class="story-excerpt">La Legislatura del estado de Arizona anunció hoy la creación del «Joint Legislative Taiwan Caucus», integrado por miembros de ambas cámaras, con el objetivo de promover los intercambios con Taiwán. Por separado, el Senado estatal y la Cámara de Representantes estatal emitieron «declaraciones de amistad hacia Taiwán», en las que resolvieron apoyar la participación de Taiwán en organizaciones internacionales.</p>
+    <button class="read-more-btn" onclick="openLightbox(4)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="5" data-category="西班牙語" data-time="2026-04-17" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260417/1024x768_wmkn_0_C20260417003002.jpg" data-source="https://www.cna.com.tw/news/aall/202604170090.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(5)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260417/1024x768_wmkn_0_C20260417003002.jpg" alt="Estreno en Quebec de la versión francesa de 'Los constructores de montañas', que refleja el espíritu taiwanés de superación" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-intl">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(5)">Estreno en Quebec de la versión francesa de 'Los constructores de montañas', que refleja el espíritu taiwanés de superación</h2>
+    <p class="story-excerpt">El evento fue organizado conjuntamente por la Oficina Económica y Cultural de Taipei en Montreal, la Université de Montréal y la Fondation Asie-Pacifique du Canada (APFC), en el cine de la Université de Montréal.</p>
+    <button class="read-more-btn" onclick="openLightbox(5)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="6" data-category="西班牙語" data-time="2026-04-17" data-image="https://imgcdn.cna.com.tw/www/webphotos/WebOg/600/20260417/1199x629_611220164209.jpg" data-source="https://www.cna.com.tw/news/aall/202604170239.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(6)">
+    <img src="https://imgcdn.cna.com.tw/www/webphotos/WebOg/600/20260417/1199x629_611220164209.jpg" alt="Generales retirados de EE.UU. advierten que eliminar artículos de venta militar a Taiwán debilitará la interoperabilidad y capacidad de combate entre ambos países" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-intl">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(6)">Generales retirados de EE.UU. advierten que eliminar artículos de venta militar a Taiwán debilitará la interoperabilidad y capacidad de combate entre ambos países</h2>
+    <p class="story-excerpt">El medio taiwanés NOWnews celebró esta tarde el foro 'Las decisiones clave de Taiwán: la prueba de realidad en seguridad nacional, política energética y desarrollo económico', con la participación de expertos y académicos nacionales e internacionales.</p>
+    <button class="read-more-btn" onclick="openLightbox(6)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="7" data-category="西班牙語" data-time="2026-04-17" data-image="https://i.ytimg.com/vi/NBPFOu_qbIY/hqdefault.jpg?t=2604181314" data-source="https://www.cna.com.tw/news/aall/202604170127.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(7)">
+    <img src="https://i.ytimg.com/vi/NBPFOu_qbIY/hqdefault.jpg?t=2604181314" alt="El presidente inspecciona el Comando de Entrenamiento de Infantería y reitera acelerar la aprobación del presupuesto de compra de armamento para prepararse para la guerra y evitarla" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-intl">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(7)">El presidente inspecciona el Comando de Entrenamiento de Infantería y reitera acelerar la aprobación del presupuesto de compra de armamento para prepararse para la guerra y evitarla</h2>
+    <p class="story-excerpt">Acompañado por el secretario general del Consejo de Seguridad Nacional, Joseph Wu, y el ministro de Defensa Nacional, Wellington Koo, entre otros, el presidente Lai visitó esta mañana el campamento Jintang del Comando de Entrenamiento de Infantería del Ejército para inspeccionar las instalaciones y expresar su reconocimiento al personal, además de entregar una bonificación especial para la alimentación. El mandatario no solo conoció de primera mano la situación de las distintas unidades de entrenamiento y observó una simulación de instrucción con vehículos blindados de ruedas, sino que también revisó materiales didácticos sobre fusiles de francotirador elaborados por el propio Ejército.</p>
+    <button class="read-more-btn" onclick="openLightbox(7)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="8" data-category="西班牙語" data-time="2026-04-17" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260417/1200x800_wmky_517323021830_202601270155000000.jpg" data-source="https://www.cna.com.tw/news/aall/202604170105.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(8)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260417/1200x800_wmky_517323021830_202601270155000000.jpg" alt="CIER eleva la previsión de crecimiento económico de este año al 7,22%" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-intl">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(8)">CIER eleva la previsión de crecimiento económico de este año al 7,22%</h2>
+    <p class="story-excerpt">En su anterior previsión económica, publicada en enero de este año, el Chung-Hua Institution for Economic Research (CIER) estimó que la tasa de crecimiento económico sería del 4,14% este año y del 2,95% el próximo, mientras que la tasa anual de aumento del IPC para el conjunto del año sería del 1,64% y del 1,58%, respectivamente. En la última previsión difundida hoy, elevó de forma significativa la proyección de crecimiento económico para todo este año hasta el 7,22% y estimó un 3,4% para el próximo año; afectada por el alza de precios impulsada por el conflicto bélico en Oriente Medio, la previsión de aumento anual del IPC para este año también fue revisada al alza hasta el 1,98%, y para el próximo año se situó en el 1,83%.</p>
+    <button class="read-more-btn" onclick="openLightbox(8)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="9" data-category="西班牙語" data-time="2026-04-17" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260417/1024x768_wmky_0_C20260417000030.jpg" data-source="https://www.cna.com.tw/news/aall/202604170084.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(9)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260417/1024x768_wmky_0_C20260417000030.jpg" alt="Cheng Ming-chien: Perfeccionar la protección de las tecnologías clave para reforzar la competitividad de la alta tecnología de Taiwán | Política | CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-intl">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(9)">Cheng Ming-chien: Perfeccionar la protección de las tecnologías clave para reforzar la competitividad de la alta tecnología de Taiwán | Política | CNA</h2>
+    <p class="story-excerpt">La Fundación Internacional de Investigación Jurídica sobre Inteligencia Artificial celebró esta mañana el “Foro Internacional sobre el Pensamiento de la Coproducción entre Taiwán y Estados Unidos y Estrategias de Protección”, e invitó a representantes de centros de estudios, la industria, el ámbito académico, el derecho y la contabilidad de Taiwán y Estados Unidos a sostener un diálogo interdisciplinario sobre las oportunidades y los riesgos en medio de la reestructuración de la cadena de suministro. El ministro de Justicia, Cheng Ming-chien, y la viceministra política del Ministerio de Asuntos Digitales, Hou Yi-hsiu, fueron invitados a pronunciar los discursos de apertura.</p>
+    <button class="read-more-btn" onclick="openLightbox(9)">看全文</button>
+  </div>
+</article>
+<article class="story-card" data-id="10" data-category="西班牙語" data-time="2026-04-17" data-image="https://imgcdn.cna.com.tw/www/webphotos/WebCover/800/20260417/863x647_357044522748.jpg" data-source="https://www.cna.com.tw/news/aall/202604170187.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(10)">
+    <img src="https://imgcdn.cna.com.tw/www/webphotos/WebCover/800/20260417/863x647_357044522748.jpg" alt="Lian Hsien-ming: las industrias de ambos lados del Estrecho han pasado de ser complementarias a competir; las 10 medidas hacia Taiwán tienen un efecto limitado | Economía | CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-intl">西班牙語</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta"><time class="story-time">2026-04-17</time></div>
+    <h2 class="story-title" onclick="openLightbox(10)">Lian Hsien-ming: las industrias de ambos lados del Estrecho han pasado de ser complementarias a competir; las 10 medidas hacia Taiwán tienen un efecto limitado | Economía | CNA</h2>
+    <p class="story-excerpt">El Chung-Hua Institution for Economic Research (CIER) publicó hoy su más reciente pronóstico económico. Pese a las perturbaciones causadas por el conflicto en Medio Oriente, estimó que, gracias al vigoroso desarrollo de la tecnología de IA y a la fuerte demanda, la tasa de crecimiento económico de este año alcanzará el 7,22%. No obstante, las presiones inflacionarias han aumentado ligeramente, y la previsión para la tasa anual de crecimiento del índice de precios al consumidor (IPC) para todo el año es del 1,98%, acercándose al umbral de alerta inflacionaria del 2%.</p>
+    <button class="read-more-btn" onclick="openLightbox(10)">看全文</button>
+  </div>
+</article>
+  </main>
+
+  <!-- ===== HIDDEN FULL CONTENTS (read by lightbox JS) ===== -->
+  <div id="story-contents" style="display:none;">
+    <div id="story-content-1">
+<p>Este es el noveno informe del AI Index publicado por Stanford University. A diferencia de años anteriores, en los que Taiwán solía figurar principalmente en las listas estadísticas, este año se destacó la información económica de Taiwán y su posición clave en la cadena de suministro.</p><p>En el informe, de 423 páginas, Stanford University enumeró en su sitio web 10 conclusiones principales; una de ellas es la posición crucial de TSMC en la cadena mundial de suministro de hardware de IA. El texto explica que, desde 2022, la capacidad de cómputo de los modelos de IA ha crecido a un ritmo aproximado de 3,3 veces por año, y que la demanda de cómputo depende casi por completo de una sola fundición de semiconductores por contrato de Taiwán, lo que también pone de relieve la fragilidad de la cadena de suministro de hardware.</p><p>En 2025, Estados Unidos contaba con 5.427 centros de datos, más de 10 veces la cifra de cualquier otro país. TSMC, por su parte, es clave en la cadena de suministro de chips de IA. Los chips de NVIDIA y AMD son fabricados por TSMC, y cada eslabón de la cadena de suministro presenta barreras tecnológicas extremadamente altas, que requieren décadas de experiencia acumulada, inversión en equipos especializados y grandes cantidades de capital.</p><p>Además, la tasa de adopción de IA en Taiwán fue del 28,4% en el segundo semestre de 2025. En cuanto a la automatización industrial, el informe compara 2023 y 2024, y señala que Taiwán registró el mayor crecimiento del mundo en instalaciones de robots industriales, con una tasa anual del 33%.</p><p>En los últimos años, el desempeño de los modelos de IA de Estados Unidos y China ha sido uno de los focos del informe. Entre las conclusiones principales se indica que la ventaja de liderazgo de Estados Unidos se ha reducido y que, desde comienzos de 2025, los modelos de ambos países se han superado mutuamente en varias ocasiones. En febrero, el modelo chino DeepSeek-R1 llegó a empatar con los mejores modelos de Estados Unidos; hasta marzo, el modelo más potente de la estadounidense Anthropic mantenía una ventaja del 2,7%.</p><p>Además, en 2025 la inversión privada total en IA en Estados Unidos alcanzó los 285.900 millones de dólares estadounidenses, más de 23 veces los 12.400 millones de dólares de China. Sin embargo, esos 12.400 millones no incluyen la financiación del gobierno chino, por lo que no representan el gasto total de China en IA.</p><p>Un dato que merece atención es que el número de investigadores y desarrolladores de IA que se trasladan a vivir a Estados Unidos ha caído un 89% desde 2017, y solo en el último año descendió un 80%.</p><p>En cuanto al impacto de la IA en el trabajo, existe una gran brecha entre la opinión de los expertos en IA y la del público general: el 73% de los expertos prevé que la IA tendrá un impacto positivo, mientras que solo el 23% del público comparte esa opinión, una diferencia de hasta 50 puntos porcentuales.</p>
+</div>
+<div id="story-content-2">
+<p>La Cámara de Representantes y el Senado del estado de Massachusetts aprobaron por separado el día 15 resoluciones de apoyo a Taiwán, en las que subrayaron los valores compartidos de democracia y Estado de derecho, así como su respaldo a una mayor profundización de la cooperación bilateral. El director de la Oficina Económica y Cultural de Taipei en Boston, Liao Chao-hung, acudió al lugar para expresar su agradecimiento.</p><p>La resolución de la Cámara de Representantes estatal felicita al presidente Lai Ching-te y a la vicepresidenta Hsiao Bi-khim por el segundo aniversario de su toma de posesión, reconoce los logros democráticos de Taiwán, valora la amistad entre estados hermanos y el compromiso compartido entre Taiwán y Estados Unidos con los valores de democracia, libertad y Estado de derecho, impulsa la "diplomacia integral" para profundizar la asociación integral entre Taiwán y Estados Unidos, y apoya la ampliación de la participación internacional de Taiwán.</p><p>La resolución señala que 2026 no solo marcará el 250.º aniversario de la fundación de Estados Unidos, sino también el 30.º aniversario de la primera elección presidencial directa por parte del pueblo taiwanés, lo que simboliza el firme compromiso de Taiwán y Estados Unidos con la libertad, la democracia y el Estado de derecho. En 2025, Taiwán ya se ha convertido en el cuarto mayor socio comercial de Estados Unidos y también en el quinto mercado de exportación de Massachusetts en Asia, mientras que los intercambios comerciales y de inversión entre Taiwán y Massachusetts siguen creciendo.</p><p>En el futuro, ambas partes podrán profundizar aún más la cooperación en sectores clave como biotecnología, semiconductores, manufactura avanzada, inteligencia artificial e industria de defensa mediante la firma de un memorando de entendimiento sobre intercambios económicos y comerciales y el establecimiento de una oficina comercial en Taiwán. La resolución también respalda la firma de un acuerdo entre Taiwán y Estados Unidos para evitar la doble tributación, con el fin de promover la inversión y el empleo, y alienta la ampliación de los intercambios educativos y entre los pueblos.</p><p>La resolución indica que la política de Estados Unidos hacia Taiwán se basa en la Ley de Relaciones con Taiwán de 1979, y apoya la participación de Taiwán en organismos internacionales como la Organización Mundial de la Salud (OMS) y la Organización de Aviación Civil Internacional (OACI), para contribuir a la comunidad internacional.</p><p>El Senado de Massachusetts también aprobó una resolución de apoyo a Taiwán por primera vez en casi 10 años, en la que destacó el compromiso compartido con la democracia, la libertad y el Estado de derecho, y expresó su apoyo a una mayor profundización de la cooperación e intercambios económicos y comerciales entre Taiwán y Estados Unidos, así como entre Taiwán y Massachusetts. (Editor: Chen Hui-ping) 1150417</p>
+</div>
+<div id="story-content-3">
+<p>El Yuan Legislativo informó hoy mediante un comunicado de prensa que Chiang Chi-chen asistió esta mañana a la ceremonia de fundación del "Grupo de Amistad Parlamentaria entre la República de China y Canadá", iniciativa impulsada por la legisladora del Kuomintang Chen Ching-hui. Entre los distinguidos invitados presentes se encontraban decenas de legisladores del Kuomintang, el viceministro de Relaciones Exteriores Chen Ming-chi y la representante de la Oficina Comercial de Canadá en Taipei, Manon Giguère.</p><p>Chiang Chi-chen manifestó su satisfacción por ser testigo de la fundación del "Grupo de Amistad Parlamentaria entre la República de China y Canadá", promovida por Chen Ching-hui, y subrayó que los intercambios parlamentarios entre Taiwán y Canadá son estrechos y amistosos. Desde que asumió el cargo de vicepresidente del Yuan Legislativo, ha recibido ya cinco delegaciones de parlamentarios canadienses. Aunque Taiwán y Canadá se encuentran geográficamente distantes y difieren considerablemente en extensión territorial, sus economías son altamente complementarias, lo que los convierte en socios ideales de cooperación.</p><p>Chiang Chi-chen señaló que Canadá alberga una comunidad taiwanesa de considerable tamaño, y que sus paisajes naturales y su diversidad cultural atraen cada año a numerosos turistas taiwaneses. Los vínculos bilaterales son sólidos y cuentan con amplio margen para ser profundizados y ampliados.</p><p>Chiang Chi-chen destacó que, a diferencia de los intercambios entre gobiernos o empresas, los contactos entre parlamentos ofrecen mayor flexibilidad y permiten una comunicación plena y un intercambio franco de opiniones. En el futuro, el "Grupo de Amistad Parlamentaria entre la República de China y Canadá" se convertirá en una importante plataforma de intercambio parlamentario entre Taiwán y Canadá. Tanto la recepción de parlamentarios canadienses en visita oficial como la organización de delegaciones taiwanesas a Canadá contribuirán a fortalecer las relaciones bilaterales, promover una cooperación más estrecha y mejorar el bienestar de los pueblos de ambos países. (Editado por Chang Jo-yao) 1150417</p>
+</div>
+<div id="story-content-4">
+<p>La Legislatura del estado de Arizona anunció hoy la creación del «Joint Legislative Taiwan Caucus», integrado por miembros de ambas cámaras, con el objetivo de promover los intercambios con Taiwán. Por separado, el Senado estatal y la Cámara de Representantes estatal emitieron «declaraciones de amistad hacia Taiwán», en las que resolvieron apoyar la participación de Taiwán en organizaciones internacionales.</p><p>Tony Rivero, presidente del Comité de Comercio Internacional de la Cámara de Representantes estatal y del caucus sobre Taiwán, y Frank Carroll, líder de la mayoría en el Senado estatal, presentaron respectivamente a Alexander Tah-ray Yui ante todos los legisladores al aprobarse las declaraciones de amistad hacia Taiwán.</p><p>Cabe destacar que la declaración de esta ocasión de la Legislatura estatal abordó una cuestión central de la participación de Taiwán en la comunidad internacional. También fue la primera vez que la Legislatura del estado mencionó la Resolución 2758 de la Asamblea General de la ONU, al señalar que dicha resolución no excluye la participación de Taiwán en organizaciones internacionales ni autoriza a la República Popular China a representar a Taiwán.</p><p>La Legislatura estatal anunció su apoyo a la participación de Taiwán en organizaciones internacionales, incluido el sistema de las Naciones Unidas, la Organización Mundial de la Salud, la Organización de Aviación Civil Internacional, la Convención Marco de las Naciones Unidas sobre el Cambio Climático e Interpol, entre otras.</p><p>Tras el acto, Alexander Tah-ray Yui ofreció aperitivos taiwaneses y té de burbujas a los senadores y representantes estatales para agradecer el apoyo bipartidista de ambas cámaras estatales. Representantes de Taiwán y Estados Unidos alzaron vasos de té de burbujas para celebrar.</p><p>Tony Rivero, presidente del caucus sobre Taiwán en la Cámara de Representantes estatal, afirmó que, para Arizona, la cuestión de Taiwán no es un tema político y que el apoyo de la Legislatura estatal a Taiwán siempre ha abarcado todo el espectro político.</p><p>Frank Carroll, líder de la mayoría en el Senado estatal, dijo que pasa todos los días por la planta de TSMC y ha sido testigo del rápido avance de las obras. Añadió que espera que TSMC atraiga a más talento, que la comunidad taiwanesa siga creciendo y que en el futuro haya más intercambios culturales. (Editor: Chang Chih-hsuan) 2026/04/17</p><p>El director general de la Oficina Económica y Cultural de Taipéi en Los Ángeles, Alexander Tah-ray Yui (delante), presenció el día 16 en el Senado de Arizona la declaración de amistad hacia Taiwán y recibió el aplauso de bienvenida de los legisladores estatales. (Foto proporcionada por la oficina en Los Ángeles) Fax de Lin Hung-han, reportero de la Agencia Central de Noticias. 17 de abril de 2026.</p><p>El director general de la Oficina Económica y Cultural de Taipéi en Los Ángeles, Alexander Tah-ray Yui (de pie), se reunió con senadores y representantes del estado de Arizona, y representantes de Taiwán y Estados Unidos alzaron vasos de té de burbujas para celebrar la amistad entre ambas partes. (Foto proporcionada por la oficina en Los Ángeles) Fax de Lin Hung-han, reportero de la Agencia Central de Noticias. 17 de abril de 2026.</p><p>El presidente de la Cámara de Representantes de Arizona, Steve Montenegro (izquierda), y el director general de la Oficina Económica y Cultural de Taipéi en Los Ángeles, Alexander Tah-ray Yui (derecha), se estrechan la mano en el recinto legislativo. (Foto proporcionada por la oficina en Los Ángeles) Fax de Lin Hung-han, reportero de la Agencia Central de Noticias. 17 de abril de 2026.</p>
+</div>
+<div id="story-content-5">
+<p>El evento fue organizado conjuntamente por la Oficina Económica y Cultural de Taipei en Montreal, la Université de Montréal y la Fondation Asie-Pacifique du Canada (APFC), en el cine de la Université de Montréal.</p><p>La directora de la Oficina Económica y Cultural de Taipei en Montreal, Chen Shu-jung, señaló que «Los constructores de montañas» es una historia de transformación de crisis en oportunidades y el mejor reflejo del espíritu taiwanés. Destacó que la economía de Taiwán florece en democracia y llamó a la comunidad internacional a defender conjuntamente la democracia y la libertad.</p><p>Alexandre Veilleux, representante de la oficina de Montreal de la Fondation Asie-Pacifique du Canada, afirmó que los semiconductores no son solo un avance tecnológico, sino también un proceso de desarrollo que combina el esfuerzo humano, la visión política y la planificación industrial, con un profundo impacto en la economía mundial y que ha convertido a Taiwán en un socio indispensable a escala global.</p><p>Veilleux señaló además que, según la más reciente encuesta de la Fondation Asie-Pacifique du Canada, la población canadiense tiene una percepción muy positiva de Taiwán, que ocupa una posición destacada en el índice de simpatía hacia países asiáticos, lo que refleja un amplio respaldo de la opinión pública a las relaciones entre Taiwán y Canadá.</p><p>El coloquio posterior a la proyección fue moderado por Tsai Hsiao-lin, profesora asistente del Departamento de Historia de la Université de Montréal, e incluyó la participación de Cheng Fang-fang, profesora asistente del Departamento de Ingeniería Eléctrica y Computación de la Universidad de Minnesota, y Olga Alexeeva, profesora del Departamento de Historia de la Université du Québec à Montréal. Los participantes coincidieron en que los logros de Taiwán en el desarrollo de la industria de semiconductores merecen reconocimiento internacional, y subrayaron que Taiwán debe gestionar con cautela los importantes desafíos derivados de la competencia entre Estados Unidos y China.</p><p>Los profesores también interactuaron con el público presente y debatieron ampliamente sobre temas como la relación entre el desarrollo tecnológico y la transición democrática de Taiwán tras el levantamiento de la ley marcial, la posición geopolítica de Taiwán en materia de semiconductores, el vínculo entre la política estadounidense hacia Taiwán y el «Escudo de Silicio» (Silicon Shield), las perspectivas futuras de la industria de semiconductores taiwanesa, y el estado actual de las interacciones industriales entre Taiwán y Canadá. El intercambio resultó sumamente animado. (Editado por Tang Sheng-yang)</p>
+</div>
+<div id="story-content-6">
+<p>El medio taiwanés NOWnews celebró esta tarde el foro 'Las decisiones clave de Taiwán: la prueba de realidad en seguridad nacional, política energética y desarrollo económico', con la participación de expertos y académicos nacionales e internacionales.</p><p>Mark Montgomery señaló que la 'interoperabilidad' entre las fuerzas armadas estadounidenses y las de otros países comprende cuatro niveles: el más básico es la desconflicción (de-conflicted), seguido de la coordinación (coordinated), luego la integración (integrated) y, finalmente, la unificación (unified). Como ejemplo, indicó que las fuerzas de Estados Unidos y Corea del Sur han alcanzado el nivel de unificación con el establecimiento de un mando conjunto, mientras que con Japón se ha logrado la integración, con Filipinas la coordinación, y que Taiwán y Estados Unidos solo han alcanzado el nivel de desconflicción.</p><p>Montgomery señaló que el presupuesto especial de adquisiciones militares de Taiwán tiene como objetivo avanzar en la interoperabilidad entre Taiwán y Estados Unidos. Sin embargo, la actual separación entre las ventas militares extranjeras (FMS) y las ventas comerciales directas (DCS) de Estados Unidos a Taiwán no reporta ningún beneficio y resulta 'estúpida y contraproducente', ya que debilita directamente la interoperabilidad y la capacidad operativa entre Taiwán y las fuerzas estadounidenses, dado que los contratos de ingeniería de software para la mejora de sistemas de armas y los de vehículos no tripulados dependen en gran medida del canal de ventas comerciales.</p><p>Montgomery comparó la cumbre entre Trump y Xi, prevista para mayo, con unas 'elecciones' en las que solo votan dos personas —el presidente estadounidense Donald Trump y el presidente chino Xi Jinping—, y en las que Taiwán no tiene voto. Afirmó que, si Taiwán quiere ganar esas 'elecciones', debe aprobar cuanto antes el presupuesto especial de adquisiciones militares para convertirse en un aliado ejemplar ante Estados Unidos.</p><p>Michael Sobolik, investigador sénior del think tank Hudson Institute de Washington, afirmó que los fundamentos de la relación entre Estados Unidos y Taiwán son sólidos y estables, pero que la relación militar representa una variable. Indicó que Trump siempre ha esperado que los países socios de Estados Unidos estén dispuestos a invertir en su propia seguridad y cuenten con una capacidad de autodefensa creíble. Explicó que la razón por la que Trump aprecia a Israel es que este país valora su propia seguridad y se esfuerza por salir victorioso.</p><p>Sobolik, quien fue asesor del senador federal Ted Cruz, señaló que los legisladores estadounidenses esperan ver a Taiwán preparado, con capacidades de guerra asimétrica, una sólida resiliencia y capacidad de producción autónoma de armamento clave, de modo que en caso de conflicto no tenga que depender de socios externos.</p><p>Sobolik afirmó que el Partido Comunista Chino y Xi Jinping no desean que nadie en el mundo crea que Taiwán tiene iniciativa propia, y que intentan aislar a Taiwán para convencer al mundo de que este no puede protegerse a sí mismo. Sostuvo que, si Taiwán aprueba el presupuesto especial de adquisiciones militares, podrá consolidar los fundamentos de la relación entre Estados Unidos y Taiwán y situarse en una posición muy favorable.</p><p>Jason Hsu, exlegislador del Kuomintang e investigador sénior del Hudson Institute, indicó que Washington observa el presupuesto especial de adquisiciones militares de Taiwán desde dos perspectivas clave: si Taiwán se preocupa por su propia defensa, y si el bloqueo del presupuesto especial lleva a Washington a considerar que Taiwán está convirtiendo sus disputas políticas internas en un asunto internacional. Advirtió que esto podría ser visto por Trump como un elemento perturbador, y que daría a Xi Jinping margen de maniobra frente a Trump; cuando la incertidumbre interna de Taiwán se convierte en una brecha para la seguridad exterior, China puede aprovechar esa vulnerabilidad. (Editado por Lin Ke-lun y Wan Shu-zhang)</p>
+</div>
+<div id="story-content-7">
+<p>Acompañado por el secretario general del Consejo de Seguridad Nacional, Joseph Wu, y el ministro de Defensa Nacional, Wellington Koo, entre otros, el presidente Lai visitó esta mañana el campamento Jintang del Comando de Entrenamiento de Infantería del Ejército para inspeccionar las instalaciones y expresar su reconocimiento al personal, además de entregar una bonificación especial para la alimentación. El mandatario no solo conoció de primera mano la situación de las distintas unidades de entrenamiento y observó una simulación de instrucción con vehículos blindados de ruedas, sino que también revisó materiales didácticos sobre fusiles de francotirador elaborados por el propio Ejército.</p><p>Antes del banquete, el presidente señaló en su discurso que poco antes había visitado el Comando de Entrenamiento de Vuelo de la Fuerza Aérea y el Centro de Entrenamiento de Supervivencia para Personal Aéreo de las Fuerzas Armadas, donde conoció de primera mano cómo las fuerzas armadas mantienen la calma ante el peligro en escenarios simulados de gran realismo. Como comandante en jefe de las tres ramas militares, dijo ser plenamente consciente de que, además de las tareas de defensa en primera línea, las fuerzas armadas deben conceder gran importancia al entrenamiento de largo plazo que las respalda. Sin embargo, subrayó que la sola voluntad de combate no es suficiente y que también es necesario brindar a los hombres y mujeres de las fuerzas armadas el apoyo más firme y contundente.</p><p>El presidente enfatizó que esa es precisamente la razón por la que el gobierno debe impulsar con determinación un presupuesto especial de defensa y diversos proyectos de construcción en materia de defensa. El gobierno, afirmó, insiste en que no debe haber rebajas ni concesiones y en que debe aprobarse lo antes posible. Este presupuesto, explicó, ha sido objeto de estudios y debates profesionales y, dado el crecimiento anual de la economía de Taiwán, constituye un gasto absolutamente justificado y plenamente asumible. Añadió que también representa una inversión sustancial para proteger la democracia y la libertad, forjar el escudo de Taiwán y respaldar a oficiales, suboficiales y soldados de las fuerzas armadas.</p><p>El presidente dijo que, ante una situación regional que sigue siendo compleja, es necesario recurrir a un presupuesto especial para acelerar la adquisición y preparación de diversas armas de alta movilidad y alta precisión. En el caso de las unidades de infantería, señaló, estos equipos permitirán responder con mayor eficacia a los desafíos del campo de batalla moderno.</p><p>El presidente indicó que todos desean la paz y que todos saben también que solo con fortaleza puede alcanzarse una paz verdadera. Añadió que la promoción por parte del gobierno de un presupuesto especial de defensa y de diversos proyectos de defensa también busca transmitir una señal clara a la comunidad internacional: Taiwán tiene la determinación, la capacidad y la voluntad de defenderse, salvaguardar la paz y defender su soberanía. Solo una preparación continua puede disuadir las amenazas; prepararse para la guerra a fin de evitarla, y tener capacidad de combate para poner fin al conflicto, es la vía para alcanzar una paz verdadera.</p><p>Por último, el presidente Lai animó a todos a seguir manteniendo el espíritu de la escuela de infantería, perfeccionar sus capacidades de combate, avanzar al ritmo de los tiempos y seguir encaminándose hacia los objetivos de nuevo entrenamiento, nuevas ideas, nuevo equipamiento y nuevas tecnologías, para que toda la ciudadanía pueda sentirse tranquila y confiada, porque mientras estén las fuerzas armadas, la seguridad de Taiwán estará garantizada. Exhortó a todos a seguir esforzándose juntos para defender la seguridad nacional, salvaguardar la democracia y la libertad, y proteger la vida y los bienes de toda la población. (Editora: Lee Shu-hua) 2026/04/17</p>
+</div>
+<div id="story-content-8">
+<p>En su anterior previsión económica, publicada en enero de este año, el Chung-Hua Institution for Economic Research (CIER) estimó que la tasa de crecimiento económico sería del 4,14% este año y del 2,95% el próximo, mientras que la tasa anual de aumento del IPC para el conjunto del año sería del 1,64% y del 1,58%, respectivamente. En la última previsión difundida hoy, elevó de forma significativa la proyección de crecimiento económico para todo este año hasta el 7,22% y estimó un 3,4% para el próximo año; afectada por el alza de precios impulsada por el conflicto bélico en Oriente Medio, la previsión de aumento anual del IPC para este año también fue revisada al alza hasta el 1,98%, y para el próximo año se situó en el 1,83%.</p><p>El presidente del CIER, Lien Hsien-ming, explicó que, aunque existe la perturbación del conflicto en Oriente Medio, mantiene una visión positiva sobre el crecimiento económico de este año, principalmente porque las exportaciones de Taiwán avanzan con gran dinamismo y, respaldado por la demanda de productos de IA, el crecimiento económico del primer trimestre incluso superó el 13%.</p><p>Según la previsión del CIER, el patrón de crecimiento de la economía taiwanesa será de "calor externo y tibieza interna". En cuanto a la demanda externa, aunque el conflicto en Oriente Medio afecta al comercio y al transporte de mercancías, el desarrollo de la industria de la IA es vigoroso, por lo que se prevé una expansión sólida de las exportaciones e importaciones de productos relacionados con tecnologías de la información y la comunicación, electrónica y semiconductores de Taiwán, con tasas anuales de crecimiento del 19,83% y del 18,24%, respectivamente.</p><p>En cuanto a la demanda interna, el consumo privado, favorecido por la mejora del mercado laboral y el efecto riqueza del mercado bursátil, registrará un crecimiento anual del 2,16%, con un impulso superior al del año pasado.</p><p>Lien Hsien-ming añadió que el escenario supuesto en la previsión económica del CIER toma como referencia las opiniones de instituciones internacionales, según las cuales la guerra no se prolongará durante mucho tiempo y el precio internacional del petróleo alcanzaría su punto más alto en abril; la previsión se elaboró sobre esa base. No obstante, el conflicto en Oriente Medio implica factores relacionados con la energía y los cambios en las cadenas de suministro, que podrían afectar además a los tipos de interés, y las numerosas incertidumbres elevan la dificultad de prever la coyuntura.</p><p>Ante la preocupación externa por los riesgos inflacionarios derivados del conflicto, Lien Hsien-ming señaló que la duración del conflicto en Oriente Medio, si los precios internos de la energía seguirán congelados y si el Gobierno continuará con sus controles son factores clave que influirán en la evolución posterior de los precios.</p><p>La directora general del Departamento de Desarrollo Económico del Consejo Nacional de Desarrollo, Chen Mei-chu, indicó que, tras el estallido del conflicto en Oriente Medio, el Gobierno activó rápidamente múltiples medidas de estabilización de precios y convocó reuniones frecuentes para supervisar los cambios en los precios. El Ministerio de Asuntos Económicos incluso lanzó el "proyecto especial de bolsas de plástico a precio asequible del Ministerio de Asuntos Económicos" debido a la volatilidad del mercado de materias primas petroquímicas, porque "lo que más temen los precios es la expectativa de inflación". El Gobierno ha actuado con gran intensidad y ha aplicado medidas muy contundentes, con la esperanza de controlar la situación desde el origen y contener las expectativas inflacionarias.</p><p>Lien Hsien-ming afirmó sin rodeos que la previsión actual de precios ya está muy cerca del 2%, y que, si se supone que el Gobierno no hubiera congelado los precios, la previsión anual del IPC superaría el 2%.</p><p>En cuanto al tipo de cambio, el CIER, teniendo en cuenta factores como la persistencia de la incertidumbre inflacionaria en Europa y Estados Unidos, las variables en la orientación de la política monetaria y el fortalecimiento del dólar impulsado por los riesgos geopolíticos, prevé que en 2026 el tipo de cambio del dólar taiwanés frente al dólar estadounidense se aprecie gradualmente desde 31,63 por dólar en el primer trimestre hasta 31,04 en el cuarto trimestre, con un promedio anual de alrededor de 31,4, lo que supone una depreciación aproximada del 0,65% en comparación con 2025.</p>
+</div>
+<div id="story-content-9">
+<p>La Fundación Internacional de Investigación Jurídica sobre Inteligencia Artificial celebró esta mañana el “Foro Internacional sobre el Pensamiento de la Coproducción entre Taiwán y Estados Unidos y Estrategias de Protección”, e invitó a representantes de centros de estudios, la industria, el ámbito académico, el derecho y la contabilidad de Taiwán y Estados Unidos a sostener un diálogo interdisciplinario sobre las oportunidades y los riesgos en medio de la reestructuración de la cadena de suministro. El ministro de Justicia, Cheng Ming-chien, y la viceministra política del Ministerio de Asuntos Digitales, Hou Yi-hsiu, fueron invitados a pronunciar los discursos de apertura.</p><p>Cheng Ming-chien señaló que, en un momento clave de reorganización de la cadena de suministro global, la cuestión para Taiwán es cómo proteger las tecnologías centrales al tiempo que se eleva la competitividad general de la industria y la cooperación internacional, y que el foro de hoy se centra en la manufactura conjunta entre Taiwán y Estados Unidos y en la protección de la competitividad central.</p><p>Indicó que el Ministerio de Justicia, como autoridad competente del sector jurídico, concede gran importancia a la construcción de un sistema de protección multinivel que vaya de las empresas al Estado. En el despliegue transfronterizo de la coproducción entre Taiwán y Estados Unidos, la protección de las tecnologías centrales es de suma importancia. En la actualidad, esto ya no es solo una cuestión interna de la industria o de cumplimiento normativo, sino un asunto que atañe a la competitividad nacional desde el nivel empresarial hasta el de la seguridad nacional, e incluso a la reestructuración de la industria mundial de alta tecnología, por lo que el Ministerio de Justicia no puede eludir su responsabilidad.</p><p>Sobre el fortalecimiento de los mecanismos de protección, Cheng Ming-chien dijo que se reforzarán desde tres niveles: el marco legal, la aplicación de la ley y la gobernanza. En primer lugar, en el plano legislativo, se sigue impulsando la reforma de la Ley de Seguridad Nacional para definir claramente los requisitos de las tecnologías nacionales centrales y críticas, así como los procedimientos para su determinación. Además, se han añadido el delito de espionaje económico y el delito de uso extraterritorial de secretos comerciales relativos a tecnologías nacionales centrales y críticas, con el fin de establecer, junto con la Ley de Secretos Comerciales, una protección escalonada que eleve la protección de las tecnologías centrales al nivel de la seguridad nacional.</p><p>En cuanto al nivel de aplicación de la ley, Cheng Ming-chien explicó que los organismos encargados de hacer cumplir la ley asignan a fiscales especializados la tramitación de los casos de seguridad nacional, y que los tribunales también cuentan con salas especializadas, a fin de reforzar la protección y evitar la filtración al exterior de tecnologías nacionales centrales y críticas. En el plano de la gobernanza, las fiscalías organizan activamente foros sobre protección de secretos comerciales con los parques científicos y tecnológicos y, mediante seminarios e intercambio de casos, ayudan a las empresas a establecer mecanismos de protección de secretos comerciales y control de riesgos, además de crear una plataforma de enlace para que el sector empresarial obtenga información correcta y asistencia de manera oportuna, perfeccionando así el mecanismo de protección de las tecnologías centrales.</p><p>En su intervención, Hou Yi-hsiu afirmó que, cuando las industrias de Taiwán se expanden al extranjero, es necesario pensar cómo formar un ecosistema resiliente, proteger las industrias centrales originarias de Taiwán y mantener una buena conexión con las sedes corporativas. Para ello, se requiere coordinación con los ámbitos jurídico y fiscal, e incluso con talento en servicios de software. La protección y la manufactura conjunta no son contradictorias, sino complementarias; combinar ataque y defensa es la verdadera estrategia industrial a nivel nacional. (Editor: Pan Yi-ching) 2026/04/17</p>
+</div>
+<div id="story-content-10">
+<p>El Chung-Hua Institution for Economic Research (CIER) publicó hoy su más reciente pronóstico económico. Pese a las perturbaciones causadas por el conflicto en Medio Oriente, estimó que, gracias al vigoroso desarrollo de la tecnología de IA y a la fuerte demanda, la tasa de crecimiento económico de este año alcanzará el 7,22%. No obstante, las presiones inflacionarias han aumentado ligeramente, y la previsión para la tasa anual de crecimiento del índice de precios al consumidor (IPC) para todo el año es del 1,98%, acercándose al umbral de alerta inflacionaria del 2%.</p><p>Consultado por los medios sobre si, tras la conclusión de la reunión Zheng-Xi, las 10 medidas para Taiwán anunciadas el día 12 por la Oficina de Asuntos de Taiwán del Comité Central del Partido Comunista de China —entre ellas la importación al continente de productos agrícolas y pesqueros de Taiwán y el impulso a la reanudación del programa piloto de viajes individuales a Taiwán (isla principal) para residentes de Shanghái y de la provincia de Fujian— contribuirían a estimular la economía, Lian Hsien-ming señaló que medidas como los viajes individuales y la apertura a los productos agrícolas ya se habían aplicado en el pasado, y que su efecto para estimular la demanda interna es limitado; los problemas que realmente afectan de forma directa a las industrias son el exceso de capacidad de producción de China y la competencia interna excesiva, entre otros.</p><p>Lian Hsien-ming afirmó sin rodeos que una cuestión muy realista en las relaciones a través del Estrecho es que se ha pasado de la complementariedad del pasado a la competencia, especialmente en las industrias tradicionales. En la actualidad, China y Taiwán compiten directamente, la presión sobre los precios es muy fuerte y el sector petroquímico lo percibe con especial intensidad. Por ello, si la competencia interna excesiva en China se modera, la ayuda para las industrias taiwanesas sería mayor.</p><p>Lian Hsien-ming indicó que, en los últimos años, China ha impulsado con fuerza la IA, pero a Taiwán le resulta difícil beneficiarse de esas oportunidades de negocio. Por un lado, porque ya hay muchos pedidos procedentes de Estados Unidos; por otro, en las industrias no relacionadas con la IA, Taiwán ha sido sustituido en su mayor parte por la cadena de suministro roja. En la actualidad, las relaciones entre ambas partes del Estrecho tienden más hacia la competencia. (Editor: Lin Shu-yuan) 1150417</p>
+</div>
+  </div>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lb-title">
+    <div class="lb-backdrop" id="lb-backdrop"></div>
+    <div class="lb-panel">
+      <button class="lb-close" id="lb-close" aria-label="關閉">✕</button>
+      <div class="lb-scroll" id="lb-scroll">
+        <div class="lb-meta">
+          <span class="lb-category tag-default" id="lb-category"></span>
+          <span class="lb-time" id="lb-time"></span>
+        </div>
+        <h2 class="lb-title" id="lb-title"></h2>
+        <div class="lb-image-wrap" id="lb-image-wrap">
+          <img id="lb-image" src="" alt="" loading="eager">
+        </div>
+        <div class="lb-body" id="lb-body"></div>
+        <a class="lb-source" id="lb-source" href="#" target="_blank" rel="noopener">查看原文</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">CNA 外語選稿, 西班牙語 Batch 1</div>
+      <div class="footer-links">
+        <a href="https://u0401006.github.io/video-quotes/news/">歷史存檔</a>
+        <a href="https://www.cna.com.tw/">訂閱電子報</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CNA 外語選稿, 西班牙語 Batch 1 · 版權所有</span>
+      <span class="footer-generated">Generated at 2026-04-18T13:16:45</span>
+    </div>
+  </footer>
+
+</div><!-- /.page-wrapper -->
+
+<script>
+  var TAG_CLASSES = {
+    '政治': 'tag-politics', '國內': 'tag-politics',
+    '國際': 'tag-intl',     '外交': 'tag-intl',
+    '財經': 'tag-finance',  '經濟': 'tag-finance',
+    '體育': 'tag-sports',
+    '科技': 'tag-tech',     '科學': 'tag-tech',
+    '社會': 'tag-society',  '生活': 'tag-society'
+  };
+
+  function openLightbox(id) {
+    var card = document.querySelector('.story-card[data-id="' + id + '"]');
+    var contentEl = document.getElementById('story-content-' + id);
+    if (!card) return;
+
+    var category  = card.dataset.category  || '';
+    var time      = card.dataset.time      || '';
+    var image     = card.dataset.image     || '';
+    var source    = card.dataset.source    || '';
+    var tagClass  = card.dataset.tagClass  || TAG_CLASSES[category] || 'tag-default';
+    var title     = card.querySelector('.story-title').textContent.trim();
+    var fullHtml  = contentEl ? contentEl.innerHTML : '';
+
+    // Populate lightbox fields
+    var catEl = document.getElementById('lb-category');
+    catEl.textContent = category;
+    catEl.className   = 'lb-category ' + tagClass;
+
+    document.getElementById('lb-time').textContent  = time;
+    document.getElementById('lb-title').textContent = title;
+    document.getElementById('lb-body').innerHTML    = fullHtml;
+
+    var imgWrap = document.getElementById('lb-image-wrap');
+    var imgEl   = document.getElementById('lb-image');
+    if (image) {
+      imgEl.src = image;
+      imgEl.alt = title;
+      imgWrap.style.display = 'block';
+    } else {
+      imgWrap.style.display = 'none';
+    }
+
+    var srcEl = document.getElementById('lb-source');
+    if (source) {
+      srcEl.href         = source;
+      srcEl.style.display = 'inline-flex';
+    } else {
+      srcEl.style.display = 'none';
+    }
+
+    // Scroll lightbox content to top
+    document.getElementById('lb-scroll').scrollTop = 0;
+
+    // Open with animation
+    var lb = document.getElementById('lightbox');
+    lb.classList.add('is-open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    var lb = document.getElementById('lightbox');
+    lb.classList.remove('is-open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Close on backdrop click
+  document.getElementById('lb-backdrop').addEventListener('click', closeLightbox);
+  // Close button
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  // ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body>
+</html>
