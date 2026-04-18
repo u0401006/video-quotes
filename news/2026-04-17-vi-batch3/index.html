@@ -6,441 +6,80 @@
   <meta name="description" content="CNA Translation Digest VI — 2026-04-17-vi-batch3 精選新聞">
   <title>CNA Translation Digest VI — 2026-04-17-vi-batch3</title>
   <style>
-    /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
-                   "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
-      background: #f8f4ee;
-      color: #1a1008;
-      line-height: 1.7;
-      font-size: 16px;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif; background: #f8f4ee; color: #1a1008; line-height: 1.7; font-size: 16px; }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; height: auto; }
     button { cursor: pointer; font-family: inherit; }
-
-    /* ===== PAGE WRAPPER ===== */
-    .page-wrapper {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 0 48px;
-    }
-
-    /* ===== HEADER ===== */
-    .site-header {
-      background: #2a1c0f;
-      color: #f0e8d8;
-      padding: 28px 32px 22px;
-    }
-    .header-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-    .brand-name {
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: -0.5px;
-      color: #f5ead6;
-      line-height: 1.2;
-    }
-    .brand-tagline {
-      font-size: 11px;
-      color: #9a8468;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      margin-top: 3px;
-    }
-    .header-meta {
-      text-align: right;
-      flex-shrink: 0;
-    }
-    .header-date {
-      font-size: 14px;
-      color: #c8b498;
-      font-weight: 500;
-    }
-    .header-count {
-      font-size: 11px;
-      color: #806850;
-      margin-top: 3px;
-    }
-    .header-divider {
-      border: none;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      margin-bottom: 12px;
-    }
-    .header-categories {
-      font-size: 12px;
-      color: #806850;
-      letter-spacing: 0.3px;
-    }
-    .header-categories strong {
-      color: #c8a878;
-    }
-
-    /* ===== SECTION LABEL ===== */
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 24px 32px 0;
-    }
-    .section-label span {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      color: #9b5a2a;
-      white-space: nowrap;
-    }
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #e5ddd3;
-    }
-
-    /* ===== STORY LIST ===== */
-    .story-list {
-      padding: 16px 32px 0;
-    }
-
-    /* ===== STORY CARD ===== */
-    .story-card {
-      display: flex;
-      flex-direction: column;
-      background: #ffffff;
-      border: 1px solid #ede5d8;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 20px;
-      transition: box-shadow 0.2s ease, transform 0.15s ease;
-    }
-    .story-card:hover {
-      box-shadow: 0 4px 20px rgba(60, 35, 10, 0.09);
-      transform: translateY(-2px);
-    }
-
-    /* Story image */
-    .story-image-wrap {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%; /* 16:9 */
-      background: linear-gradient(135deg, #f0e8de, #e8ddd0);
-      overflow: hidden;
-      cursor: pointer;
-    }
-    .story-image-wrap img {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    .story-card:hover .story-image-wrap img {
-      transform: scale(1.03);
-    }
-    .story-img-placeholder {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #f0e8de, #e4d8cc);
-      color: #c8b098;
-      font-size: 36px;
-    }
-    .story-category-tag {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      padding: 4px 12px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      z-index: 2;
-    }
-
-    /* Category tag colors — warm palette */
+    .page-wrapper { max-width: 720px; margin: 0 auto; padding: 0 0 48px; }
+    .site-header { background: #2a1c0f; color: #f0e8d8; padding: 28px 32px 22px; }
+    .header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .brand-name { font-size: 24px; font-weight: 900; letter-spacing: -0.5px; color: #f5ead6; line-height: 1.2; }
+    .brand-tagline { font-size: 11px; color: #9a8468; letter-spacing: 0.8px; text-transform: uppercase; margin-top: 3px; }
+    .header-meta { text-align: right; flex-shrink: 0; }
+    .header-date { font-size: 14px; color: #c8b498; font-weight: 500; }
+    .header-count { font-size: 11px; color: #806850; margin-top: 3px; }
+    .header-divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 12px; }
+    .header-categories { font-size: 12px; color: #806850; letter-spacing: 0.3px; }
+    .header-categories strong { color: #c8a878; }
+    .section-label { display: flex; align-items: center; gap: 12px; padding: 24px 32px 0; }
+    .section-label span { font-size: 11px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: #9b5a2a; white-space: nowrap; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: #e5ddd3; }
+    .story-list { padding: 16px 32px 0; }
+    .story-card { display: flex; flex-direction: column; background: #ffffff; border: 1px solid #ede5d8; border-radius: 10px; overflow: hidden; margin-bottom: 20px; transition: box-shadow 0.2s ease, transform 0.15s ease; }
+    .story-card:hover { box-shadow: 0 4px 20px rgba(60, 35, 10, 0.09); transform: translateY(-2px); }
+    .story-image-wrap { position: relative; width: 100%; padding-bottom: 56.25%; background: linear-gradient(135deg, #f0e8de, #e8ddd0); overflow: hidden; cursor: pointer; }
+    .story-img-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f0e8de, #e4d8cc); color: #c8b098; font-size: 36px; }
+    .story-category-tag { position: absolute; top: 14px; left: 14px; padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; z-index: 2; }
+    .tag-default  { background: #f0ece4; color: #5c4830; }
     .tag-politics { background: #fff0e8; color: #b04520; }
     .tag-intl     { background: #fff8e8; color: #9a6010; }
-    .tag-finance  { background: #eef5e8; color: #3d7025; }
-    .tag-sports   { background: #fef0e0; color: #a04510; }
-    .tag-tech     { background: #f0ecf8; color: #6040a0; }
-    .tag-society  { background: #fdf0f4; color: #902848; }
-    .tag-default  { background: #f0ece4; color: #5c4830; }
-
-    /* Card body */
-    .story-body {
-      padding: 18px 20px 20px;
-    }
-    .story-meta {
-      margin-bottom: 8px;
-    }
-    .story-time {
-      font-size: 12px;
-      color: #9a8070;
-      font-weight: 400;
-    }
-    .story-title {
-      font-size: 18px;
-      font-weight: 800;
-      line-height: 1.45;
-      color: #1a1008;
-      margin-bottom: 10px;
-      cursor: pointer;
-      transition: color 0.15s ease;
-    }
-    .story-title:hover {
-      color: #9b5a2a;
-    }
-    .story-excerpt {
-      font-size: 14px;
-      color: #4a3828;
-      line-height: 1.75;
-      margin-bottom: 16px;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .read-more-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: none;
-      border: 1.5px solid #c8a878;
-      color: #9b5a2a;
-      padding: 7px 16px;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-    }
-    .read-more-btn:hover {
-      background: #9b5a2a;
-      color: #ffffff;
-      border-color: #9b5a2a;
-    }
-    .read-more-btn::after {
-      content: '→';
-      font-size: 14px;
-    }
-
-    /* ===== LIGHTBOX ===== */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.25s ease, visibility 0.25s ease;
-    }
-    .lightbox.is-open {
-      visibility: visible;
-      opacity: 1;
-    }
-    .lb-backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(28, 18, 8, 0.65);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-    }
-    .lb-panel {
-      position: relative;
-      background: #fffbf7;
-      border-radius: 12px;
-      max-width: 660px;
-      width: 100%;
-      max-height: 88vh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 20px 60px rgba(28, 18, 8, 0.3);
-      transform: translateY(16px) scale(0.98);
-      transition: transform 0.25s ease;
-      z-index: 1;
-    }
-    .lightbox.is-open .lb-panel {
-      transform: translateY(0) scale(1);
-    }
-    .lb-close {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      width: 32px;
-      height: 32px;
-      background: rgba(28, 18, 8, 0.07);
-      border: none;
-      border-radius: 50%;
-      font-size: 16px;
-      color: #5c4830;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-      transition: background 0.15s ease, color 0.15s ease;
-      line-height: 1;
-    }
-    .lb-close:hover {
-      background: rgba(28, 18, 8, 0.14);
-      color: #1a1008;
-    }
-    .lb-scroll {
-      overflow-y: auto;
-      padding: 28px 30px 32px;
-      -webkit-overflow-scrolling: touch;
-    }
+    .story-body { padding: 18px 20px 20px; }
+    .story-meta { margin-bottom: 8px; }
+    .story-time { font-size: 12px; color: #9a8070; font-weight: 400; }
+    .story-title { font-size: 18px; font-weight: 800; line-height: 1.45; color: #1a1008; margin-bottom: 10px; cursor: pointer; transition: color 0.15s ease; }
+    .story-title:hover { color: #9b5a2a; }
+    .story-excerpt { font-size: 14px; color: #4a3828; line-height: 1.75; margin-bottom: 16px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .read-more-btn { display: inline-flex; align-items: center; gap: 5px; background: none; border: 1.5px solid #c8a878; color: #9b5a2a; padding: 7px 16px; border-radius: 6px; font-size: 13px; font-weight: 700; transition: background 0.15s ease, color 0.15s ease; }
+    .read-more-btn:hover { background: #9b5a2a; color: #ffffff; border-color: #9b5a2a; }
+    .read-more-btn::after { content: '→'; font-size: 14px; }
+    .lightbox { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px; visibility: hidden; opacity: 0; transition: opacity 0.25s ease, visibility 0.25s ease; }
+    .lightbox.is-open { visibility: visible; opacity: 1; }
+    .lb-backdrop { position: absolute; inset: 0; background: rgba(28,18,8,0.65); backdrop-filter: blur(4px); }
+    .lb-panel { position: relative; background: #fffbf7; border-radius: 12px; max-width: 660px; width: 100%; max-height: 88vh; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(28,18,8,0.3); transform: translateY(16px) scale(0.98); transition: transform 0.25s ease; z-index: 1; }
+    .lightbox.is-open .lb-panel { transform: translateY(0) scale(1); }
+    .lb-close { position: absolute; top: 14px; right: 14px; width: 32px; height: 32px; background: rgba(28,18,8,0.07); border: none; border-radius: 50%; font-size: 16px; color: #5c4830; display: flex; align-items: center; justify-content: center; z-index: 2; transition: background 0.15s ease; }
+    .lb-close:hover { background: rgba(28,18,8,0.14); }
+    .lb-scroll { overflow-y: auto; padding: 28px 30px 32px; }
     .lb-scroll::-webkit-scrollbar { width: 4px; }
-    .lb-scroll::-webkit-scrollbar-track { background: #f0e8de; }
     .lb-scroll::-webkit-scrollbar-thumb { background: #c8a878; border-radius: 2px; }
-
-    .lb-meta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-    .lb-category {
-      padding: 3px 10px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-    .lb-time {
-      font-size: 12px;
-      color: #9a8070;
-    }
-    .lb-title {
-      font-size: 22px;
-      font-weight: 900;
-      line-height: 1.4;
-      color: #1a1008;
-      margin-bottom: 18px;
-      padding-right: 28px;
-    }
-    .lb-image-wrap {
-      width: 100%;
-      padding-bottom: 56.25%;
-      position: relative;
-      background: linear-gradient(135deg, #f0e8de, #e4d8cc);
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 22px;
-    }
-    .lb-image-wrap img {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-    }
-    .lb-body {
-      font-size: 15px;
-      color: #2d1e10;
-      line-height: 1.85;
-    }
+    .lb-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .lb-category { padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+    .lb-time { font-size: 12px; color: #9a8070; }
+    .lb-title { font-size: 22px; font-weight: 900; line-height: 1.4; color: #1a1008; margin-bottom: 18px; padding-right: 28px; }
+    .lb-body { font-size: 15px; color: #2d1e10; line-height: 1.85; }
     .lb-body p { margin-bottom: 16px; }
     .lb-body p:last-child { margin-bottom: 0; }
-    .lb-body strong { font-weight: 700; color: #1a1008; }
-    .lb-body a { color: #9b5a2a; text-decoration: underline; text-underline-offset: 3px; }
-    .lb-source {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 22px;
-      color: #9b5a2a;
-      font-size: 13px;
-      font-weight: 700;
-      border-bottom: 1.5px solid currentColor;
-      padding-bottom: 1px;
-      transition: opacity 0.15s ease;
-    }
-    .lb-source:hover { opacity: 0.7; }
+    .lb-source { display: inline-flex; align-items: center; gap: 6px; margin-top: 22px; color: #9b5a2a; font-size: 13px; font-weight: 700; border-bottom: 1.5px solid currentColor; padding-bottom: 1px; }
     .lb-source::after { content: '→'; }
-
-    /* ===== FOOTER ===== */
-    .site-footer {
-      background: #2a1c0f;
-      color: #806850;
-      padding: 24px 32px;
-      margin-top: 8px;
-    }
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-    .footer-brand {
-      font-size: 15px;
-      font-weight: 800;
-      color: #c8b498;
-    }
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      font-size: 12px;
-    }
-    .footer-links a {
-      color: #806850;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
+    .site-footer { background: #2a1c0f; color: #806850; padding: 24px 32px; margin-top: 8px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+    .footer-brand { font-size: 15px; font-weight: 800; color: #c8b498; }
+    .footer-links { display: flex; gap: 18px; font-size: 12px; }
+    .footer-links a { color: #806850; text-decoration: underline; text-underline-offset: 3px; }
     .footer-links a:hover { color: #c8b498; }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding-top: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 11px;
-    }
-    .footer-generated {
-      font-family: "SF Mono", "Fira Code", monospace;
-      font-size: 10px;
-    }
-
-    /* ===== RESPONSIVE ===== */
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 11px; }
+    .footer-generated { font-family: monospace; font-size: 10px; }
     @media (max-width: 600px) {
-      .page-wrapper { padding-bottom: 32px; }
-      .site-header,
-      .story-list,
-      .section-label,
-      .site-footer { padding-left: 16px; padding-right: 16px; }
+      .site-header, .story-list, .section-label, .site-footer { padding-left: 16px; padding-right: 16px; }
       .header-top { flex-direction: column; }
-      .header-meta { text-align: left; }
       .brand-name { font-size: 20px; }
       .story-title { font-size: 16px; }
-      .lb-panel { border-radius: 8px; max-height: 92vh; }
-      .lb-scroll { padding: 22px 20px 24px; }
-      .lb-title { font-size: 19px; }
-      .lb-body { font-size: 14px; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
-
 <div class="page-wrapper">
-
-  <!-- ===== HEADER ===== -->
   <header class="site-header">
     <div class="header-top">
       <div>
@@ -453,227 +92,179 @@
       </div>
     </div>
     <hr class="header-divider">
-    <div class="header-categories">
-      涵蓋 <strong>譯稿</strong>
-    </div>
+    <div class="header-categories">涵蓋 <strong>譯稿</strong></div>
   </header>
-
-  <!-- ===== SECTION LABEL ===== -->
-  <div class="section-label">
-    <span>今日要聞</span>
-  </div>
-
-  <!-- ===== STORY LIST ===== -->
+  <div class="section-label"><span>今日要聞</span></div>
   <main class="story-list" id="story-list">
-    <article class="story-card" data-id="1" data-category="譯稿" data-time="2026-04-17" data-image="" data-source="" data-tag-class="tag-default">
+    <article class="story-card" data-id="1" data-category="譯稿" data-time="2026-04-18" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170048.aspx" data-tag-class="tag-default">
   <div class="story-image-wrap" onclick="openLightbox(1)">
-    <img src="" alt="202604170048" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
-    <div class="story-img-placeholder">📰</div>
+    <img src="" alt="Ngoại trưởng Lin Chia-lung tiếp Thứ trưởng Bộ Giáo dục Belize, hoan nghênh hợp tác đại học Đài Loan - Belize" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">&#128240;</div>
     <span class="story-category-tag tag-default">譯稿</span>
   </div>
   <div class="story-body">
-    <div class="story-meta">
-      <time class="story-time">2026-04-17</time>
-    </div>
-    <h2 class="story-title" onclick="openLightbox(1)">202604170048</h2>
-    <p class="story-excerpt">（摘要暫不可用）</p>
+    <div class="story-meta"><time class="story-time">2026-04-18</time></div>
+    <h2 class="story-title" onclick="openLightbox(1)">Ngoại trưởng Lin Chia-lung tiếp Thứ trưởng Bộ Giáo dục Belize, hoan nghênh hợp tác đại học Đài Loan - Belize</h2>
+    <p class="story-excerpt">Ngoại trưởng Lin Chia-lung hôm qua đã tiếp đón Thứ trưởng Bộ Giáo dục Belize Maheia cùng Hiệu trưởng Đại học Belize Palacio và đoàn đại biểu. Hai bên đã trao đổi ý kiến về các vấn đề hợp tác học thuật Đài Loan - Belize, đào tạo nhân tài và du lịch bền vững. Ông Lin Chia-lung cho biết rất vui mừng khi thấy đoàn đại biểu có những cuộc đối thoại, giao lưu với các trường đại học tại Đài Loan, thúc đẩy mở rộng hợp tác trong tương lai.</p>
     <button class="read-more-btn" onclick="openLightbox(1)">看全文</button>
   </div>
 </article>
-<article class="story-card" data-id="2" data-category="譯稿" data-time="2026-04-17" data-image="" data-source="" data-tag-class="tag-default">
+    <article class="story-card" data-id="2" data-category="譯稿" data-time="2026-04-18" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170105.aspx" data-tag-class="tag-default">
   <div class="story-image-wrap" onclick="openLightbox(2)">
-    <img src="" alt="202604170105" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
-    <div class="story-img-placeholder">📰</div>
+    <img src="" alt="Viện Nghiên cứu Kinh tế Đài Loan nâng dự báo tăng trưởng kinh tế năm nay lên 7,22% | Kinh tế - Công nghiệp | CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">&#128240;</div>
     <span class="story-category-tag tag-default">譯稿</span>
   </div>
   <div class="story-body">
-    <div class="story-meta">
-      <time class="story-time">2026-04-17</time>
-    </div>
-    <h2 class="story-title" onclick="openLightbox(2)">202604170105</h2>
-    <p class="story-excerpt">（摘要暫不可用）</p>
+    <div class="story-meta"><time class="story-time">2026-04-18</time></div>
+    <h2 class="story-title" onclick="openLightbox(2)">Viện Nghiên cứu Kinh tế Đài Loan nâng dự báo tăng trưởng kinh tế năm nay lên 7,22% | Kinh tế - Công nghiệp | CNA</h2>
+    <p class="story-excerpt">Viện Nghiên cứu Kinh tế Đài Loan hôm nay công bố dự báo kinh tế mới nhất. Mặc dù xung đột ở Trung Đông gây nhiễu, nhờ công nghệ AI phát triển mạnh và nhu cầu vững, viện ước tính tăng trưởng kinh tế năm nay đạt 7,22%. Tuy nhiên, áp lực lạm phát tăng nhẹ, với dự báo mức tăng theo năm của chỉ số giá tiêu dùng (CPI) cả năm là 1,98%, tiến sát ngưỡng cảnh báo lạm phát 2%.</p>
     <button class="read-more-btn" onclick="openLightbox(2)">看全文</button>
   </div>
 </article>
-<article class="story-card" data-id="3" data-category="譯稿" data-time="2026-04-17" data-image="" data-source="" data-tag-class="tag-default">
+    <article class="story-card" data-id="3" data-category="譯稿" data-time="2026-04-18" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170127.aspx" data-tag-class="tag-default">
   <div class="story-image-wrap" onclick="openLightbox(3)">
-    <img src="" alt="202604170127" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
-    <div class="story-img-placeholder">📰</div>
+    <img src="" alt="Tổng thống thị sát Bộ Chỉ huy Huấn luyện Bộ binh, tái khẳng định đẩy nhanh thông qua ngân sách mua sắm quân sự để chuẩn bị chiến tranh nhằm ngăn chặn chiến tranh" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">&#128240;</div>
     <span class="story-category-tag tag-default">譯稿</span>
   </div>
   <div class="story-body">
-    <div class="story-meta">
-      <time class="story-time">2026-04-17</time>
-    </div>
-    <h2 class="story-title" onclick="openLightbox(3)">202604170127</h2>
-    <p class="story-excerpt">（摘要暫不可用）</p>
+    <div class="story-meta"><time class="story-time">2026-04-18</time></div>
+    <h2 class="story-title" onclick="openLightbox(3)">Tổng thống thị sát Bộ Chỉ huy Huấn luyện Bộ binh, tái khẳng định đẩy nhanh thông qua ngân sách mua sắm quân sự để chuẩn bị chiến tranh nhằm ngăn chặn chiến tranh</h2>
+    <p class="story-excerpt">Tổng thống Lại Thanh Đức sáng nay đến thị sát Bộ Chỉ huy Huấn luyện Bộ binh Lục quân. Trong bài phát biểu, ông tái khẳng định tầm quan trọng của ngân sách đặc biệt cho quốc phòng, nhấn mạnh không được cắt giảm và cần sớm được thông qua để bố trí kinh phí biên chế các loại vũ khí có tính cơ động cao. Ông bày tỏ hy vọng đạt được hòa bình thực sự thông qua phương châm “chuẩn bị chiến đấu để tránh chiến tranh, có khả năng tác chiến để ngăn chặn chiến tranh”.</p>
     <button class="read-more-btn" onclick="openLightbox(3)">看全文</button>
   </div>
 </article>
-<article class="story-card" data-id="4" data-category="譯稿" data-time="2026-04-17" data-image="" data-source="" data-tag-class="tag-default">
+    <article class="story-card" data-id="4" data-category="譯稿" data-time="2026-04-18" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170208.aspx" data-tag-class="tag-default">
   <div class="story-image-wrap" onclick="openLightbox(4)">
-    <img src="" alt="202604170208" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
-    <div class="story-img-placeholder">📰</div>
+    <img src="" alt="Lập hội hữu nghị nghị viện Đài Loan-Canada tại Lập pháp viện, Giang Khải Thần: Nền tảng giao lưu quan trọng giữa hai nước" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">&#128240;</div>
     <span class="story-category-tag tag-default">譯稿</span>
   </div>
   <div class="story-body">
-    <div class="story-meta">
-      <time class="story-time">2026-04-17</time>
-    </div>
-    <h2 class="story-title" onclick="openLightbox(4)">202604170208</h2>
-    <p class="story-excerpt">（摘要暫不可用）</p>
+    <div class="story-meta"><time class="story-time">2026-04-18</time></div>
+    <h2 class="story-title" onclick="openLightbox(4)">Lập hội hữu nghị nghị viện Đài Loan-Canada tại Lập pháp viện, Giang Khải Thần: Nền tảng giao lưu quan trọng giữa hai nước</h2>
+    <p class="story-excerpt">Phó Viện trưởng Lập pháp viện Giang Khải Thần hôm nay tham dự lễ thành lập &quot;Hội Hữu nghị Nghị viện Trung Hoa Dân Quốc - Canada&quot;, cho biết quan hệ giao lưu giữa nghị viện hai nước có tính linh hoạt cao hơn, có thể trao đổi đầy đủ và thẳng thắn chia sẻ quan điểm. Trong tương lai, &quot;Hội Hữu nghị Nghị viện Trung Hoa Dân Quốc - Canada&quot; sẽ trở thành nền tảng giao lưu quan trọng giữa nghị viện Đài Loan và Canada, với kỳ vọng tăng cường quan hệ song phương.</p>
     <button class="read-more-btn" onclick="openLightbox(4)">看全文</button>
   </div>
 </article>
-<article class="story-card" data-id="5" data-category="譯稿" data-time="2026-04-17" data-image="" data-source="" data-tag-class="tag-default">
+    <article class="story-card" data-id="5" data-category="譯稿" data-time="2026-04-18" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170210.aspx" data-tag-class="tag-default">
   <div class="story-image-wrap" onclick="openLightbox(5)">
-    <img src="" alt="202604170210" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
-    <div class="story-img-placeholder">📰</div>
+    <img src="" alt="Trưởng văn phòng đại diện Đài Loan tại Los Angeles đến Nghị viện bang Arizona, nâng ly trà sữa trân châu chứng kiến tình hữu nghị" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">&#128240;</div>
     <span class="story-category-tag tag-default">譯稿</span>
   </div>
   <div class="story-body">
-    <div class="story-meta">
-      <time class="story-time">2026-04-17</time>
-    </div>
-    <h2 class="story-title" onclick="openLightbox(5)">202604170210</h2>
-    <p class="story-excerpt">（摘要暫不可用）</p>
+    <div class="story-meta"><time class="story-time">2026-04-18</time></div>
+    <h2 class="story-title" onclick="openLightbox(5)">Trưởng văn phòng đại diện Đài Loan tại Los Angeles đến Nghị viện bang Arizona, nâng ly trà sữa trân châu chứng kiến tình hữu nghị</h2>
+    <p class="story-excerpt">Cả Thượng viện và Hạ viện bang Arizona có động thái lớn ủng hộ Đài Loan, mời Tổng lãnh sự Ma Bo-yuan vào nghị trường chứng kiến lễ thông qua tuyên bố thân thiện với Đài Loan. Trong bữa tiệc với các nghị sĩ Thượng viện và Hạ viện bang, hai bên Đài Loan và Mỹ đã nâng ly trà sữa trân châu để chúc mừng.</p>
     <button class="read-more-btn" onclick="openLightbox(5)">看全文</button>
   </div>
 </article>
   </main>
-
-  <!-- ===== HIDDEN FULL CONTENTS (read by lightbox JS) ===== -->
   <div id="story-contents" style="display:none;">
     <div id="story-content-1">
-<p>（正文暫不可用）</p>
+<p>Sáng nay, Bộ Ngoại giao Đài Loan ra thông cáo báo chí cho biết Ngoại trưởng Lin Chia-lung đã tiếp kiến Thứ trưởng Maheia và ông Vincent Palacio, đồng thời chào mừng ông Maheia lần thứ hai đến thăm Đài Loan.</p>
+<p>Ngoại trưởng Lin Chia-lung cho biết giáo dục và đào tạo nhân tài luôn là chủ đề hợp tác quan trọng giữa Đài Loan và Belize. Hai chính phủ đã phối hợp thúc đẩy các chương trình học bổng trong nhiều năm qua. Các sinh viên Belize đang học tập tại Đài Loan không chỉ là nguồn nhân lực quý giá của đất nước mà còn là cầu nối giao lưu văn hóa giữa hai quốc gia.</p>
+<p>Ông Lin Chia-lung cho biết ông đã bốn lần đến thăm Belize và rất ấn tượng trước vẻ đẹp của đại dương xanh ngắt cùng kỳ quan Great Blue Hole. Belize sở hữu nguồn tài nguyên du lịch phong phú và lợi thế địa lý là trung tâm kết nối Trung Mỹ và vùng Caribe. Hai bên cần tiếp tục thúc đẩy du lịch bền vững, tăng cường đào tạo nhân lực trong các lĩnh vực kỹ thuật nghề nghiệp như nhà hàng - khách sạn, nâng cao năng lực cạnh tranh của ngành, đồng thời chia sẻ kinh nghiệm thành công và bí quyết của Đài Loan, học hỏi lẫn nhau để nâng tầm quan hệ đối tác toàn diện giữa hai nước.</p>
+<p>Thứ trưởng Maheia bày tỏ lòng cảm ơn đối với sự sắp xếp chu đáo và tiếp đón nhiệt tình của phía Đài Loan, cũng như những đóng góp không ngừng nghỉ của Đài Loan trong việc hỗ trợ Belize đào tạo nhân tài. Ông ghi nhận các sinh viên Belize học tập tại Đài Loan đã trở thành tài sản quan trọng của xã hội đất nước, đồng thời nhấn mạnh rằng chuyến thăm lần này đến Đại học Quốc gia Chung Hsing, Đại học Da-Yeh và Đại học Khoa học Công nghệ Meiho để trực tiếp trao đổi quan niệm giáo dục và kinh nghiệm thực tiễn đã mang lại nhiều điều bổ ích.</p>
+<p>Ông Vincent Palacio bày tỏ lòng biết ơn chân thành đối với việc chính phủ Đài Loan gần đây đã tặng thiết bị giảng dạy y khoa cho trường, đồng thời đặc biệt kỳ vọng sẽ triển khai hợp tác với các trường đại học Đài Loan trên nhiều lĩnh vực, cùng tạo ra kết quả đôi bên cùng có lợi.</p>
+<p>Bộ Ngoại giao cho biết Đại học Belize là trường đại học quốc lập duy nhất của Belize. Sau khi lần lượt ký kết biên bản ghi nhớ hợp tác (MOU) với Đại học Quốc gia Chung Hsing và Đại học Da-Yeh vào năm 2022, trong chuyến thăm lần này, trường cũng đã ký kết biên bản ghi nhớ với Đại học Khoa học Công nghệ Meiho, góp phần thúc đẩy hợp tác giáo dục đại học giữa hai nước, mở ra thêm nhiều kênh và cơ hội học tập đa dạng cho sinh viên trẻ.</p>
 </div>
-<div id="story-content-2">
-<p>（正文暫不可用）</p>
+    <div id="story-content-2">
+<p>Trong lần dự báo kinh tế trước đó vào tháng 1 năm nay, Viện Nghiên cứu Kinh tế Trung Hoa (CIER) ước tính tăng trưởng kinh tế năm nay và năm sau lần lượt là 4,14% và 2,95%, còn mức tăng CPI cả năm lần lượt là 1,64% và 1,58%. Trong dự báo mới nhất công bố hôm nay, CIER đã điều chỉnh tăng mạnh dự báo tăng trưởng kinh tế cả năm nay lên 7,22%, đồng thời ước tính năm sau là 3,4%; do giá cả bị đẩy lên bởi xung đột ở Trung Đông, dự báo mức tăng CPI năm nay được nâng lên 1,98%, năm sau là 1,83%.</p>
+<p>Viện trưởng CIER Lien Hsien-ming cho biết, dù có sự nhiễu động từ xung đột ở Trung Đông, ông vẫn giữ quan điểm tích cực về tăng trưởng kinh tế năm nay, chủ yếu vì xuất khẩu của Đài Loan rất sôi động; nhờ nhu cầu đối với các sản phẩm AI, tăng trưởng kinh tế quý I thậm chí đã vượt 13%.</p>
+<p>Theo dự báo của CIER, mô hình tăng trưởng kinh tế của Đài Loan là “bên ngoài nóng, bên trong ấm”. Về nhu cầu bên ngoài, dù xung đột ở Trung Đông ảnh hưởng đến thương mại hàng hóa và vận tải, ngành AI vẫn phát triển mạnh mẽ; dự kiến xuất nhập khẩu các sản phẩm liên quan đến công nghệ thông tin - truyền thông, điện tử và bán dẫn của Đài Loan sẽ mở rộng vững chắc, với tốc độ tăng hàng năm của xuất khẩu và nhập khẩu lần lượt là 19,83% và 18,24%.</p>
+<p>Về nhu cầu trong nước, tiêu dùng tư nhân nhờ thị trường lao động cải thiện và hiệu ứng tài sản từ thị trường chứng khoán hỗ trợ, được dự báo tăng 2,16% so với cùng kỳ năm trước, với động lực tăng trưởng tốt hơn năm ngoái.</p>
+<p>Lien Hsien-ming nói thêm, kịch bản giả định trong dự báo kinh tế của CIER tham khảo quan điểm của các tổ chức quốc tế, theo đó chiến sự sẽ không kéo dài trong thời gian dài và giá dầu quốc tế đạt đỉnh vào tháng 4; dự báo được đưa ra trên nền tảng đó. Tuy nhiên, xung đột ở Trung Đông liên quan đến năng lượng và thay đổi chuỗi cung ứng, có thể tiếp tục ảnh hưởng đến lãi suất, và nhiều yếu tố bất định đã làm gia tăng độ khó trong việc dự báo triển vọng kinh tế.</p>
+<p>Trước mối lo ngại từ bên ngoài về rủi ro lạm phát do chiến sự gây ra, Lien Hsien-ming cho biết thời gian kéo dài của xung đột ở Trung Đông, việc giá năng lượng trong nước có tiếp tục bị đóng băng tăng giá hay không, cũng như việc chính phủ có tiếp tục kiểm soát hay không, là những yếu tố then chốt chi phối diễn biến giá cả thời gian tới.</p>
+<p>Giám đốc Vụ Phát triển Kinh tế thuộc Hội đồng Phát triển Quốc gia, bà Chen Mei-chu, cho biết sau khi xung đột ở Trung Đông bùng phát, chính phủ đã nhanh chóng triển khai nhiều biện pháp ổn định giá cả, thường xuyên tổ chức họp để giám sát biến động giá. Bộ Kinh tế thậm chí còn triển khai “dự án túi nhựa giá bình ổn của Bộ Kinh tế” do thị trường nguyên liệu hóa dầu biến động, bởi “điều giá cả sợ nhất là kỳ vọng lạm phát”; chính phủ đã hành động rất mạnh và dùng biện pháp quyết liệt, với hy vọng kiểm soát từ đầu nguồn và kiềm chế kỳ vọng lạm phát.</p>
+<p>Lien Hsien-ming nói thẳng rằng dự báo giá cả hiện đã rất sát mức 2%; nếu giả định chính phủ không đóng băng việc tăng giá, thì dự báo CPI cả năm sẽ vượt 2%.</p>
+<p>Về tỷ giá, CIER cho rằng do tình hình lạm phát ở châu Âu và Mỹ vẫn chưa rõ ràng, định hướng chính sách tiền tệ còn nhiều biến số, cùng với các yếu tố như rủi ro địa chính trị đẩy đồng USD mạnh lên, nên dự kiến trong năm 2026, tỷ giá giữa Đài tệ và USD sẽ tăng giá nhẹ từ 31,63 Đài tệ/USD trong quý I lên 31,04 Đài tệ/USD trong quý IV, bình quân năm khoảng 31,4 Đài tệ/USD; so với năm 2025, Đài tệ mất giá khoảng 0,65%.</p>
 </div>
-<div id="story-content-3">
-<p>（正文暫不可用）</p>
+    <div id="story-content-3">
+<p>Sáng nay, Tổng thống Lai, cùng Tổng thư ký Hội đồng An ninh Quốc gia Ngô Chiêu Nhiếp, Bộ trưởng Quốc phòng Cố Lập Hùng và những người khác tháp tùng, đã đến thị sát và động viên tại doanh trại Kim Thang thuộc Bộ Chỉ huy Huấn luyện Bộ binh Lục quân, đồng thời trao tiền hỗ trợ bữa ăn. Ngoài việc trực tiếp tìm hiểu tình hình các khóa huấn luyện, tổng thống còn xem huấn luyện mô phỏng xe bọc thép bánh lốp, cũng như kiểm tra giáo trình súng bắn tỉa do Lục quân tự biên soạn.</p>
+<p>Trước buổi tiệc, trong bài phát biểu, tổng thống cho biết trước đó ông đã đến Bộ Chỉ huy Huấn luyện Bay của Không quân và Trung tâm Huấn luyện Sinh tồn cho nhân viên hàng không quân sự, trực tiếp tìm hiểu cách quân đội quốc gia giữ được bình tĩnh trước nguy cấp trong các tình huống mô phỏng chân thực. Với cương vị là Tổng tư lệnh ba quân, ông hiểu rõ rằng ngoài nhiệm vụ quốc phòng tuyến đầu, quân đội quốc gia càng cần coi trọng công tác huấn luyện lâu dài phía sau. Tuy nhiên, chỉ có ý chí chiến đấu thôi là chưa đủ, mà còn phải dành cho các anh chị em trong quân đội quốc gia sự hỗ trợ mạnh mẽ và vững chắc nhất.</p>
+<p>Tổng thống nhấn mạnh, đó chính là lý do vì sao chính phủ phải kiên định thúc đẩy ngân sách đặc biệt cho quốc phòng và các hạng mục xây dựng quốc phòng. Chính phủ kiên trì không giảm bớt, kiên trì cho rằng cần phải nhanh chóng thông qua. Khoản ngân sách này đã trải qua quá trình nghiên cứu và thảo luận chuyên môn, và trong bối cảnh kinh tế Đài Loan tăng trưởng qua từng năm, đây tuyệt đối là khoản chi xứng đáng và hoàn toàn có khả năng chi trả. Đây cũng là khoản đầu tư thực chất để bảo vệ dân chủ tự do, xây dựng lá chắn của Đài Loan và hỗ trợ sĩ quan, hạ sĩ quan và binh sĩ quân đội quốc gia.</p>
+<p>Tổng thống nói, trước tình hình khu vực tiếp tục phức tạp, cần thông qua ngân sách đặc biệt để đẩy nhanh việc mua sắm và bố trí các loại vũ khí có tính cơ động cao và độ chính xác cao. Đối với các đơn vị bộ binh, những trang bị này sẽ giúp mọi người ứng phó hiệu quả hơn với những thách thức của chiến trường hiện đại.</p>
+<p>Tổng thống chỉ ra rằng mọi người đều mong muốn hòa bình, và mọi người cũng đều biết rằng chỉ có dựa vào thực lực mới có thể giành được hòa bình thực sự. Việc chính phủ thúc đẩy ngân sách đặc biệt cho quốc phòng và triển khai các hạng mục xây dựng quốc phòng cũng là để truyền đi một tín hiệu rõ ràng tới cộng đồng quốc tế. Đài Loan có quyết tâm, có năng lực và có ý chí tự bảo vệ mình, gìn giữ hòa bình và bảo vệ chủ quyền. Chỉ có tiếp tục chuẩn bị mới có thể răn đe các mối đe dọa; thông qua chuẩn bị cho chiến tranh để tránh chiến tranh, có khả năng tác chiến để chấm dứt chiến tranh, từ đó đạt được hòa bình thực sự.</p>
+<p>Cuối cùng, Tổng thống Lai cũng khích lệ mọi người tiếp tục phát huy tinh thần của trường bộ binh, tinh tiến kỹ năng tác chiến, theo kịp thời đại, tiếp tục hướng tới các mục tiêu huấn luyện mới, tư duy mới, trang bị mới và công nghệ mới, để toàn thể người dân cả nước an tâm và yên lòng, bởi chỉ cần có quân đội quốc gia, thì an ninh của Đài Loan vẫn còn. Mọi người hãy tiếp tục cùng nhau nỗ lực, bảo vệ an ninh quốc gia, gìn giữ dân chủ tự do, bảo vệ an toàn tính mạng và tài sản của toàn thể nhân dân. (Biên tập: Lý Thục Hoa) 1150417</p>
 </div>
-<div id="story-content-4">
-<p>（正文暫不可用）</p>
+    <div id="story-content-4">
+<p>Viện Lập pháp Đài Loan hôm nay ra thông cáo báo chí cho biết, ông Giang Khải Thần (Chiang Chi-chen) sáng nay đã tham dự lễ thành lập &quot;Hội Hữu nghị Nghị viện Trung Hoa Dân Quốc - Canada&quot; do nghị sĩ Quốc Dân Đảng Trần Tinh Huy (Chen Ching-hui) khởi xướng. Các quan khách có mặt tại buổi lễ bao gồm hàng chục nghị sĩ Quốc Dân Đảng, Thứ trưởng Ngoại giao Trần Minh Kỳ (Chen Ming-chi) và đại diện Văn phòng Thương mại Canada tại Taipei, bà Manon Laporte.</p>
+<p>Ông Giang Khải Thần cho biết ông rất vui mừng được chứng kiến sự ra đời của &quot;Hội Hữu nghị Nghị viện Trung Hoa Dân Quốc - Canada&quot; do bà Trần Tinh Huy khởi xướng, đồng thời nhấn mạnh rằng quan hệ giao lưu nghị viện giữa Đài Loan và Canada vốn gắn bó và thân thiết. Kể từ khi đảm nhận chức vụ Phó Viện trưởng đến nay, ông đã tiếp đón 5 đoàn nghị sĩ Canada. Dù Đài Loan và Canada cách xa nhau về địa lý và có sự chênh lệch lớn về quy mô lãnh thổ, hai bên có tính bổ trợ cao và có thể trở thành đối tác hợp tác lý tưởng nhất.</p>
+<p>Ông Giang Khải Thần chỉ ra rằng Canada có cộng đồng người Đài Loan với quy mô đáng kể; cảnh quan thiên nhiên và nền văn hóa đa dạng của Canada cũng thu hút đông đảo người dân Đài Loan đến du lịch mỗi năm. Quan hệ song phương vốn đã sâu sắc và còn nhiều dư địa để tiếp tục củng cố và mở rộng.</p>
+<p>Ông Giang Khải Thần nhấn mạnh, khác với các trao đổi giữa chính phủ hay doanh nghiệp, giao lưu giữa nghị viện với nghị viện linh hoạt hơn, cho phép hai bên trao đổi đầy đủ và thẳng thắn chia sẻ quan điểm. Trong tương lai, &quot;Hội Hữu nghị Nghị viện Trung Hoa Dân Quốc - Canada&quot; sẽ trở thành nền tảng giao lưu quan trọng giữa nghị viện hai nước. Dù là tiếp đón các nghị sĩ Canada đến thăm hay tổ chức đoàn sang thăm Canada, đều có thể góp phần tăng cường quan hệ song phương, thúc đẩy hợp tác chặt chẽ hơn, từ đó nâng cao phúc lợi cho người dân hai nước.</p>
 </div>
-<div id="story-content-5">
-<p>（正文暫不可用）</p>
+    <div id="story-content-5">
+<p>Nghị viện bang Arizona hôm nay tuyên bố thành lập &quot;Nhóm Nghị sĩ Liên viện về Đài Loan&quot; (Joint Legislative Taiwan Caucus) xuyên suốt cả Thượng viện lẫn Hạ viện bang, nhằm thúc đẩy giao lưu với Đài Loan. Thượng viện và Hạ viện bang lần lượt thông qua &quot;tuyên bố thân thiện với Đài Loan&quot;, quyết nghị ủng hộ Đài Loan tham gia các tổ chức quốc tế.</p>
+<p>Chủ tịch Ủy ban Thương mại Quốc tế kiêm Chủ tịch Nhóm Nghị sĩ về Đài Loan tại Hạ viện bang Tony Rivero và Trưởng khối đa số tại Thượng viện bang Frank Carroll đã lần lượt giới thiệu Tổng lãnh sự Ma Bo-yuan trước toàn thể nghị sĩ trong lễ thông qua các tuyên bố thân thiện với Đài Loan.</p>
+<p>Đáng chú ý, tuyên bố lần này của nghị viện bang đề cập đến vấn đề cốt lõi về sự tham gia của Đài Loan vào cộng đồng quốc tế, đồng thời là lần đầu tiên nghị viện bang này nhắc đến Nghị quyết 2758 của Đại hội đồng Liên Hợp Quốc, khẳng định rằng nghị quyết này không loại trừ Đài Loan khỏi các tổ chức quốc tế, cũng không ủy quyền cho Cộng hòa Nhân dân Trung Hoa đại diện cho Đài Loan.</p>
+<p>Nghị viện bang tuyên bố ủng hộ Đài Loan tham gia các tổ chức quốc tế, bao gồm hệ thống Liên Hợp Quốc, Tổ chức Y tế Thế giới, Tổ chức Hàng không Dân dụng Quốc tế, Công ước khung của Liên Hợp Quốc về Biến đổi Khí hậu và Tổ chức Cảnh sát Hình sự Quốc tế (Interpol).</p>
+<p>Sau buổi lễ, ông Ma Bo-yuan đã chiêu đãi các nghị sĩ Thượng viện và Hạ viện bang bằng các món ăn vặt Đài Loan và trà sữa trân châu, bày tỏ lòng cảm ơn đối với sự ủng hộ xuyên đảng phái của cả hai viện. Đại diện Đài Loan và Mỹ cùng nâng ly trà sữa trân châu chúc mừng.</p>
+<p>Chủ tịch Nhóm Nghị sĩ về Đài Loan tại Hạ viện bang Tony Rivero cho biết, đối với bang Arizona, vấn đề Đài Loan không phải là vấn đề chính trị, và sự ủng hộ của nghị viện bang dành cho Đài Loan luôn trải rộng trên toàn bộ phổ chính trị.</p>
+<p>Trưởng khối đa số tại Thượng viện bang Frank Carroll cho biết, mỗi ngày ông đều đi qua khu vực nhà máy TSMC, chứng kiến công trình được đẩy nhanh tiến độ, và kỳ vọng TSMC sẽ thu hút thêm nhiều nhân tài, cộng đồng người Đài Loan tiếp tục phát triển, và trong tương lai sẽ có nhiều hoạt động giao lưu văn hóa hơn.</p>
 </div>
   </div>
-
-  <!-- ===== LIGHTBOX ===== -->
   <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lb-title">
     <div class="lb-backdrop" id="lb-backdrop"></div>
     <div class="lb-panel">
-      <button class="lb-close" id="lb-close" aria-label="關閉">✕</button>
+      <button class="lb-close" id="lb-close" aria-label="關閉">&#10005;</button>
       <div class="lb-scroll" id="lb-scroll">
         <div class="lb-meta">
           <span class="lb-category tag-default" id="lb-category"></span>
           <span class="lb-time" id="lb-time"></span>
         </div>
         <h2 class="lb-title" id="lb-title"></h2>
-        <div class="lb-image-wrap" id="lb-image-wrap">
-          <img id="lb-image" src="" alt="" loading="eager">
-        </div>
         <div class="lb-body" id="lb-body"></div>
         <a class="lb-source" id="lb-source" href="#" target="_blank" rel="noopener">查看原文</a>
       </div>
     </div>
   </div>
-
-  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">CNA Translation Digest VI</div>
       <div class="footer-links">
         <a href="https://u0401006.github.io/video-quotes/news/">歷史存檔</a>
-        <a href="https://u0401006.github.io/video-quotes/">訂閱電子報</a>
+        <a href="https://u0401006.github.io/video-quotes/">首頁</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 CNA Translation Digest VI · 版權所有</span>
-      <span class="footer-generated">Generated at 2026-04-18T14:51:25</span>
+      <span class="footer-generated">Generated at 2026-04-18T15:17:56</span>
     </div>
   </footer>
-
-</div><!-- /.page-wrapper -->
-
+</div>
 <script>
-  var TAG_CLASSES = {
-    '政治': 'tag-politics', '國內': 'tag-politics',
-    '國際': 'tag-intl',     '外交': 'tag-intl',
-    '財經': 'tag-finance',  '經濟': 'tag-finance',
-    '體育': 'tag-sports',
-    '科技': 'tag-tech',     '科學': 'tag-tech',
-    '社會': 'tag-society',  '生活': 'tag-society'
-  };
-
   function openLightbox(id) {
     var card = document.querySelector('.story-card[data-id="' + id + '"]');
     var contentEl = document.getElementById('story-content-' + id);
     if (!card) return;
-
-    var category  = card.dataset.category  || '';
-    var time      = card.dataset.time      || '';
-    var image     = card.dataset.image     || '';
-    var source    = card.dataset.source    || '';
-    var tagClass  = card.dataset.tagClass  || TAG_CLASSES[category] || 'tag-default';
-    var title     = card.querySelector('.story-title').textContent.trim();
-    var fullHtml  = contentEl ? contentEl.innerHTML : '';
-
-    // Populate lightbox fields
-    var catEl = document.getElementById('lb-category');
-    catEl.textContent = category;
-    catEl.className   = 'lb-category ' + tagClass;
-
-    document.getElementById('lb-time').textContent  = time;
+    var source = card.dataset.source || '';
+    var title = card.querySelector('.story-title').textContent.trim();
+    var fullHtml = contentEl ? contentEl.innerHTML : '';
+    document.getElementById('lb-category').textContent = '譯稿';
+    document.getElementById('lb-category').className = 'lb-category tag-default';
+    document.getElementById('lb-time').textContent = card.dataset.time || '';
     document.getElementById('lb-title').textContent = title;
-    document.getElementById('lb-body').innerHTML    = fullHtml;
-
-    var imgWrap = document.getElementById('lb-image-wrap');
-    var imgEl   = document.getElementById('lb-image');
-    if (image) {
-      imgEl.src = image;
-      imgEl.alt = title;
-      imgWrap.style.display = 'block';
-    } else {
-      imgWrap.style.display = 'none';
-    }
-
+    document.getElementById('lb-body').innerHTML = fullHtml;
     var srcEl = document.getElementById('lb-source');
-    if (source) {
-      srcEl.href         = source;
-      srcEl.style.display = 'inline-flex';
-    } else {
-      srcEl.style.display = 'none';
-    }
-
-    // Scroll lightbox content to top
+    if (source) { srcEl.href = source; srcEl.style.display = 'inline-flex'; } else { srcEl.style.display = 'none'; }
     document.getElementById('lb-scroll').scrollTop = 0;
-
-    // Open with animation
     var lb = document.getElementById('lightbox');
     lb.classList.add('is-open');
     lb.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
-
   function closeLightbox() {
     var lb = document.getElementById('lightbox');
     lb.classList.remove('is-open');
     lb.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
-
-  // Close on backdrop click
   document.getElementById('lb-backdrop').addEventListener('click', closeLightbox);
-  // Close button
   document.getElementById('lb-close').addEventListener('click', closeLightbox);
-  // ESC key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeLightbox();
-  });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
 </script>
-
 </body>
 </html>
