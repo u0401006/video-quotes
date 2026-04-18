@@ -6,441 +6,80 @@
   <meta name="description" content="CNA Translation Digest ES — 2026-04-17-es-batch3 精選新聞">
   <title>CNA Translation Digest ES — 2026-04-17-es-batch3</title>
   <style>
-    /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
-                   "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
-      background: #f8f4ee;
-      color: #1a1008;
-      line-height: 1.7;
-      font-size: 16px;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif; background: #f8f4ee; color: #1a1008; line-height: 1.7; font-size: 16px; }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; height: auto; }
     button { cursor: pointer; font-family: inherit; }
-
-    /* ===== PAGE WRAPPER ===== */
-    .page-wrapper {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 0 48px;
-    }
-
-    /* ===== HEADER ===== */
-    .site-header {
-      background: #2a1c0f;
-      color: #f0e8d8;
-      padding: 28px 32px 22px;
-    }
-    .header-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-    .brand-name {
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: -0.5px;
-      color: #f5ead6;
-      line-height: 1.2;
-    }
-    .brand-tagline {
-      font-size: 11px;
-      color: #9a8468;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      margin-top: 3px;
-    }
-    .header-meta {
-      text-align: right;
-      flex-shrink: 0;
-    }
-    .header-date {
-      font-size: 14px;
-      color: #c8b498;
-      font-weight: 500;
-    }
-    .header-count {
-      font-size: 11px;
-      color: #806850;
-      margin-top: 3px;
-    }
-    .header-divider {
-      border: none;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      margin-bottom: 12px;
-    }
-    .header-categories {
-      font-size: 12px;
-      color: #806850;
-      letter-spacing: 0.3px;
-    }
-    .header-categories strong {
-      color: #c8a878;
-    }
-
-    /* ===== SECTION LABEL ===== */
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 24px 32px 0;
-    }
-    .section-label span {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      color: #9b5a2a;
-      white-space: nowrap;
-    }
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #e5ddd3;
-    }
-
-    /* ===== STORY LIST ===== */
-    .story-list {
-      padding: 16px 32px 0;
-    }
-
-    /* ===== STORY CARD ===== */
-    .story-card {
-      display: flex;
-      flex-direction: column;
-      background: #ffffff;
-      border: 1px solid #ede5d8;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 20px;
-      transition: box-shadow 0.2s ease, transform 0.15s ease;
-    }
-    .story-card:hover {
-      box-shadow: 0 4px 20px rgba(60, 35, 10, 0.09);
-      transform: translateY(-2px);
-    }
-
-    /* Story image */
-    .story-image-wrap {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%; /* 16:9 */
-      background: linear-gradient(135deg, #f0e8de, #e8ddd0);
-      overflow: hidden;
-      cursor: pointer;
-    }
-    .story-image-wrap img {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    .story-card:hover .story-image-wrap img {
-      transform: scale(1.03);
-    }
-    .story-img-placeholder {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #f0e8de, #e4d8cc);
-      color: #c8b098;
-      font-size: 36px;
-    }
-    .story-category-tag {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      padding: 4px 12px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      z-index: 2;
-    }
-
-    /* Category tag colors — warm palette */
+    .page-wrapper { max-width: 720px; margin: 0 auto; padding: 0 0 48px; }
+    .site-header { background: #2a1c0f; color: #f0e8d8; padding: 28px 32px 22px; }
+    .header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .brand-name { font-size: 24px; font-weight: 900; letter-spacing: -0.5px; color: #f5ead6; line-height: 1.2; }
+    .brand-tagline { font-size: 11px; color: #9a8468; letter-spacing: 0.8px; text-transform: uppercase; margin-top: 3px; }
+    .header-meta { text-align: right; flex-shrink: 0; }
+    .header-date { font-size: 14px; color: #c8b498; font-weight: 500; }
+    .header-count { font-size: 11px; color: #806850; margin-top: 3px; }
+    .header-divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 12px; }
+    .header-categories { font-size: 12px; color: #806850; letter-spacing: 0.3px; }
+    .header-categories strong { color: #c8a878; }
+    .section-label { display: flex; align-items: center; gap: 12px; padding: 24px 32px 0; }
+    .section-label span { font-size: 11px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: #9b5a2a; white-space: nowrap; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: #e5ddd3; }
+    .story-list { padding: 16px 32px 0; }
+    .story-card { display: flex; flex-direction: column; background: #ffffff; border: 1px solid #ede5d8; border-radius: 10px; overflow: hidden; margin-bottom: 20px; transition: box-shadow 0.2s ease, transform 0.15s ease; }
+    .story-card:hover { box-shadow: 0 4px 20px rgba(60, 35, 10, 0.09); transform: translateY(-2px); }
+    .story-image-wrap { position: relative; width: 100%; padding-bottom: 56.25%; background: linear-gradient(135deg, #f0e8de, #e8ddd0); overflow: hidden; cursor: pointer; }
+    .story-img-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f0e8de, #e4d8cc); color: #c8b098; font-size: 36px; }
+    .story-category-tag { position: absolute; top: 14px; left: 14px; padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; z-index: 2; }
+    .tag-default  { background: #f0ece4; color: #5c4830; }
     .tag-politics { background: #fff0e8; color: #b04520; }
     .tag-intl     { background: #fff8e8; color: #9a6010; }
-    .tag-finance  { background: #eef5e8; color: #3d7025; }
-    .tag-sports   { background: #fef0e0; color: #a04510; }
-    .tag-tech     { background: #f0ecf8; color: #6040a0; }
-    .tag-society  { background: #fdf0f4; color: #902848; }
-    .tag-default  { background: #f0ece4; color: #5c4830; }
-
-    /* Card body */
-    .story-body {
-      padding: 18px 20px 20px;
-    }
-    .story-meta {
-      margin-bottom: 8px;
-    }
-    .story-time {
-      font-size: 12px;
-      color: #9a8070;
-      font-weight: 400;
-    }
-    .story-title {
-      font-size: 18px;
-      font-weight: 800;
-      line-height: 1.45;
-      color: #1a1008;
-      margin-bottom: 10px;
-      cursor: pointer;
-      transition: color 0.15s ease;
-    }
-    .story-title:hover {
-      color: #9b5a2a;
-    }
-    .story-excerpt {
-      font-size: 14px;
-      color: #4a3828;
-      line-height: 1.75;
-      margin-bottom: 16px;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .read-more-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: none;
-      border: 1.5px solid #c8a878;
-      color: #9b5a2a;
-      padding: 7px 16px;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-    }
-    .read-more-btn:hover {
-      background: #9b5a2a;
-      color: #ffffff;
-      border-color: #9b5a2a;
-    }
-    .read-more-btn::after {
-      content: '→';
-      font-size: 14px;
-    }
-
-    /* ===== LIGHTBOX ===== */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.25s ease, visibility 0.25s ease;
-    }
-    .lightbox.is-open {
-      visibility: visible;
-      opacity: 1;
-    }
-    .lb-backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(28, 18, 8, 0.65);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-    }
-    .lb-panel {
-      position: relative;
-      background: #fffbf7;
-      border-radius: 12px;
-      max-width: 660px;
-      width: 100%;
-      max-height: 88vh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 20px 60px rgba(28, 18, 8, 0.3);
-      transform: translateY(16px) scale(0.98);
-      transition: transform 0.25s ease;
-      z-index: 1;
-    }
-    .lightbox.is-open .lb-panel {
-      transform: translateY(0) scale(1);
-    }
-    .lb-close {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      width: 32px;
-      height: 32px;
-      background: rgba(28, 18, 8, 0.07);
-      border: none;
-      border-radius: 50%;
-      font-size: 16px;
-      color: #5c4830;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-      transition: background 0.15s ease, color 0.15s ease;
-      line-height: 1;
-    }
-    .lb-close:hover {
-      background: rgba(28, 18, 8, 0.14);
-      color: #1a1008;
-    }
-    .lb-scroll {
-      overflow-y: auto;
-      padding: 28px 30px 32px;
-      -webkit-overflow-scrolling: touch;
-    }
+    .story-body { padding: 18px 20px 20px; }
+    .story-meta { margin-bottom: 8px; }
+    .story-time { font-size: 12px; color: #9a8070; font-weight: 400; }
+    .story-title { font-size: 18px; font-weight: 800; line-height: 1.45; color: #1a1008; margin-bottom: 10px; cursor: pointer; transition: color 0.15s ease; }
+    .story-title:hover { color: #9b5a2a; }
+    .story-excerpt { font-size: 14px; color: #4a3828; line-height: 1.75; margin-bottom: 16px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .read-more-btn { display: inline-flex; align-items: center; gap: 5px; background: none; border: 1.5px solid #c8a878; color: #9b5a2a; padding: 7px 16px; border-radius: 6px; font-size: 13px; font-weight: 700; transition: background 0.15s ease, color 0.15s ease; }
+    .read-more-btn:hover { background: #9b5a2a; color: #ffffff; border-color: #9b5a2a; }
+    .read-more-btn::after { content: '→'; font-size: 14px; }
+    .lightbox { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px; visibility: hidden; opacity: 0; transition: opacity 0.25s ease, visibility 0.25s ease; }
+    .lightbox.is-open { visibility: visible; opacity: 1; }
+    .lb-backdrop { position: absolute; inset: 0; background: rgba(28,18,8,0.65); backdrop-filter: blur(4px); }
+    .lb-panel { position: relative; background: #fffbf7; border-radius: 12px; max-width: 660px; width: 100%; max-height: 88vh; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(28,18,8,0.3); transform: translateY(16px) scale(0.98); transition: transform 0.25s ease; z-index: 1; }
+    .lightbox.is-open .lb-panel { transform: translateY(0) scale(1); }
+    .lb-close { position: absolute; top: 14px; right: 14px; width: 32px; height: 32px; background: rgba(28,18,8,0.07); border: none; border-radius: 50%; font-size: 16px; color: #5c4830; display: flex; align-items: center; justify-content: center; z-index: 2; transition: background 0.15s ease; }
+    .lb-close:hover { background: rgba(28,18,8,0.14); }
+    .lb-scroll { overflow-y: auto; padding: 28px 30px 32px; }
     .lb-scroll::-webkit-scrollbar { width: 4px; }
-    .lb-scroll::-webkit-scrollbar-track { background: #f0e8de; }
     .lb-scroll::-webkit-scrollbar-thumb { background: #c8a878; border-radius: 2px; }
-
-    .lb-meta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-    .lb-category {
-      padding: 3px 10px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-    .lb-time {
-      font-size: 12px;
-      color: #9a8070;
-    }
-    .lb-title {
-      font-size: 22px;
-      font-weight: 900;
-      line-height: 1.4;
-      color: #1a1008;
-      margin-bottom: 18px;
-      padding-right: 28px;
-    }
-    .lb-image-wrap {
-      width: 100%;
-      padding-bottom: 56.25%;
-      position: relative;
-      background: linear-gradient(135deg, #f0e8de, #e4d8cc);
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 22px;
-    }
-    .lb-image-wrap img {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-    }
-    .lb-body {
-      font-size: 15px;
-      color: #2d1e10;
-      line-height: 1.85;
-    }
+    .lb-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .lb-category { padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+    .lb-time { font-size: 12px; color: #9a8070; }
+    .lb-title { font-size: 22px; font-weight: 900; line-height: 1.4; color: #1a1008; margin-bottom: 18px; padding-right: 28px; }
+    .lb-body { font-size: 15px; color: #2d1e10; line-height: 1.85; }
     .lb-body p { margin-bottom: 16px; }
     .lb-body p:last-child { margin-bottom: 0; }
-    .lb-body strong { font-weight: 700; color: #1a1008; }
-    .lb-body a { color: #9b5a2a; text-decoration: underline; text-underline-offset: 3px; }
-    .lb-source {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 22px;
-      color: #9b5a2a;
-      font-size: 13px;
-      font-weight: 700;
-      border-bottom: 1.5px solid currentColor;
-      padding-bottom: 1px;
-      transition: opacity 0.15s ease;
-    }
-    .lb-source:hover { opacity: 0.7; }
+    .lb-source { display: inline-flex; align-items: center; gap: 6px; margin-top: 22px; color: #9b5a2a; font-size: 13px; font-weight: 700; border-bottom: 1.5px solid currentColor; padding-bottom: 1px; }
     .lb-source::after { content: '→'; }
-
-    /* ===== FOOTER ===== */
-    .site-footer {
-      background: #2a1c0f;
-      color: #806850;
-      padding: 24px 32px;
-      margin-top: 8px;
-    }
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-    .footer-brand {
-      font-size: 15px;
-      font-weight: 800;
-      color: #c8b498;
-    }
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      font-size: 12px;
-    }
-    .footer-links a {
-      color: #806850;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
+    .site-footer { background: #2a1c0f; color: #806850; padding: 24px 32px; margin-top: 8px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+    .footer-brand { font-size: 15px; font-weight: 800; color: #c8b498; }
+    .footer-links { display: flex; gap: 18px; font-size: 12px; }
+    .footer-links a { color: #806850; text-decoration: underline; text-underline-offset: 3px; }
     .footer-links a:hover { color: #c8b498; }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding-top: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 11px;
-    }
-    .footer-generated {
-      font-family: "SF Mono", "Fira Code", monospace;
-      font-size: 10px;
-    }
-
-    /* ===== RESPONSIVE ===== */
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 11px; }
+    .footer-generated { font-family: monospace; font-size: 10px; }
     @media (max-width: 600px) {
-      .page-wrapper { padding-bottom: 32px; }
-      .site-header,
-      .story-list,
-      .section-label,
-      .site-footer { padding-left: 16px; padding-right: 16px; }
+      .site-header, .story-list, .section-label, .site-footer { padding-left: 16px; padding-right: 16px; }
       .header-top { flex-direction: column; }
-      .header-meta { text-align: left; }
       .brand-name { font-size: 20px; }
       .story-title { font-size: 16px; }
-      .lb-panel { border-radius: 8px; max-height: 92vh; }
-      .lb-scroll { padding: 22px 20px 24px; }
-      .lb-title { font-size: 19px; }
-      .lb-body { font-size: 14px; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
-
 <div class="page-wrapper">
-
-  <!-- ===== HEADER ===== -->
   <header class="site-header">
     <div class="header-top">
       <div>
@@ -453,227 +92,186 @@
       </div>
     </div>
     <hr class="header-divider">
-    <div class="header-categories">
-      涵蓋 <strong>譯稿</strong>
-    </div>
+    <div class="header-categories">涵蓋 <strong>譯稿</strong></div>
   </header>
-
-  <!-- ===== SECTION LABEL ===== -->
-  <div class="section-label">
-    <span>今日要聞</span>
-  </div>
-
-  <!-- ===== STORY LIST ===== -->
+  <div class="section-label"><span>今日要聞</span></div>
   <main class="story-list" id="story-list">
-    <article class="story-card" data-id="1" data-category="譯稿" data-time="2026-04-17" data-image="" data-source="" data-tag-class="tag-default">
+    <article class="story-card" data-id="1" data-category="譯稿" data-time="2026-04-18" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170125.aspx" data-tag-class="tag-default">
   <div class="story-image-wrap" onclick="openLightbox(1)">
-    <img src="" alt="202604170125" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
-    <div class="story-img-placeholder">📰</div>
+    <img src="" alt="Marcas taiwanesas ganan confianza por ofrecer suministros de calidad no rojos; alta demanda de consultas en feria industrial de Vietnam | Economía e Industria | CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">&#128240;</div>
     <span class="story-category-tag tag-default">譯稿</span>
   </div>
   <div class="story-body">
-    <div class="story-meta">
-      <time class="story-time">2026-04-17</time>
-    </div>
-    <h2 class="story-title" onclick="openLightbox(1)">202604170125</h2>
-    <p class="story-excerpt">（摘要暫不可用）</p>
+    <div class="story-meta"><time class="story-time">2026-04-18</time></div>
+    <h2 class="story-title" onclick="openLightbox(1)">Marcas taiwanesas ganan confianza por ofrecer suministros de calidad no rojos; alta demanda de consultas en feria industrial de Vietnam | Economía e Industria | CNA</h2>
+    <p class="story-excerpt">Hai Phong, la mayor ciudad portuaria del norte de Vietnam, acoge del 15 al 17 de abril la Exposición de Industria y Manufactura de Vietnam, en la que participan numerosas empresas taiwanesas, entre ellas no pocas campeonas ocultas que sostienen la industria mundial. Empresas taiwanesas expositoras señalaron que muchos clientes buscan una «cadena de suministro no roja» y que, junto con una sólida reputación de fiabilidad, estas son ventajas de las marcas taiwanesas.</p>
     <button class="read-more-btn" onclick="openLightbox(1)">看全文</button>
   </div>
 </article>
-<article class="story-card" data-id="2" data-category="譯稿" data-time="2026-04-17" data-image="" data-source="" data-tag-class="tag-default">
+    <article class="story-card" data-id="2" data-category="譯稿" data-time="2026-04-18" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170243.aspx" data-tag-class="tag-default">
   <div class="story-image-wrap" onclick="openLightbox(2)">
-    <img src="" alt="202604170243" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
-    <div class="story-img-placeholder">📰</div>
+    <img src="" alt="Ganancias de iST en marzo aumentan 214% interanual; BPA alcanza 2,27 dólares taiwaneses" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">&#128240;</div>
     <span class="story-category-tag tag-default">譯稿</span>
   </div>
   <div class="story-body">
-    <div class="story-meta">
-      <time class="story-time">2026-04-17</time>
-    </div>
-    <h2 class="story-title" onclick="openLightbox(2)">202604170243</h2>
-    <p class="story-excerpt">（摘要暫不可用）</p>
+    <div class="story-meta"><time class="story-time">2026-04-18</time></div>
+    <h2 class="story-title" onclick="openLightbox(2)">Ganancias de iST en marzo aumentan 214% interanual; BPA alcanza 2,27 dólares taiwaneses</h2>
+    <p class="story-excerpt">La empresa taiwanesa de verificación y análisis para la industria electrónica iST (Integrated Service Technology) registró en marzo una utilidad neta atribuible a la empresa matriz de 196 millones de nuevos dólares taiwaneses, lo que representa un aumento interanual del 214,43%, con una utilidad por acción de 2,27 nuevos dólares taiwaneses. iST señaló que el incremento en las ganancias de marzo se debió principalmente a la optimización de su estructura financiera y a la mejora en la eficiencia de la gestión operativa.</p>
     <button class="read-more-btn" onclick="openLightbox(2)">看全文</button>
   </div>
 </article>
-<article class="story-card" data-id="3" data-category="譯稿" data-time="2026-04-17" data-image="" data-source="" data-tag-class="tag-default">
+    <article class="story-card" data-id="3" data-category="譯稿" data-time="2026-04-18" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170253.aspx" data-tag-class="tag-default">
   <div class="story-image-wrap" onclick="openLightbox(3)">
-    <img src="" alt="202604170253" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
-    <div class="story-img-placeholder">📰</div>
+    <img src="" alt="Concluye la disputa por el control de China Engineering Corp.; Baojia y Weijing llegan a un acuerdo y gobernarán conjuntamente | Economía | CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">&#128240;</div>
     <span class="story-category-tag tag-default">譯稿</span>
   </div>
   <div class="story-body">
-    <div class="story-meta">
-      <time class="story-time">2026-04-17</time>
-    </div>
-    <h2 class="story-title" onclick="openLightbox(3)">202604170253</h2>
-    <p class="story-excerpt">（摘要暫不可用）</p>
+    <div class="story-meta"><time class="story-time">2026-04-18</time></div>
+    <h2 class="story-title" onclick="openLightbox(3)">Concluye la disputa por el control de China Engineering Corp.; Baojia y Weijing llegan a un acuerdo y gobernarán conjuntamente | Economía | CNA</h2>
+    <p class="story-excerpt">China Engineering Corp. indicó que tuvo conocimiento de que sus dos principales accionistas, el Grupo Baojia y el Grupo Weijing, con la mediación de un amigo común de ambas partes, ya concluyeron negociaciones amistosas y establecieron la dirección general para una cogestión conjunta.</p>
     <button class="read-more-btn" onclick="openLightbox(3)">看全文</button>
   </div>
 </article>
-<article class="story-card" data-id="4" data-category="譯稿" data-time="2026-04-17" data-image="" data-source="" data-tag-class="tag-default">
+    <article class="story-card" data-id="4" data-category="譯稿" data-time="2026-04-18" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170260.aspx" data-tag-class="tag-default">
   <div class="story-image-wrap" onclick="openLightbox(4)">
-    <img src="" alt="202604170260" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
-    <div class="story-img-placeholder">📰</div>
+    <img src="" alt="Bolsa de Taiwán sube 1.386 puntos esta semana y capitalización de mercado supera los NT$120 billones" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">&#128240;</div>
     <span class="story-category-tag tag-default">譯稿</span>
   </div>
   <div class="story-body">
-    <div class="story-meta">
-      <time class="story-time">2026-04-17</time>
-    </div>
-    <h2 class="story-title" onclick="openLightbox(4)">202604170260</h2>
-    <p class="story-excerpt">（摘要暫不可用）</p>
+    <div class="story-meta"><time class="story-time">2026-04-18</time></div>
+    <h2 class="story-title" onclick="openLightbox(4)">Bolsa de Taiwán sube 1.386 puntos esta semana y capitalización de mercado supera los NT$120 billones</h2>
+    <p class="story-excerpt">La distensión entre Estados Unidos e Irán, junto con el impulso de la conferencia de resultados de TSMC, llevó al índice bursátil de Taiwán a superar por primera vez en la historia los 37.000 puntos el día 16. Aunque el retroceso de TSMC arrastró a la baja al mercado el día 17, el índice acumuló en la semana una ganancia de 1.386,51 puntos, equivalente a un alza del 3,91%, cerrando hoy el mercado de valores en 36.804,34 puntos.</p>
     <button class="read-more-btn" onclick="openLightbox(4)">看全文</button>
   </div>
 </article>
-<article class="story-card" data-id="5" data-category="譯稿" data-time="2026-04-17" data-image="" data-source="" data-tag-class="tag-default">
+    <article class="story-card" data-id="5" data-category="譯稿" data-time="2026-04-18" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170273.aspx" data-tag-class="tag-default">
   <div class="story-image-wrap" onclick="openLightbox(5)">
-    <img src="" alt="202604170273" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
-    <div class="story-img-placeholder">📰</div>
+    <img src="" alt="iPASS aumenta capital en 300 millones para expandir pagos electrónicos y alcanzar la rentabilidad" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">&#128240;</div>
     <span class="story-category-tag tag-default">譯稿</span>
   </div>
   <div class="story-body">
-    <div class="story-meta">
-      <time class="story-time">2026-04-17</time>
-    </div>
-    <h2 class="story-title" onclick="openLightbox(5)">202604170273</h2>
-    <p class="story-excerpt">（摘要暫不可用）</p>
+    <div class="story-meta"><time class="story-time">2026-04-18</time></div>
+    <h2 class="story-title" onclick="openLightbox(5)">iPASS aumenta capital en 300 millones para expandir pagos electrónicos y alcanzar la rentabilidad</h2>
+    <p class="story-excerpt">El servicio de pago electrónico iPASS MONEY se separó de LINE Pay a finales del año pasado e inició operaciones de forma independiente. El director general de iPASS, Cheng Kai-yin, declaró hoy que a principios de este año ya se aprobó un plan de aumento de capital estratégico por 300 millones de nuevos dólares taiwaneses, fondos que se destinarán a promoción y marketing para ampliar la escala del pago electrónico. Subrayó que iPASS no reducirá su negocio de pagos electrónicos, sino que adoptará una estrategia de expansión para revertir las pérdidas y alcanzar la rentabilidad.</p>
     <button class="read-more-btn" onclick="openLightbox(5)">看全文</button>
   </div>
 </article>
   </main>
-
-  <!-- ===== HIDDEN FULL CONTENTS (read by lightbox JS) ===== -->
   <div id="story-contents" style="display:none;">
     <div id="story-content-1">
-<p>（正文暫不可用）</p>
+<p>La Feria Industrial y de Manufactura de Vietnam (VIMF) en Hai Phong se celebró del 15 al 17 de abril, en lo que además fue la primera vez que esta exposición industrial se realizó en Hai Phong, la tercera ciudad más grande de Vietnam y una emergente concentración industrial. Como uno de los principales centros manufactureros del mundo, Vietnam acogió en la muestra cientos de estands de Japón, Corea del Sur, Taiwán y otros países, con la participación de profesionales del sector de todo el Sudeste Asiático.</p>
+<p>HIWIN, una de las tres principales marcas mundiales de husillos de bolas de precisión y componentes de transmisión lineal, cuenta con una cuota de mercado global de hasta el 20% en productos relacionados. Sus productos son necesarios para las industrias de semiconductores, automatización, robótica, infraestructura e IA, y sus clientes incluyen grandes fabricantes de todo el mundo.</p>
+<p>A medida que las líneas de producción de fábricas de las cadenas de suministro de Apple, Samsung y NVIDIA, entre otras, se han trasladado a Vietnam, productos electrónicos como teléfonos móviles y servidores exigen altos niveles de precisión y el rápido despliegue de líneas de producción automatizadas, lo que hace necesario el uso de sistemas modulares de transmisión de precisión.</p>
+<p>El representante comercial Chen Ming-hui dijo a CNA que muchas fábricas se han trasladado desde China con el objetivo de construir una “cadena de suministro no roja”. “Tras mudarse a Vietnam, tampoco desean utilizar componentes clave producidos en China, para evitar posibles trabas en las entregas derivadas de factores geopolíticos”, señaló.</p>
+<p>HIWIN produce el 100% en Taiwán y lleva más de 20 años implantándose en Vietnam a través de distribuidores, siendo testigo de la transformación industrial del país, desde la manufactura tradicional en sus inicios hasta la actual fabricación de precisión de teléfonos móviles y servidores.</p>
+<p>Hoy en día, los clientes del sector electrónico exigen aún más precisión y estabilidad, y muchos clientes finales de Europa y Estados Unidos plantean elevados estándares conforme a normas estadounidenses y europeas, por lo que los clientes vietnamitas también necesitan orientarse hacia productos fabricados en Taiwán. A ello se suma el cada vez más grave problema de escasez de mano de obra en Vietnam, factores que hacen que HIWIN vea con optimismo sus perspectivas de ventas.</p>
+<p>Al hablar de las ventajas de Taiwán en el traslado de cadenas de suministro, Chen Ming-hui indicó que, en primer lugar, las empresas taiwanesas son muy flexibles, se implantan con rapidez y operan con alta eficiencia; en segundo lugar, el capital taiwanés ya ha echado raíces en Vietnam y puede suministrar de inmediato a las empresas que se trasladen posteriormente al país; y, además, el diseño de componentes de alta precisión depende absolutamente del talento tecnológico de Taiwán.</p>
+<p>“Los clientes vietnamitas siguen teniendo un mayor grado de confianza en las marcas taiwanesas. China tiene productos similares a un tercio del precio, pero los clientes siguen eligiendo marcas de Taiwán, porque simbolizamos precisión y durabilidad, algo que afecta al resultado final de su producción”. Según relató, los clientes le han dicho que los productos baratos no duran mucho y además conllevan riesgo de interrupciones, por lo que no resultan rentables.</p>
+<p>En la feria industrial pudieron verse numerosas empresas taiwanesas, cuyos estands recibieron un flujo incesante de consultas de clientes, lo que pone de manifiesto el importante papel que desempeña la “cadena de suministro no roja” de Taiwán en la transformación industrial de Vietnam, como campeones ocultos detrás de la cadena industrial.</p>
+<p>La empresa K.S. Terminals produce todo tipo de terminales y materias primas para bridas, incluidos terminales de compresión en frío, de cobre y aluminio, conductores e impermeables. Siempre que haya relación con electricidad o corriente, es posible que se necesiten sus productos, que tienen un amplio abanico de aplicaciones.</p>
+<p>K.S. Terminals lleva cerca de 10 años operando ventas en Vietnam. Sus clientes se reparten en 150 países y en Vietnam cuenta con cerca de 1.000 clientes, entre ellos muchos grandes clientes de ingeniería, como proyectos de energía eólica marina, aeropuertos internacionales y el mayor fabricante de automóviles de Vietnam, VinFast.</p>
+<p>El subdirector general Chen Chang-yueh dijo a CNA que el Sudeste Asiático tiene una base poblacional suficiente y que la demanda eléctrica guarda una relación positiva con la población, por lo que crece con rapidez.</p>
+<p>Sobre el potencial del mercado vietnamita, Chen Chang-yueh afirmó: “La política de Vietnam está concentrada; no pretende desarrollar todo tipo de industrias, sino que se centra en el desarrollo de industrias de alta tecnología. Los equipos de alta tecnología requieren numerosos terminales para la transmisión, y además el suministro eléctrico complementario y el diseño de redes eléctricas periféricas están directamente relacionados con K.S. Terminals”.</p>
+<p>Por ejemplo, en Vung Tau, Vietnam, se está construyendo una central eléctrica de gas natural, y también se van a construir centrales nucleares; todos ellos forman parte de los grupos de clientes con los que K.S. Terminals está en contacto. En particular, en el último año o dos Vietnam ha impulsado con fuerza las obras públicas, y sus productos también están presentes en el metro de Hanói.</p>
+<p>Frente a la estrategia china de bajos precios, Chen Chang-yueh señaló que los grupos de clientes objetivo de ambas partes son distintos: las fábricas chinas se centran principalmente en productos baratos dirigidos a proyectos pequeños y artículos de uso doméstico, donde las exigencias de calidad no son tan altas.</p>
+<p>Dijo: “Sin embargo, clientes como los aeropuertos no pueden tolerar que ocurra ningún accidente y exigen necesariamente alta calidad. Nuestros productos superan a los chinos en todos los aspectos, cumplen los estándares más altos y además son más duraderos. Por eso, en grandes proyectos de construcción, aeropuertos y automóviles, la mayoría sigue queriendo colaborar con nosotros; esa es nuestra ventaja”.</p>
+<p>Los productos taiwaneses ofrecen garantía de calidad, y muchos clientes vietnamitas han dicho francamente a K.S. Terminals que, en su mente, las dos principales procedencias de marca son, en primer lugar, Japón y, en segundo, Taiwán. “Muchos clientes tienden a buscar a Japón o Taiwán como proveedores en el ámbito eléctrico”.</p>
+<p>Li Yu-yu, gerente de la empresa Gong De, comparte la misma opinión. La compañía cuenta con una fábrica en el norte de Vietnam, donde produce mantas aislantes y mantas calefactoras como base de manufactura por encargo para Taiwán; posteriormente, los productos se venden a Taiwán, Japón, Singapur y otros mercados, y la empresa mantiene una estrecha cooperación con fábricas taiwanesas de obleas.</p>
+<p>Actualmente, la inversión extranjera sigue aumentando en Vietnam y se orienta hacia la transformación del sector electrónico. La demanda interna vietnamita también crece, y los productos de Gong De se centran en el ahorro energético, la reducción de carbono y la responsabilidad social corporativa, en línea con las necesidades de las empresas vietnamitas.</p>
+<p>Li Yu-yu dijo: “La cadena industrial de Taiwán es muy completa, la industria de obleas lidera el mundo y, como parte de esa cadena industrial, los proveedores también se han desarrollado de forma integral, lo que constituye una garantía de calidad”. (Editor: Tang Sheng-yang) 1150417</p>
 </div>
-<div id="story-content-2">
-<p>（正文暫不可用）</p>
+    <div id="story-content-2">
+<p>iST (Integrated Service Technology) señaló que, con el ajuste de su estructura operativa próximo a completarse, la gestión interna y la asignación de recursos son cada vez más eficientes. Los pedidos actuales se mantienen estables, y la empresa continuará optimizando su combinación de productos para impulsar el margen bruto.</p>
+<p>De cara al futuro, iST indicó que, ante el creciente aumento de la demanda de capacidad de cómputo para la inteligencia artificial (IA) generativa y la mayor complejidad en la verificación y análisis de semiconductores, la compañía seguirá profundizando en tecnologías como la fotónica de silicio (SiPh) y la óptica de co-empaquetado (CPO). Actualmente, ya ha construido una plataforma madura e integral de verificación y análisis optoelectrónico de ventanilla única.</p>
+<p>La empresa señaló que el volumen de proyectos entrantes registra un crecimiento sólido, lo que permitirá ayudar a clientes como los principales fabricantes de chips de IA, fabricantes de chips para comunicaciones móviles y fundiciones de obleas a superar cuellos de botella tecnológicos, acelerar el proceso de lanzamiento de productos al mercado e impulsar el crecimiento del negocio de empaquetado avanzado. (Editado por Yang Kai-hsiang) 1150417</p>
 </div>
-<div id="story-content-3">
-<p>（正文暫不可用）</p>
+    <div id="story-content-3">
+<p>En un comunicado emitido hoy, China Engineering Corp. señaló que ambas partes han decidido participar conjuntamente en la gobernanza corporativa, dando máxima prioridad al crecimiento sostenible de la empresa y a los mayores intereses de todos los accionistas, con la esperanza de inyectar un nuevo impulso a China Engineering Corp.</p>
+<p>China Engineering Corp. indicó que, según tiene entendido, tras una comunicación plena y una coordinación de buena fe entre ambas partes, ya se ha alcanzado un consenso armonioso para impulsar conjuntamente la reelección de la junta directiva en este mandato. En su momento, de entre las tres listas de candidatos ya presentadas, se integrará y propondrá conjuntamente una sola lista considerada la más idónea para participar en la elección.</p>
+<p>Según se informó, de los siete puestos de director, Baojia obtendrá cuatro y el Grupo Weijing tres, aunque China Engineering Corp. no lo confirmó.</p>
+<p>China Engineering Corp. explicó que esta medida no solo pone plenamente de manifiesto la determinación de los principales accionistas de limar sus diferencias, sino que también establece para el mercado de capitales de Taiwán un modelo de priorizar el interés general y de recurrir a la negociación pacífica para buscar conjuntamente los intereses empresariales.</p>
+<p>China Engineering Corp. señaló que, de cara al futuro, ambas partes dejarán atrás las disputas del pasado y, guiadas por un espíritu de cooperación basada en la integridad, beneficio mutuo y prosperidad compartida, ayudarán al desarrollo operativo de la empresa. El futuro equipo directivo de China Engineering Corp. también estabilizará la moral interna y seguirá concentrado en su actividad principal, avanzando codo a codo con los principales accionistas. (Editor: Yang Lan-hsuan) 2026/04/17</p>
 </div>
-<div id="story-content-4">
-<p>（正文暫不可用）</p>
+    <div id="story-content-4">
+<p>Según estadísticas de la Bolsa de Valores de Taiwán, la capitalización bursátil total de las empresas cotizadas alcanzó los NT$120 billones 594 millones, un aumento de aproximadamente NT$4,5 billones respecto a la semana anterior.</p>
+<p>En cuanto a los índices sectoriales, el mayor avance de la semana correspondió al índice de vidrio y cerámica, que subió un 26,51%, mientras que el mayor retroceso lo registró el índice de papel, con una caída del 1,57%. El índice no financiero subió 1.324,65 puntos, un alza de aproximadamente el 4,17%; el índice no electrónico avanzó 508,83 puntos, equivalente a un incremento del 2,56%; y el índice que excluye los sectores financiero y electrónico subió 497,71 puntos, con una ganancia de aproximadamente el 3,60%.</p>
+<p>El volumen total de transacciones de acciones cotizadas durante la semana ascendió a NT$4 billones 381.900 millones. Los tres sectores con mayor volumen de negociación fueron: semiconductores, con NT$1 billón 629.900 millones, representando el 37,20% del total negociado; componentes electrónicos, con NT$966.512 millones, equivalente al 22,06%; y optoelectrónica, con NT$330.043 millones, correspondiente al 7,53%.</p>
+<p>Asimismo, la tasa de rotación semanal del volumen de acciones negociadas fue del 4,25%. Los tres sectores con mayor tasa de rotación fueron: vidrio y cerámica con 34,14%, optoelectrónica con 21,25% y componentes electrónicos con 14,52%.</p>
+<p>Desde el inicio del año hasta la fecha, acumulando un total de 66 jornadas bursátiles, el volumen total de transacciones en el mercado centralizado ascendió a NT$53 billones 720.200 millones, con un promedio diario de NT$814.944 millones, una tasa de rotación acumulada del 54,97% y una tasa de rotación diaria promedio del 0,83%. (Editado por Yang Kai-hsiang) 1150417</p>
 </div>
-<div id="story-content-5">
-<p>（正文暫不可用）</p>
+    <div id="story-content-5">
+<p>Cheng Kai-yin participó esta tarde en un encuentro con medios de comunicación y señaló que el aumento de capital de 300 millones de dólares taiwaneses aprobado a principios de este año ajustó el precio de la ronda anterior, de 15 a 10 dólares taiwaneses por acción. Esta corrección responde a las variaciones en los precios bursátiles del sector y tiene como objetivo retribuir a los accionistas existentes, quienes actualmente muestran un alto nivel de apoyo al plan de expansión del negocio.</p>
+<p>Respecto al avance de la oferta pública inicial (IPO), tema de interés en el mercado, Cheng indicó que alcanzar la rentabilidad es un hito indispensable antes de llevar a cabo una IPO. La empresa ya cuenta con un calendario interno estimado para lograr dicho objetivo, aunque precisó que este año «definitivamente no» se producirá.</p>
+<p>Señaló que, si bien no descarta la posibilidad de una IPO en el futuro, la prioridad en esta etapa es expandir el negocio de pagos electrónicos. Actualmente, la aplicación iPASS MONEY de iPass ha alcanzado 4 millones de descargas, con aproximadamente 2 millones de usuarios activos mensuales y entre 300.000 y 400.000 usuarios activos diarios. El monto de cobros y pagos procesados registró su punto más bajo en enero de este año con 1.420 millones de dólares taiwaneses, pero la recuperación ha superado las expectativas internas, alcanzando 1.520 millones en febrero y 1.820 millones en marzo.</p>
+<p>Al referirse a los desafíos surgidos tras la separación de LINE Pay, Cheng reconoció abiertamente que la empresa se ha visto afectada. La imposibilidad de seguir cobrando comisiones por cooperación y la pérdida de la ventaja que ofrecía la función de transferencia en los chats de LINE han provocado una caída en los montos de transferencias y recargas. Además, los canales que anteriormente estaban integrados a través de LINE Pay deberán reconectarse, un proceso que se estima tomará entre 6 y 12 meses.</p>
+<p>A pesar de estos desafíos, Cheng subrayó que iPass adoptará una estrategia de expansión, en lugar de reducir la escala de sus operaciones de pago electrónico. iPass es actualmente la única institución de pago electrónico con participación tanto del gobierno central como de gobiernos locales, por lo que promoverá activamente las políticas gubernamentales. La aplicación independiente permite gestionar simultáneamente tarjetas de recarga físicas y pagos electrónicos, una integración vertical difícil de igualar por la competencia. Asimismo, contar con una aplicación propia le permite decidir de forma autónoma sus alianzas con otras empresas.</p>
+<p>En materia de economía de puntos, Cheng explicó que los «puntos verdes» de iPass están concebidos como puntos de carácter político, vinculados a la política de reducción de emisiones netas de carbono, y pueden utilizarse para descuentos en transporte público, pagos de servicios cotidianos y consumo en canales de comercio verde. El volumen anual de puntos verdes emitidos ha mostrado un crecimiento exponencial, con una tasa de canje de entre el 60% y el 80%, y en el futuro se anunciarán proyectos de colaboración de mayor envergadura en materia de puntos.</p>
 </div>
   </div>
-
-  <!-- ===== LIGHTBOX ===== -->
   <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lb-title">
     <div class="lb-backdrop" id="lb-backdrop"></div>
     <div class="lb-panel">
-      <button class="lb-close" id="lb-close" aria-label="關閉">✕</button>
+      <button class="lb-close" id="lb-close" aria-label="關閉">&#10005;</button>
       <div class="lb-scroll" id="lb-scroll">
         <div class="lb-meta">
           <span class="lb-category tag-default" id="lb-category"></span>
           <span class="lb-time" id="lb-time"></span>
         </div>
         <h2 class="lb-title" id="lb-title"></h2>
-        <div class="lb-image-wrap" id="lb-image-wrap">
-          <img id="lb-image" src="" alt="" loading="eager">
-        </div>
         <div class="lb-body" id="lb-body"></div>
         <a class="lb-source" id="lb-source" href="#" target="_blank" rel="noopener">查看原文</a>
       </div>
     </div>
   </div>
-
-  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">CNA Translation Digest ES</div>
       <div class="footer-links">
         <a href="https://u0401006.github.io/video-quotes/news/">歷史存檔</a>
-        <a href="https://u0401006.github.io/video-quotes/">訂閱電子報</a>
+        <a href="https://u0401006.github.io/video-quotes/">首頁</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 CNA Translation Digest ES · 版權所有</span>
-      <span class="footer-generated">Generated at 2026-04-18T14:51:25</span>
+      <span class="footer-generated">Generated at 2026-04-18T15:18:16</span>
     </div>
   </footer>
-
-</div><!-- /.page-wrapper -->
-
+</div>
 <script>
-  var TAG_CLASSES = {
-    '政治': 'tag-politics', '國內': 'tag-politics',
-    '國際': 'tag-intl',     '外交': 'tag-intl',
-    '財經': 'tag-finance',  '經濟': 'tag-finance',
-    '體育': 'tag-sports',
-    '科技': 'tag-tech',     '科學': 'tag-tech',
-    '社會': 'tag-society',  '生活': 'tag-society'
-  };
-
   function openLightbox(id) {
     var card = document.querySelector('.story-card[data-id="' + id + '"]');
     var contentEl = document.getElementById('story-content-' + id);
     if (!card) return;
-
-    var category  = card.dataset.category  || '';
-    var time      = card.dataset.time      || '';
-    var image     = card.dataset.image     || '';
-    var source    = card.dataset.source    || '';
-    var tagClass  = card.dataset.tagClass  || TAG_CLASSES[category] || 'tag-default';
-    var title     = card.querySelector('.story-title').textContent.trim();
-    var fullHtml  = contentEl ? contentEl.innerHTML : '';
-
-    // Populate lightbox fields
-    var catEl = document.getElementById('lb-category');
-    catEl.textContent = category;
-    catEl.className   = 'lb-category ' + tagClass;
-
-    document.getElementById('lb-time').textContent  = time;
+    var source = card.dataset.source || '';
+    var title = card.querySelector('.story-title').textContent.trim();
+    var fullHtml = contentEl ? contentEl.innerHTML : '';
+    document.getElementById('lb-category').textContent = '譯稿';
+    document.getElementById('lb-category').className = 'lb-category tag-default';
+    document.getElementById('lb-time').textContent = card.dataset.time || '';
     document.getElementById('lb-title').textContent = title;
-    document.getElementById('lb-body').innerHTML    = fullHtml;
-
-    var imgWrap = document.getElementById('lb-image-wrap');
-    var imgEl   = document.getElementById('lb-image');
-    if (image) {
-      imgEl.src = image;
-      imgEl.alt = title;
-      imgWrap.style.display = 'block';
-    } else {
-      imgWrap.style.display = 'none';
-    }
-
+    document.getElementById('lb-body').innerHTML = fullHtml;
     var srcEl = document.getElementById('lb-source');
-    if (source) {
-      srcEl.href         = source;
-      srcEl.style.display = 'inline-flex';
-    } else {
-      srcEl.style.display = 'none';
-    }
-
-    // Scroll lightbox content to top
+    if (source) { srcEl.href = source; srcEl.style.display = 'inline-flex'; } else { srcEl.style.display = 'none'; }
     document.getElementById('lb-scroll').scrollTop = 0;
-
-    // Open with animation
     var lb = document.getElementById('lightbox');
     lb.classList.add('is-open');
     lb.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
-
   function closeLightbox() {
     var lb = document.getElementById('lightbox');
     lb.classList.remove('is-open');
     lb.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
-
-  // Close on backdrop click
   document.getElementById('lb-backdrop').addEventListener('click', closeLightbox);
-  // Close button
   document.getElementById('lb-close').addEventListener('click', closeLightbox);
-  // ESC key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeLightbox();
-  });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
 </script>
-
 </body>
 </html>
