@@ -6,441 +6,80 @@
   <meta name="description" content="CNA Translation Digest VI — 2026-04-17-vi-batch2 精選新聞">
   <title>CNA Translation Digest VI — 2026-04-17-vi-batch2</title>
   <style>
-    /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
-                   "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
-      background: #f8f4ee;
-      color: #1a1008;
-      line-height: 1.7;
-      font-size: 16px;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif; background: #f8f4ee; color: #1a1008; line-height: 1.7; font-size: 16px; }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; height: auto; }
     button { cursor: pointer; font-family: inherit; }
-
-    /* ===== PAGE WRAPPER ===== */
-    .page-wrapper {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 0 48px;
-    }
-
-    /* ===== HEADER ===== */
-    .site-header {
-      background: #2a1c0f;
-      color: #f0e8d8;
-      padding: 28px 32px 22px;
-    }
-    .header-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-    .brand-name {
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: -0.5px;
-      color: #f5ead6;
-      line-height: 1.2;
-    }
-    .brand-tagline {
-      font-size: 11px;
-      color: #9a8468;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      margin-top: 3px;
-    }
-    .header-meta {
-      text-align: right;
-      flex-shrink: 0;
-    }
-    .header-date {
-      font-size: 14px;
-      color: #c8b498;
-      font-weight: 500;
-    }
-    .header-count {
-      font-size: 11px;
-      color: #806850;
-      margin-top: 3px;
-    }
-    .header-divider {
-      border: none;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      margin-bottom: 12px;
-    }
-    .header-categories {
-      font-size: 12px;
-      color: #806850;
-      letter-spacing: 0.3px;
-    }
-    .header-categories strong {
-      color: #c8a878;
-    }
-
-    /* ===== SECTION LABEL ===== */
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 24px 32px 0;
-    }
-    .section-label span {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      color: #9b5a2a;
-      white-space: nowrap;
-    }
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #e5ddd3;
-    }
-
-    /* ===== STORY LIST ===== */
-    .story-list {
-      padding: 16px 32px 0;
-    }
-
-    /* ===== STORY CARD ===== */
-    .story-card {
-      display: flex;
-      flex-direction: column;
-      background: #ffffff;
-      border: 1px solid #ede5d8;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 20px;
-      transition: box-shadow 0.2s ease, transform 0.15s ease;
-    }
-    .story-card:hover {
-      box-shadow: 0 4px 20px rgba(60, 35, 10, 0.09);
-      transform: translateY(-2px);
-    }
-
-    /* Story image */
-    .story-image-wrap {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%; /* 16:9 */
-      background: linear-gradient(135deg, #f0e8de, #e8ddd0);
-      overflow: hidden;
-      cursor: pointer;
-    }
-    .story-image-wrap img {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    .story-card:hover .story-image-wrap img {
-      transform: scale(1.03);
-    }
-    .story-img-placeholder {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #f0e8de, #e4d8cc);
-      color: #c8b098;
-      font-size: 36px;
-    }
-    .story-category-tag {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      padding: 4px 12px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      z-index: 2;
-    }
-
-    /* Category tag colors — warm palette */
+    .page-wrapper { max-width: 720px; margin: 0 auto; padding: 0 0 48px; }
+    .site-header { background: #2a1c0f; color: #f0e8d8; padding: 28px 32px 22px; }
+    .header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .brand-name { font-size: 24px; font-weight: 900; letter-spacing: -0.5px; color: #f5ead6; line-height: 1.2; }
+    .brand-tagline { font-size: 11px; color: #9a8468; letter-spacing: 0.8px; text-transform: uppercase; margin-top: 3px; }
+    .header-meta { text-align: right; flex-shrink: 0; }
+    .header-date { font-size: 14px; color: #c8b498; font-weight: 500; }
+    .header-count { font-size: 11px; color: #806850; margin-top: 3px; }
+    .header-divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 12px; }
+    .header-categories { font-size: 12px; color: #806850; letter-spacing: 0.3px; }
+    .header-categories strong { color: #c8a878; }
+    .section-label { display: flex; align-items: center; gap: 12px; padding: 24px 32px 0; }
+    .section-label span { font-size: 11px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: #9b5a2a; white-space: nowrap; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: #e5ddd3; }
+    .story-list { padding: 16px 32px 0; }
+    .story-card { display: flex; flex-direction: column; background: #ffffff; border: 1px solid #ede5d8; border-radius: 10px; overflow: hidden; margin-bottom: 20px; transition: box-shadow 0.2s ease, transform 0.15s ease; }
+    .story-card:hover { box-shadow: 0 4px 20px rgba(60, 35, 10, 0.09); transform: translateY(-2px); }
+    .story-image-wrap { position: relative; width: 100%; padding-bottom: 56.25%; background: linear-gradient(135deg, #f0e8de, #e8ddd0); overflow: hidden; cursor: pointer; }
+    .story-img-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f0e8de, #e4d8cc); color: #c8b098; font-size: 36px; }
+    .story-category-tag { position: absolute; top: 14px; left: 14px; padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; z-index: 2; }
+    .tag-default  { background: #f0ece4; color: #5c4830; }
     .tag-politics { background: #fff0e8; color: #b04520; }
     .tag-intl     { background: #fff8e8; color: #9a6010; }
-    .tag-finance  { background: #eef5e8; color: #3d7025; }
-    .tag-sports   { background: #fef0e0; color: #a04510; }
-    .tag-tech     { background: #f0ecf8; color: #6040a0; }
-    .tag-society  { background: #fdf0f4; color: #902848; }
-    .tag-default  { background: #f0ece4; color: #5c4830; }
-
-    /* Card body */
-    .story-body {
-      padding: 18px 20px 20px;
-    }
-    .story-meta {
-      margin-bottom: 8px;
-    }
-    .story-time {
-      font-size: 12px;
-      color: #9a8070;
-      font-weight: 400;
-    }
-    .story-title {
-      font-size: 18px;
-      font-weight: 800;
-      line-height: 1.45;
-      color: #1a1008;
-      margin-bottom: 10px;
-      cursor: pointer;
-      transition: color 0.15s ease;
-    }
-    .story-title:hover {
-      color: #9b5a2a;
-    }
-    .story-excerpt {
-      font-size: 14px;
-      color: #4a3828;
-      line-height: 1.75;
-      margin-bottom: 16px;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .read-more-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: none;
-      border: 1.5px solid #c8a878;
-      color: #9b5a2a;
-      padding: 7px 16px;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-    }
-    .read-more-btn:hover {
-      background: #9b5a2a;
-      color: #ffffff;
-      border-color: #9b5a2a;
-    }
-    .read-more-btn::after {
-      content: '→';
-      font-size: 14px;
-    }
-
-    /* ===== LIGHTBOX ===== */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.25s ease, visibility 0.25s ease;
-    }
-    .lightbox.is-open {
-      visibility: visible;
-      opacity: 1;
-    }
-    .lb-backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(28, 18, 8, 0.65);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-    }
-    .lb-panel {
-      position: relative;
-      background: #fffbf7;
-      border-radius: 12px;
-      max-width: 660px;
-      width: 100%;
-      max-height: 88vh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 20px 60px rgba(28, 18, 8, 0.3);
-      transform: translateY(16px) scale(0.98);
-      transition: transform 0.25s ease;
-      z-index: 1;
-    }
-    .lightbox.is-open .lb-panel {
-      transform: translateY(0) scale(1);
-    }
-    .lb-close {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      width: 32px;
-      height: 32px;
-      background: rgba(28, 18, 8, 0.07);
-      border: none;
-      border-radius: 50%;
-      font-size: 16px;
-      color: #5c4830;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-      transition: background 0.15s ease, color 0.15s ease;
-      line-height: 1;
-    }
-    .lb-close:hover {
-      background: rgba(28, 18, 8, 0.14);
-      color: #1a1008;
-    }
-    .lb-scroll {
-      overflow-y: auto;
-      padding: 28px 30px 32px;
-      -webkit-overflow-scrolling: touch;
-    }
+    .story-body { padding: 18px 20px 20px; }
+    .story-meta { margin-bottom: 8px; }
+    .story-time { font-size: 12px; color: #9a8070; font-weight: 400; }
+    .story-title { font-size: 18px; font-weight: 800; line-height: 1.45; color: #1a1008; margin-bottom: 10px; cursor: pointer; transition: color 0.15s ease; }
+    .story-title:hover { color: #9b5a2a; }
+    .story-excerpt { font-size: 14px; color: #4a3828; line-height: 1.75; margin-bottom: 16px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .read-more-btn { display: inline-flex; align-items: center; gap: 5px; background: none; border: 1.5px solid #c8a878; color: #9b5a2a; padding: 7px 16px; border-radius: 6px; font-size: 13px; font-weight: 700; transition: background 0.15s ease, color 0.15s ease; }
+    .read-more-btn:hover { background: #9b5a2a; color: #ffffff; border-color: #9b5a2a; }
+    .read-more-btn::after { content: '→'; font-size: 14px; }
+    .lightbox { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px; visibility: hidden; opacity: 0; transition: opacity 0.25s ease, visibility 0.25s ease; }
+    .lightbox.is-open { visibility: visible; opacity: 1; }
+    .lb-backdrop { position: absolute; inset: 0; background: rgba(28,18,8,0.65); backdrop-filter: blur(4px); }
+    .lb-panel { position: relative; background: #fffbf7; border-radius: 12px; max-width: 660px; width: 100%; max-height: 88vh; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(28,18,8,0.3); transform: translateY(16px) scale(0.98); transition: transform 0.25s ease; z-index: 1; }
+    .lightbox.is-open .lb-panel { transform: translateY(0) scale(1); }
+    .lb-close { position: absolute; top: 14px; right: 14px; width: 32px; height: 32px; background: rgba(28,18,8,0.07); border: none; border-radius: 50%; font-size: 16px; color: #5c4830; display: flex; align-items: center; justify-content: center; z-index: 2; transition: background 0.15s ease; }
+    .lb-close:hover { background: rgba(28,18,8,0.14); }
+    .lb-scroll { overflow-y: auto; padding: 28px 30px 32px; }
     .lb-scroll::-webkit-scrollbar { width: 4px; }
-    .lb-scroll::-webkit-scrollbar-track { background: #f0e8de; }
     .lb-scroll::-webkit-scrollbar-thumb { background: #c8a878; border-radius: 2px; }
-
-    .lb-meta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-    .lb-category {
-      padding: 3px 10px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-    .lb-time {
-      font-size: 12px;
-      color: #9a8070;
-    }
-    .lb-title {
-      font-size: 22px;
-      font-weight: 900;
-      line-height: 1.4;
-      color: #1a1008;
-      margin-bottom: 18px;
-      padding-right: 28px;
-    }
-    .lb-image-wrap {
-      width: 100%;
-      padding-bottom: 56.25%;
-      position: relative;
-      background: linear-gradient(135deg, #f0e8de, #e4d8cc);
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 22px;
-    }
-    .lb-image-wrap img {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-    }
-    .lb-body {
-      font-size: 15px;
-      color: #2d1e10;
-      line-height: 1.85;
-    }
+    .lb-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .lb-category { padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+    .lb-time { font-size: 12px; color: #9a8070; }
+    .lb-title { font-size: 22px; font-weight: 900; line-height: 1.4; color: #1a1008; margin-bottom: 18px; padding-right: 28px; }
+    .lb-body { font-size: 15px; color: #2d1e10; line-height: 1.85; }
     .lb-body p { margin-bottom: 16px; }
     .lb-body p:last-child { margin-bottom: 0; }
-    .lb-body strong { font-weight: 700; color: #1a1008; }
-    .lb-body a { color: #9b5a2a; text-decoration: underline; text-underline-offset: 3px; }
-    .lb-source {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 22px;
-      color: #9b5a2a;
-      font-size: 13px;
-      font-weight: 700;
-      border-bottom: 1.5px solid currentColor;
-      padding-bottom: 1px;
-      transition: opacity 0.15s ease;
-    }
-    .lb-source:hover { opacity: 0.7; }
+    .lb-source { display: inline-flex; align-items: center; gap: 6px; margin-top: 22px; color: #9b5a2a; font-size: 13px; font-weight: 700; border-bottom: 1.5px solid currentColor; padding-bottom: 1px; }
     .lb-source::after { content: '→'; }
-
-    /* ===== FOOTER ===== */
-    .site-footer {
-      background: #2a1c0f;
-      color: #806850;
-      padding: 24px 32px;
-      margin-top: 8px;
-    }
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-    .footer-brand {
-      font-size: 15px;
-      font-weight: 800;
-      color: #c8b498;
-    }
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      font-size: 12px;
-    }
-    .footer-links a {
-      color: #806850;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
+    .site-footer { background: #2a1c0f; color: #806850; padding: 24px 32px; margin-top: 8px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+    .footer-brand { font-size: 15px; font-weight: 800; color: #c8b498; }
+    .footer-links { display: flex; gap: 18px; font-size: 12px; }
+    .footer-links a { color: #806850; text-decoration: underline; text-underline-offset: 3px; }
     .footer-links a:hover { color: #c8b498; }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding-top: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 11px;
-    }
-    .footer-generated {
-      font-family: "SF Mono", "Fira Code", monospace;
-      font-size: 10px;
-    }
-
-    /* ===== RESPONSIVE ===== */
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 11px; }
+    .footer-generated { font-family: monospace; font-size: 10px; }
     @media (max-width: 600px) {
-      .page-wrapper { padding-bottom: 32px; }
-      .site-header,
-      .story-list,
-      .section-label,
-      .site-footer { padding-left: 16px; padding-right: 16px; }
+      .site-header, .story-list, .section-label, .site-footer { padding-left: 16px; padding-right: 16px; }
       .header-top { flex-direction: column; }
-      .header-meta { text-align: left; }
       .brand-name { font-size: 20px; }
       .story-title { font-size: 16px; }
-      .lb-panel { border-radius: 8px; max-height: 92vh; }
-      .lb-scroll { padding: 22px 20px 24px; }
-      .lb-title { font-size: 19px; }
-      .lb-body { font-size: 14px; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
-
 <div class="page-wrapper">
-
-  <!-- ===== HEADER ===== -->
   <header class="site-header">
     <div class="header-top">
       <div>
@@ -453,227 +92,175 @@
       </div>
     </div>
     <hr class="header-divider">
-    <div class="header-categories">
-      涵蓋 <strong>譯稿</strong>
-    </div>
+    <div class="header-categories">涵蓋 <strong>譯稿</strong></div>
   </header>
-
-  <!-- ===== SECTION LABEL ===== -->
-  <div class="section-label">
-    <span>今日要聞</span>
-  </div>
-
-  <!-- ===== STORY LIST ===== -->
+  <div class="section-label"><span>今日要聞</span></div>
   <main class="story-list" id="story-list">
-    <article class="story-card" data-id="1" data-category="譯稿" data-time="2026-04-17" data-image="" data-source="" data-tag-class="tag-default">
+    <article class="story-card" data-id="1" data-category="譯稿" data-time="2026-04-18" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170018.aspx" data-tag-class="tag-default">
   <div class="story-image-wrap" onclick="openLightbox(1)">
-    <img src="" alt="202604170018" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
-    <div class="story-img-placeholder">📰</div>
+    <img src="" alt="Đài Loan vươn lên thành đối tác thương mại lớn thứ 4 của Mỹ, Nghị viện bang Massachusetts thông qua nghị quyết tăng cường hợp tác" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">&#128240;</div>
     <span class="story-category-tag tag-default">譯稿</span>
   </div>
   <div class="story-body">
-    <div class="story-meta">
-      <time class="story-time">2026-04-17</time>
-    </div>
-    <h2 class="story-title" onclick="openLightbox(1)">202604170018</h2>
-    <p class="story-excerpt">（摘要暫不可用）</p>
+    <div class="story-meta"><time class="story-time">2026-04-18</time></div>
+    <h2 class="story-title" onclick="openLightbox(1)">Đài Loan vươn lên thành đối tác thương mại lớn thứ 4 của Mỹ, Nghị viện bang Massachusetts thông qua nghị quyết tăng cường hợp tác</h2>
+    <p class="story-excerpt">Nghị viện bang Massachusetts của Hoa Kỳ thông qua nghị quyết ủng hộ Đài Loan, nhấn mạnh rằng vào năm 2025, Đài Loan đã là đối tác thương mại lớn thứ 4 của Hoa Kỳ và là thị trường xuất khẩu lớn thứ 5 tại châu Á của Massachusetts; hai bên cần tăng cường quan hệ đối tác và hợp tác trong các lĩnh vực chuyên môn.</p>
     <button class="read-more-btn" onclick="openLightbox(1)">看全文</button>
   </div>
 </article>
-<article class="story-card" data-id="2" data-category="譯稿" data-time="2026-04-17" data-image="" data-source="" data-tag-class="tag-default">
+    <article class="story-card" data-id="2" data-category="譯稿" data-time="2026-04-18" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170169.aspx" data-tag-class="tag-default">
   <div class="story-image-wrap" onclick="openLightbox(2)">
-    <img src="" alt="202604170169" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
-    <div class="story-img-placeholder">📰</div>
+    <img src="" alt="Taitung sở hữu 6 nhà máy thủy điện nhỏ và 4 nhà máy địa nhiệt, đặt mục tiêu tự chủ 60% điện năng vào năm 2030" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">&#128240;</div>
     <span class="story-category-tag tag-default">譯稿</span>
   </div>
   <div class="story-body">
-    <div class="story-meta">
-      <time class="story-time">2026-04-17</time>
-    </div>
-    <h2 class="story-title" onclick="openLightbox(2)">202604170169</h2>
-    <p class="story-excerpt">（摘要暫不可用）</p>
+    <div class="story-meta"><time class="story-time">2026-04-18</time></div>
+    <h2 class="story-title" onclick="openLightbox(2)">Taitung sở hữu 6 nhà máy thủy điện nhỏ và 4 nhà máy địa nhiệt, đặt mục tiêu tự chủ 60% điện năng vào năm 2030</h2>
+    <p class="story-excerpt">Chính quyền huyện Đài Đông thúc đẩy năng lượng xanh, hiện huyện đã có 6 nhà máy thủy điện nhỏ và 4 nhà máy địa nhiệt, dự kiến đến năm 2030 sẽ sản xuất 600 triệu kWh điện mỗi năm, đạt tỷ lệ tự cung cấp điện 60%.</p>
     <button class="read-more-btn" onclick="openLightbox(2)">看全文</button>
   </div>
 </article>
-<article class="story-card" data-id="3" data-category="譯稿" data-time="2026-04-17" data-image="" data-source="" data-tag-class="tag-default">
+    <article class="story-card" data-id="3" data-category="譯稿" data-time="2026-04-18" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170239.aspx" data-tag-class="tag-default">
   <div class="story-image-wrap" onclick="openLightbox(3)">
-    <img src="" alt="202604170239" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
-    <div class="story-img-placeholder">📰</div>
+    <img src="" alt="Cựu tướng Mỹ cảnh báo việc cắt bỏ các hạng mục bán thương mại trong ngân sách mua sắm vũ khí sẽ làm suy yếu khả năng tương tác và sức mạnh chiến đấu giữa Mỹ và Đài Loan" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">&#128240;</div>
     <span class="story-category-tag tag-default">譯稿</span>
   </div>
   <div class="story-body">
-    <div class="story-meta">
-      <time class="story-time">2026-04-17</time>
-    </div>
-    <h2 class="story-title" onclick="openLightbox(3)">202604170239</h2>
-    <p class="story-excerpt">（摘要暫不可用）</p>
+    <div class="story-meta"><time class="story-time">2026-04-18</time></div>
+    <h2 class="story-title" onclick="openLightbox(3)">Cựu tướng Mỹ cảnh báo việc cắt bỏ các hạng mục bán thương mại trong ngân sách mua sắm vũ khí sẽ làm suy yếu khả năng tương tác và sức mạnh chiến đấu giữa Mỹ và Đài Loan</h2>
+    <p class="story-excerpt">Quốc hội Đài Loan vẫn chưa đạt được đồng thuận giữa các phe về dự thảo điều lệ ngân sách đặc biệt quốc phòng. Thiếu tướng Hải quân Mỹ đã nghỉ hưu Montgomery hôm nay cho rằng, không thể vì không thích một hạng mục mua bán thương mại nào đó trong ngân sách đặc biệt mua sắm vũ khí mà cố tình xóa bỏ toàn bộ các hạng mục mua bán thương mại trong ngân sách, vì điều đó sẽ làm suy yếu khả năng tương tác và năng lực tác chiến giữa Đài Loan và quân đội Mỹ.</p>
     <button class="read-more-btn" onclick="openLightbox(3)">看全文</button>
   </div>
 </article>
-<article class="story-card" data-id="4" data-category="譯稿" data-time="2026-04-17" data-image="" data-source="" data-tag-class="tag-default">
+    <article class="story-card" data-id="4" data-category="譯稿" data-time="2026-04-18" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170283.aspx" data-tag-class="tag-default">
   <div class="story-image-wrap" onclick="openLightbox(4)">
-    <img src="" alt="202604170283" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
-    <div class="story-img-placeholder">📰</div>
+    <img src="" alt="Công ty con của Wistron đầu tư hơn 1,9 tỷ Đài tệ, chuyển từ thuê sang mua nhà máy tại bang California, Mỹ" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">&#128240;</div>
     <span class="story-category-tag tag-default">譯稿</span>
   </div>
   <div class="story-body">
-    <div class="story-meta">
-      <time class="story-time">2026-04-17</time>
-    </div>
-    <h2 class="story-title" onclick="openLightbox(4)">202604170283</h2>
-    <p class="story-excerpt">（摘要暫不可用）</p>
+    <div class="story-meta"><time class="story-time">2026-04-18</time></div>
+    <h2 class="story-title" onclick="openLightbox(4)">Công ty con của Wistron đầu tư hơn 1,9 tỷ Đài tệ, chuyển từ thuê sang mua nhà máy tại bang California, Mỹ</h2>
+    <p class="story-excerpt">Wistron hôm nay thay mặt công ty con WisLab EMS Corporation công bố việc mua bất động sản. Hội đồng quản trị đã thông qua việc mua một nhà xưởng tại Fremont, bang California, Mỹ với giá 61 triệu USD (khoảng 1,92 tỷ Đài tệ) nhằm đáp ứng nhu cầu sản xuất tại địa phương.</p>
     <button class="read-more-btn" onclick="openLightbox(4)">看全文</button>
   </div>
 </article>
-<article class="story-card" data-id="5" data-category="譯稿" data-time="2026-04-17" data-image="" data-source="" data-tag-class="tag-default">
+    <article class="story-card" data-id="5" data-category="譯稿" data-time="2026-04-18" data-image="" data-source="https://www.cna.com.tw/news/aall/202604170299.aspx" data-tag-class="tag-default">
   <div class="story-image-wrap" onclick="openLightbox(5)">
-    <img src="" alt="202604170299" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
-    <div class="story-img-placeholder">📰</div>
+    <img src="" alt="Giai đoạn 2 điện gió ngoài khơi của Fuwei Energy được bổ sung ngân sách, Taipower đồng ý chi trả hơn 5,5 tỷ Đài tệ | Kinh tế - Công nghiệp | CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">&#128240;</div>
     <span class="story-category-tag tag-default">譯稿</span>
   </div>
   <div class="story-body">
-    <div class="story-meta">
-      <time class="story-time">2026-04-17</time>
-    </div>
-    <h2 class="story-title" onclick="openLightbox(5)">202604170299</h2>
-    <p class="story-excerpt">（摘要暫不可用）</p>
+    <div class="story-meta"><time class="story-time">2026-04-18</time></div>
+    <h2 class="story-title" onclick="openLightbox(5)">Giai đoạn 2 điện gió ngoài khơi của Fuwei Energy được bổ sung ngân sách, Taipower đồng ý chi trả hơn 5,5 tỷ Đài tệ | Kinh tế - Công nghiệp | CNA</h2>
+    <p class="story-excerpt">{&quot;meta_description&quot;:&quot;Shinfox Energy hôm nay vào tối muộn thay mặt công ty con Fuwei Energy công bố thông tin trọng yếu, cho biết trong quá trình nhận thầu dự án của Taipower mang tên \&quot;Kế hoạch điện gió ngoài khơi giai đoạn 2 - gói mua sắm tài sản cho trang trại điện gió kèm lắp đặt\&quot;, do các yếu tố như chiến tranh Nga-Ukraine trong thời gian đấu thầu mua sắm gây ra lạm phát, tăng lãi suất và các nguyên nhân bất khả kháng khác, Fuwei Energy đã đề nghị Taipower bổ sung ngân sách, và Taipower đã đồng ý chi trả 5.556.933.697 Đài tệ mới.&quot;}</p>
     <button class="read-more-btn" onclick="openLightbox(5)">看全文</button>
   </div>
 </article>
   </main>
-
-  <!-- ===== HIDDEN FULL CONTENTS (read by lightbox JS) ===== -->
   <div id="story-contents" style="display:none;">
     <div id="story-content-1">
-<p>（正文暫不可用）</p>
+<p>Thượng viện và Hạ viện bang Massachusetts ngày 15 tháng 4 đã lần lượt thông qua các nghị quyết ủng hộ Đài Loan, nhấn mạnh hai bên cùng chia sẻ các giá trị dân chủ và pháp quyền, đồng thời ủng hộ việc tăng cường hợp tác song phương. Giám đốc Văn phòng Kinh tế và Văn hóa Đài Bắc tại Boston, ông Liêu Triều Hoành, đã đến dự để bày tỏ lời chào mừng.</p>
+<p>Nghị quyết của Hạ viện bang chúc mừng Tổng thống Lại Thanh Đức và Phó Tổng thống Tiêu Mỹ Cầm nhân kỷ niệm 2 năm nhậm chức, ghi nhận những thành tựu dân chủ của Đài Loan, coi trọng tình hữu nghị giữa hai bang kết nghĩa, cũng như cam kết chung của Đài Loan và Hoa Kỳ đối với các giá trị tự do, dân chủ và pháp quyền. Nghị quyết thúc đẩy &quot;ngoại giao đa diện&quot; nhằm tăng cường quan hệ đối tác toàn diện Đài Loan - Hoa Kỳ, đồng thời ủng hộ việc mở rộng sự tham gia quốc tế của Đài Loan.</p>
+<p>Nghị quyết nêu rõ, năm 2026 không chỉ là dịp kỷ niệm 250 năm ngày thành lập Hoa Kỳ, mà còn là kỷ niệm 30 năm Đài Loan tổ chức bầu cử tổng thống trực tiếp, tượng trưng cho cam kết vững chắc của cả Đài Loan và Hoa Kỳ đối với tự do, dân chủ và pháp quyền. Năm 2025, Đài Loan đã trở thành đối tác thương mại lớn thứ 4 của Hoa Kỳ và là thị trường xuất khẩu lớn thứ 5 của bang Massachusetts tại châu Á, với quan hệ thương mại và đầu tư giữa Đài Loan và Massachusetts tiếp tục tăng trưởng.</p>
+<p>Trong tương lai, hai bên có thể thông qua việc ký kết biên bản ghi nhớ về trao đổi kinh tế và thương mại, cũng như thành lập văn phòng thương mại tại Đài Loan, nhằm tăng cường hợp tác trong các lĩnh vực then chốt như công nghệ sinh học, bán dẫn, sản xuất tiên tiến, trí tuệ nhân tạo và công nghiệp quốc phòng. Nghị quyết cũng ủng hộ việc Đài Loan và Hoa Kỳ ký kết hiệp định tránh đánh thuế hai lần nhằm thúc đẩy đầu tư và việc làm, đồng thời khuyến khích mở rộng giao lưu giáo dục và dân sự.</p>
+<p>Nghị quyết ghi rõ, chính sách của Hoa Kỳ đối với Đài Loan dựa trên Đạo luật Quan hệ Đài Loan năm 1979, ủng hộ Đài Loan tham gia vào các tổ chức quốc tế như Tổ chức Y tế Thế giới (WHO) và Tổ chức Hàng không Dân dụng Quốc tế (ICAO), đóng góp cho cộng đồng quốc tế.</p>
+<p>Thượng viện bang Massachusetts cũng lần đầu tiên trong gần 10 năm thông qua nghị quyết ủng hộ Đài Loan, nhấn mạnh cam kết của hai bên đối với tự do, dân chủ và pháp quyền, đồng thời thể hiện sự ủng hộ đối với việc tăng cường hơn nữa quan hệ hợp tác kinh tế và thương mại giữa Đài Loan - Hoa Kỳ cũng như giữa Đài Loan và bang Massachusetts.</p>
 </div>
-<div id="story-content-2">
-<p>（正文暫不可用）</p>
+    <div id="story-content-2">
+<p>Toàn bộ điện năng của huyện Đài Đông đều được truyền tải từ miền Tây, với mức tiêu thụ khoảng 1 tỷ kWh mỗi năm. Một khi xảy ra thảm họa nghiêm trọng ảnh hưởng đến nguồn điện từ miền Tây, huyện Đài Đông có thể bị mất điện hoàn toàn. Chính quyền huyện Đài Đông đã đẩy nhanh việc phát triển lưới điện vi mô (microgrid) sử dụng địa nhiệt và thủy điện nhỏ từ 6 năm trước, với mục tiêu đạt sản lượng phát điện tự chủ 600 triệu kWh vào năm 2030.</p>
+<p>Ông Chang Cheng-wen, Trưởng phòng Tài chính và Phát triển Kinh tế huyện Đài Đông, cho biết với phóng viên CNA hôm nay rằng vùng núi của huyện có nhiều suối nhỏ với độ chênh lệch cao lớn, có thể dẫn nước qua đường ống đến các máy phát thủy điện nhỏ để tạo ra điện. Hiện tại, chính quyền huyện đã hợp tác với các bộ lạc địa phương, mời doanh nghiệp xây dựng 6 nhà máy thủy điện nhỏ, trong đó 4 nhà máy đã đi vào vận hành.</p>
+<p>Năm nay, nhà máy thủy điện nhỏ thứ 7 sẽ được xây dựng tại xã Đạt Nhân, tận dụng suối Wufugu, với công suất dự kiến 132 kW. Nước sau khi sử dụng sẽ được trả lại suối để tiếp tục khai thác. Điện sản xuất ra có thể ưu tiên cung cấp cho các bộ lạc địa phương, phần dư sẽ bán lại cho Taipower. Người dân các bộ lạc cũng kỳ vọng đây có thể trở thành điểm thu hút du lịch.</p>
+<p>Về phát điện địa nhiệt, hiện có một nhà máy đang vận hành thương mại, cùng 3 nhà máy khác đang trong quá trình xây dựng.</p>
+<p>Ông Chang Cheng-wen cho biết, mặc dù Đài Đông không có nhà máy điện lớn, nhưng có thể tận dụng địa nhiệt và thủy điện nhỏ để tự chủ phát điện xanh, hình thành lưới điện vi mô. Tài nguyên thực sự rất dồi dào. Với mức tiêu thụ khoảng 1 tỷ kWh mỗi năm, một khi cả hai nguồn năng lượng xanh này hoàn thiện, dự kiến đến năm 2030, huyện có thể tự sản xuất khoảng 600 triệu kWh điện mỗi năm.</p>
+<p>Ông nhấn mạnh rằng phát điện từ năng lượng xanh gây tác động rất thấp đến môi trường tự nhiên. Trong tương lai, nếu có thêm nhiều nhà máy phát điện nhỏ được xây dựng và kết nối thành công thành lưới điện khu vực, huyện có thể tự chủ về điện năng mà không lo ngại tình trạng mất điện diện rộng do thiên tai.</p>
+<p>Kỹ sư tư vấn công trình phát điện Huang Chun-kai cho biết, điện từ thủy điện nhỏ sẽ được cung cấp trước cho các bộ lạc, sau đó mới đưa vào lưới điện chung. Ông Kao Ho-feng, Chủ tịch Hiệp hội Phát triển Cộng đồng Nam Điền, xã Đạt Nhân, huyện Đài Đông, cho rằng việc kết hợp thủy điện nhỏ với du lịch carbon thấp có thể thúc đẩy thêm hoạt động giáo dục môi trường. (Biên tập: Trần Nhân Hoa) 1150417</p>
 </div>
-<div id="story-content-3">
-<p>（正文暫不可用）</p>
+    <div id="story-content-3">
+<p>Hãng tin NOWnews hôm nay tổ chức diễn đàn với chủ đề &quot;Lựa chọn then chốt của Đài Loan: Thực tiễn về an ninh quốc phòng, chính sách năng lượng và phát triển kinh tế&quot;, mời các chuyên gia học giả trong và ngoài nước tham dự.</p>
+<p>Thiếu tướng hải quân Mỹ đã nghỉ hưu Mark Montgomery cho biết, &quot;khả năng tương tác&quot; (interoperability) giữa quân đội Mỹ và quân đội các nước khác gồm 4 cấp độ: thấp nhất là phi xung đột (de-conflicted), tiếp theo là phối hợp (coordinated), cấp độ thứ ba là tích hợp (integrated), và cao nhất là thống nhất (unified). Ví dụ, quân đội Mỹ - Hàn đã đạt cấp độ thống nhất và thành lập bộ tư lệnh liên hợp; Mỹ - Nhật đạt cấp độ tích hợp; Philippines ở cấp độ phối hợp; còn Đài Loan và Mỹ hiện chỉ đạt mức &quot;phi xung đột&quot;.</p>
+<p>Ông Montgomery chỉ ra rằng ngân sách đặc biệt mua sắm vũ khí của Đài Loan nhằm nâng cao khả năng tương tác giữa Đài Loan và Mỹ, nhưng cách thức hiện nay tách biệt giữa bán hàng quân sự của chính phủ Mỹ cho Đài Loan (FMS) và bán hàng thương mại (DCS) không mang lại lợi ích gì, thậm chí là &quot;ngu ngốc và phản tác dụng&quot;, vì điều này trực tiếp làm suy yếu khả năng tương tác và năng lực tác chiến giữa Đài Loan và quân đội Mỹ. Lý do là các hợp đồng kỹ thuật phần mềm nâng cấp hệ thống vũ khí và phương tiện không người lái phần lớn phụ thuộc vào kênh bán hàng thương mại.</p>
+<p>Ông Montgomery ví cuộc gặp thượng đỉnh Trump - Tập dự kiến diễn ra vào tháng 5 như một &quot;cuộc bầu cử&quot; chỉ có 2 người bỏ phiếu đối với Đài Loan, đó là Tổng thống Mỹ Donald Trump và Chủ tịch Trung Quốc Tập Cận Bình. Nếu Đài Loan muốn thắng trong cuộc bầu cử này, cần sớm thông qua ngân sách đặc biệt mua sắm vũ khí để trở thành đồng minh mẫu mực của Mỹ.</p>
+<p>Michael Sobolik, nhà nghiên cứu cấp cao tại viện nghiên cứu Hudson Institute ở Washington, cho rằng nền tảng quan hệ Mỹ - Đài vững chắc và ổn định, nhưng quan hệ quân sự là biến số. Ông Trump luôn kỳ vọng các nước đối tác của Mỹ sẵn sàng đầu tư cho an ninh của chính mình và có năng lực tự vệ đáng tin cậy. Lý do ông Trump yêu thích Israel là vì Israel coi trọng an ninh của mình và nỗ lực giành chiến thắng.</p>
+<p>Ông Sobolik, người từng là trợ lý của Thượng nghị sĩ Ted Cruz, cho biết các nghị sĩ Mỹ muốn thấy Đài Loan chuẩn bị sẵn sàng, có năng lực tác chiến bất đối xứng, sức chống chịu mạnh mẽ và khả năng tự sản xuất các vũ khí quan trọng, để khi xung đột xảy ra không phải phụ thuộc vào các đối tác bên ngoài.</p>
+<p>Ông Sobolik nói rằng Đảng Cộng sản Trung Quốc và ông Tập Cận Bình không muốn thế giới tin rằng Đài Loan có thế chủ động, và đang cố gắng cô lập Đài Loan để thuyết phục thế giới rằng Đài Loan không thể tự bảo vệ mình. Nếu Đài Loan thông qua ngân sách đặc biệt mua sắm vũ khí, điều đó sẽ củng cố nền tảng quan hệ Mỹ - Đài và đặt Đài Loan vào vị thế rất thuận lợi.</p>
+<p>Ông Hsu Yu-jen, cựu lập pháp viên Quốc Dân Đảng và nhà nghiên cứu cấp cao tại Hudson Institute, chỉ ra rằng phía Mỹ nhìn nhận ngân sách đặc biệt mua sắm vũ khí của Đài Loan qua hai điểm mấu chốt: một là liệu Đài Loan có quan tâm đến việc tự vệ hay không; hai là khi ngân sách này bị tắc nghẽn, Washington sẽ cho rằng Đài Loan đang biến tranh chấp chính trị nội bộ thành vấn đề quốc tế - điều này trong mắt ông Trump sẽ là kẻ gây rắc rối, tạo đòn bẩy cho ông Tập Cận Bình tác động lên ông Trump. Khi sự bất ổn nội bộ của Đài Loan trở thành lỗ hổng an ninh đối ngoại, Trung Quốc có thể lợi dụng lỗ hổng đó. (Biên tập: Lin Ke-lun, Wan Shu-zhang)</p>
 </div>
-<div id="story-content-4">
-<p>（正文暫不可用）</p>
+    <div id="story-content-4">
+<p>Công ty con của Wistron ngày 10/5/2024 công bố thuê nhà xưởng tại Fremont, California; hợp đồng thuê hiện tại sẽ chấm dứt sau khi hoàn tất giao dịch lần này. Thị trường nhận định việc nhà máy tại California nay chuyển từ thuê sang mua đứt cho thấy chiến lược bố trí của Wistron tại thị trường Bắc Mỹ đang chuyển từ “thuê tài sản nhẹ” sang “đầu tư tài sản nặng để cắm rễ sâu”.</p>
+<p>Wistron cho biết trong thông tin trọng yếu rằng mục đích mua nhà xưởng là “đáp ứng nhu cầu phát triển kinh doanh và hoạch định chiến lược”.</p>
+<p>Tại cuộc họp báo cáo với pháp nhân tổ chức hồi tháng 3 năm nay, Wistron cho biết chi tiêu vốn năm ngoái là 35,5 tỷ Đài tệ, và năm nay dự kiến tăng lên 60 tỷ Đài tệ, chủ yếu dùng cho hai cơ sở sản xuất lớn tại Đài Loan và Mỹ. Khi đó, Chủ tịch Wistron Lin Hsien-ming nói thẳng rằng nhà máy tại Mỹ là một “quân cờ linh hoạt” để ở gần khách hàng, đồng thời cũng có tác động tích cực đối với các vấn đề thuế quan có thể phát sinh trong tương lai. (Biên tập: Yang Kai-hsiang) 1150417</p>
 </div>
-<div id="story-content-5">
-<p>（正文暫不可用）</p>
+    <div id="story-content-5">
+<p>Cheng Uei, cùng với các công ty trong tập đoàn là Shinfox Energy và Yongwei Investment Holding, đã tổ chức họp báo công bố thông tin trọng yếu vào ngày 13/11/2025. Shinfox Energy cho biết do công ty con Fuwei Energy bị ảnh hưởng bởi việc nhận thầu giai đoạn 2 của công trình điện gió ngoài khơi, công ty đã ghi nhận lỗ trước, khiến khoản lỗ trên sổ sách trong quý III năm ngoái lên tới 7,736 tỷ Đài tệ; Cheng Uei và Yongwei lần lượt ghi nhận khoản lỗ theo tỷ lệ sở hữu cổ phần là 24,87% và 44,16%.</p>
+<p>Shinfox Energy lỗ trên sổ sách 7,736 tỷ Đài tệ trong quý III năm 2025; cộng với khoản lỗ 4,43 tỷ Đài tệ trong nửa đầu năm, lỗ lũy kế trong 3 quý đầu năm ngoái lên tới 12,172 tỷ Đài tệ. Tuy nhiên, Shinfox Energy nhấn mạnh giá trị tài sản ròng vẫn còn 4,869 tỷ Đài tệ và nền tảng tài chính vẫn vững mạnh.</p>
+<p>Khi đó, Shinfox Energy cũng công bố thay đổi nhân sự cấp cao: Tổng giám đốc Shinfox Energy Hu Hui-sen từ chức, vị trí này do Chủ tịch Shinfox Energy Kuo Tai-chiang tạm thời kiêm nhiệm; Tổng giám đốc Fuwei Energy Pu Da-wei cũng từ chức, vị trí này do Chủ tịch Fuwei Energy Hu Hui-sen tạm thời kiêm nhiệm.</p>
+<p>Shinfox Energy cho biết phương án xin bổ sung ngân sách gửi Taipower ban đầu không được chấp thuận. Sau khi đề nghị Ủy ban Công trình Công cộng thuộc Viện Hành chính hòa giải, hôm nay công ty đã nhận được văn bản xác nhận hòa giải thành từ Ủy ban Công trình Công cộng thuộc Viện Hành chính, trong đó Taipower đồng ý chi trả 5.556.933.697 Đài tệ. (Biên tập: Chang Liang-chih) 1150417</p>
 </div>
   </div>
-
-  <!-- ===== LIGHTBOX ===== -->
   <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lb-title">
     <div class="lb-backdrop" id="lb-backdrop"></div>
     <div class="lb-panel">
-      <button class="lb-close" id="lb-close" aria-label="關閉">✕</button>
+      <button class="lb-close" id="lb-close" aria-label="關閉">&#10005;</button>
       <div class="lb-scroll" id="lb-scroll">
         <div class="lb-meta">
           <span class="lb-category tag-default" id="lb-category"></span>
           <span class="lb-time" id="lb-time"></span>
         </div>
         <h2 class="lb-title" id="lb-title"></h2>
-        <div class="lb-image-wrap" id="lb-image-wrap">
-          <img id="lb-image" src="" alt="" loading="eager">
-        </div>
         <div class="lb-body" id="lb-body"></div>
         <a class="lb-source" id="lb-source" href="#" target="_blank" rel="noopener">查看原文</a>
       </div>
     </div>
   </div>
-
-  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">CNA Translation Digest VI</div>
       <div class="footer-links">
         <a href="https://u0401006.github.io/video-quotes/news/">歷史存檔</a>
-        <a href="https://u0401006.github.io/video-quotes/">訂閱電子報</a>
+        <a href="https://u0401006.github.io/video-quotes/">首頁</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 CNA Translation Digest VI · 版權所有</span>
-      <span class="footer-generated">Generated at 2026-04-18T14:51:25</span>
+      <span class="footer-generated">Generated at 2026-04-18T15:17:13</span>
     </div>
   </footer>
-
-</div><!-- /.page-wrapper -->
-
+</div>
 <script>
-  var TAG_CLASSES = {
-    '政治': 'tag-politics', '國內': 'tag-politics',
-    '國際': 'tag-intl',     '外交': 'tag-intl',
-    '財經': 'tag-finance',  '經濟': 'tag-finance',
-    '體育': 'tag-sports',
-    '科技': 'tag-tech',     '科學': 'tag-tech',
-    '社會': 'tag-society',  '生活': 'tag-society'
-  };
-
   function openLightbox(id) {
     var card = document.querySelector('.story-card[data-id="' + id + '"]');
     var contentEl = document.getElementById('story-content-' + id);
     if (!card) return;
-
-    var category  = card.dataset.category  || '';
-    var time      = card.dataset.time      || '';
-    var image     = card.dataset.image     || '';
-    var source    = card.dataset.source    || '';
-    var tagClass  = card.dataset.tagClass  || TAG_CLASSES[category] || 'tag-default';
-    var title     = card.querySelector('.story-title').textContent.trim();
-    var fullHtml  = contentEl ? contentEl.innerHTML : '';
-
-    // Populate lightbox fields
-    var catEl = document.getElementById('lb-category');
-    catEl.textContent = category;
-    catEl.className   = 'lb-category ' + tagClass;
-
-    document.getElementById('lb-time').textContent  = time;
+    var source = card.dataset.source || '';
+    var title = card.querySelector('.story-title').textContent.trim();
+    var fullHtml = contentEl ? contentEl.innerHTML : '';
+    document.getElementById('lb-category').textContent = '譯稿';
+    document.getElementById('lb-category').className = 'lb-category tag-default';
+    document.getElementById('lb-time').textContent = card.dataset.time || '';
     document.getElementById('lb-title').textContent = title;
-    document.getElementById('lb-body').innerHTML    = fullHtml;
-
-    var imgWrap = document.getElementById('lb-image-wrap');
-    var imgEl   = document.getElementById('lb-image');
-    if (image) {
-      imgEl.src = image;
-      imgEl.alt = title;
-      imgWrap.style.display = 'block';
-    } else {
-      imgWrap.style.display = 'none';
-    }
-
+    document.getElementById('lb-body').innerHTML = fullHtml;
     var srcEl = document.getElementById('lb-source');
-    if (source) {
-      srcEl.href         = source;
-      srcEl.style.display = 'inline-flex';
-    } else {
-      srcEl.style.display = 'none';
-    }
-
-    // Scroll lightbox content to top
+    if (source) { srcEl.href = source; srcEl.style.display = 'inline-flex'; } else { srcEl.style.display = 'none'; }
     document.getElementById('lb-scroll').scrollTop = 0;
-
-    // Open with animation
     var lb = document.getElementById('lightbox');
     lb.classList.add('is-open');
     lb.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
-
   function closeLightbox() {
     var lb = document.getElementById('lightbox');
     lb.classList.remove('is-open');
     lb.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
-
-  // Close on backdrop click
   document.getElementById('lb-backdrop').addEventListener('click', closeLightbox);
-  // Close button
   document.getElementById('lb-close').addEventListener('click', closeLightbox);
-  // ESC key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeLightbox();
-  });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
 </script>
-
 </body>
 </html>
