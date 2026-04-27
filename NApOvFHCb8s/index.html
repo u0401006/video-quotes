@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>為什麼越來越多的人拋棄 MCP，轉向 CLI？</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      min-height: 100vh;
+      color: #fff;
+      padding: 24px 16px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+      padding: 24px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    header h1 { font-size: clamp(1.1rem, 2.5vw, 1.6rem); margin-bottom: 12px; }
+    header .meta { color: #a1a1aa; font-size: 0.95rem; margin-bottom: 16px; }
+    header a { color: #60a5fa; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: rgba(96,165,250,0.1); border-radius: 8px; transition: 0.2s; }
+    header a:hover { background: rgba(96,165,250,0.2); }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; max-width: 1400px; margin: 0 auto; }
+    .card { background: rgba(255,255,255,0.03); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: 0.3s; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); }
+    .card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+    .card .content { padding: 16px; }
+    .card .timecode { font-family: ui-monospace, monospace; color: #9ca3af; font-size: 0.85rem; margin-bottom: 8px; display: inline-block; padding: 4px 8px; background: rgba(0,0,0,0.3); border-radius: 6px; }
+    .card .text { color: #e5e7eb; font-size: 0.95rem; line-height: 1.6; word-break: break-all; }
+    footer { text-align: center; margin-top: 48px; padding: 24px; color: #6b7280; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>為什麼越來越多的人拋棄 MCP，轉向 CLI？</h1>
+    <div class="meta">共 15 句金句</div>
+    <a href="https://youtu.be/NApOvFHCb8s" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+      觀看原影片
+    </a>
+  </header>
+  
+  <div class="gallery">
+
+    <div class="card" onclick="window.open('https://youtu.be/NApOvFHCb8s?t=7s', '_blank')">
+      <img src="quote_01.jpg" alt="Keyframe">
+      <div class="content">
+        <div class="timecode">00:00:07</div>
+        <div class="text">MCP曾被譽爲Agent的萬能介面，連接一切工具的標準，但最近越來越多的頂級開發者，開始悄悄地拋棄它，轉而用一種更原始的方式來解決問題，那就是直接調用命令列程式</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="window.open('https://youtu.be/NApOvFHCb8s?t=44s', '_blank')">
+      <img src="quote_02.jpg" alt="Keyframe">
+      <div class="content">
+        <div class="timecode">00:00:44</div>
+        <div class="text">注意了這不是少數極客的小圈子自嗨，就在今年3月份，Perplexity的CTO，在一場開發者大會上公開宣佈，他們內部正全面轉向，API和CLI工具放棄MCP</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="window.open('https://youtu.be/NApOvFHCb8s?t=58s', '_blank')">
+      <img src="quote_03.jpg" alt="Keyframe">
+      <div class="content">
+        <div class="timecode">00:00:58</div>
+        <div class="text">而最近爆火的OpenClaw，在實際執行任務時，用的幾乎全是內部工具和CLI命令，基本上也是看不到MCP的身影</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="window.open('https://youtu.be/NApOvFHCb8s?t=95s', '_blank')">
+      <img src="quote_04.jpg" alt="Keyframe">
+      <div class="content">
+        <div class="timecode">00:01:35</div>
+        <div class="text">既然CLI工具能獲得越來越多人的青睞，那它必然有着非常明顯的優勢，我總結了一下，我認爲CLI工具的優勢，主要體現爲兩點，Token消耗小以及執行效率高，我們先來看第一部分，CLI工具的Token消耗小</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="window.open('https://youtu.be/NApOvFHCb8s?t=115s', '_blank')">
+      <img src="quote_05.jpg" alt="Keyframe">
+      <div class="content">
+        <div class="timecode">00:01:55</div>
+        <div class="text">就意味着MCP工具的Token消耗大，對沒錯尤其是MCP的元信息，包括名稱描述入參格式等等，這些其實都會傳到，大模型的上下文裡面，從而消耗大量的Token</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="window.open('https://youtu.be/NApOvFHCb8s?t=220s', '_blank')">
+      <img src="quote_06.jpg" alt="Keyframe">
+      <div class="content">
+        <div class="timecode">00:03:40</div>
+        <div class="text">可用的工具列表都發給模型，這裡面我們用的是，GitHub的MCPserver，這個MCPServer裡面有多少工具呢，44個我們來看一下，這44個工具在一起的信息有多少，這就是44個工具的全部信息了，可以看出它有這麼多，我翻都翻不完，翻到最底下，我們來看一下它一共是有1683行，然後它的字符數量呢，大概是63703個字符，這63703個字符代表什麼含義呢，我們來到這個計算Token數量的網站，來算一下它有多少個Token，粘貼進去，可以看出，它一共會佔用14268個Token</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="window.open('https://youtu.be/NApOvFHCb8s?t=327s', '_blank')">
+      <img src="quote_07.jpg" alt="Keyframe">
+      <div class="content">
+        <div class="timecode">00:05:27</div>
+        <div class="text">你看在CLI這個流程裡面，我們只需要傳一個bash工具，給大模型就行，而這個工具的說明就十幾行，這跟我們之前看到的那種，上萬行的MCP工具說明相比，Token的消耗量幾乎可以忽略不計</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="window.open('https://youtu.be/NApOvFHCb8s?t=356s', '_blank')">
+      <img src="quote_08.jpg" alt="Keyframe">
+      <div class="content">
+        <div class="timecode">00:05:56</div>
+        <div class="text">其實很簡單，像ghgit和grep，這種常見的CLI程式，大模型在訓練階段，就已經見識過大量的用法了，所以它天然就知道怎麼用</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="window.open('https://youtu.be/NApOvFHCb8s?t=375s', '_blank')">
+      <img src="quote_09.jpg" alt="Keyframe">
+      <div class="content">
+        <div class="timecode">00:06:15</div>
+        <div class="text">那如果是一個非常冷門，甚至是你自己寫的CLI工具怎麼辦呢，這個也很簡單，給大模型一份對應的說明文檔就行，在實際的工程裡，這通常是通過AgentSkill來實現的，AgentSkill本質上，就是一份給模型看的說明文檔</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="window.open('https://youtu.be/NApOvFHCb8s?t=505s', '_blank')">
+      <img src="quote_10.jpg" alt="Keyframe">
+      <div class="content">
+        <div class="timecode">00:08:25</div>
+        <div class="text">它看過之後才能決定下一步該幹什麼，可見大模型是整個鏈路的調度中心，所有操作都必須要經過它，少一步都不行，這就意味着流程裡的每一步，都要等大模型響應一次，整體效率自然就卡在這裡了</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="window.open('https://youtu.be/NApOvFHCb8s?t=578s', '_blank')">
+      <img src="quote_11.jpg" alt="Keyframe">
+      <div class="content">
+        <div class="timecode">00:09:38</div>
+        <div class="text">那爲什麼CLI可以做到這一點呢，因爲CLI的程式可以隨意組合，讓我們再回頭看看這行命令，這裡面有兩個非常重要的符號，一個是豎槓，它負責把上個命令的結果傳給下一個命令，另外一個是雙AND號，它的意思是如果上個命令成功完成，那就開始跑下一個命令，你看就是這幾個看似不起眼的符號，把原本獨立的工具，串聯成了一個完整的流程，最終能完成的任務遠超你的想象</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="window.open('https://youtu.be/NApOvFHCb8s?t=604s', '_blank')">
+      <img src="quote_12.jpg" alt="Keyframe">
+      <div class="content">
+        <div class="timecode">00:10:04</div>
+        <div class="text">這背後其實就是UNIX系統，幾十年就確立的一個設計哲學，每個工具只做一件事但做到極致，工具和工具之間可以自由組合，像搭積木一樣拼出任意複雜的流程，exiftool只管讀元數據，ImageMagick只管處理圖像，scp只管傳文件它們互不干涉，卻能夠無縫協作</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="window.open('https://youtu.be/NApOvFHCb8s?t=663s', '_blank')">
+      <img src="quote_13.jpg" alt="Keyframe">
+      <div class="content">
+        <div class="timecode">00:11:03</div>
+        <div class="text">而CLI天生就是組合式的，換個需求調整幾個參數，重新拼一下幾秒鐘就搞定了，這種靈活性是，MCP工具難以復刻的</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="window.open('https://youtu.be/NApOvFHCb8s?t=824s', '_blank')">
+      <img src="quote_14.jpg" alt="Keyframe">
+      <div class="content">
+        <div class="timecode">00:13:44</div>
+        <div class="text">一條bash命令，原因很簡單它是一個共享環境，你在上面跑的每一步操作，都有可能影響到其他用戶，一旦放開CLI權限，一條失控的命令，就有可能把整個伺服器，甚至整個集羣給搞崩</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="window.open('https://youtu.be/NApOvFHCb8s?t=887s', '_blank')">
+      <img src="quote_15.jpg" alt="Keyframe">
+      <div class="content">
+        <div class="timecode">00:14:47</div>
+        <div class="text">我的判斷是，CLI工具的比重會越來越大，而MCP的比重會逐漸縮小，原因很簡單我們前面已經分析過了，CLI更省Token執行效率更高，模型只需生成一行命令，就能搞定的事情，MCP要來來回回折騰好幾輪，對於大部分場景和大部分人來說，CLI就是一個更快更便宜，更直接的選擇</div>
+      </div>
+    </div>
+
+  </div>
+  <footer>Generated by OpenClaw</footer>
+</body>
+</html>
