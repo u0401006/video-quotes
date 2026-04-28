@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cat Wu 金句集 — Lenny's Podcast</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:  #D4A853;
+    --gold2: #f0c97a;
+    --bg:    #0f0d0a;
+    --bg2:   #181410;
+    --surface: #1e1a14;
+    --border: #2d2820;
+    --text:  #f5ede0;
+    --text2: #a89070;
+    --text3: #6b5840;
+    --header-bg: rgba(15,13,10,0.92);
+    --ts: 300ms;
+  }
+  .light {
+    --bg:    #fdf8f2;
+    --bg2:   #f7f0e6;
+    --surface: #fffdf9;
+    --border: #e8d9c0;
+    --text:  #1a1208;
+    --text2: #7a5e3a;
+    --text3: #b8986c;
+    --header-bg: rgba(253,248,242,0.92);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%; width: 100%; overflow: hidden;
+    font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background var(--ts), color var(--ts);
+  }
+
+  /* ── Header ── */
+  #header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: 52px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 24px;
+    background: var(--header-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    transition: background var(--ts), border-color var(--ts);
+  }
+  #brand {
+    display: flex; align-items: center; gap: 10px;
+  }
+  #brand-icon {
+    width: 30px; height: 30px; border-radius: 6px;
+    background: var(--gold); display: flex; align-items: center; justify-content: center;
+  }
+  #brand-icon svg { display: block; }
+  #brand-name {
+    font-size: 0.82rem; font-weight: 600; color: var(--text2);
+    letter-spacing: 0.04em;
+  }
+  #brand-name strong { color: var(--gold); font-weight: 700; }
+  #theme-btn {
+    background: none; border: 1px solid var(--border);
+    border-radius: 16px; padding: 5px 14px; cursor: pointer;
+    color: var(--text2); font-size: 0.78rem;
+    display: flex; align-items: center; gap: 5px;
+    transition: all var(--ts);
+    font-family: inherit;
+  }
+  #theme-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ── Progress ── */
+  #progress-bar {
+    position: fixed; top: 52px; left: 0; height: 2px;
+    background: var(--gold); transition: width 0.4s ease; z-index: 99;
+  }
+
+  /* ── Slides ── */
+  #slides {
+    position: fixed; top: 52px; bottom: 52px; left: 0; right: 0;
+    overflow: hidden;
+  }
+  .slide {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: clamp(32px, 5vw, 72px) clamp(24px, 8vw, 120px);
+    opacity: 0; pointer-events: none;
+    transform: translateX(48px);
+    transition: opacity 0.38s ease, transform 0.38s ease;
+    background: var(--bg);
+    overflow-y: auto;
+  }
+  .slide.active { opacity: 1; pointer-events: all; transform: translateX(0); }
+  .slide.exit-left { opacity: 0; transform: translateX(-48px); }
+
+  /* ── Title slide ── */
+  #slide-0 {
+    background: var(--bg2);
+  }
+  .title-eyebrow {
+    font-size: clamp(0.7rem, 1.2vw, 0.82rem);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .title-eyebrow::before {
+    content: ''; display: block; width: 24px; height: 1.5px; background: var(--gold);
+  }
+  .title-main-cn {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 900; color: var(--text);
+    line-height: 1.2; margin-bottom: 0.6rem;
+  }
+  .title-main-cn em { color: var(--gold); font-style: normal; }
+  .title-sub {
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    color: var(--text2); margin-bottom: 2.4rem; line-height: 1.6;
+  }
+  .title-meta {
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  .meta-chip {
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 6px 14px; font-size: 0.8rem; color: var(--text2);
+    transition: border-color var(--ts), color var(--ts);
+  }
+  .meta-chip strong { color: var(--gold); }
+
+  /* ── Quote slide ── */
+  .quote-slide-inner {
+    max-width: 860px; width: 100%;
+  }
+  .quote-number {
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
+    font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.6rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .quote-number::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+    max-width: 60px;
+  }
+  .quote-mark {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(4rem, 10vw, 7rem);
+    color: var(--gold); line-height: 0.6;
+    margin-bottom: clamp(1rem, 2vw, 1.6rem);
+    opacity: 0.6;
+    user-select: none;
+  }
+  .quote-cn {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+    font-weight: 700; color: var(--text);
+    line-height: 1.65; margin-bottom: 1.4rem;
+    transition: color var(--ts);
+  }
+  .quote-cn em {
+    color: var(--gold); font-style: normal;
+    border-bottom: 1.5px solid var(--gold);
+    padding-bottom: 1px;
+  }
+  .quote-en {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.82rem, 1.4vw, 0.95rem);
+    color: var(--text3); line-height: 1.7;
+    font-style: italic; margin-bottom: 2rem;
+    border-left: 2px solid var(--border);
+    padding-left: 14px;
+    transition: color var(--ts), border-color var(--ts);
+  }
+  .quote-attr {
+    display: flex; align-items: center; gap: 10px;
+  }
+  .attr-avatar {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--gold); display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 700; color: #1a0f00;
+    flex-shrink: 0;
+  }
+  .attr-info { font-size: 0.82rem; color: var(--text2); }
+  .attr-info strong { color: var(--text); display: block; font-size: 0.88rem; }
+
+  /* ── End slide ── */
+  #slide-end { background: var(--bg2); }
+  .end-gold-line {
+    width: 48px; height: 3px; background: var(--gold); margin-bottom: 1.6rem;
+  }
+  .end-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    font-weight: 900; color: var(--text); line-height: 1.3;
+    margin-bottom: 0.8rem;
+  }
+  .end-sub { font-size: clamp(0.85rem, 1.5vw, 1rem); color: var(--text2); }
+  .end-source {
+    margin-top: 2rem; display: flex; align-items: center; gap: 8px;
+    font-size: 0.8rem; color: var(--text3);
+  }
+  .source-dot { width: 4px; height: 4px; background: var(--gold); border-radius: 50%; }
+
+  /* ── Click zones ── */
+  #click-left, #click-right {
+    position: fixed; top: 52px; bottom: 52px; width: 72px;
+    z-index: 50; cursor: pointer; opacity: 0;
+  }
+  #click-left { left: 0; }
+  #click-right { right: 0; }
+
+  /* ── Footer ── */
+  #footer {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+    height: 52px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 24px;
+    background: var(--header-bg);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border);
+    transition: background var(--ts), border-color var(--ts);
+  }
+  .nav-btn {
+    background: none; border: 1px solid var(--border);
+    border-radius: 8px; padding: 6px 16px; cursor: pointer;
+    color: var(--text2); font-size: 0.82rem; font-weight: 500;
+    display: flex; align-items: center; gap: 6px;
+    transition: all var(--ts); font-family: inherit;
+  }
+  .nav-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .nav-btn:disabled { opacity: 0.25; cursor: not-allowed; }
+  .nav-btn:disabled:hover { border-color: var(--border); color: var(--text2); }
+  #page-indicator {
+    font-size: 0.82rem; color: var(--text2); font-weight: 500;
+    transition: color var(--ts);
+    display: flex; align-items: center; gap: 6px;
+  }
+  #page-indicator .pi-cur { color: var(--gold); font-weight: 700; }
+
+  /* ── Thumb nav ── */
+  #thumb-nav {
+    position: fixed; bottom: 52px; left: 0; right: 0;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    padding: 10px 20px;
+    background: var(--header-bg);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.25s ease; z-index: 98;
+    overflow-x: auto;
+  }
+  #footer:hover ~ #thumb-nav, #thumb-nav:hover { opacity: 1; pointer-events: all; }
+  .thumb {
+    flex-shrink: 0; width: 72px; height: 44px;
+    border: 1px solid var(--border); border-radius: 6px;
+    cursor: pointer; background: var(--surface);
+    font-size: 0.62rem; color: var(--text2); font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; line-height: 1.3; padding: 4px;
+    transition: all var(--ts);
+  }
+  .thumb.active { border-color: var(--gold); color: var(--gold); }
+  .thumb:hover { border-color: var(--gold); }
+
+  @media (max-width: 640px) {
+    .quote-cn { font-size: 1.3rem; }
+    .title-main-cn { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div id="brand">
+    <div id="brand-icon">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <path d="M3 13.5 Q3 5 9 5 Q15 5 15 9" stroke="#1a0f00" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <circle cx="9" cy="13" r="2.5" fill="#1a0f00"/>
+      </svg>
+    </div>
+    <span id="brand-name"><strong>Cat Wu</strong> 金句集 · Lenny's Podcast</span>
+  </div>
+  <button id="theme-btn" onclick="toggleTheme()">
+    <svg id="t-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <circle cx="12" cy="12" r="5"/>
+      <line x1="12" y1="1" x2="12" y2="3"/>
+      <line x1="12" y1="21" x2="12" y2="23"/>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+      <line x1="1" y1="12" x2="3" y2="12"/>
+      <line x1="21" y1="12" x2="23" y2="12"/>
+    </svg>
+    <span id="t-label">亮色</span>
+  </button>
+</header>
+
+<div id="progress-bar"></div>
+<div id="click-left" onclick="prevSlide()"></div>
+<div id="click-right" onclick="nextSlide()"></div>
+
+<main id="slides">
+
+  <!-- 0: Title -->
+  <section class="slide active" id="slide-0">
+    <div style="max-width:760px;width:100%">
+      <div class="title-eyebrow">Lenny's Podcast · 2026</div>
+      <div class="title-main-cn">Anthropic PM<br>的<em>十句金言</em></div>
+      <div class="title-sub">
+        Cat Wu，Anthropic Head of Product（Claude Code）<br>
+        談 AI 時代的產品管理、速度、角色，與那些反直覺的洞見
+      </div>
+      <div class="title-meta">
+        <div class="meta-chip"><strong>Cat Wu</strong> · Head of Product</div>
+        <div class="meta-chip">Claude Code · Anthropic</div>
+        <div class="meta-chip"><strong>10</strong> 句金言</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q1 -->
+  <section class="slide" id="slide-1">
+    <div class="quote-slide-inner">
+      <div class="quote-number">01 / 10</div>
+      <div class="quote-mark">「</div>
+      <div class="quote-cn">
+        寫程式的成本越來越低，<br>
+        反而讓<em>「決定寫什麼」</em>這件事<br>
+        變得越來越珍貴。
+      </div>
+      <div class="quote-en">
+        "As code becomes much cheaper to write, the thing that becomes more valuable is deciding what to write."
+      </div>
+      <div class="quote-attr">
+        <div class="attr-avatar">CW</div>
+        <div class="attr-info">
+          <strong>Cat Wu</strong>
+          Head of Product, Claude Code · Anthropic
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q2 -->
+  <section class="slide" id="slide-2">
+    <div class="quote-slide-inner">
+      <div class="quote-number">02 / 10</div>
+      <div class="quote-mark">「</div>
+      <div class="quote-cn">
+        職稱是假的。<br>
+        理解限制條件，搞清楚能做什麼，<br>
+        然後<em>快速嘗試</em>、從錯誤中學習，<br>
+        做錯了就道歉或修正。
+      </div>
+      <div class="quote-en">
+        "Jobs are fake. If you understand the constraints, you can figure out what you can do and then just try to do it quickly, learn from the mistakes, and apologize or fix them if you did something wrong."
+      </div>
+      <div class="quote-attr">
+        <div class="attr-avatar">CW</div>
+        <div class="attr-info">
+          <strong>Cat Wu</strong>
+          Head of Product, Claude Code · Anthropic
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q3 -->
+  <section class="slide" id="slide-3">
+    <div class="quote-slide-inner">
+      <div class="quote-number">03 / 10</div>
+      <div class="quote-mark">「</div>
+      <div class="quote-cn">
+        為超強 AGI 打造產品很容易。<br>
+        難的是：在<em>現有模型</em>上，<br>
+        如何把它的能力逼到極限。
+      </div>
+      <div class="quote-en">
+        "It is very easy to build the product for a super AGI strong model. The hard thing is figuring out for the current model how do you elicit the maximum capability."
+      </div>
+      <div class="quote-attr">
+        <div class="attr-avatar">CW</div>
+        <div class="attr-info">
+          <strong>Cat Wu</strong>
+          Head of Product, Claude Code · Anthropic
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q4 -->
+  <section class="slide" id="slide-4">
+    <div class="quote-slide-inner">
+      <div class="quote-number">04 / 10</div>
+      <div class="quote-mark">「</div>
+      <div class="quote-cn">
+        所有角色正在<em>融合</em>。<br>
+        PM 在寫程式、工程師在做 PM、<br>
+        設計師在制定策略，同時也在提交程式碼。
+      </div>
+      <div class="quote-en">
+        "All of the roles are merging. PMs are doing some engineering work, engineers are doing PM work, designers are PMing and also landing code."
+      </div>
+      <div class="quote-attr">
+        <div class="attr-avatar">CW</div>
+        <div class="attr-info">
+          <strong>Cat Wu</strong>
+          Head of Product, Claude Code · Anthropic
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q5 -->
+  <section class="slide" id="slide-5">
+    <div class="quote-slide-inner">
+      <div class="quote-number">05 / 10</div>
+      <div class="quote-mark">「</div>
+      <div class="quote-cn">
+        以前上線有問題的功能，我會<em>輾轉難眠</em>。<br>
+        現在我能接受了——<br>
+        因為我知道下一版就會修好。
+      </div>
+      <div class="quote-en">
+        "Launching a feature that is buggy is the kind of thing that would have kept me up at night. But I am now able to live with it knowing we'll fix it in the next release."
+      </div>
+      <div class="quote-attr">
+        <div class="attr-avatar">CW</div>
+        <div class="attr-info">
+          <strong>Cat Wu</strong>
+          Head of Product, Claude Code · Anthropic
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q6 -->
+  <section class="slide" id="slide-6">
+    <div class="quote-slide-inner">
+      <div class="quote-number">06 / 10</div>
+      <div class="quote-mark">「</div>
+      <div class="quote-cn">
+        打造 AI 原生產品，最重要的是：<br>
+        <em>快速迭代</em>——<br>
+        找到方法，讓你每週都能上線功能。
+      </div>
+      <div class="quote-en">
+        "The thing that is extremely important for building AI native products is iterating so quickly, figuring out a way for you to actually launch features every single week."
+      </div>
+      <div class="quote-attr">
+        <div class="attr-avatar">CW</div>
+        <div class="attr-info">
+          <strong>Cat Wu</strong>
+          Head of Product, Claude Code · Anthropic
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q7 -->
+  <section class="slide" id="slide-7">
+    <div class="quote-slide-inner">
+      <div class="quote-number">07 / 10</div>
+      <div class="quote-mark">「</div>
+      <div class="quote-cn">
+        你圍繞著某個限制設計的產品，<br>
+        可能在開發到<em>一半</em>時，<br>
+        那個限制就消失了。
+      </div>
+      <div class="quote-en">
+        "Exponentially improving models break that assumption. The constraints you designed around might disappear mid-project."
+      </div>
+      <div class="quote-attr">
+        <div class="attr-avatar">CW</div>
+        <div class="attr-info">
+          <strong>Cat Wu</strong>
+          Head of Product, Claude Code · Anthropic
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q8 -->
+  <section class="slide" id="slide-8">
+    <div class="quote-slide-inner">
+      <div class="quote-number">08 / 10</div>
+      <div class="quote-mark">「</div>
+      <div class="quote-cn">
+        新的產品管理節奏：<br>
+        <em>快速實驗</em>、持續上線、<br>
+        把有效的事情加倍放大。
+      </div>
+      <div class="quote-en">
+        "The new product management rhythm is rapid experimentation, consistent shipping, and doubling down on what works."
+      </div>
+      <div class="quote-attr">
+        <div class="attr-avatar">CW</div>
+        <div class="attr-info">
+          <strong>Cat Wu</strong>
+          Head of Product, Claude Code · Anthropic
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q9 -->
+  <section class="slide" id="slide-9">
+    <div class="quote-slide-inner">
+      <div class="quote-number">09 / 10</div>
+      <div class="quote-mark">「</div>
+      <div class="quote-cn">
+        當 PM 能在<em>一個下午</em>從想法變成原型，<br>
+        「要不要試試看…」<br>
+        與「來，試試這個」的距離幾乎消失。
+      </div>
+      <div class="quote-en">
+        "When a product manager can go from idea to working prototype in an afternoon, the gap between 'what if we tried…' and 'here, try this' nearly disappears."
+      </div>
+      <div class="quote-attr">
+        <div class="attr-avatar">CW</div>
+        <div class="attr-info">
+          <strong>Cat Wu</strong>
+          Head of Product, Claude Code · Anthropic
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q10 -->
+  <section class="slide" id="slide-10">
+    <div class="quote-slide-inner">
+      <div class="quote-number">10 / 10</div>
+      <div class="quote-mark">「</div>
+      <div class="quote-cn">
+        不需要做上百個評測才有用。<br>
+        只要建立<em>十個好的評測</em>，<br>
+        就能幫助團隊量化目標，以及衡量進展。
+      </div>
+      <div class="quote-en">
+        "You do not need to build hundreds of evals for them to be useful. Just building ten great evals is important for helping the team quantify what the goal is and what their progress towards it is."
+      </div>
+      <div class="quote-attr">
+        <div class="attr-avatar">CW</div>
+        <div class="attr-info">
+          <strong>Cat Wu</strong>
+          Head of Product, Claude Code · Anthropic
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- End -->
+  <section class="slide" id="slide-end">
+    <div style="max-width:600px;width:100%">
+      <div class="end-gold-line"></div>
+      <div class="end-main">
+        在 AI 指數成長的時代，<br>
+        PM 的核心能力只剩一件事：<br>
+        <span style="color:var(--gold)">判斷力。</span>
+      </div>
+      <div class="end-sub">速度人人都有，判斷力無可取代。</div>
+      <div class="end-source">
+        <div class="source-dot"></div>
+        How Anthropic's product team moves faster than anyone else
+        <div class="source-dot"></div>
+        Lenny's Podcast · 2026
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="footer">
+  <button class="nav-btn" id="btn-prev" onclick="prevSlide()" disabled>
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    上一則
+  </button>
+  <div id="page-indicator">
+    <span class="pi-cur" id="pi-cur">1</span>
+    <span style="color:var(--text3)">/</span>
+    <span id="pi-total">12</span>
+  </div>
+  <button class="nav-btn" id="btn-next" onclick="nextSlide()">
+    下一則
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+</footer>
+
+<div id="thumb-nav"></div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  const thumbNav = document.getElementById('thumb-nav');
+  const labels = ['封面','Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8','Q9','Q10','結語'];
+
+  // Build thumbs
+  labels.forEach((l, i) => {
+    const t = document.createElement('div');
+    t.className = 'thumb' + (i === 0 ? ' active' : '');
+    t.textContent = l;
+    t.onclick = () => goTo(i);
+    thumbNav.appendChild(t);
+  });
+  const thumbs = thumbNav.querySelectorAll('.thumb');
+
+  let current = 0;
+
+  function updateUI() {
+    slides.forEach((s, i) => {
+      s.classList.remove('active', 'exit-left');
+      if (i < current) s.classList.add('exit-left');
+      else if (i === current) s.classList.add('active');
+    });
+    thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
+    document.getElementById('progress-bar').style.width = ((current + 1) / total * 100) + '%';
+    document.getElementById('pi-cur').textContent = current + 1;
+    document.getElementById('btn-prev').disabled = current === 0;
+    document.getElementById('btn-next').disabled = current === total - 1;
+  }
+
+  function goTo(n) {
+    if (n < 0 || n >= total) return;
+    current = n; updateUI();
+  }
+  function nextSlide() { goTo(current + 1); }
+  function prevSlide() { goTo(current - 1); }
+
+  document.addEventListener('keydown', e => {
+    if (['ArrowRight','ArrowDown'].includes(e.key)) nextSlide();
+    if (['ArrowLeft','ArrowUp'].includes(e.key)) prevSlide();
+    if (e.key === 'f' || e.key === 'F') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+      else document.exitFullscreen?.();
+    }
+  });
+
+  let tx = 0;
+  document.addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+  document.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - tx;
+    if (dx < -50) nextSlide();
+    if (dx > 50) prevSlide();
+  });
+
+  // Theme
+  let isLight = localStorage.getItem('cat-wu-theme') === 'light';
+  function applyTheme() {
+    document.body.classList.toggle('light', isLight);
+    document.getElementById('t-label').textContent = isLight ? '暗色' : '亮色';
+    const icon = document.getElementById('t-icon');
+    icon.innerHTML = isLight
+      ? '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="none"/>'
+      : '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>';
+  }
+  function toggleTheme() {
+    isLight = !isLight;
+    localStorage.setItem('cat-wu-theme', isLight ? 'light' : 'dark');
+    applyTheme();
+  }
+  applyTheme();
+  updateUI();
+</script>
+</body>
+</html>
