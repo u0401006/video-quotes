@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CNA Translation Digest ES — 2026-05-03-es-batch 精選新聞">
+  <title>CNA Translation Digest ES — 2026-05-03-es-batch</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+                   "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: #f8f4ee;
+      color: #1a1008;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    button { cursor: pointer; font-family: inherit; }
+    .page-wrapper { max-width: 720px; margin: 0 auto; padding: 0 0 48px; }
+    .site-header { background: #2a1c0f; color: #f0e8d8; padding: 28px 32px 22px; }
+    .header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .brand-name { font-size: 24px; font-weight: 900; letter-spacing: -0.5px; color: #f5ead6; line-height: 1.2; }
+    .brand-tagline { font-size: 11px; color: #9a8468; letter-spacing: 0.8px; text-transform: uppercase; margin-top: 3px; }
+    .header-meta { text-align: right; flex-shrink: 0; }
+    .header-date { font-size: 14px; color: #c8b498; font-weight: 500; }
+    .header-count { font-size: 11px; color: #806850; margin-top: 3px; }
+    .header-divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 12px; }
+    .header-categories { font-size: 12px; color: #806850; letter-spacing: 0.3px; }
+    .header-categories strong { color: #c8a878; }
+    .section-label { display: flex; align-items: center; gap: 12px; padding: 24px 32px 0; }
+    .section-label span { font-size: 11px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: #9b5a2a; white-space: nowrap; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: #e5ddd3; }
+    .story-list { padding: 16px 32px 0; }
+    .story-card { display: flex; flex-direction: column; background: #ffffff; border: 1px solid #ede5d8; border-radius: 10px; overflow: hidden; margin-bottom: 20px; transition: box-shadow 0.2s ease, transform 0.15s ease; }
+    .story-card:hover { box-shadow: 0 4px 20px rgba(60, 35, 10, 0.09); transform: translateY(-2px); }
+    .story-image-wrap { position: relative; width: 100%; padding-bottom: 56.25%; background: linear-gradient(135deg, #f0e8de, #e8ddd0); overflow: hidden; cursor: pointer; }
+    .story-image-wrap img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+    .story-card:hover .story-image-wrap img { transform: scale(1.03); }
+    .story-img-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f0e8de, #e4d8cc); color: #c8b098; font-size: 36px; }
+    .story-category-tag { position: absolute; top: 14px; left: 14px; padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; z-index: 2; }
+    .tag-politics { background: #fff0e8; color: #b04520; }
+    .tag-intl     { background: #fff8e8; color: #9a6010; }
+    .tag-finance  { background: #eef5e8; color: #3d7025; }
+    .tag-sports   { background: #fef0e0; color: #a04510; }
+    .tag-tech     { background: #f0ecf8; color: #6040a0; }
+    .tag-society  { background: #fdf0f4; color: #902848; }
+    .tag-default  { background: #f0ece4; color: #5c4830; }
+    .story-body { padding: 18px 20px 20px; }
+    .story-meta { margin-bottom: 8px; }
+    .story-time { font-size: 12px; color: #9a8070; font-weight: 400; }
+    .story-title { font-size: 18px; font-weight: 800; line-height: 1.45; color: #1a1008; margin-bottom: 10px; cursor: pointer; transition: color 0.15s ease; }
+    .story-title:hover { color: #9b5a2a; }
+    .story-excerpt { font-size: 14px; color: #4a3828; line-height: 1.75; margin-bottom: 16px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .read-more-btn { display: inline-flex; align-items: center; gap: 5px; background: none; border: 1.5px solid #c8a878; color: #9b5a2a; padding: 7px 16px; border-radius: 6px; font-size: 13px; font-weight: 700; letter-spacing: 0.3px; transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease; }
+    .read-more-btn:hover { background: #9b5a2a; color: #ffffff; border-color: #9b5a2a; }
+    .read-more-btn::after { content: '→'; font-size: 14px; }
+    .lightbox { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px; visibility: hidden; opacity: 0; transition: opacity 0.25s ease, visibility 0.25s ease; }
+    .lightbox.is-open { visibility: visible; opacity: 1; }
+    .lb-backdrop { position: absolute; inset: 0; background: rgba(28, 18, 8, 0.65); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+    .lb-panel { position: relative; background: #fffbf7; border-radius: 12px; max-width: 660px; width: 100%; max-height: 88vh; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(28, 18, 8, 0.3); transform: translateY(16px) scale(0.98); transition: transform 0.25s ease; z-index: 1; }
+    .lightbox.is-open .lb-panel { transform: translateY(0) scale(1); }
+    .lb-close { position: absolute; top: 14px; right: 14px; width: 32px; height: 32px; background: rgba(28, 18, 8, 0.07); border: none; border-radius: 50%; font-size: 16px; color: #5c4830; display: flex; align-items: center; justify-content: center; z-index: 2; transition: background 0.15s ease, color 0.15s ease; line-height: 1; }
+    .lb-close:hover { background: rgba(28, 18, 8, 0.14); color: #1a1008; }
+    .lb-scroll { overflow-y: auto; padding: 28px 30px 32px; -webkit-overflow-scrolling: touch; }
+    .lb-scroll::-webkit-scrollbar { width: 4px; }
+    .lb-scroll::-webkit-scrollbar-track { background: #f0e8de; }
+    .lb-scroll::-webkit-scrollbar-thumb { background: #c8a878; border-radius: 2px; }
+    .lb-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .lb-category { padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+    .lb-time { font-size: 12px; color: #9a8070; }
+    .lb-title { font-size: 22px; font-weight: 900; line-height: 1.4; color: #1a1008; margin-bottom: 18px; padding-right: 28px; }
+    .lb-image-wrap { width: 100%; padding-bottom: 56.25%; position: relative; background: linear-gradient(135deg, #f0e8de, #e4d8cc); border-radius: 8px; overflow: hidden; margin-bottom: 22px; }
+    .lb-image-wrap img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+    .lb-body { font-size: 15px; color: #2d1e10; line-height: 1.85; }
+    .lb-body p { margin-bottom: 16px; }
+    .lb-body p:last-child { margin-bottom: 0; }
+    .lb-body strong { font-weight: 700; color: #1a1008; }
+    .lb-body a { color: #9b5a2a; text-decoration: underline; text-underline-offset: 3px; }
+    .lb-source { display: inline-flex; align-items: center; gap: 6px; margin-top: 22px; color: #9b5a2a; font-size: 13px; font-weight: 700; border-bottom: 1.5px solid currentColor; padding-bottom: 1px; transition: opacity 0.15s ease; }
+    .lb-source:hover { opacity: 0.7; }
+    .lb-source::after { content: '→'; }
+    .site-footer { background: #2a1c0f; color: #806850; padding: 24px 32px; margin-top: 8px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+    .footer-brand { font-size: 15px; font-weight: 800; color: #c8b498; }
+    .footer-links { display: flex; gap: 18px; font-size: 12px; }
+    .footer-links a { color: #806850; text-decoration: underline; text-underline-offset: 3px; }
+    .footer-links a:hover { color: #c8b498; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 11px; }
+    .footer-generated { font-family: "SF Mono", "Fira Code", monospace; font-size: 10px; }
+    @media (max-width: 600px) {
+      .page-wrapper { padding-bottom: 32px; }
+      .site-header, .story-list, .section-label, .site-footer { padding-left: 16px; padding-right: 16px; }
+      .header-top { flex-direction: column; }
+      .header-meta { text-align: left; }
+      .brand-name { font-size: 20px; }
+      .story-title { font-size: 16px; }
+      .lb-panel { border-radius: 8px; max-height: 92vh; }
+      .lb-scroll { padding: 22px 20px 24px; }
+      .lb-title { font-size: 19px; }
+      .lb-body { font-size: 14px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-top">
+      <div>
+        <div class="brand-name">CNA Translation Digest ES</div>
+        <div class="brand-tagline">AI 新聞精選 · 每小時更新</div>
+      </div>
+      <div class="header-meta">
+        <div class="header-date">2026-05-03-es-batch</div>
+        <div class="header-count">2 則精選</div>
+      </div>
+    </div>
+    <hr class="header-divider">
+    <div class="header-categories">
+      涵蓋 <strong>譯稿</strong>
+    </div>
+  </header>
+
+  <!-- ===== SECTION LABEL ===== -->
+  <div class="section-label">
+    <span>今日要聞</span>
+  </div>
+
+  <!-- ===== STORY LIST ===== -->
+  <main class="story-list" id="story-list">
+    <article class="story-card" data-id="1" data-category="譯稿" data-time="2026-05-04" data-image="" data-source="https://www.cna.com.tw/news/aall/202605030027.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(1)">
+    <img src="" alt="Presidente Lai invita al rey de Esuatini a visitar Taiwán de nuevo y afirma que ningún país debería impedir la contribución de Taiwán al mundo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">&#128240;</div>
+    <span class="story-category-tag tag-default">譯稿</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-04</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(1)">Presidente Lai invita al rey de Esuatini a visitar Taiwán de nuevo y afirma que ningún país debería impedir la contribución de Taiwán al mundo</h2>
+    <p class="story-excerpt">El presidente Lai Ching-te visitó Esuatini, donde participó en una ceremonia de bienvenida con honores militares y celebró una cumbre bilateral con el monarca del país. Durante el encuentro, se firmaron el Acuerdo de Asistencia Mutua en Materia Aduanera entre el Gobierno de la República de China (Taiwán) y el Gobierno del Reino de Esuatini, así como un comunicado conjunto. Lai afirmó que ningún país tiene el derecho ni debe impedir que Taiwán contribuya al mundo, y subrayó que la isla seguirá fortaleciendo sus capacidades e integrándose en la comunidad internacional. Asimismo, invitó al rey de Esuatini a visitar Taiwán nuevamente.</p>
+    <button class="read-more-btn" onclick="openLightbox(1)">看全文</button>
+  </div>
+</article>
+    <article class="story-card" data-id="2" data-category="譯稿" data-time="2026-05-04" data-image="" data-source="https://www.cna.com.tw/news/aall/202605030211.aspx" data-tag-class="tag-default">
+  <div class="story-image-wrap" onclick="openLightbox(2)">
+    <img src="" alt="Presidente: la mayor cooperación en la historia de Taiwán; tanques de almacenamiento de petróleo y parque de innovación industrial tienen importancia estratégica | Política | CNA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">&#128240;</div>
+    <span class="story-category-tag tag-default">譯稿</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-04</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(2)">Presidente: la mayor cooperación en la historia de Taiwán; tanques de almacenamiento de petróleo y parque de innovación industrial tienen importancia estratégica | Política | CNA</h2>
+    <p class="story-excerpt">El presidente Lai Ching-te, de visita oficial en Eswatini, afirmó hoy al escuchar las presentaciones sobre el «depósito estratégico de petróleo» y el «Parque de Innovación Industrial de Taiwán» que estos dos proyectos de cooperación son los de mayor envergadura y mayor significado estratégico desde el establecimiento de relaciones diplomáticas entre ambos países, y constituyen un importante hito para que la cooperación entre Taiwán y Eswatini avance hacia la siguiente etapa.</p>
+    <button class="read-more-btn" onclick="openLightbox(2)">看全文</button>
+  </div>
+</article>
+  </main>
+
+  <!-- ===== HIDDEN FULL CONTENTS (read by lightbox JS) ===== -->
+  <div id="story-contents" style="display:none;">
+    <div id="story-content-1">
+<p>La Presidencia de la República emitió un comunicado informando que el presidente Lai Ching-te, en visita oficial a Esuatini, se dirigió el día 2 (hora local) por la tarde —la misma noche en hora de Taipéi— al Centro Internacional de Conferencias Mandvulo, donde participó en una ceremonia de bienvenida con honores militares, celebró una cumbre bilateral con el jefe de Estado anfitrión, fue testigo de la firma del &#x27;Acuerdo de Asistencia Mutua en Materia Aduanera entre el Gobierno de la República de China (Taiwán) y el Gobierno del Reino de Esuatini&#x27; y suscribió un comunicado conjunto.</p>
+<p>El presidente Lai manifestó que la República de China-Taiwán es un Estado soberano y un Taiwán para el mundo, y que ningún país tiene el derecho ni debería impedir que Taiwán contribuya a la comunidad internacional. Afirmó que Taiwán continuará fortaleciendo sus capacidades y avanzando con firmeza hacia el escenario internacional, y expresó su esperanza de que ambos países se apoyen mutuamente para que su amistad se profundice y perdure.</p>
+<p>Tras su llegada, el presidente estrechó la mano del rey Mswati III y subió junto a él a la tribuna de honor. Después de la interpretación de los himnos nacionales de ambos países, pasaron revista a la guardia de honor de Esuatini, se presentaron los funcionarios de ambas delegaciones, se dispararon salvas de artillería y se ejecutaron danzas tradicionales de Esuatini en bienvenida al presidente Lai. Concluida la ceremonia, el presidente celebró conversaciones con el rey Mswati III, durante las cuales ambas partes intercambiaron ampliamente opiniones sobre temas como salud y atención médica, relaciones bilaterales, empoderamiento de la mujer y cooperación económica y comercial.</p>
+<p>Al término de las conversaciones, el presidente y el rey fueron testigos de la firma del &#x27;Acuerdo de Asistencia Mutua en Materia Aduanera&#x27; por parte del ministro de Relaciones Exteriores de Taiwán, Lin Chia-lung, y la ministra de Relaciones Exteriores de Esuatini, Pholile Shakantu. A continuación, los jefes de Estado de ambos países firmaron el comunicado conjunto, en el que reafirmaron la profunda amistad, la confianza mutua y los valores compartidos, y su compromiso de continuar profundizando las relaciones bilaterales en la búsqueda de una visión común de paz, estabilidad y prosperidad sostenible.</p>
+<p>En su discurso, el presidente expresó su más sincero agradecimiento al rey Mswati III por su cálida invitación y su pleno apoyo. Señaló que es un honor encabezar la delegación en esta visita de Estado al Reino de Esuatini y que, aunque la visita se realizó unos días después de las celebraciones oficiales, la sinceridad de la delegación no ha disminuido en absoluto. En nombre del pueblo de la República de China-Taiwán, transmitió sus más cordiales felicitaciones al rey por su 58 cumpleaños y le deseó larga vida, y lo felicitó también por el 40 aniversario de su ascensión al trono, deseando prosperidad al Reino de Esuatini y buena salud al monarca. Destacó asimismo que este año se cumplen 58 años del establecimiento de relaciones diplomáticas entre ambos países, y expresó sus deseos de que la amistad bilateral sea duradera y que los pueblos de ambas naciones estrechen cada vez más su cooperación y sus lazos.</p>
+<p>El presidente también agradeció al rey y a los funcionarios del Gobierno del Reino de Esuatini por la calurosa bienvenida que brindaron la semana pasada al enviado especial presidencial y a la delegación de felicitación encabezada por Lin Chia-lung, así como por la gran recepción dispensada ese día a la delegación que él mismo lidera.</p>
+<p>El presidente subrayó que la República de China-Taiwán es un Estado soberano y un Taiwán para el mundo; que los 23 millones de taiwaneses tienen el derecho de proyectarse hacia el mundo; que ningún país tiene el derecho ni debería impedir que Taiwán contribuya a la comunidad internacional; y que Taiwán continuará fortaleciendo sus capacidades y avanzando con firmeza en el escenario internacional. Agradeció al rey Mswati III y al Reino de Esuatini por acompañar a Taiwán durante tanto tiempo y por defender la causa de Taiwán en el ámbito internacional.</p>
+<p>El presidente Lai calificó al rey Mswati III como un monarca visionario, valiente, sabio y benevolente, y expresó su satisfacción por poder considerarlo un buen amigo. En nombre del pueblo taiwanés, invitó cordialmente al rey a visitar nuevamente Taiwán, con el fin de que la amistad entre ambos países se profundice y perdure.</p>
+</div>
+    <div id="story-content-2">
+<p>Según un comunicado de la Oficina Presidencial, el presidente Lai visitó en la mañana del día 3, hora local de Eswatini (la misma tarde en Taipéi), el Royal Science and Technology Park, donde escuchó por separado presentaciones de la Overseas Investment and Development Company y de CECI Engineering Consultants sobre el “depósito estratégico de petróleo” y el “Parque de Innovación Industrial de Taiwán” (TIIP).</p>
+<p>El presidente afirmó que se trata del proyecto de cooperación de mayor envergadura y con mayor significado estratégico desde el establecimiento de relaciones diplomáticas entre ambos países, y que simboliza el avance conjunto hacia un futuro aún más brillante y próspero. Expresó además su sincero agradecimiento al rey Mswati III, al Gobierno y al pueblo de Eswatini por su plena confianza en Taiwán y su total apoyo.</p>
+<p>El presidente señaló que el “depósito estratégico de petróleo” representa la seguridad energética y la resiliencia nacional para hacer frente a riesgos y crisis, mientras que el “Parque de Innovación Industrial de Taiwán” representa la planificación industrial orientada al futuro y la esperanza de desarrollo. El primero protege la estabilidad y el segundo abre nuevas oportunidades de crecimiento; esto constituye precisamente un importante hito en el paso de la cooperación entre Taiwán y Eswatini hacia una nueva etapa.</p>
+<p>El presidente consideró que, ante los rápidos cambios en la situación internacional, la reconfiguración de las cadenas globales de suministro, los desafíos del cambio climático y la ola de la inteligencia artificial, las alianzas confiables son hoy más importantes que nunca, y que Taiwán es precisamente un socio de cooperación de Eswatini que es a la vez fiable y resiliente.</p>
+<p>El presidente mencionó que Eswatini es un firme aliado de Taiwán en África y también una importante puerta de entrada para los empresarios taiwaneses que buscan expandirse en el continente. Expresó su esperanza de seguir profundizando la cooperación económica y comercial con Eswatini y, a través del “Parque de Innovación Industrial de Taiwán”, atraer a más empresas taiwanesas a invertir en Eswatini y formar talento, impulsando el empleo y promoviendo además una mayor integración de las empresas locales en las cadenas globales de suministro, con el fin de fortalecer la resiliencia económica nacional de Eswatini.</p>
+<p>El presidente agradeció a los empresarios taiwaneses que luchan y trabajan en África por esforzarse para que el mundo vea la fortaleza de Taiwán: allí donde llega la industria taiwanesa, se extiende también la capacidad de Taiwán; allí donde llegan los pasos de los empresarios taiwaneses, allí se siembra también la amistad de Taiwán. En el futuro, Taiwán y Eswatini seguirán reforzando su cooperación en ámbitos como la manufactura, el procesamiento agrícola, la transformación digital y la formación de talento, a fin de promover la modernización industrial y un desarrollo económico diversificado. Más aún, Taiwán espera abrir junto con Eswatini el mercado africano y crear conjuntamente un mayor valor económico.</p>
+<p>El presidente subrayó que Taiwán necesita al mundo, y el mundo también necesita a Taiwán. Taiwán espera avanzar junto con Eswatini hacia el mundo, y seguirá profundizando los intercambios y la cooperación con Eswatini y con socios afines sobre la base de sus tres grandes ventajas de “valores, resiliencia y tecnología”, para construir cadenas de suministro y relaciones de asociación más seguras y confiables.</p>
+<p>El presidente indicó que una amistad verdaderamente profunda se materializa en uno tras otro de los resultados de cooperación, y expresó su convicción de que, con los esfuerzos conjuntos de Taiwán y Eswatini, en el futuro se fortalecerá aún más la seguridad energética y se desarrollará más la industria. Manifestó su deseo de seguir avanzando juntos para que las perspectivas de prosperidad de ambos países brillen en el mundo.</p>
+<p>Posteriormente, el presidente se dirigió a la plataforma panorámica al aire libre del tercer piso para contemplar desde lo alto la vista general de la primera fase del “Parque de Innovación Industrial de Taiwán”, y escuchó la explicación del gerente de CECI Engineering Consultants, Tsai Chin-yao, sobre la planificación de las distintas áreas de fábricas del parque.</p>
+</div>
+  </div>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lb-title">
+    <div class="lb-backdrop" id="lb-backdrop"></div>
+    <div class="lb-panel">
+      <button class="lb-close" id="lb-close" aria-label="關閉">&#10005;</button>
+      <div class="lb-scroll" id="lb-scroll">
+        <div class="lb-meta">
+          <span class="lb-category tag-default" id="lb-category"></span>
+          <span class="lb-time" id="lb-time"></span>
+        </div>
+        <h2 class="lb-title" id="lb-title"></h2>
+        <div class="lb-image-wrap" id="lb-image-wrap">
+          <img id="lb-image" src="" alt="" loading="eager">
+        </div>
+        <div class="lb-body" id="lb-body"></div>
+        <a class="lb-source" id="lb-source" href="#" target="_blank" rel="noopener">查看原文</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">CNA Translation Digest ES</div>
+      <div class="footer-links">
+        <a href="https://u0401006.github.io/video-quotes/news/">歷史存檔</a>
+        <a href="https://u0401006.github.io/video-quotes/">訂閱電子報</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CNA Translation Digest ES · 版權所有</span>
+      <span class="footer-generated">Generated at 2026-05-04T11:57:11</span>
+    </div>
+  </footer>
+
+</div><!-- /.page-wrapper -->
+
+<script>
+
+  var TAG_CLASSES = {
+    '政治': 'tag-politics', '國內': 'tag-politics',
+    '國際': 'tag-intl',     '外交': 'tag-intl',
+    '財經': 'tag-finance',  '經濟': 'tag-finance',
+    '體育': 'tag-sports',
+    '科技': 'tag-tech',     '科學': 'tag-tech',
+    '社會': 'tag-society',  '生活': 'tag-society'
+  };
+
+  function openLightbox(id) {
+    var card = document.querySelector('.story-card[data-id="' + id + '"]');
+    var contentEl = document.getElementById('story-content-' + id);
+    if (!card) return;
+    var category  = card.dataset.category  || '';
+    var time      = card.dataset.time      || '';
+    var image     = card.dataset.image     || '';
+    var source    = card.dataset.source    || '';
+    var tagClass  = card.dataset.tagClass  || TAG_CLASSES[category] || 'tag-default';
+    var title     = card.querySelector('.story-title').textContent.trim();
+    var fullHtml  = contentEl ? contentEl.innerHTML : '';
+    var catEl = document.getElementById('lb-category');
+    catEl.textContent = category;
+    catEl.className   = 'lb-category ' + tagClass;
+    document.getElementById('lb-time').textContent  = time;
+    document.getElementById('lb-title').textContent = title;
+    document.getElementById('lb-body').innerHTML    = fullHtml;
+    var imgWrap = document.getElementById('lb-image-wrap');
+    var imgEl   = document.getElementById('lb-image');
+    if (image) {
+      imgEl.src = image; imgEl.alt = title;
+      imgWrap.style.display = 'block';
+    } else {
+      imgWrap.style.display = 'none';
+    }
+    var srcEl = document.getElementById('lb-source');
+    if (source) {
+      srcEl.href = source;
+      srcEl.style.display = 'inline-flex';
+    } else {
+      srcEl.style.display = 'none';
+    }
+    document.getElementById('lb-scroll').scrollTop = 0;
+    var lb = document.getElementById('lightbox');
+    lb.classList.add('is-open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    var lb = document.getElementById('lightbox');
+    lb.classList.remove('is-open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('lb-backdrop').addEventListener('click', closeLightbox);
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+</script>
+
+</body>
+</html>
