@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="外語讀者新聞精選 — 2026-05-13 精選新聞">
+  <title>外語讀者新聞精選 — 2026-05-13</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
+                   -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      background: #f2f2f2;
+      color: #333333;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ===== PAGE WRAPPER ===== */
+    .page-wrapper {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 0 48px;
+      background: #f2f2f2;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 3px solid #1e5aab;
+    }
+    .header-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    /* Focus Taiwan eye icon via SVG inline */
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-name {
+      font-size: 20px;
+      font-weight: 900;
+      color: #333333;
+      letter-spacing: -0.3px;
+      line-height: 1.2;
+    }
+    .brand-tagline {
+      font-size: 11px;
+      color: #767676;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+    .header-meta {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .header-date {
+      font-size: 13px;
+      color: #333333;
+      font-weight: 500;
+    }
+    .header-count {
+      font-size: 11px;
+      color: #767676;
+      margin-top: 2px;
+    }
+
+    /* ===== NAV STRIP ===== */
+    .site-nav {
+      background: #1e5aab;
+      padding: 0 20px;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+    }
+    .site-nav::-webkit-scrollbar { display: none; }
+    .nav-categories {
+      display: inline-flex;
+      gap: 0;
+    }
+    .nav-cat {
+      display: inline-block;
+      padding: 10px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.5px;
+      border-bottom: 3px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .nav-cat:first-child {
+      color: #ffffff;
+      border-bottom-color: #ffffff;
+    }
+    .nav-cat:hover {
+      color: #ffffff;
+      border-bottom-color: rgba(255,255,255,0.5);
+    }
+
+    /* ===== SECTION LABEL ===== */
+    .section-label {
+      padding: 20px 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label-text {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1e5aab;
+      letter-spacing: 0.5px;
+      border-left: 3px solid #1e5aab;
+      padding-left: 8px;
+    }
+    .section-label-line {
+      flex: 1;
+      height: 1px;
+      background: #ddd;
+    }
+
+    /* ===== STORY LIST ===== */
+    .story-list {
+      padding: 12px 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    /* ===== STORY CARD ===== */
+    .story-card {
+      background: #ffffff;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      border-bottom: 1px solid #e8e8e8;
+      transition: background 0.15s;
+      cursor: pointer;
+    }
+    .story-card:first-child {
+      /* Featured first card: full width image on top */
+      flex-direction: column;
+    }
+    .story-card:hover {
+      background: #f8f8f8;
+    }
+
+    /* Story image — featured (first card) */
+    .story-card:first-child .story-image-wrap {
+      width: 100%;
+      padding-bottom: 50%; /* 2:1 for featured */
+      flex-shrink: 0;
+    }
+
+    /* Story image — normal (horizontal cards) */
+    .story-image-wrap {
+      position: relative;
+      width: 160px;
+      flex-shrink: 0;
+      background: #e5e5e5;
+      overflow: hidden;
+    }
+    /* For non-first cards, keep fixed height */
+    .story-card:not(:first-child) .story-image-wrap {
+      width: 160px;
+      min-height: 107px; /* ~3:2 of 160px */
+    }
+    .story-card:first-child .story-image-wrap {
+      width: 100%;
+      padding-bottom: 50%;
+      position: relative;
+    }
+
+    .story-image-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .story-card:hover .story-image-wrap img {
+      transform: scale(1.04);
+    }
+    .story-img-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e5e5e5;
+      color: #aaaaaa;
+      font-size: 28px;
+    }
+    .story-category-tag {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 3px 8px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      z-index: 2;
+    }
+
+    /* Category tag colors — Focus Taiwan style */
+    .tag-politics { background: #cc3333; color: #ffffff; }
+    .tag-intl     { background: #1e5aab; color: #ffffff; }
+    .tag-finance  { background: #2a7a2a; color: #ffffff; }
+    .tag-sports   { background: #e07010; color: #ffffff; }
+    .tag-tech     { background: #6040a0; color: #ffffff; }
+    .tag-society  { background: #555555; color: #ffffff; }
+    .tag-default  { background: #333333; color: #ffffff; }
+
+    /* Card body */
+    .story-body {
+      padding: 14px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .story-card:first-child .story-body {
+      padding: 16px 20px 18px;
+    }
+    .story-meta {
+      margin-bottom: 6px;
+    }
+    .story-time {
+      font-size: 11px;
+      color: #767676;
+      font-weight: 400;
+    }
+    .story-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.5;
+      color: #333333;
+      margin-bottom: 6px;
+      transition: color 0.15s;
+    }
+    .story-card:first-child .story-title {
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .story-card:hover .story-title {
+      color: #1e5aab;
+    }
+    .story-excerpt {
+      font-size: 13px;
+      color: #555555;
+      line-height: 1.65;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .story-card:first-child .story-excerpt {
+      -webkit-line-clamp: 3;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+    .read-more-btn {
+      display: none; /* hidden on list; lightbox opens on click */
+    }
+    .story-card:first-child .read-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #1e5aab;
+      border: none;
+      color: #ffffff;
+      padding: 7px 16px;
+      border-radius: 2px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      width: fit-content;
+      transition: background 0.15s;
+    }
+    .story-card:first-child .read-more-btn:hover {
+      background: #174d94;
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+    .lightbox.is-open {
+      visibility: visible;
+      opacity: 1;
+    }
+    .lb-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .lb-panel {
+      position: relative;
+      background: #ffffff;
+      max-width: 680px;
+      width: 100%;
+      max-height: 90vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+      transform: translateY(12px);
+      transition: transform 0.2s ease;
+      z-index: 1;
+    }
+    .lightbox.is-open .lb-panel {
+      transform: translateY(0);
+    }
+
+    /* Lightbox header bar */
+    .lb-header {
+      background: #1e5aab;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .lb-header-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .lb-category {
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      background: rgba(255,255,255,0.2);
+      color: #ffffff;
+      border-radius: 2px;
+    }
+    .lb-time {
+      font-size: 11px;
+      color: rgba(255,255,255,0.7);
+    }
+    .lb-close {
+      width: 28px;
+      height: 28px;
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: #ffffff;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background 0.15s;
+      flex-shrink: 0;
+    }
+    .lb-close:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .lb-scroll {
+      overflow-y: auto;
+      padding: 20px 24px 28px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .lb-scroll::-webkit-scrollbar { width: 4px; }
+    .lb-scroll::-webkit-scrollbar-track { background: #f2f2f2; }
+    .lb-scroll::-webkit-scrollbar-thumb { background: #1e5aab; border-radius: 2px; }
+
+    .lb-title {
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 1.45;
+      color: #222222;
+      margin-bottom: 14px;
+    }
+    .lb-image-wrap {
+      width: 100%;
+      padding-bottom: 50%;
+      position: relative;
+      background: #e5e5e5;
+      margin-bottom: 18px;
+    }
+    .lb-image-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .lb-body {
+      font-size: 15px;
+      color: #333333;
+      line-height: 1.85;
+    }
+    .lb-body p { margin-bottom: 14px; }
+    .lb-body p:last-child { margin-bottom: 0; }
+    .lb-body strong { font-weight: 700; color: #222222; }
+    .lb-body a { color: #1e5aab; text-decoration: underline; text-underline-offset: 2px; }
+    .lb-divider {
+      border: none;
+      border-top: 1px solid #e8e8e8;
+      margin: 18px 0;
+    }
+    .lb-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #1e5aab;
+      font-size: 13px;
+      font-weight: 700;
+      transition: opacity 0.15s;
+    }
+    .lb-source:hover { opacity: 0.7; }
+    .lb-source::after { content: ' →'; }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: #333333;
+      color: #aaaaaa;
+      padding: 20px 20px;
+      margin-top: 24px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .footer-brand {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+    }
+    .footer-links a {
+      color: #aaaaaa;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: #ffffff; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+    }
+    .footer-generated {
+      font-family: "SF Mono", "Fira Code", monospace;
+      font-size: 10px;
+      color: #666666;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .page-wrapper { padding-bottom: 24px; }
+      .header-inner { padding: 12px 16px; }
+      .brand-name { font-size: 17px; }
+      .site-nav { padding: 0 12px; }
+      .section-label,
+      .story-list,
+      .site-footer { padding-left: 12px; padding-right: 12px; }
+
+      /* All cards go vertical on mobile */
+      .story-card {
+        flex-direction: column;
+      }
+      .story-card:not(:first-child) .story-image-wrap {
+        width: 100%;
+        min-height: 0;
+        padding-bottom: 50%;
+        position: relative;
+      }
+      .story-card:not(:first-child) .story-image-wrap img {
+        position: absolute;
+      }
+      .story-title { font-size: 15px; }
+      .story-card:first-child .story-title { font-size: 17px; }
+
+      .lb-panel { max-height: 93vh; }
+      .lb-scroll { padding: 16px 18px 22px; }
+      .lb-title { font-size: 17px; }
+      .lb-body { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-area">
+        <!-- Focus Taiwan eye icon (simplified SVG) -->
+        <svg class="brand-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M22 10 C10 10 4 22 4 22 C4 22 10 34 22 34 C34 34 40 22 40 22 C40 22 34 10 22 10Z" stroke="#1e5aab" stroke-width="2.5" fill="none"/>
+          <circle cx="22" cy="22" r="7" fill="#1e5aab"/>
+          <circle cx="22" cy="22" r="3.5" fill="#ffffff"/>
+          <path d="M6 22 Q14 14 22 22 Q30 30 38 22" stroke="#1e5aab" stroke-width="1.5" fill="none" stroke-dasharray="2 2"/>
+        </svg>
+        <div class="brand-text">
+          <div class="brand-name">外語讀者新聞精選</div>
+          <div class="brand-tagline">AI 新聞精選 · 每小時更新</div>
+        </div>
+      </div>
+      <div class="header-meta">
+        <div class="header-date">2026-05-13</div>
+        <div class="header-count">40 則精選</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== NAV ===== -->
+  <nav class="site-nav" aria-label="分類導覽">
+    <div class="nav-categories">
+      <span class="nav-cat">最新</span>
+      <span class="nav-cat">政治</span>
+      <span class="nav-cat">國際</span>
+      <span class="nav-cat">財經</span>
+      <span class="nav-cat">社會</span>
+      <span class="nav-cat">科技</span>
+      <span class="nav-cat">體育</span>
+    </div>
+  </nav>
+
+  <!-- ===== SECTION LABEL ===== -->
+  <div class="section-label">
+    <span class="section-label-text">今日要聞</span>
+    <div class="section-label-line"></div>
+    <span style="font-size:11px;color:#767676;">涵蓋 國際、社會、科技、財經</span>
+  </div>
+
+  <!-- ===== STORY LIST ===== -->
+  <main class="story-list" id="story-list">
+    <article class="story-card" data-id="1" data-category="財經" data-time="2026-05-13 20:59" data-image="" data-source="https://www.cna.com.tw/news/afe/202605133007.aspx" data-tag-class="tag-finance">
+  <div class="story-image-wrap" onclick="openLightbox(1)">
+    <img src="" alt="嘉澤越南子公司砸960萬美元購地　擬興建廠房" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-finance">財經</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-13 20:59</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(1)">嘉澤越南子公司砸960萬美元購地　擬興建廠房</h2>
+    <p class="story-excerpt">嘉澤端子工業股份有限公司今天代越南子公司LOTES VIET NAM COMPANY LIMITED公告，以960萬美元取得3.2萬平方公尺土地，每平方公尺單價300美元，將用以興建廠房與宿舍。</p>
+    <button class="read-more-btn" onclick="openLightbox(1)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="2" data-category="財經" data-time="2026-05-13 19:48" data-image="" data-source="https://www.cna.com.tw/news/afe/202605133006.aspx" data-tag-class="tag-finance">
+  <div class="story-image-wrap" onclick="openLightbox(2)">
+    <img src="" alt="正新印尼子公司擬現金增資2000萬美元　充實營運資金" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-finance">財經</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-13 19:48</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(2)">正新印尼子公司擬現金增資2000萬美元　充實營運資金</h2>
+    <p class="story-excerpt">輪胎廠正新今天公告，董事會通過現金增資子公司PT. Maxxis International Indonesia案，增資2000萬美元，正新出資1999萬9250美元，約新台幣6.28億元，目的為充實營運資金。</p>
+    <button class="read-more-btn" onclick="openLightbox(2)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="3" data-category="科技" data-time="2026-05-08 15:01" data-image="" data-source="https://www.cna.com.tw/news/afe/202605080184.aspx" data-tag-class="tag-tech">
+  <div class="story-image-wrap" onclick="openLightbox(3)">
+    <img src="" alt="馬來西亞AI數位轉型　駐馬代表：台灣盼成關鍵夥伴" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-tech">科技</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-08 15:01</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(3)">馬來西亞AI數位轉型　駐馬代表：台灣盼成關鍵夥伴</h2>
+    <p class="story-excerpt">隨著全球半導體供應鏈重組，台灣近年加速布局東南亞市場。駐馬代表連玉蘋指出，台灣在先進晶片製造居全球領先地位，大馬封裝測試及電子製造服務扮演關鍵角色，雙方供應鏈高度互補。</p>
+    <button class="read-more-btn" onclick="openLightbox(3)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="4" data-category="國際" data-time="2026-05-08 22:04" data-image="" data-source="https://www.cna.com.tw/news/aipl/202605080389.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(4)">
+    <img src="" alt="川習會擬討論美台軍售　美國務院：致力維護台海和平" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-08 22:04</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(4)">川習會擬討論美台軍售　美國務院：致力維護台海和平</h2>
+    <p class="story-excerpt">美國國務卿盧比歐表示，川普下週造訪北京與習近平進行峰會期間，很可能談到台灣議題，包括美台軍售。盧比歐強調美國政策維持不變，台灣海峽穩定對於美國、中國和全球都是有利的。</p>
+    <button class="read-more-btn" onclick="openLightbox(4)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="5" data-category="國際" data-time="2026-05-08 22:03" data-image="" data-source="https://www.cna.com.tw/news/aopl/202605080386.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(5)">
+    <img src="" alt="川習會在即　中東評論圈普遍憂台灣將成交易籌碼" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-08 22:03</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(5)">川習會在即　中東評論圈普遍憂台灣將成交易籌碼</h2>
+    <p class="story-excerpt">川普即將與習近平會面，法國亞洲事務專家高德蒙撰文表示，美國若放棄台灣，對亞洲盟友造成的衝擊可能比撤出歐洲更嚴重。中東評論界普遍擔憂台灣安全問題將在峰會上被用作美中博弈的交易籌碼。</p>
+    <button class="read-more-btn" onclick="openLightbox(5)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="6" data-category="國際" data-time="2026-05-13 07:53" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/800/20260512/1200x900_wmky_882963021632_0.jpg" data-source="https://www.cna.com.tw/news/ahel/202605135001.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(6)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/800/20260512/1200x900_wmky_882963021632_0.jpg" alt="川普抵達北京　中國高規格由國家副主席韓正接機" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-13 07:53</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(6)">川普抵達北京　中國高規格由國家副主席韓正接機</h2>
+    <p class="story-excerpt">美國總統川普與中國國家主席習近平的雙邊峰會預定14日在北京舉行，議程預料包括美中貿易與科技戰、伊朗戰爭停火等議題，川普出訪前夕表示，美國對台軍售議題也將有所討論。</p>
+    <button class="read-more-btn" onclick="openLightbox(6)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="7" data-category="國際" data-time="2026-05-13 08:00" data-image="" data-source="https://www.cna.com.tw/" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(7)">
+    <img src="" alt="7艘共艦1架次共機擾台　國軍監控" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-13 08:00</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(7)">7艘共艦1架次共機擾台　國軍監控</h2>
+    <p class="story-excerpt">台灣國防部公布，偵獲解放軍共艦7艘及共機1架次在台海周邊活動，國軍持續嚴密監控並依規定應處。解放軍的持續軍事施壓是台海緊張態勢的重要指標，對印太區域的海上安全評估具有警示意義。</p>
+    <button class="read-more-btn" onclick="openLightbox(7)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="8" data-category="國際" data-time="2026-05-13 08:00" data-image="" data-source="https://www.cna.com.tw/" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(8)">
+    <img src="" alt="強強攜手　台美簽署無人機合作意向書" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-13 08:00</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(8)">強強攜手　台美簽署無人機合作意向書</h2>
+    <p class="story-excerpt">台灣無人機國際學院在美國底特律XPONENTIAL 2026展覽期間，與美國無人載具系統協會（AUVSI）簽署合作意向書，共同推動無人機人才培訓交流及國際認證，展示台美防衛產業合作的最新進展。</p>
+    <button class="read-more-btn" onclick="openLightbox(8)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="9" data-category="國際" data-time="2026-05-08 13:08" data-image="" data-source="https://www.cna.com.tw/news/ahel/202605080134.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(9)">
+    <img src="" alt="台灣未獲WHA邀請　歐盟挺台參與國際組織" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-08 13:08</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(9)">台灣未獲WHA邀請　歐盟挺台參與國際組織</h2>
+    <p class="story-excerpt">第79屆世界衛生大會將於5月18日在日內瓦召開，台灣今年再度未獲邀請，若再度未能出席，將是第10年缺席。21個醫事團體疾呼國際社會認可台灣在全球衛生體系的角色，歐盟公開支持台灣參與。</p>
+    <button class="read-more-btn" onclick="openLightbox(9)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="10" data-category="國際" data-time="2025-11-01 17:51" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/800/20251101/2000x1500_wmkn_39814650293681_0.jpg" data-source="https://www.cna.com.tw/news/aipl/202511010173.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(10)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/800/20251101/2000x1500_wmkn_39814650293681_0.jpg" alt="外交部要求中國善盡APEC主辦責任　確保台灣平等參與" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2025-11-01 17:51</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(10)">外交部要求中國善盡APEC主辦責任　確保台灣平等參與</h2>
+    <p class="story-excerpt">2026年亞太經濟合作會議（APEC）將由中國主辦，台灣外交部表示，各經濟體都有疑慮，將持續與各經濟體保持聯繫，希望中國確實履行承諾，確保台灣在APEC各會議中平等、尊嚴、安全地與會。</p>
+    <button class="read-more-btn" onclick="openLightbox(10)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="11" data-category="社會" data-time="2026-05-13 08:00" data-image="" data-source="https://www.cna.com.tw/" data-tag-class="tag-society">
+  <div class="story-image-wrap" onclick="openLightbox(11)">
+    <img src="" alt="雇主新聘逾65歲勞工　不得用強制退休為由終止契約" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-society">社會</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-13 08:00</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(11)">雇主新聘逾65歲勞工　不得用強制退休為由終止契約</h2>
+    <p class="story-excerpt">台灣研議修法保障高齡勞工工作權，明訂雇主新聘65歲以上員工後，不得以強制退休為由終止勞動契約，此政策對有意在台灣長期就業的外籍移工具有重要的職場保障參考意義。</p>
+    <button class="read-more-btn" onclick="openLightbox(11)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="12" data-category="社會" data-time="2026-05-08 20:54" data-image="" data-source="https://www.cna.com.tw/news/ahel/202605080360.aspx" data-tag-class="tag-society">
+  <div class="story-image-wrap" onclick="openLightbox(12)">
+    <img src="" alt="三班護病比分階段上路　醫改會籲做好風險溝通" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-society">社會</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-08 20:54</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(12)">三班護病比分階段上路　醫改會籲做好風險溝通</h2>
+    <p class="story-excerpt">醫療法修正草案今天三讀通過，三班護病比正式入法。衛福部長石崇良表示，考量年底、春節長假等因素，預計117年5月1日分階段實施，醫改會呼籲醫院確實做好醫病風險溝通。</p>
+    <button class="read-more-btn" onclick="openLightbox(12)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="13" data-category="科技" data-time="2026-05-13 08:00" data-image="" data-source="https://www.cna.com.tw/" data-tag-class="tag-tech">
+  <div class="story-image-wrap" onclick="openLightbox(13)">
+    <img src="" alt="台積電發行184億元綠債　用於綠建築及環保支出" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-tech">科技</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-13 08:00</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(13)">台積電發行184億元綠債　用於綠建築及環保支出</h2>
+    <p class="story-excerpt">全球最重要晶圓代工廠台積電宣布發行184億元無擔保普通公司債，募得資金將專用於綠建築及各項環保支出，持續落實永續發展承諾，對倚重台積電供應鏈的越南電子產業具有重要的標竿示範意義。</p>
+    <button class="read-more-btn" onclick="openLightbox(13)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="14" data-category="科技" data-time="2026-05-08 09:41" data-image="" data-source="https://www.cna.com.tw/news/aopl/202605080045.aspx" data-tag-class="tag-tech">
+  <div class="story-image-wrap" onclick="openLightbox(14)">
+    <img src="" alt="美中科技角力升溫　黃仁勳加入川普訪中行程" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-tech">科技</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-08 09:41</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(14)">美中科技角力升溫　黃仁勳加入川普訪中行程</h2>
+    <p class="story-excerpt">美國媒體Semafor報導，川普政府正邀請輝達（NVIDIA）、蘋果等大企業執行長下週隨行訪問中國。輝達執行長黃仁勳表示，如果受邀將是一大榮幸，凸顯美中科技角力的複雜博弈面向。</p>
+    <button class="read-more-btn" onclick="openLightbox(14)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="15" data-category="科技" data-time="2026-05-13 08:00" data-image="" data-source="https://www.cna.com.tw/news/afe/202505210082.aspx" data-tag-class="tag-tech">
+  <div class="story-image-wrap" onclick="openLightbox(15)">
+    <img src="" alt="鴻海首次切入非洲主權AI　台法非三方合作AI基礎設施" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-tech">科技</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-13 08:00</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(15)">鴻海首次切入非洲主權AI　台法非三方合作AI基礎設施</h2>
+    <p class="story-excerpt">鴻海集團首次進入非洲主權AI領域，由台灣鴻海、法國政府旗下Bull公司與非洲AI公司Amini三方合作，目標是縮小非洲及全球南方地區的主權運算能力差距，標誌台灣科技業國際布局延伸至非洲大陸。</p>
+    <button class="read-more-btn" onclick="openLightbox(15)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="16" data-category="社會" data-time="2026-05-13 08:00" data-image="" data-source="https://www.cna.com.tw/" data-tag-class="tag-society">
+  <div class="story-image-wrap" onclick="openLightbox(16)">
+    <img src="" alt="花蓮地震規模5　最大震度4級" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-society">社會</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-13 08:00</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(16)">花蓮地震規模5　最大震度4級</h2>
+    <p class="story-excerpt">台灣花蓮今日發生地震，芮氏規模達5，最大震度為4級，中央氣象署呼籲民眾注意餘震，台鐵部分路段須進行慢行確認後方可恢復正常行駛。</p>
+    <button class="read-more-btn" onclick="openLightbox(16)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="17" data-category="財經" data-time="2026-03-11 08:00" data-image="" data-source="https://www.cna.com.tw/news/aopl/202603110065.aspx" data-tag-class="tag-finance">
+  <div class="story-image-wrap" onclick="openLightbox(17)">
+    <img src="" alt="國際能源總署：各國以破紀錄速度動用石油庫存" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-finance">財經</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-03-11 08:00</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(17)">國際能源總署：各國以破紀錄速度動用石油庫存</h2>
+    <p class="story-excerpt">國際能源總署宣布協調成員國釋出史上最大規模石油儲備，以穩定因中東戰爭而動盪的全球能源市場。各成員國正以破紀錄的速度動用石油戰略儲備，反映美伊戰爭對全球能源供應的嚴重衝擊。</p>
+    <button class="read-more-btn" onclick="openLightbox(17)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="18" data-category="國際" data-time="2026-05-06 15:28" data-image="" data-source="https://www.cna.com.tw/news/aipl/202605060200.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(18)">
+    <img src="" alt="賴清德：軍購大打折扣　盼朝野合作支持國防完整建構" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-06 15:28</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(18)">賴清德：軍購大打折扣　盼朝野合作支持國防完整建構</h2>
+    <p class="story-excerpt">總統賴清德表示，支持不打折的國防特別預算，就是守護國軍、保障台灣安全與民主日常；無論預算遭打3折或7折，對全年無休堅守崗位的國軍官士兵都是沉重打擊。</p>
+    <button class="read-more-btn" onclick="openLightbox(18)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="19" data-category="科技" data-time="2026-04-15 16:55" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/800/20260415/1200x1800_wmky_30556493393_202406040130000000.jpg" data-source="https://www.cna.com.tw/news/afe/202604150221.aspx" data-tag-class="tag-tech">
+  <div class="story-image-wrap" onclick="openLightbox(19)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/800/20260415/1200x1800_wmky_30556493393_202406040130000000.jpg" alt="研調：代理式AI帶動　估第2季伺服器出貨突破500萬台" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-tech">科技</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-04-15 16:55</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(19)">研調：代理式AI帶動　估第2季伺服器出貨突破500萬台</h2>
+    <p class="story-excerpt">研調機構集邦科技表示，2026年AI將同步推升通用型伺服器與AI伺服器需求，代理式AI需求帶動下，第2季整體伺服器出貨量有望突破500萬台，全年整體伺服器出貨年增維持在13%左右。</p>
+    <button class="read-more-btn" onclick="openLightbox(19)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="20" data-category="社會" data-time="2026-05-13 08:00" data-image="" data-source="https://www.cna.com.tw/" data-tag-class="tag-society">
+  <div class="story-image-wrap" onclick="openLightbox(20)">
+    <img src="" alt="賴清德邀府院黨黨團談少子女化　聚焦3面向" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-society">社會</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-13 08:00</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(20)">賴清德邀府院黨黨團談少子女化　聚焦3面向</h2>
+    <p class="story-excerpt">台灣總統賴清德召集行政院、立法院及執政黨黨團，共同商討少子女化對策，聚焦生育鼓勵、育兒陪伴與教育支持3大政策面向。台灣人口結構挑戰使引進外籍移工的需求長期存在，對越南勞動力輸出具有持續正面的意涵。</p>
+    <button class="read-more-btn" onclick="openLightbox(20)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="21" data-category="國際" data-time="2026-05-11 05:47" data-image="" data-source="https://www.cna.com.tw/news/aipl/202605110009.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(21)">
+    <img src="" alt="川習會擬討論美台軍售　美國務院：致力維護台海和平" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-11 05:47</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(21)">川習會擬討論美台軍售　美國務院：致力維護台海和平</h2>
+    <p class="story-excerpt">美國總統川普預計本週前往中國訪問，美國資深官員指出，川習持續就台灣進行對話，不預期美國政策有任何改變。官員表示，對台灣通過的軍購條例感到失望，希望未能通過部分的資金能夠到位。</p>
+    <button class="read-more-btn" onclick="openLightbox(21)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="22" data-category="國際" data-time="2026-05-12 07:54" data-image="" data-source="https://www.cna.com.tw/news/aipl/202605120016.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(22)">
+    <img src="" alt="川習會在即　中東評論圈普遍憂台灣將成交易籌碼" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-12 07:54</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(22)">川習會在即　中東評論圈普遍憂台灣將成交易籌碼</h2>
+    <p class="story-excerpt">川習會在即，美國學者傅立門指出，川普交易式外交不可預測，確實引發台灣與區域盟友的憂慮；但北京也可能利用這種不確定性，操作「川普會賣台」的敘事，藉此打擊台灣社會信心。</p>
+    <button class="read-more-btn" onclick="openLightbox(22)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="23" data-category="國際" data-time="2026-05-08 15:22" data-image="" data-source="https://www.cna.com.tw/news/aipl/202605080192.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(23)">
+    <img src="" alt="川普啟程赴中　前白宮官員：台灣議題敏感需謹慎應對" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-08 15:22</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(23)">川普啟程赴中　前白宮官員：台灣議題敏感需謹慎應對</h2>
+    <p class="story-excerpt">美國前白宮副國家安全顧問博明表示，台灣應建立可迭代創新的國防工業基礎，勿僅依賴大型軍購，強調在川習峰會前夕，台灣議題極為敏感，各方均需謹慎應對。</p>
+    <button class="read-more-btn" onclick="openLightbox(23)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="24" data-category="財經" data-time="2026-05-13 08:00" data-image="" data-source="https://www.cna.com.tw/" data-tag-class="tag-finance">
+  <div class="story-image-wrap" onclick="openLightbox(24)">
+    <img src="" alt="台積電發行184億元綠債　用於綠建築及環保支出" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-finance">財經</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-13 08:00</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(24)">台積電發行184億元綠債　用於綠建築及環保支出</h2>
+    <p class="story-excerpt">全球最重要晶圓代工廠台積電宣布發行184億元無擔保普通公司債，募得資金將全數用於綠建築及環保相關支出。對西語系投資者及環境議題關注者而言，台積電的ESG實踐是觀察全球科技業如何落實氣候責任的標竿案例。</p>
+    <button class="read-more-btn" onclick="openLightbox(24)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="25" data-category="科技" data-time="2026-05-08 09:41" data-image="" data-source="https://www.cna.com.tw/news/aopl/202605080045.aspx" data-tag-class="tag-tech">
+  <div class="story-image-wrap" onclick="openLightbox(25)">
+    <img src="" alt="美中科技角力升溫　黃仁勳加入川普訪中行程" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-tech">科技</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-08 09:41</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(25)">美中科技角力升溫　黃仁勳加入川普訪中行程</h2>
+    <p class="story-excerpt">美國媒體Semafor報導，川普政府正邀請輝達、蘋果、埃克森美孚、波音等大企業執行長在下週隨行訪問中國。輝達執行長黃仁勳表示，如果受邀將是一大榮幸，凸顯美中科技戰已延伸至最高層政治角力場域。</p>
+    <button class="read-more-btn" onclick="openLightbox(25)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="26" data-category="國際" data-time="2026-05-08 13:08" data-image="" data-source="https://www.cna.com.tw/news/ahel/202605080134.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(26)">
+    <img src="" alt="台灣未獲WHA邀請　歐盟挺台參與國際組織" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-08 13:08</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(26)">台灣未獲WHA邀請　歐盟挺台參與國際組織</h2>
+    <p class="story-excerpt">世界衛生大會（WHA）召開在即，台灣還沒收到邀請函。21個醫事團體高呼「守護全球健康，台灣不能缺席」口號，籲國際正視台灣在全球健康體系角色與價值，強調醫療衛生非關政治。</p>
+    <button class="read-more-btn" onclick="openLightbox(26)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="27" data-category="國際" data-time="2026-05-01 18:20" data-image="" data-source="https://www.cna.com.tw/news/aipl/202605010197.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(27)">
+    <img src="" alt="外交部譴責中國荒謬言論　重申中華民國台灣主權獨立" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-01 18:20</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(27)">外交部譴責中國荒謬言論　重申中華民國台灣主權獨立</h2>
+    <p class="story-excerpt">外交部表示，中國外交部在與澳洲會談後單方面發布新聞公報，嚴重扭曲事實，對此表達強烈抗議並嚴厲譴責，重申中華民國台灣是主權獨立國家，中華人民共和國與台灣互不隸屬。</p>
+    <button class="read-more-btn" onclick="openLightbox(27)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="28" data-category="國際" data-time="2026-05-13 08:00" data-image="" data-source="https://www.cna.com.tw/" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(28)">
+    <img src="" alt="民主基金會出席哥本哈根峰會　探討民主援助的未來" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-13 08:00</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(28)">民主基金會出席哥本哈根峰會　探討民主援助的未來</h2>
+    <p class="story-excerpt">台灣民主基金會派員出席哥本哈根民主峰會，與各國代表共同探討全球民主援助的未來走向與挑戰。西班牙語世界長期深耕民主鞏固議題，台灣的民主化經驗對拉美社會具有高度參考價值。</p>
+    <button class="read-more-btn" onclick="openLightbox(28)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="29" data-category="國際" data-time="2026-05-13 08:00" data-image="" data-source="https://www.cna.com.tw/video/foreign/4354213" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(29)">
+    <img src="" alt="賴總統哥本哈根峰會視訊演說　台灣可為世界做出貢獻" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-13 08:00</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(29)">賴總統哥本哈根峰會視訊演說　台灣可為世界做出貢獻</h2>
+    <p class="story-excerpt">台灣總統賴清德在哥本哈根民主峰會上發表視訊演說，強調台灣是主權獨立的國家，人民有權利走向世界，台灣的民主對於區域和平穩定以及半導體與AI產業的民主供應鏈可為世界做出很大貢獻。</p>
+    <button class="read-more-btn" onclick="openLightbox(29)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="30" data-category="國際" data-time="2026-05-13 08:00" data-image="" data-source="https://www.cna.com.tw/" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(30)">
+    <img src="" alt="前北約秘書長籲建立民主中等強權聯盟D7　台灣可受益" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-13 08:00</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(30)">前北約秘書長籲建立民主中等強權聯盟D7　台灣可受益</h2>
+    <p class="story-excerpt">前北約秘書長在哥本哈根民主峰會上倡議組建涵蓋民主中等強國的「D7」聯盟，並明確指出台灣在此架構中可獲得具體利益。此構想呼應西語系民主國家如何在美中激烈競爭下維護多邊秩序的深層關切。</p>
+    <button class="read-more-btn" onclick="openLightbox(30)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="31" data-category="國際" data-time="2026-05-07 08:52" data-image="" data-source="https://www.cna.com.tw/news/aipl/202605073001.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(31)">
+    <img src="" alt="台灣攜手歐盟助史瓦帝尼畜牧升級　改善農村生計" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-07 08:52</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(31)">台灣攜手歐盟助史瓦帝尼畜牧升級　改善農村生計</h2>
+    <p class="story-excerpt">跟著總統賴清德突圍出訪的腳步，台灣記者深入史瓦帝尼，見證台灣長年投入農業援助的成果。台灣國合會駐史瓦帝尼技術團推動畜牧業升級計畫，透過三角援助模式改善農村地區民眾生計。</p>
+    <button class="read-more-btn" onclick="openLightbox(31)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="32" data-category="科技" data-time="2025-05-21 11:32" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/800/20250521/1024x768_wmky_0_C20250521000042.jpg" data-source="https://www.cna.com.tw/news/afe/202505210082.aspx" data-tag-class="tag-tech">
+  <div class="story-image-wrap" onclick="openLightbox(32)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/800/20250521/1024x768_wmky_0_C20250521000042.jpg" alt="鴻海首次切入非洲主權AI　台法非三方合作AI基礎設施" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-tech">科技</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2025-05-21 11:32</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(32)">鴻海首次切入非洲主權AI　台法非三方合作AI基礎設施</h2>
+    <p class="story-excerpt">鴻海發言人巫俊毅出席台灣智慧科技島主題業績展望會透露，透過併購方式，鴻海首次進軍非洲市場，並宣布與法國廠商Thales及Radiall合資進入先進半導體封測領域，標誌台法非三方AI基礎設施合作啟動。</p>
+    <button class="read-more-btn" onclick="openLightbox(32)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="33" data-category="國際" data-time="2026-05-13 08:00" data-image="" data-source="https://www.cna.com.tw/" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(33)">
+    <img src="" alt="強強攜手　台美簽署無人機合作意向書" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-13 08:00</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(33)">強強攜手　台美簽署無人機合作意向書</h2>
+    <p class="story-excerpt">台灣與美國在川習峰會前夕正式簽署無人機合作意向書，展示台美防衛產業合作的最新深化進展。無人機技術的戰略意義日益凸顯，此合作對研究印太軍事平衡的西語系讀者具有重要防衛戰略參考價值。</p>
+    <button class="read-more-btn" onclick="openLightbox(33)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="34" data-category="國際" data-time="2026-05-11 17:07" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/800/20260511/2000x1348_wmky_079066997679_0.jpg" data-source="https://www.cna.com.tw/news/aipl/202605110220.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(34)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/800/20260511/2000x1348_wmky_079066997679_0.jpg" alt="國防特別預算未納無人機艦　專家：衝擊關鍵不對稱戰力" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-11 17:07</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(34)">國防特別預算未納無人機艦　專家：衝擊關鍵不對稱戰力</h2>
+    <p class="story-excerpt">立法院三讀通過國防採購特別條例，但立院版與行政院版本相差新台幣4700億元，學者警告，未納入無人機艦、戰術網路及先進飛彈的缺口若轉為公務預算，恐嚴重擠壓現有軍事投資。</p>
+    <button class="read-more-btn" onclick="openLightbox(34)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="35" data-category="國際" data-time="2026-05-13 08:00" data-image="" data-source="https://www.cna.com.tw/news/aopl/202604120115.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(35)">
+    <img src="" alt="秘魯總統候選人涉金融犯罪　檢方求刑5年4個月撤資格" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-13 08:00</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(35)">秘魯總統候選人涉金融犯罪　檢方求刑5年4個月撤資格</h2>
+    <p class="story-excerpt">秘魯總統選舉候選人遭檢察官以金融犯罪罪名提出求刑並申請撤銷候選資格，秘魯政局陷入高度不確定。此案例由台灣媒體視角記錄拉美政治局勢，為西語系讀者提供了解台灣如何觀察世界的切入點。</p>
+    <button class="read-more-btn" onclick="openLightbox(35)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="36" data-category="國際" data-time="2024-10-11 13:30" data-image="" data-source="https://www.cna.com.tw/news/aopl/202410110137.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(36)">
+    <img src="" alt="阿根廷上萬民眾遊行　抗議政府削減大學預算" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2024-10-11 13:30</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(36)">阿根廷上萬民眾遊行　抗議政府削減大學預算</h2>
+    <p class="story-excerpt">阿根廷總統米雷伊否決了增加公立大學經費的法案，引發全國公立大學師生強烈反應，上萬名民眾走上街頭抗議，展現拉美公民社會對教育權利的強烈捍衛意志。</p>
+    <button class="read-more-btn" onclick="openLightbox(36)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="37" data-category="財經" data-time="2026-03-11 23:21" data-image="https://imgcdn.cna.com.tw/www/WebPhotos/800/20260312/2000x1367_wmkn_77885552677448_0.jpg" data-source="https://www.cna.com.tw/news/aopl/202603110395.aspx" data-tag-class="tag-finance">
+  <div class="story-image-wrap" onclick="openLightbox(37)">
+    <img src="https://imgcdn.cna.com.tw/www/WebPhotos/800/20260312/2000x1367_wmkn_77885552677448_0.jpg" alt="國際能源總署：各國以破紀錄速度動用石油庫存" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="story-img-placeholder" style="display:none;">📰</div>
+    <span class="story-category-tag tag-finance">財經</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-03-11 23:21</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(37)">國際能源總署：各國以破紀錄速度動用石油庫存</h2>
+    <p class="story-excerpt">國際能源總署宣布成員國將釋出4億桶石油儲備，以平抑美國與以色列對伊朗開戰而飆升的油價，規模超越2022年俄烏戰爭時的歷史記錄，各國正以破紀錄速度動用石油庫存。</p>
+    <button class="read-more-btn" onclick="openLightbox(37)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="38" data-category="國際" data-time="2026-01-12 13:35" data-image="" data-source="https://www.cna.com.tw/news/aopl/202601123002.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(38)">
+    <img src="" alt="用美國國旗標出委內瑞拉國土　川普社媒發圖引爭議" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-01-12 13:35</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(38)">用美國國旗標出委內瑞拉國土　川普社媒發圖引爭議</h2>
+    <p class="story-excerpt">川普在自家社群平台自封為委內瑞拉「代理總統」，還覺得由國務卿盧比歐當古巴總統也不錯，在西語系世界引發廣泛爭議與強烈反應。此舉涉及美國對拉美主權問題的態度。</p>
+    <button class="read-more-btn" onclick="openLightbox(38)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="39" data-category="國際" data-time="2026-02-11 09:55" data-image="" data-source="https://www.cna.com.tw/news/aopl/202602110042.aspx" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(39)">
+    <img src="" alt="加州前市長當中國代理人　美地方政壇警戒中共滲透" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-02-11 09:55</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(39)">加州前市長當中國代理人　美地方政壇警戒中共滲透</h2>
+    <p class="story-excerpt">加州山野市65歲居民孫耀寧因非法充當中國政府代理人，被判處4年有期徒刑。聯邦檢察官指出，美國執法機關不容許敵對外國勢力滲透美國政治體系。</p>
+    <button class="read-more-btn" onclick="openLightbox(39)">閱讀全文 →</button>
+  </div>
+</article>
+<article class="story-card" data-id="40" data-category="國際" data-time="2026-05-13 08:00" data-image="" data-source="https://www.cna.com.tw/" data-tag-class="tag-intl">
+  <div class="story-image-wrap" onclick="openLightbox(40)">
+    <img src="" alt="擺脫殖民歷史　太平洋島國諾魯將公投尋求更名" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+    <div class="story-img-placeholder">📰</div>
+    <span class="story-category-tag tag-intl">國際</span>
+  </div>
+  <div class="story-body">
+    <div class="story-meta">
+      <time class="story-time">2026-05-13 08:00</time>
+    </div>
+    <h2 class="story-title" onclick="openLightbox(40)">擺脫殖民歷史　太平洋島國諾魯將公投尋求更名</h2>
+    <p class="story-excerpt">太平洋島國諾魯計畫透過公投更改沿用自殖民時代的國家名稱「Nauru」，改為本土語言的「Naoero」，展現去殖民化運動在太平洋地區的持續推進。去殖民化議題在拉丁美洲有深厚的歷史積澱與文化共鳴。</p>
+    <button class="read-more-btn" onclick="openLightbox(40)">閱讀全文 →</button>
+  </div>
+</article>
+
+  </main>
+
+  <!-- ===== HIDDEN FULL CONTENTS ===== -->
+  <div id="story-contents" style="display:none;">
+    <div id="story-content-1">
+<p>嘉澤端子工業股份有限公司今天代越南子公司LOTES VIET NAM COMPANY LIMITED公告，以960萬美元取得3.2萬平方公尺土地，每平方公尺單價300美元，將用以興建廠房與宿舍。</p><p>據公告，此次所購得土地位於越南太瑞鄉聯河泰(Green IP-1)工業區DVCC 2C-2地塊，交易相對人為Green I-PARK CORP.。</p><p>截至去年第4季止，嘉澤對越南子公司的投資餘額達新台幣37億元。</p>
+</div>
+<div id="story-content-2">
+<p>輪胎廠正新今天公告，董事會通過現金增資子公司PT. Maxxis International Indonesia案，增資2000萬美元，正新出資1999萬9250美元，約新台幣6.28億元，目的為充實營運資金。</p><p>正新表示，迄目前為止，本交易證券（含本次交易）累計投資2.2億美元，約新台幣61.17億元，持股比例99.99625%。</p><p>正新同步公告第1季財報，單季營收新台幣234.28億元，歸屬母公司業主淨利18.61億元，基本每股盈餘0.57元。</p>
+</div>
+<div id="story-content-3">
+<p>隨著全球半導體供應鏈重組，台灣近年加速布局東南亞市場。駐馬代表連玉蘋指出，台灣在先進晶片製造居全球領先地位，大馬封裝測試及電子製造服務扮演關鍵角色，雙方供應鏈高度互補。</p><p>為期3天的「東南亞半導體展」昨天落幕，駐馬來西亞台北經濟文化辦事處代表連玉蘋出席「2026年台灣與東南亞半導體產業交流會」。她表示，半導體成為全球科技與經濟發展核心，從人工智慧、高效能運算、5G通訊到電動車與智慧製造，都高度依賴半導體技術。</p><p>連玉蘋指出，她最近訪問檳城，見證台商持續擴大在馬來西亞投資，展現對馬來西亞市場的信心，台灣希望成為馬國AI數位轉型的關鍵合作夥伴。</p>
+</div>
+<div id="story-content-4">
+<p>美國國務卿盧比歐剛結束在義大利和梵蒂岡的訪問行程，他今天受訪表示，美國總統川普下週造訪北京與中國國家主席習近平進行峰會期間，很可能談到台灣議題。</p><p>盧比歐被記者問到台灣議題，他強調美國政策維持不變，「我們不希望看到任何強迫或被迫的情勢改變」，如此會對整個世界造成不穩定。</p><p>盧比歐還說，他不認為台灣議題是「川習會」的重點，但肯定會被提及，而台灣海峽穩定對於美國、中國和全球都是有利的。</p>
+</div>
+<div id="story-content-5">
+<p>美國總統川普即將與中國國家主席習近平會面，法國亞洲事務專家高德蒙撰文表示，川普曾指台灣國防開支不足，但美國若放棄台灣，對亞洲盟友造成的衝擊可能比撤出歐洲更嚴重。</p><p>川普將於本月14日、15日訪問北京，與習近平會面，一般預期兩人將談到台灣、伊朗、貿易等議題。</p><p>高德蒙在近日發表於智庫「蒙田研究所」網站的文章中表示，鑒於美國整體政策，尤其是對中國政策一變再變，這次川習會的不確定性更勝以往。</p>
+</div>
+<div id="story-content-6">
+<p>美國總統川普與中國國家主席習近平的雙邊峰會預定14日在北京舉行，議程預料包括美中貿易與科技戰、伊朗戰爭停火等議題，川普出訪前夕表示，美國對台軍售議題也將有所討論。</p><p>與其他議員共同致函川普敦促加快140億美元對台軍售案的共和黨籍聯邦參議員提里斯指出，「在對台軍售議題上，美國必須清楚表明立場沒有改變」。</p><p>國安人士認為，對台灣最大的風險並不是川普，而是北京恐以上週國民黨主導大幅刪減對美軍購這件事，說服川普停止或減少對台灣的國防支持。</p>
+</div>
+<div id="story-content-7">
+<p>台灣國防部今天公布，偵獲解放軍共艦7艘及共機1架次在台海周邊活動，國軍持續嚴密監控，並依規定應處。</p><p>解放軍近期持續在台海周邊增強軍事活動，包括艦艇巡弋及軍機出動，國軍已全程追監，並以岸置飛彈及空中兵力應處。</p><p>解放軍的持續軍事施壓是台海緊張態勢的重要指標，對整個印太區域的海上安全評估具有警示意義，各國正密切關注川習峰會前後的台海情勢發展。</p>
+</div>
+<div id="story-content-8">
+<p>台灣無人機國際學院在美國底特律舉行的XPONENTIAL 2026無人系統國際展覽期間，與美國無人載具系統協會（AUVSI）簽署合作意向書，共同推動無人機人才培訓交流及國際認證。</p><p>AUVSI執行長羅賓斯表示，台灣是將「Green UAS」（安全無人機認證）推向國際舞台的理想地點，因為台灣擁有非紅色供應鏈、速度、規模、韌性和卓越的領導力。</p><p>羅賓斯強調，在威權國家威脅民主國家的當下，民主國家應更緊密合作，台美無人機合作不僅直接強化台灣自主防衛能力，也展現台灣在印太安全架構中積極參與的具體行動。</p>
+</div>
+<div id="story-content-9">
+<p>第79屆世界衛生大會將於5月18日在日內瓦召開，但台灣至今未收到邀請函。台灣已連續9年未獲世界衛生大會邀請，若今年再度未能出席，將是第10年缺席。</p><p>中華民國醫師公會全國聯合會與21個醫事組織以「台灣不能缺席守護全球健康」為號召，舉行國際記者會，呼籲全球正視台灣在醫療保健、公共衛生和人道主義援助方面的實質貢獻，強調醫衛不應是政治問題。</p><p>歐盟延續一貫政策，公開表態支持台灣平等參與世界衛生組織，認為台灣的相關技術能力與能量能為全球衛生治理增添價值，彰顯台灣在全球公衛治理上的不可或缺性。</p>
+</div>
+<div id="story-content-10">
+<p>2026年亞太經濟合作會議（APEC）將由中國主辦，外界高度關注台灣是否能順利與會，以及安全是否受保障。外交部表示，台灣以及各經濟體都有疑慮，會持續與各經濟體保持聯繫，希望中國確實履行承諾，確保順利與會。</p><p>為期2天的APEC第32次領導人非正式會議今天在韓國慶尚北道慶州市落幕。下一屆峰會預計明年11月於中國廣東深圳舉行。</p><p>外交部國際組織司司長孫儉元表示，APEC核心原則是所有會員平等參與，這也是APEC順暢運作且維持和諧的重要關鍵，台灣在APEC架構下的參與地位是包括越南在內的亞太成員觀察兩岸關係與多邊合作的重要指標。</p>
+</div>
+<div id="story-content-11">
+<p>台灣研議修法保障高齡勞工工作權，明訂雇主新聘65歲以上員工後，不得以強制退休為由終止勞動契約。</p><p>勞基法已修正規定，勞工非年滿65歲，雇主不得強制其退休；若勞雇雙方協商後得延後強制退休年齡，雇主仍應依法投保勞保及每個月提撥6%退休金。</p><p>此政策對有意在台灣長期就業的外籍移工及高齡勞工具有重要的職場保障參考意義，也反映台灣因應人口老化積極調整勞動政策的趨勢，雇主不得以強制退休為由終止新聘高齡員工的勞動契約。</p>
+</div>
+<div id="story-content-12">
+<p>醫療法修正草案今天三讀通過，三班護病比正式入法。衛福部長石崇良晚間說明，護團希望在116年12月上路，但考量年底、春節長假等因素，討論後預計117年5月1日實施。</p><p>總統賴清德曾承諾上任2年內三班護病比入法，行政院並在113年7月通過「護理人力政策整備12項策略計畫」，包括三班護病比預計2年入法等。</p><p>三讀條文明定，首次規範於設置標準之三班護病比標準，醫學中心白班1比6、小夜1比9、大夜1比11；區域醫院白班1比7、小夜1比11、大夜1比13。護病比政策落實代表台灣醫療照護品質提升，對在台就業或就醫的外籍移工具有直接的健康照護保障意義。</p>
+</div>
+<div id="story-content-13">
+<p>全球最重要晶圓代工廠台積電宣布發行新台幣184億元無擔保普通公司債，為綠色債券，募得資金將全數用於綠建築及環保相關支出。</p><p>台積電近年持續發行綠色債券，資金用途涵蓋再生能源採購、綠建築建設及各項環保相關資本支出，充分展現台積電在ESG永續面向的積極承諾。</p><p>台積電將永續發展置於企業核心策略，對倚重台積電供應鏈的越南電子產業具有重要的標竿示範意義，也反映全球半導體產業朝向綠色轉型的不可逆趨勢。</p>
+</div>
+<div id="story-content-14">
+<p>美國媒體Semafor今天報導，美國總統川普政府正邀請輝達（NVIDIA）、蘋果（Apple）、埃克森美孚（ExxonMobil）、波音（Boeing）等大企業執行長在下週隨行訪問中國。</p><p>輝達執行長黃仁勳在財經媒體CNBC節目主持人克芮麥（Jim Cramer）訪問中說「我們應該讓總統宣布任何他決定宣布的消息」，但同時表示「如果受邀將是一大榮幸，這是作為美國代表的一大殊榮」。</p><p>路透社引述Semafor報導說，受邀名單上還包括高通（Qualcomm）、黑石集團（Blackstone）、花旗集團（Citigroup）及Visa公司執行長。此舉凸顯美中科技角力的複雜博弈面向，也牽動全球半導體與AI供應鏈的未來格局。</p>
+</div>
+<div id="story-content-15">
+<p>鴻海集團首次進入非洲主權AI領域，由台灣鴻海、法國政府旗下Bull公司與非洲AI公司Amini三方合作建立AI基礎設施，目標是縮小非洲及全球南方地區的主權運算能力差距。</p><p>根據合作計畫，Amini將與鴻海及Bull攜手合作，Bull由法國政府持股，將繼續與Amini既有的合作，推進主權AI基礎設施計畫，標誌台灣科技業國際布局延伸至非洲大陸。</p><p>台灣科技企業的全球化競爭力持續擴張，此次進軍非洲大陸的AI基礎設施建設，對越南等追求AI轉型的新興市場具有發展模式的參考價值，也展現台灣在全球主權AI浪潮中的積極角色。</p>
+</div>
+<div id="story-content-16">
+<p>台灣花蓮今日發生地震，芮氏規模達5，最大震度為4級，中央氣象署呼籲民眾注意餘震，台鐵部分路段須進行慢行確認後方可恢復正常行駛。</p><p>地震發生後，相關單位立即啟動安全確認機制，台鐵依規定對受影響路段進行列車慢行檢查，確保行車安全無虞。</p><p>此地震資訊對居住花蓮或在花蓮地區工作的在台移工具有即時安全參考價值，建議密切關注中央氣象署後續公告及台鐵官方通知。</p>
+</div>
+<div id="story-content-17">
+<p>國際能源總署宣布協調成員國釋出史上最大規模石油儲備，以穩定因中東戰爭而動盪的全球能源市場。各成員國正以破紀錄的速度動用石油戰略儲備，反映美伊戰爭對全球能源供應的嚴重衝擊。</p><p>中東衝突持續擴大導致全球石油供應出現緊張態勢，各國政府正積極釋出戰略儲備以彌補供需缺口，此舉推動全球石油庫存消耗速度創下歷史新高。</p><p>油價上漲壓力對越南等能源進口國的通膨與民生成本形成直接影響，值得密切關注後續的能源政策動向與國際油市變化。</p>
+</div>
+<div id="story-content-18">
+<p>總統賴清德今天表示，支持不打折的國防特別預算，就是守護國軍、保障台灣安全與民主日常；無論預算遭打3折或7折，對全年無休堅守崗位的國軍官士兵都是沉重打擊。</p><p>總統在臉書發文表示，支持不打折的國防特別預算，就是守護國軍弟兄、保障熱愛的日常。無論是打3折、或打7折，對於每天在第一線、全年無休的國軍官士兵來說，都是沉重的打擊。</p><p>他並說，副總統蕭美琴已經明確指出這筆預算的必要性，而這筆預算是由國防部專業擬定，獲得國際盟友讚揚，並有近七成民意支持，全面涵蓋台澎金馬的長期防衛需求。在川習峰會前夕，台灣領導人就國防議題發出的呼籲受到國際社會的高度矚目。</p>
+</div>
+<div id="story-content-19">
+<p>研調機構集邦科技表示，2026年AI將同步推升通用型伺服器與AI伺服器需求，但因供應商優先分配產能給利潤較高的AI伺服器，使通用型伺服器零組件交期明顯拉長；全年整體伺服器出貨原有望年增近20%，將因此保持在13%左右，難以完全反映市場潛在購買力。</p><p>集邦科技（TrendForce）在最新伺服器產業研究中指出，通用型伺服器訂單需求穩健，原已面臨印刷電路板（PCB）、中央處理器（CPU）供應吃緊問題，目前兩項核心零組件的交期已長達近一年。</p><p>代理式AI（Agentic AI）需求崛起帶動下，第2季整體伺服器出貨量有望突破500萬台的歷史新高。台灣伺服器供應鏈的強勢表現直接帶動越南電子零組件廠商的接單景氣，具有重要的產業連動意義。</p>
+</div>
+<div id="story-content-20">
+<p>台灣總統賴清德召集行政院、立法院及執政黨黨團，共同商討少子女化對策，聚焦生育鼓勵、育兒陪伴與教育支持3大政策面向。</p><p>政府計畫提出實質性政策，進一步減輕家庭的經濟、時間與照顧壓力，同時擴大推動企業托育措施，強化職場托育可及性，並從生育、育兒、教育、住宅與職場等多元面向提供家庭支持。</p><p>台灣的人口結構挑戰使引進外籍移工的需求長期存在，對越南勞動力輸出具有持續正面的意涵；此次府院黨聯合討論少子女化政策，也顯示台灣政府高度重視人口危機的跨黨派協商。</p>
+</div>
+<div id="story-content-21">
+<p>美國總統川普預計本週前往中國訪問，美國資深官員指出，川習持續就台灣進行對話，不預期美國政策有任何改變。官員表示，對台灣通過的軍購條例感到失望，希望未能通過部分的資金能夠到位。</p><p>美國資深官員就川習會可能觸及台灣議題指出，這雖有點類似美中就伊朗與俄羅斯的討論，但實際是某種區域熱點或可能的熱點。川普與中國國家主席習近平持續就台灣進行對話，期間美國的政策沒有改變，也不預期之後美國政策會有任何改變。</p><p>資深官員特別指出，川普政府首年對台軍售相較於前政府4年間有明顯改善。美國政府對台灣防衛預算、上週通過特別條例的立場是失望的，當中有部分未納入最終版本。</p>
+</div>
+<div id="story-content-22">
+<p>川習會在即，美國學者傅立門今天在華府一場智庫座談上指出，川普交易式外交不可預測，確實引發台灣與區域盟友的憂慮；但北京也可能利用這種不確定性，操作「川普會賣台」的敘事，藉此打擊台灣社會信心。</p><p>傅立門在華府智庫哈德遜研究所座談會上示警過度炒作「川普會賣台」敘事的風險，指出這種敘事不但未必準確，還可能被北京利用，作為削弱台灣信心的政治工具。</p><p>美國總統川普預計本週訪問中國。中東地區評論人士與分析師則普遍憂慮，台灣安全問題可能在峰會中淪為美中談判的交易籌碼，引發國際輿論廣泛關注。</p>
+</div>
+<div id="story-content-23">
+<p>美國前白宮副國家安全顧問博明（Matt Pottinger）表示，台灣應建立可迭代創新的國防工業基礎，勿僅依賴大型軍購，強調在川習峰會前夕，台灣議題極為敏感，各方均需謹慎應對。</p><p>博明在亞太韌性研究基金會第4屆國際論壇的爐邊座談中指出，台灣需要建立能夠快速更新防衛技術的國防工業基礎，而非單純依賴大規模軍購案。</p><p>美國前駐波蘭大使穆爾（Stephen Mull）也指出，川普政府的政策對歐洲是一個警示，提醒各方認真看待防衛議題。台灣議題在峰會中的敏感性，需要所有相關方謹慎因應。</p>
+</div>
+<div id="story-content-24">
+<p>全球最重要晶圓代工廠台積電宣布發行新台幣184億元無擔保普通公司債，為綠色債券，募得資金將全數用於綠建築及環保相關支出。</p><p>台積電持續落實ESG永續承諾，透過發行綠債籌資，支應廠區綠建築建設與再生能源使用所需資金，展現全球科技龍頭對氣候責任的積極作為。</p><p>對西語系投資者及環境議題關注者而言，台積電的ESG實踐是觀察全球科技業如何落實氣候責任、推動低碳轉型的標竿案例，也是台灣科技業在永續發展領域的重要里程碑。</p>
+</div>
+<div id="story-content-25">
+<p>美國媒體Semafor今天報導，美國總統川普政府正邀請輝達（NVIDIA）、蘋果（Apple）、埃克森美孚（ExxonMobil）、波音（Boeing）等大企業執行長在下週隨行訪問中國。</p><p>輝達執行長黃仁勳在財經媒體CNBC節目主持人克芮麥（Jim Cramer）訪問中說「我們應該讓總統宣布任何他決定宣布的消息」，但同時表示「如果受邀將是一大榮幸，這是作為美國代表的一大殊榮」。</p><p>路透社引述Semafor報導說，受邀名單上還包括高通（Qualcomm）、黑石集團（Blackstone）、花旗集團（Citigroup）及Visa公司執行長。台灣作為全球半導體供應鏈核心節點，美中科技競逐的走向直接影響台灣在全球晶片產業的戰略地位。</p>
+</div>
+<div id="story-content-26">
+<p>世界衛生大會（WHA）召開在即，台灣還沒收到邀請函。21個醫事團體今天高呼「守護全球健康，台灣不能缺席」口號，籲國際正視台灣在全球健康體系角色與價值，強調醫療衛生非關政治。</p><p>第79屆世界衛生大會將於5月18日在瑞士日內瓦登場，台灣已連續9年未獲邀請，若今年再落空，將是第10年缺席。</p><p>歐盟明確表態支持台灣平等參與國際衛生組織，強調在多邊主義框架下，任何地區都不應被排除於全球健康合作之外。歐盟此一立場是觀察中國如何操縱國際組織排擠台灣的典型案例。</p>
+</div>
+<div id="story-content-27">
+<p>外交部表示，中國外交部在與澳洲外長舉行外交戰略對話後，單方面發布包含嚴重扭曲事實內容的新聞公報，對此表達強烈抗議並嚴厲譴責。</p><p>外交部發表聲明，強烈抗議並嚴厲譴責中國共產黨政府持續在國際間假借他國名義，發表貶損台灣主權的不實論述。</p><p>外交部重申，中華民國台灣是主權獨立國家，中華人民共和國與台灣互不隸屬，中國的軍事威脅與虛假訊息無法改變台灣對自由民主的承諾。</p>
+</div>
+<div id="story-content-28">
+<p>台灣民主基金會派員出席哥本哈根民主峰會，與各國代表共同探討全球民主援助的未來走向與挑戰。第8屆「哥本哈根民主高峰會」於5月13至14日在丹麥舉行。</p><p>台灣持續透過民主基金會等管道積極參與國際民主社群，展現台灣作為全球民主夥伴的實質角色，在被排除於多數國際組織的困境下，持續發揮民主軟實力。</p><p>西班牙語世界長期深耕民主鞏固議題，台灣的民主化轉型經驗與外交參與模式，對拉美民主社會在面對威權主義挑戰時具有高度參考價值。</p>
+</div>
+<div id="story-content-29">
+<p>台灣總統賴清德在哥本哈根民主峰會上發表視訊演說，強調台灣是主權獨立的國家，人民有權利走向世界，台灣的民主對於區域和平穩定以及在半導體與AI產業中提供民主供應鏈，也可為世界做出很大貢獻。</p><p>賴總統在演說中表示，無論國際社會如何施壓，台灣都不會放棄參與國際社會的決心，孤立台灣的嘗試無法阻擋台灣走向世界。</p><p>此次演說展示台灣如何在被排除於多數國際組織的困境下，持續發揮民主軟實力，並在全球民主社群中贏得認同與支持。</p>
+</div>
+<div id="story-content-30">
+<p>前北約秘書長在哥本哈根民主峰會倡議組建涵蓋民主中等強國的「D7」聯盟，並明確指出台灣在此架構中可獲得具體利益，引發國際社會廣泛討論。</p><p>此一構想旨在凝聚美國與中國之外的民主中等強國，形成多邊安全與外交合作框架，以集體力量維護以規則為基礎的國際秩序。</p><p>此構想直接呼應西語系民主國家如何在美中激烈競爭下維護多邊秩序的深層關切，對拉美國家在全球地緣政治重組中的角色定位具有重要的戰略參考意義。</p>
+</div>
+<div id="story-content-31">
+<p>跟著總統賴清德突圍出訪的腳步，台灣駐南非特派記者深入史瓦帝尼，見證台灣長年投入農業援助的成果，以及史瓦帝尼人對台灣跨越萬里善意的深切感謝。</p><p>台灣國合會駐史瓦帝尼技術團長期推動畜牧業升級計畫，協助當地養豬小農導入人工授精技術，使史國國產豬肉產量從2015年的785公噸提升至逾2000公噸，達到自給自足。</p><p>台灣與歐盟合作的三角援助模式，在農業技術移轉、農村婦女賦能等面向發揮顯著成效，展示台灣在南南合作框架下的國際發展援助能力，與拉美及非洲的農業與農村發展議題高度連結。</p>
+</div>
+<div id="story-content-32">
+<p>鴻海發言人巫俊毅出席COMPUTEX台灣智慧科技島主題業績展望會透露，透過併購方式，鴻海首次進軍非洲市場，今年集團也會持續增加全球據點。</p><p>在半導體策略方面，巫俊毅說明，全球成熟製程產能已足夠，鴻海聚焦IC設計與先進封測服務，並宣布與法國廠商Thales及Radiall合資進入先進半導體封裝測試（OSAT）領域，開啟台法非三方合作的AI基礎設施新頁。</p><p>此案凸顯台灣科技企業的國際競爭力，以及全球南方數位轉型對新興市場的巨大發展機遇，對研究非洲數位經濟崛起的西語系讀者具有重要參考價值。</p>
+</div>
+<div id="story-content-33">
+<p>台灣與美國在川習峰會前夕正式簽署無人機合作意向書，展示台美防衛產業合作的最新深化進展，雙方將在無人機技術研發、生產與供應鏈去中化等面向深化合作。</p><p>美國跨黨派議員推動「台灣藍天法案」，建立「藍色無人機工作小組」，並與台灣工業技術研究院合作在台灣建立完整的GreenUAS測試系統，為美國本土以外全球首例。</p><p>無人機技術的戰略意義日益凸顯，此次台美簽署意向書對研究印太軍事平衡、不對稱作戰能力建構的西語系讀者而言，具有深度的防衛戰略分析參考價值。</p>
+</div>
+<div id="story-content-34">
+<p>賴總統今天明令公布「保衛國家安全及強化不對稱戰力計畫採購特別條例」。立法院通過的版本與行政院版本相差新台幣4700億元，學者警告這一缺口可能嚴重損及現有軍事投資配置。</p><p>立法院5月8日通過「保衛國家安全及強化不對稱戰力計畫採購特別條例」，設定第一批軍購上限3000億元、第二批4800億元，但無人機艦、戰術網路及先進飛彈均未納入採購項目。</p><p>國防安全研究院學者張捷指出，4700億元缺口若轉為年度公務預算，每年約需編列500億元，「將嚴重擠壓既有國防投資配置」，可能延誤關鍵無人系統的發展時程，衝擊台灣不對稱作戰能力。</p>
+</div>
+<div id="story-content-35">
+<p>秘魯總統選舉候選人遭檢察官以金融犯罪罪名提出求刑5年4個月，並申請撤銷候選資格，秘魯政局陷入高度不確定。</p><p>秘魯4月12日舉行總統和國會大選，有30多位候選人，且選前民調顯示無明顯領先者，幾乎篤定要到6月第二輪決選才能定勝負。此案的爆發使選情更加複雜。</p><p>此案例是台灣媒體持續記錄拉美政治局勢的具體體現，對西語系讀者而言，既呈現了秘魯司法體系對政治人物究責的努力，也提供了解台灣如何以亞洲視角觀察拉美民主進程的獨特切入點。</p>
+</div>
+<div id="story-content-36">
+<p>阿根廷總統米雷伊9日在眾議院否決了增加公立大學經費的法案，引發全國公立大學師生強烈反應，上萬名民眾走上街頭抗議，展現拉美公民社會對教育權利的強烈捍衛。</p><p>阿根廷目前有近8成、約200萬名學生就讀於57所公立大學。自1949年起，阿根廷實施免費公立大學政策，公立高等教育被視為公民基本權利。</p><p>此事件是台灣媒體持續記錄拉美社會運動的具體案例，對西語系讀者具有直接的地區認同與情感共鳴，也是觀察米雷伊政府財政緊縮政策引發社會反彈的重要窗口。</p>
+</div>
+<div id="story-content-37">
+<p>國際能源總署宣布成員國將釋出4億桶石油儲備，以平抑美國與以色列對伊朗開戰而飆升的油價，此次協調釋出規模超越2022年俄烏戰爭時創下的1.82億桶歷史記錄。</p><p>成員國在緊急特別會議上全票通過釋出決議，國際能源總署署長強調此次危機與回應的規模均屬前所未見。伊朗衝突實際上已封鎖霍姆茲海峽這條石油與天然氣運輸的關鍵水道。</p><p>油價波動對拉美產油國及能源進口國均形成直接影響，是西語系讀者高度關注的能源政策核心議題。亞洲及大洋洲成員國的戰略石油儲備將立即啟動釋出，美洲與歐洲則預計月底前完成釋放。</p>
+</div>
+<div id="story-content-38">
+<p>美國1月3日前抓捕委內瑞拉總統馬杜洛帶回紐約受審。川普今天在自家社群平台自封為委內瑞拉「代理總統」，還覺得由國務卿盧比歐當古巴總統也不錯。</p><p>川普於1月11日在真實社群（Truth Social）分享一張仿照維基百科格式的圖片，將自己的頭銜標示為「委內瑞拉代理總統」，任期自2026年1月起，以美國國旗標示委內瑞拉領土範圍。</p><p>此舉涉及美國對拉美主權問題的態度，在西語系世界引發廣泛爭議，對關注美拉關係走向的西語系讀者而言具有高度的新聞與政治意義，也再度引燃美國干預拉美主權的歷史爭議。</p>
+</div>
+<div id="story-content-39">
+<p>加州山野市65歲居民孫耀寧（Mike Sun）因非法充當中國政府代理人，被判處4年有期徒刑。聯邦檢察官指出，美國執法機關不容許敵對外國勢力滲透美國政治體系。</p><p>孫耀寧依照中國政府指示，在地方選舉中支持親中候選人、經營親中媒體平台，並向中國官員回報台灣前總統蔡英文訪美行程，是中共滲透美國地方政治的典型案例。</p><p>聯邦檢察官強調，外國政府試圖影響地方政治、扶植特定候選人擔任市議員，一旦成功將可能逐步延伸至州議會、州長乃至國會層級，對民主體制構成嚴重威脅。</p>
+</div>
+<div id="story-content-40">
+<p>太平洋島國諾魯計畫透過公投更改沿用自殖民時代的國家名稱「Nauru」，改為本土語言發音的「Naoero」。現行名稱「Nauru」係因外國人無法正確發音本土語言而沿用至今，政府表示更名後將全面適用於國家航空、船舶及聯合國等各項官方識別。</p><p>諾魯總統宣布此項更名計畫，強調這是諾魯人民告別殖民歷史、回歸本土語言認同的重要宣示，體現太平洋島嶼國家主體意識的覺醒。</p><p>去殖民化議題在拉丁美洲有深厚的歷史積澱與文化共鳴，此案例提供太平洋地區的比較視角，呈現原住民語言復振與國家認同重塑的全球共同課題。</p>
+</div>
+
+  </div>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lb-title">
+    <div class="lb-backdrop" id="lb-backdrop"></div>
+    <div class="lb-panel">
+      <div class="lb-header">
+        <div class="lb-header-meta">
+          <span class="lb-category" id="lb-category"></span>
+          <span class="lb-time" id="lb-time"></span>
+        </div>
+        <button class="lb-close" id="lb-close" aria-label="關閉">✕</button>
+      </div>
+      <div class="lb-scroll" id="lb-scroll">
+        <h2 class="lb-title" id="lb-title"></h2>
+        <div class="lb-image-wrap" id="lb-image-wrap">
+          <img id="lb-image" src="" alt="" loading="eager">
+        </div>
+        <div class="lb-body" id="lb-body"></div>
+        <hr class="lb-divider">
+        <a class="lb-source" id="lb-source" href="#" target="_blank" rel="noopener">查看原文</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">外語讀者新聞精選</div>
+      <div class="footer-links">
+        <a href="https://u0401006.github.io/video-quotes/news/">歷史存檔</a>
+        <a href="https://u0401006.github.io/video-quotes/news/">訂閱電子報</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 外語讀者新聞精選 · 版權所有</span>
+      <span class="footer-generated">Generated at 2026-05-13T21:32:53+08:00</span>
+    </div>
+  </footer>
+
+</div><!-- /.page-wrapper -->
+
+<script>
+  var TAG_CLASSES = {
+    '政治': 'tag-politics', '國內': 'tag-politics',
+    '國際': 'tag-intl',     '外交': 'tag-intl',
+    '財經': 'tag-finance',  '經濟': 'tag-finance',
+    '體育': 'tag-sports',
+    '科技': 'tag-tech',     '科學': 'tag-tech',
+    '社會': 'tag-society',  '生活': 'tag-society'
+  };
+
+  // Make all story cards clickable
+  document.addEventListener('DOMContentLoaded', function() {
+    var cards = document.querySelectorAll('.story-card');
+    cards.forEach(function(card) {
+      card.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') return;
+        var id = card.dataset.id;
+        if (id) openLightbox(parseInt(id, 10));
+      });
+    });
+  });
+
+  function openLightbox(id) {
+    var card = document.querySelector('.story-card[data-id="' + id + '"]');
+    var contentEl = document.getElementById('story-content-' + id);
+    if (!card) return;
+
+    var category = card.dataset.category || '';
+    var time     = card.dataset.time     || '';
+    var image    = card.dataset.image    || '';
+    var source   = card.dataset.source   || '';
+    var tagClass = card.dataset.tagClass || TAG_CLASSES[category] || 'tag-default';
+    var title    = card.querySelector('.story-title').textContent.trim();
+    var fullHtml = contentEl ? contentEl.innerHTML : '';
+
+    var catEl = document.getElementById('lb-category');
+    catEl.textContent = category;
+    catEl.className   = 'lb-category';
+
+    document.getElementById('lb-time').textContent  = time;
+    document.getElementById('lb-title').textContent = title;
+    document.getElementById('lb-body').innerHTML    = fullHtml;
+
+    var imgWrap = document.getElementById('lb-image-wrap');
+    var imgEl   = document.getElementById('lb-image');
+    if (image) {
+      imgEl.src = image;
+      imgEl.alt = title;
+      imgWrap.style.display = 'block';
+    } else {
+      imgWrap.style.display = 'none';
+    }
+
+    var srcEl = document.getElementById('lb-source');
+    if (source) {
+      srcEl.href           = source;
+      srcEl.style.display  = 'inline-flex';
+    } else {
+      srcEl.style.display  = 'none';
+    }
+
+    document.getElementById('lb-scroll').scrollTop = 0;
+
+    var lb = document.getElementById('lightbox');
+    lb.classList.add('is-open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    var lb = document.getElementById('lightbox');
+    lb.classList.remove('is-open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('lb-backdrop').addEventListener('click', closeLightbox);
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body>
+</html>
